@@ -581,8 +581,8 @@
 
 ### 2026-09-04 — GitHub 원격 저장소 연결
 
-- Git: 프로젝트 루트를 `main` 브랜치의 새 저장소로 초기화하고 `https://github.com/Joko123666/Maou_speech_defense.git`를 fetch/push `origin`으로 등록했습니다. 연결 당시 원격은 커밋이 없는 빈 저장소였습니다.
-- 점검: 50 MiB 이상 파일은 없고 `.godot/`, `/android/`, `/tmp/`는 기존 `.gitignore`에서 제외됩니다. GitHub CLI 로그인과 Git 작성자 정보는 설정되어 있지 않아 첫 커밋·푸시 전에 인증/작성자 설정이 필요합니다.
+- Git: 프로젝트 루트를 `main` 브랜치의 새 저장소로 초기화하고 `https://github.com/Joko123666/Maou_speech_defense.git`를 fetch/push `origin`으로 등록했습니다. 연결 당시 비어 있던 원격에 초기 프로젝트 커밋을 푸시했고 로컬 `main`이 `origin/main`을 추적합니다.
+- 점검: 50 MiB 이상 파일은 없고 `.godot/`, `/android/`, `/tmp/`는 기존 `.gitignore`에서 제외됩니다. 저장소 로컬 작성자는 `Joko123666 <Joko123666@users.noreply.github.com>`로 설정했으며 브라우저 인증을 통한 원격 푸시를 확인했습니다. 런타임 코드는 변경하지 않아 게임 테스트는 실행하지 않았습니다.
 
 ### 2026-09-04 — 2분 주기 운반 정예 아티팩트 구현
 
