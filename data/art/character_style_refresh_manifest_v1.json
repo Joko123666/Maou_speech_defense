@@ -1,0 +1,1314 @@
+{
+  "schema_version": 1,
+  "status": "enemy_boss_style_refresh_active",
+  "gdd": "res://godot_formation_defense_gdd_v0_19.md",
+  "plan": "res://docs/CHARACTER_RESOURCE_STYLE_REFRESH_PLAN_2026-08-28.md",
+  "reference_root": "res://reference",
+  "staging_root": "res://assets/graphics/style_refresh_v019",
+  "activation_policy": "category_batch_activated_after_m6_approval",
+  "style": {
+    "canvas": "square",
+    "player_facing": "right",
+    "enemy_facing": "left",
+    "player_outline": "thick_deep_navy",
+    "enemy_outline": "medium_deep_navy",
+    "shading": "two_step_cel",
+    "target_safe_margin_ratio": 0.07,
+    "review_sizes": [48, 64, 96],
+    "transparent_categories": [
+      "defenders",
+      "defender_attacks",
+      "defender_icons",
+      "towers",
+      "tower_attacks",
+      "candidates",
+      "candidate_sd",
+      "candidate_intrusion_sd",
+      "retainers",
+      "retainer_sd",
+      "retainer_intrusion_sd",
+      "guard_intrusion_sd",
+      "enemies"
+    ]
+  },
+  "review": {
+    "scene": "res://tests/character_style_refresh_review.tscn",
+    "capture": "res://tests/visual_reviews/character_style_refresh_pilots.png",
+    "result": "approved_for_m2_derivation",
+    "findings": [
+      "all five pilots keep distinct role silhouettes at 64px",
+      "given v2 keeps the whip readable while the body remains dominant at 48px",
+      "jeomujeom v2 reduces the design to five eyes and broad hand, body, and tentacle masses at 48px",
+      "pilot approval authorizes derivatives and remaining reference production, not active catalog replacement"
+    ]
+  },
+  "m2_defender_full_body": {
+    "status": "approved_for_icon_derivation",
+    "review_scene": "res://tests/character_style_refresh_defender_review.tscn",
+    "captures": [
+      "res://tests/visual_reviews/character_style_refresh_defenders_a.png",
+      "res://tests/visual_reviews/character_style_refresh_defenders_b.png"
+    ],
+    "findings": [
+      "all seven normal-defender roles keep distinct silhouettes at 48px, 64px, and 96px",
+      "weapons and role props remain separated from faces and bodies at mobile review sizes",
+      "mark uses the approved heart motif without skull props and slow uses one dominant eye with five broad tentacles",
+      "full-body approval authorizes defender icon derivation only and does not activate staged assets"
+    ],
+    "assets": [
+      {
+        "reference_id": "char_001",
+        "content_id": "rapid",
+        "path": "res://assets/graphics/style_refresh_v019/defenders/rapid.png",
+        "generation_method": "m1_reference_guided_generation",
+        "status": "approved_for_icon_derivation"
+      },
+      {
+        "reference_id": "char_002",
+        "content_id": "pierce",
+        "path": "res://assets/graphics/style_refresh_v019/defenders/pierce.png",
+        "generation_method": "reference_guided_generation_with_approved_style_anchor",
+        "status": "approved_for_icon_derivation"
+      },
+      {
+        "reference_id": "char_003",
+        "content_id": "area",
+        "path": "res://assets/graphics/style_refresh_v019/defenders/area.png",
+        "generation_method": "approved_mapping_text_generation_after_reference_alpha_failure",
+        "status": "approved_for_icon_derivation"
+      },
+      {
+        "reference_id": "char_004",
+        "content_id": "execute",
+        "path": "res://assets/graphics/style_refresh_v019/defenders/execute.png",
+        "generation_method": "reference_guided_generation_with_approved_style_anchor",
+        "status": "approved_for_icon_derivation"
+      },
+      {
+        "reference_id": "char_005",
+        "content_id": "knockback",
+        "path": "res://assets/graphics/style_refresh_v019/defenders/knockback.png",
+        "generation_method": "m1_reference_guided_generation_and_alpha_cleanup",
+        "status": "approved_for_icon_derivation"
+      },
+      {
+        "reference_id": "char_006",
+        "content_id": "mark",
+        "path": "res://assets/graphics/style_refresh_v019/defenders/mark.png",
+        "generation_method": "approved_mapping_text_generation_after_reference_alpha_failure",
+        "status": "approved_for_icon_derivation"
+      },
+      {
+        "reference_id": "char_010",
+        "content_id": "slow",
+        "path": "res://assets/graphics/style_refresh_v019/defenders/slow.png",
+        "generation_method": "approved_mapping_text_generation_after_reference_alpha_failure",
+        "status": "approved_for_icon_derivation"
+      }
+    ]
+  },
+  "m2_defender_icons": {
+    "status": "approved_identity_pairs_staging_only",
+    "review_scene": "res://tests/character_style_refresh_defender_icon_review.tscn",
+    "captures": [
+      "res://tests/visual_reviews/character_style_refresh_defender_icons_a.png",
+      "res://tests/visual_reviews/character_style_refresh_defender_icons_b.png"
+    ],
+    "findings": [
+      "all seven staged icons preserve the approved full-body species, face, palette, and primary role cue",
+      "all seven icons remain distinct and readable at 48px, 64px, and 96px",
+      "pierce is the approved male orc archer, knockback is the single-red-eye saw machine, and slow is the single-eye green abyss pillar",
+      "mark preserves the approved heart staff and contains no skull or bone motif",
+      "identity-pair approval remains staging-only until the remaining M2 portrait and SD pairs are complete"
+    ],
+    "assets": [
+      {
+        "reference_id": "char_001",
+        "content_id": "rapid",
+        "source_full_body": "res://assets/graphics/style_refresh_v019/defenders/rapid.png",
+        "path": "res://assets/graphics/style_refresh_v019/defender_icons/rapid.png",
+        "generation_method": "approved_full_body_spec_text_generation_after_reference_alpha_failure",
+        "status": "approved_identity_pair"
+      },
+      {
+        "reference_id": "char_002",
+        "content_id": "pierce",
+        "source_full_body": "res://assets/graphics/style_refresh_v019/defenders/pierce.png",
+        "path": "res://assets/graphics/style_refresh_v019/defender_icons/pierce.png",
+        "generation_method": "approved_full_body_spec_text_generation_after_beard_and_alpha_iteration",
+        "status": "approved_identity_pair"
+      },
+      {
+        "reference_id": "char_003",
+        "content_id": "area",
+        "source_full_body": "res://assets/graphics/style_refresh_v019/defenders/area.png",
+        "path": "res://assets/graphics/style_refresh_v019/defender_icons/area.png",
+        "generation_method": "approved_full_body_spec_text_generation",
+        "status": "approved_identity_pair"
+      },
+      {
+        "reference_id": "char_004",
+        "content_id": "execute",
+        "source_full_body": "res://assets/graphics/style_refresh_v019/defenders/execute.png",
+        "path": "res://assets/graphics/style_refresh_v019/defender_icons/execute.png",
+        "generation_method": "approved_full_body_spec_text_generation",
+        "status": "approved_identity_pair"
+      },
+      {
+        "reference_id": "char_005",
+        "content_id": "knockback",
+        "source_full_body": "res://assets/graphics/style_refresh_v019/defenders/knockback.png",
+        "path": "res://assets/graphics/style_refresh_v019/defender_icons/knockback.png",
+        "generation_method": "approved_full_body_spec_text_generation",
+        "status": "approved_identity_pair"
+      },
+      {
+        "reference_id": "char_006",
+        "content_id": "mark",
+        "source_full_body": "res://assets/graphics/style_refresh_v019/defenders/mark.png",
+        "path": "res://assets/graphics/style_refresh_v019/defender_icons/mark.png",
+        "generation_method": "approved_full_body_spec_text_generation",
+        "status": "approved_identity_pair"
+      },
+      {
+        "reference_id": "char_010",
+        "content_id": "slow",
+        "source_full_body": "res://assets/graphics/style_refresh_v019/defenders/slow.png",
+        "path": "res://assets/graphics/style_refresh_v019/defender_icons/slow.png",
+        "generation_method": "approved_full_body_spec_text_generation",
+        "status": "approved_identity_pair"
+      }
+    ]
+  },
+  "m2_character_pairs": {
+    "status": "approved_identity_pairs_staging_only",
+    "review_scene": "res://tests/character_style_refresh_character_pair_review.tscn",
+    "captures": [
+      "res://tests/visual_reviews/character_style_refresh_character_pairs_a.png",
+      "res://tests/visual_reviews/character_style_refresh_character_pairs_b.png"
+    ],
+    "findings": [
+      "jugdied preserves the skeletal rider and skeletal warhorse as one identity in both portrait and combat SD",
+      "death_vanguard shows one non-attacking standard-bearer and three separately readable attack members instead of a lone rider",
+      "judaginda keeps an exposed demon face, horns, red-black palette, and compact scythe while avoiding the skull mask and spectral aura reserved for the summoned reaper",
+      "given preserves the tired witch face, detachable work-bunny headband, and compact whip safety margin across the pair",
+      "jeomujeom keeps exactly five eyes, two large hands, a broad body, and simplified tentacle masses across the pair",
+      "all five staged SD assets retain their primary identity cue at 48px, 64px, and 96px",
+      "pair approval remains staging-only and does not authorize active catalog replacement"
+    ],
+    "assets": [
+      {
+        "reference_id": "char_007",
+        "content_id": "jugdied",
+        "portrait_path": "res://assets/graphics/style_refresh_v019/retainers/jugdied.png",
+        "sd_path": "res://assets/graphics/style_refresh_v019/retainer_sd/jugdied.png",
+        "generation_method": "reference_guided_portrait_and_approved_identity_text_sd_after_reference_alpha_failure",
+        "identity_contract": ["skeletal_rider", "skeletal_warhorse", "irelai_cyan_soul_white"],
+        "status": "approved_identity_pair"
+      },
+      {
+        "reference_id": "char_008",
+        "content_id": "death_vanguard",
+        "portrait_path": "res://assets/graphics/style_refresh_v019/retainers/death_vanguard.png",
+        "sd_path": "res://assets/graphics/style_refresh_v019/retainer_sd/death_vanguard.png",
+        "generation_method": "approved_squad_spec_text_generation_after_reference_alpha_failure",
+        "identity_contract": ["one_standard_bearer", "three_attack_members", "judaginda_red_black"],
+        "status": "approved_identity_pair"
+      },
+      {
+        "reference_id": "char_009",
+        "content_id": "judaginda",
+        "portrait_path": "res://assets/graphics/style_refresh_v019/candidates/judaginda.png",
+        "sd_path": "res://assets/graphics/style_refresh_v019/candidate_sd/judaginda.png",
+        "generation_method": "approved_exposed_candidate_identity_text_generation_with_compact_scythe_iteration",
+        "identity_contract": ["exposed_demon_face", "compact_horns", "compact_scythe", "no_reaper_aura"],
+        "status": "approved_identity_pair"
+      },
+      {
+        "reference_id": "char_012",
+        "content_id": "given",
+        "portrait_path": "res://assets/graphics/style_refresh_v019/retainers/given.png",
+        "sd_path": "res://assets/graphics/style_refresh_v019/retainer_sd/given_v2.png",
+        "generation_method": "approved_m1_sd_identity_text_portrait_pairing",
+        "identity_contract": ["tired_witch_face", "detachable_work_bunny_headband", "compact_whip"],
+        "status": "approved_identity_pair"
+      },
+      {
+        "reference_id": "char_013",
+        "content_id": "jeomujeom",
+        "portrait_path": "res://assets/graphics/style_refresh_v019/retainers/jeomujeom.png",
+        "sd_path": "res://assets/graphics/style_refresh_v019/retainer_sd/jeomujeom_v2.png",
+        "generation_method": "approved_m1_sd_identity_text_portrait_pairing",
+        "identity_contract": ["exactly_five_eyes", "two_large_hands", "broad_body", "simplified_tentacles"],
+        "status": "approved_identity_pair"
+      }
+    ]
+  },
+  "m2_guard_application": {
+    "status": "approved_application_example_staging_only",
+    "reference_id": "char_011",
+    "content_id": "emerald_guardian",
+    "source_full_body": "res://assets/graphics/style_refresh_v019/towers/emerald_guardian.png",
+    "review_scene": "res://tests/character_style_refresh_character_pair_review.tscn",
+    "capture": "res://tests/visual_reviews/character_style_refresh_character_pairs_b.png",
+    "emblem": "sword_shield",
+    "floor_border": "partason_metal_ring",
+    "palette": ["#252831", "#B8B9C1", "#C9A75D"],
+    "finding": "the charcoal and steel guard remains readable over the limited metal floor ring while the sword-and-shield emblem replaces the legacy crown and horseshoe language"
+  },
+  "m3_missing_defenders": {
+    "status": "approved_identity_pairs_staging_only",
+    "review_scene": "res://tests/character_style_refresh_m3_defender_review.tscn",
+    "capture": "res://tests/visual_reviews/character_style_refresh_m3_defenders.png",
+    "findings": [
+      "chain reads as a multi-install mana relay through its dominant cyan core, paired conductor hands, insulated cable loops, and weighted base",
+      "rubber_golem reads as a mobile knockback and gathering unit through its inflated segments, tension cords, broad stance, and oversized padded fists",
+      "both full-body and icon pairs retain their primary identity cues at 48px, 64px, and 96px",
+      "M3-A approval remains staging-only and does not authorize active catalog replacement"
+    ],
+    "assets": [
+      {
+        "content_id": "chain",
+        "full_body_path": "res://assets/graphics/style_refresh_v019/defenders/chain.png",
+        "icon_path": "res://assets/graphics/style_refresh_v019/defender_icons/chain.png",
+        "generation_method": "approved_runtime_role_and_legacy_identity_text_generation",
+        "identity_contract": ["cyan_mana_core", "paired_conductor_hands", "insulated_cable_loops", "weighted_relay_base"],
+        "status": "approved_identity_pair"
+      },
+      {
+        "content_id": "rubber_golem",
+        "full_body_path": "res://assets/graphics/style_refresh_v019/defenders/rubber_golem.png",
+        "icon_path": "res://assets/graphics/style_refresh_v019/defender_icons/rubber_golem.png",
+        "generation_method": "approved_runtime_role_and_legacy_identity_text_generation_with_icon_identity_iteration",
+        "identity_contract": ["sea_mint_inflated_body", "acid_lime_padded_fists", "cream_tension_cords", "four_way_belly_knot"],
+        "status": "approved_identity_pair"
+      }
+    ]
+  },
+  "m3_kanda_pair": {
+    "status": "approved_identity_pair_staging_only",
+    "content_id": "kanda",
+    "portrait_path": "res://assets/graphics/style_refresh_v019/retainers/kanda.png",
+    "sd_path": "res://assets/graphics/style_refresh_v019/retainer_sd/kanda.png",
+    "review_scene": "res://tests/character_style_refresh_m3_kanda_review.tscn",
+    "capture": "res://tests/visual_reviews/character_style_refresh_m3_kanda.png",
+    "generation_method": "approved_gdd_role_and_legacy_identity_text_generation_with_portrait_margin_and_sd_scale_iterations",
+    "identity_contract": [
+      "exactly_two_short_bronze_horns",
+      "left_eye_battle_scar",
+      "charcoal_steel_frontline_armor",
+      "limited_brass_and_crimson_accents",
+      "exactly_one_broad_iron_greatsword"
+    ],
+    "findings": [
+      "the portrait and combat SD preserve the same horns, left-eye scar, amber eyes, hair, stubble, armor, and limited accent palette",
+      "the combat SD replaces the legacy unarmed boxer silhouette with the authoritative one-greatsword close-slash role",
+      "the staged pair retains the two horns, face scar, iron armor, and one broad sword at 48px, 64px, and 96px",
+      "M3-B Kanda approval remains staging-only and does not authorize active catalog replacement"
+    ]
+  },
+  "m3_candidate_pairs": {
+    "status": "approved_identity_pairs_staging_only",
+    "review_scene": "res://tests/character_style_refresh_m3_candidate_review.tscn",
+    "captures": [
+      "res://tests/visual_reviews/character_style_refresh_m3_candidates_a.png",
+      "res://tests/visual_reviews/character_style_refresh_m3_candidates_b.png"
+    ],
+    "findings": [
+      "Partason preserves the large ridged horns, left-eye scar, amber eyes, and orthodox royal bearing while replacing the legacy red, gold, and teal dominance with charcoal, steel, limited brass, and a sword-and-shield combat cue",
+      "Jiane preserves the long dark-purple hair, paired curved horns, poised succubus identity, and magenta control language while replacing the legacy star crystal with heart, ribbon, bat-wing, and charm-wave cues",
+      "Kasuha preserves the long midnight hair, paired black horns, green facial cracks, and analytical expression while moving the legacy cyan crystal attack to a green tentacle-eye area-burst telegraph",
+      "Irelai preserves the braided black hair, branching antler crown, pale face, and serene necromancer identity while replacing legacy emerald and gold with pale-cyan soul white, skulls, and a slow death wave",
+      "all four candidate portrait and combat SD pairs retain their dominant face, horn, faction, and core-skill cues at 48px, 64px, and 96px",
+      "all eight masters keep genuine RGBA transparency and at least eight percent transparent safety margin on every side after non-destructive canvas normalization",
+      "M3-C candidate approval remains staging-only and does not authorize active catalog replacement"
+    ],
+    "assets": [
+      {
+        "content_id": "partason",
+        "portrait_path": "res://assets/graphics/style_refresh_v019/candidates/partason.png",
+        "sd_path": "res://assets/graphics/style_refresh_v019/candidate_sd/partason.png",
+        "generation_method": "legacy_portrait_identity_reference_generation_and_text_sd_after_checkerboard_failure_with_alpha_margin_normalization",
+        "identity_contract": ["large_symmetric_ridged_horns", "left_eye_vertical_scar_and_amber_eyes", "charcoal_steel_royal_armor", "sword_and_shield_role_cue", "limited_brass_trim"],
+        "status": "approved_identity_pair"
+      },
+      {
+        "content_id": "jiane",
+        "portrait_path": "res://assets/graphics/style_refresh_v019/candidates/jiane.png",
+        "sd_path": "res://assets/graphics/style_refresh_v019/candidate_sd/jiane.png",
+        "generation_method": "legacy_identity_text_generation_after_reference_checkerboard_failure_with_alpha_margin_normalization",
+        "identity_contract": ["long_wavy_dark_purple_hair", "two_slim_curved_horns", "magenta_heart_crest", "bat_wing_and_ribbon_motifs", "right_facing_charm_wave"],
+        "status": "approved_identity_pair"
+      },
+      {
+        "content_id": "kasuha",
+        "portrait_path": "res://assets/graphics/style_refresh_v019/candidates/kasuha.png",
+        "sd_path": "res://assets/graphics/style_refresh_v019/candidate_sd/kasuha.png",
+        "generation_method": "approved_gdd_role_and_legacy_identity_text_generation_with_alpha_margin_normalization",
+        "identity_contract": ["long_midnight_hair_and_green_face_cracks", "two_black_cracked_horns", "dominant_tentacle_eye_symbol", "abyss_green_charcoal_palette", "right_facing_area_burst"],
+        "status": "approved_identity_pair"
+      },
+      {
+        "content_id": "irelai",
+        "portrait_path": "res://assets/graphics/style_refresh_v019/candidates/irelai.png",
+        "sd_path": "res://assets/graphics/style_refresh_v019/candidate_sd/irelai.png",
+        "generation_method": "approved_gdd_role_and_legacy_identity_text_generation_with_alpha_margin_normalization",
+        "identity_contract": ["braided_black_hair", "two_branching_bone_antlers", "pale_cyan_soul_white_palette", "skull_cameo_and_three_soul_skulls", "right_facing_death_wave"],
+        "status": "approved_identity_pair"
+      }
+    ]
+  },
+  "m3_guard_full_body": {
+    "status": "approved_guard_set_staging_only",
+    "review_scene": "res://tests/character_style_refresh_m3_guard_review.tscn",
+    "captures": [
+      "res://tests/visual_reviews/character_style_refresh_m3_guards_a.png",
+      "res://tests/visual_reviews/character_style_refresh_m3_guards_b.png"
+    ],
+    "prompt_document": "res://docs/DEMON_ELECTION_PORTRAIT_PROMPTS.md",
+    "prompt_palette_status": "updated_to_v019_faction_tokens",
+    "findings": [
+      "Jiane's guard now reads as a short-range frenzy attacker through a right-facing heart glaive lunge, magenta massing, and bat-wing silhouette instead of the legacy gold star staff",
+      "Kasuha's guard now reads as a rear area caster through the single-eye staff, tentacle shoulder, and green abyss pulse instead of the legacy blue crystal mage",
+      "Irelai's guard now reads as a collapsing and reviving corpse through exposed bone, a bone halberd, paired cyan ghost flames, and skull-aura language instead of the legacy green and bronze living warrior",
+      "Judaginda's rear inquisitor and front verdict guard separate at 48px through narrow staff-caster and broad heavy-scythe silhouettes while sharing red, charcoal, pale gray, scythe, and blood-drop language",
+      "all five masters keep genuine RGBA transparency, stable guard IDs, right-facing player silhouettes, and at least seven percent transparent safety margin on every side",
+      "M3-D completion and the v0.19 prompt cleanup remain staging-only and do not authorize active catalog replacement"
+    ],
+    "assets": [
+      {
+        "content_id": "sapphire_lance",
+        "legacy_active_path": "res://assets/graphics/towers/jiane_fanatic_follower.png",
+        "path": "res://assets/graphics/style_refresh_v019/towers/sapphire_lance.png",
+        "generation_method": "approved_gdd_role_and_v019_faction_token_text_generation_with_alpha_margin_normalization",
+        "identity_contract": ["adult_succubus_follower", "heart_blade_glaive", "short_range_right_facing_lunge", "jiane_magenta_plum_palette", "bat_wing_ribbon_heart"],
+        "status": "approved_guard_full_body"
+      },
+      {
+        "content_id": "amethyst_nova",
+        "legacy_active_path": "res://assets/graphics/towers/kasuha_abyss_believer.png",
+        "path": "res://assets/graphics/style_refresh_v019/towers/amethyst_nova.png",
+        "generation_method": "approved_gdd_role_and_v019_faction_token_text_generation_with_alpha_margin_normalization",
+        "identity_contract": ["hooded_abyss_mage", "single_eye_staff", "tentacle_eye_shoulder", "right_facing_area_pulse", "kasuha_green_charcoal_palette"],
+        "status": "approved_guard_full_body"
+      },
+      {
+        "content_id": "jade_roulette",
+        "legacy_active_path": "res://assets/graphics/towers/irelai_resurrected_guard.png",
+        "path": "res://assets/graphics/style_refresh_v019/towers/jade_roulette.png",
+        "generation_method": "approved_gdd_role_and_v019_faction_token_text_generation_with_alpha_margin_normalization",
+        "identity_contract": ["resurrected_skeletal_corpse", "bone_halberd", "paired_pale_cyan_ghost_flames", "right_facing_attack_stance", "irelai_soul_blue_palette"],
+        "status": "approved_guard_full_body"
+      },
+      {
+        "content_id": "obsidian_inquisitor",
+        "legacy_active_path": "res://assets/graphics/towers/obsidian_inquisitor.png",
+        "path": "res://assets/graphics/style_refresh_v019/towers/obsidian_inquisitor.png",
+        "generation_method": "approved_gdd_role_and_v019_faction_token_text_generation_with_alpha_margin_normalization",
+        "identity_contract": ["narrow_rear_line_silhouette", "crescent_ritual_staff", "red_judgment_bolt", "scythe_and_blood_drop", "no_scales_or_gold"],
+        "status": "approved_guard_full_body"
+      },
+      {
+        "content_id": "obsidian_verdict",
+        "legacy_active_path": "res://assets/graphics/towers/obsidian_verdict.png",
+        "path": "res://assets/graphics/style_refresh_v019/towers/obsidian_verdict.png",
+        "generation_method": "approved_gdd_role_and_v019_faction_token_text_generation_with_alpha_margin_normalization",
+        "identity_contract": ["broad_heavy_front_line_silhouette", "large_execution_scythe", "crossed_scythe_blood_drop", "red_charcoal_gray", "no_scales_or_gold"],
+        "status": "approved_guard_full_body"
+      }
+    ]
+  },
+  "m4_intrusion_derivatives": {
+    "status": "approved_intrusion_set_active",
+    "runtime_policy": "dedicated_intrusion_then_ally_sd_horizontal_flip",
+    "review_scene": "res://tests/character_style_refresh_m4_intrusion_review.tscn",
+    "captures": [
+      "res://tests/visual_reviews/character_style_refresh_m4_intrusions_a.png",
+      "res://tests/visual_reviews/character_style_refresh_m4_intrusions_b.png",
+      "res://tests/visual_reviews/character_style_refresh_m4_intrusions_c.png",
+      "res://tests/visual_reviews/character_style_refresh_m4_intrusions_d.png"
+    ],
+    "findings": [
+      "all five candidate intrusions face left and replace the allied presentation with hostile expressions, attack poses, medium outlines, and faction-specific hostile effects",
+      "all five retainer intrusions preserve the approved identity counts and silhouettes while changing direction, expression or gaze, pose, and hostile effect",
+      "Jeomujeom keeps exactly five eyes and two dominant hands, Jugdied keeps one rider and one horse, and Death Vanguard keeps one non-attacking standard-bearer plus three attackers",
+      "all ten intrusion masters remain distinct from their right-facing allied source at 48px, 64px, and 96px",
+      "all ten masters keep genuine RGBA transparency and at least seven percent transparent safety margin on every side",
+      "all ten M4 derivatives are active catalog content; external catalogs without optional intrusion categories retain the allied SD horizontal-flip and faction-marker compatibility path"
+    ],
+    "active_enemy_audit": {
+      "audited_ids": [
+        "civilian_slime", "goblin_raider", "skeleton_raider", "orc_shield", "hound_light_infantry", "wraith_raider", "steel_golem",
+        "partason_standard_shield", "jiane_succubus_bewitcher", "kasuha_abyss_creature", "irelai_skeleton_cavalry", "judaginda_cult_applicant",
+        "boss_5", "boss_10", "boss_15", "final_boss", "judgment_bell"
+      ],
+      "corrected_ids": [],
+      "approved_frontal_exceptions": ["steel_golem", "kasuha_abyss_creature", "boss_5", "boss_10", "boss_15", "final_boss"],
+      "outline_result": "medium_or_internal_dark_contour_no_player_thick_outline_violations",
+      "finding": "all twelve active common and faction enemies plus all five boss identities now use approved direct art; judgment_bell is a dedicated left-facing identity while symmetric machines, frontal creatures, and four pressure-facing bosses remain explicit frontal exceptions"
+    },
+    "assets": [
+      {
+        "content_id": "partason",
+        "ally_category": "candidate_sd",
+        "ally_path": "res://assets/graphics/combat_sd/candidates/partason.png",
+        "intrusion_category": "candidate_intrusion_sd",
+        "path": "res://assets/graphics/candidate_intrusion_sd/partason.png",
+        "generation_method": "approved_ally_identity_reference_generation_with_alpha_margin_normalization",
+        "changed_elements": ["left_facing_shield_bash", "hostile_clenched_snarl", "medium_outline", "fractured_sword_shield_pressure_arc"],
+        "status": "approved_intrusion_derivative"
+      },
+      {
+        "content_id": "jiane",
+        "ally_category": "candidate_sd",
+        "ally_path": "res://assets/graphics/combat_sd/candidates/jiane.png",
+        "intrusion_category": "candidate_intrusion_sd",
+        "path": "res://assets/graphics/candidate_intrusion_sd/jiane.png",
+        "generation_method": "approved_identity_text_generation_after_reference_horn_count_and_checkerboard_failures_with_alpha_margin_normalization",
+        "changed_elements": ["left_facing_spell_lunge", "hostile_fanged_smile", "medium_outline", "barbed_heart_ribbon_blades"],
+        "status": "approved_intrusion_derivative"
+      },
+      {
+        "content_id": "kasuha",
+        "ally_category": "candidate_sd",
+        "ally_path": "res://assets/graphics/combat_sd/candidates/kasuha.png",
+        "intrusion_category": "candidate_intrusion_sd",
+        "path": "res://assets/graphics/candidate_intrusion_sd/kasuha.png",
+        "generation_method": "approved_ally_identity_reference_generation_with_alpha_margin_normalization",
+        "changed_elements": ["left_facing_predatory_cast", "hostile_bared_teeth", "medium_outline", "angular_tentacle_eye_vortex"],
+        "status": "approved_intrusion_derivative"
+      },
+      {
+        "content_id": "irelai",
+        "ally_category": "candidate_sd",
+        "ally_path": "res://assets/graphics/combat_sd/candidates/irelai.png",
+        "intrusion_category": "candidate_intrusion_sd",
+        "path": "res://assets/graphics/candidate_intrusion_sd/irelai.png",
+        "generation_method": "approved_ally_identity_reference_generation_with_alpha_margin_normalization",
+        "changed_elements": ["left_facing_command_pose", "cold_hostile_glare", "medium_outline", "hooked_three_skull_death_wave"],
+        "status": "approved_intrusion_derivative"
+      },
+      {
+        "content_id": "judaginda",
+        "ally_category": "candidate_sd",
+        "ally_path": "res://assets/graphics/combat_sd/candidates/judaginda.png",
+        "intrusion_category": "candidate_intrusion_sd",
+        "path": "res://assets/graphics/candidate_intrusion_sd/judaginda.png",
+        "generation_method": "approved_ally_identity_reference_generation_with_alpha_margin_normalization",
+        "changed_elements": ["left_facing_execution_lunge", "hostile_fang_snarl", "medium_outline", "blood_shard_scythe_arc"],
+        "status": "approved_intrusion_derivative"
+      },
+      {
+        "content_id": "kanda",
+        "ally_category": "retainer_sd",
+        "ally_path": "res://assets/graphics/combat_sd/retainers/kanda.png",
+        "intrusion_category": "retainer_intrusion_sd",
+        "path": "res://assets/graphics/retainer_intrusion_sd/kanda.png",
+        "generation_method": "approved_ally_identity_reference_generation_with_alpha_margin_normalization",
+        "changed_elements": ["left_facing_greatsword_cleave", "hostile_clenched_teeth", "medium_outline", "charcoal_brass_impact_wedges"],
+        "status": "approved_intrusion_derivative"
+      },
+      {
+        "content_id": "given",
+        "ally_category": "retainer_sd",
+        "ally_path": "res://assets/graphics/combat_sd/retainers/given.png",
+        "intrusion_category": "retainer_intrusion_sd",
+        "path": "res://assets/graphics/retainer_intrusion_sd/given.png",
+        "generation_method": "approved_ally_identity_reference_generation_with_alpha_margin_normalization",
+        "changed_elements": ["left_facing_whip_snap", "hostile_weary_scowl", "medium_outline", "barbed_heart_lash"],
+        "status": "approved_intrusion_derivative"
+      },
+      {
+        "content_id": "jeomujeom",
+        "ally_category": "retainer_sd",
+        "ally_path": "res://assets/graphics/combat_sd/retainers/jeomujeom.png",
+        "intrusion_category": "retainer_intrusion_sd",
+        "path": "res://assets/graphics/retainer_intrusion_sd/jeomujeom.png",
+        "generation_method": "approved_identity_text_generation_after_reference_checkerboard_failure_with_alpha_margin_normalization",
+        "changed_elements": ["left_facing_crushing_swipe", "five_hostile_narrowed_eyes", "medium_outline", "toothy_abyss_grimace"],
+        "status": "approved_intrusion_derivative"
+      },
+      {
+        "content_id": "jugdied",
+        "ally_category": "retainer_sd",
+        "ally_path": "res://assets/graphics/combat_sd/retainers/jugdied.png",
+        "intrusion_category": "retainer_intrusion_sd",
+        "path": "res://assets/graphics/retainer_intrusion_sd/jugdied.png",
+        "generation_method": "approved_identity_text_generation_after_reference_checkerboard_failure_with_alpha_margin_normalization",
+        "changed_elements": ["left_facing_mounted_charge", "hostile_rider_and_horse_skulls", "medium_outline", "hooked_cyan_soul_skull_trail"],
+        "status": "approved_intrusion_derivative"
+      },
+      {
+        "content_id": "death_vanguard",
+        "ally_category": "retainer_sd",
+        "ally_path": "res://assets/graphics/combat_sd/retainers/death_vanguard.png",
+        "intrusion_category": "retainer_intrusion_sd",
+        "path": "res://assets/graphics/retainer_intrusion_sd/death_vanguard.png",
+        "generation_method": "approved_identity_text_generation_after_reference_checkerboard_failure_with_alpha_margin_normalization",
+        "changed_elements": ["left_facing_four_member_rush", "hostile_narrowed_red_eyes", "medium_outline", "blood_shard_speed_streaks"],
+        "status": "approved_intrusion_derivative"
+      }
+    ]
+  },
+  "official_intrusion_boss_m1_review": {
+    "status": "approved_active_set_no_regeneration_required",
+    "review_scene": "res://tests/official_intrusion_boss_m1_review.tscn",
+    "captures": [
+      "res://tests/visual_reviews/official_intrusion_boss_m1_candidates.png",
+      "res://tests/visual_reviews/official_intrusion_boss_m1_retainers.png",
+      "res://tests/visual_reviews/official_intrusion_boss_m1_monochrome.png",
+      "res://tests/visual_reviews/official_intrusion_boss_m1_density.png"
+    ],
+    "source_policy": "active_catalog_paths_only",
+    "candidate_display_size_px": 224,
+    "retainer_display_sizes_px": [158, 190, 210],
+    "monochrome_display_size_px": 128,
+    "reviewed_ids": [
+      "candidate/partason", "candidate/jiane", "candidate/kasuha", "candidate/irelai", "candidate/judaginda",
+      "retainer/kanda", "retainer/given", "retainer/jeomujeom", "retainer/jugdied", "retainer/death_vanguard"
+    ],
+    "failed_ids": [],
+    "regeneration_ids": [],
+    "density_fixture": [
+      "retainer/kanda@158", "retainer/given@190", "retainer/jugdied@210", "candidate/kasuha@224"
+    ],
+    "findings": [
+      "all five candidates keep a distinct face, weapon or spell silhouette at the actual 224px final-boss body envelope",
+      "all five retainers preserve their required weapon, eye, mount, or member-count cue at every 158px, 190px, and 210px mid-boss envelope",
+      "all ten identities remain distinguishable at 128px neutral luminance without faction hue or UI emblems",
+      "a four-rival density fixture preserves left-facing silhouettes and readable gaps with boss-health and warning frames present",
+      "the active candidate and retainer intrusion set needs no selective regeneration before the five guard intrusion assets are authored"
+    ]
+  },
+  "official_intrusion_boss_m2_guards": {
+    "status": "approved_active_guard_intrusion_set",
+    "review_scene": "res://tests/official_intrusion_boss_m2_guard_review.tscn",
+    "captures": [
+      "res://tests/visual_reviews/official_intrusion_boss_m2_guard_pairs.png",
+      "res://tests/visual_reviews/official_intrusion_boss_m2_guard_sizes.png"
+    ],
+    "preparation_tool": "res://tools/prepare_guard_intrusion_art.ps1",
+    "source_policy": "active_guard_idle_and_attack_identity_pair",
+    "master_size_px": 1254,
+    "maximum_fill_ratio": 0.84,
+    "runtime_texture_limit": 512,
+    "assets": [
+      {
+        "faction_id": "partason_faction",
+        "guard_id": "emerald_guardian",
+        "source_idle_path": "res://assets/graphics/towers/emerald_guardian.png",
+        "source_attack_path": "res://assets/graphics/tower_attacks/emerald_guardian.png",
+        "staged_path": "res://assets/graphics/style_refresh_v019/guard_intrusion_sd/partason_faction.png",
+        "active_path": "res://assets/graphics/guard_intrusion_sd/partason_faction.png",
+        "sha256": "f8429929f001b1f9561f17f51f25dc376f39a98845ad4a111152fc1d752d0f54",
+        "alpha_margins_px": [100, 129, 101, 129],
+        "identity_contract": ["closed_helmet", "sword_and_shield", "shield_first_left_charge", "black_steel_restrained_gold"],
+        "status": "active_guard_intrusion"
+      },
+      {
+        "faction_id": "jiane_faction",
+        "guard_id": "sapphire_lance",
+        "source_idle_path": "res://assets/graphics/towers/sapphire_lance.png",
+        "source_attack_path": "res://assets/graphics/tower_attacks/sapphire_lance.png",
+        "staged_path": "res://assets/graphics/style_refresh_v019/guard_intrusion_sd/jiane_faction.png",
+        "active_path": "res://assets/graphics/guard_intrusion_sd/jiane_faction.png",
+        "sha256": "ec5db68a597e4ffe18629d7b66cf2f86400d422f4746e9df3f87818de5d1e628",
+        "alpha_margins_px": [100, 244, 101, 245],
+        "identity_contract": ["adult_succubus_guard", "single_heart_glaive", "left_thrust", "magenta_plum_palette"],
+        "status": "active_guard_intrusion"
+      },
+      {
+        "faction_id": "kasuha_faction",
+        "guard_id": "amethyst_nova",
+        "source_idle_path": "res://assets/graphics/towers/amethyst_nova.png",
+        "source_attack_path": "res://assets/graphics/tower_attacks/amethyst_nova.png",
+        "staged_path": "res://assets/graphics/style_refresh_v019/guard_intrusion_sd/kasuha_faction.png",
+        "active_path": "res://assets/graphics/guard_intrusion_sd/kasuha_faction.png",
+        "sha256": "40d34e07823527c7cd0673cb70d75afea396eee99a068097c300a8aaafded7aa",
+        "alpha_margins_px": [100, 144, 101, 145],
+        "identity_contract": ["hooded_abyss_guard", "exactly_three_eye_cues", "pupil_free_left_spiral", "green_charcoal_palette"],
+        "status": "active_guard_intrusion"
+      },
+      {
+        "faction_id": "irelai_faction",
+        "guard_id": "jade_roulette",
+        "source_idle_path": "res://assets/graphics/towers/jade_roulette.png",
+        "source_attack_path": "res://assets/graphics/tower_attacks/jade_roulette.png",
+        "staged_path": "res://assets/graphics/style_refresh_v019/guard_intrusion_sd/irelai_faction.png",
+        "active_path": "res://assets/graphics/guard_intrusion_sd/irelai_faction.png",
+        "sha256": "e4880b93fd30bc87a4321b3c43f690b142f1ca993553a091afbb89c540a1589a",
+        "alpha_margins_px": [100, 179, 101, 180],
+        "identity_contract": ["resurrected_skeletal_guard", "single_bone_halberd", "two_cyan_ghost_flames", "left_charge"],
+        "status": "active_guard_intrusion"
+      },
+      {
+        "faction_id": "judaginda_faction",
+        "guard_id": "obsidian_verdict",
+        "source_idle_path": "res://assets/graphics/towers/obsidian_verdict.png",
+        "source_attack_path": "res://assets/graphics/tower_attacks/obsidian_verdict.png",
+        "staged_path": "res://assets/graphics/style_refresh_v019/guard_intrusion_sd/judaginda_faction.png",
+        "active_path": "res://assets/graphics/guard_intrusion_sd/judaginda_faction.png",
+        "sha256": "a9846d8696412a53b30efcfb00e296dd3fda21d796621b5fd8a0587650cd079a",
+        "alpha_margins_px": [100, 202, 101, 203],
+        "identity_contract": ["broad_masked_executioner", "single_heavy_scythe", "left_judgment_cleave", "red_charcoal_gray"],
+        "status": "active_guard_intrusion"
+      }
+    ],
+    "findings": [
+      "all five guards preserve the active ally guard identity while using a separately authored left-facing hostile pose",
+      "all five active masters are unique 1254px RGBA images with at least seven percent alpha-safe margin and matching staged SHA-256 values",
+      "all five active imports are capped at 512px and remain readable at 220px, 96px, 64px, and 48px",
+      "the Kasuha commander uses exactly three eye cues and a pupil-free spiral so it does not collapse into the five-eye Jeomujeom retainer identity",
+      "the active election catalog now resolves dedicated faction guard intrusions while external packs without the optional category retain the flipped tower fallback"
+    ]
+  },
+  "official_intrusion_boss_m4_integration": {
+    "status": "approved_integrated_runtime_and_android_package",
+    "matrix": {
+      "candidate_count": 5,
+      "retainer_count": 5,
+      "seeds": [17, 42731, 99881],
+      "plan_count": 75,
+      "slot_count": 300,
+      "guard_faction_count": 5
+    },
+    "runtime_contract": "opening_retainer_or_same_faction_guard_final_unselected_candidate_direct_left_no_ally_duplicate",
+    "result_surface_policy": "same_presentation_identity_candidate_and_retainer_portraits_guard_intrusion_sd",
+    "review_scene": "res://tests/official_intrusion_boss_m4_integration_review.tscn",
+    "captures": [
+      {"path": "res://tests/visual_reviews/official_intrusion_boss_m4_integration_1280x720.png", "size": [1280, 720]},
+      {"path": "res://tests/visual_reviews/official_intrusion_boss_m4_integration_1600x720.png", "size": [1600, 720]},
+      {"path": "res://tests/visual_reviews/official_intrusion_boss_m4_integration_1920x1080.png", "size": [1920, 1080]}
+    ],
+    "active_asset_paths": [
+      {"key": "candidate/partason", "path": "res://assets/graphics/candidate_intrusion_sd/partason.png", "sha256": "73fd74ac14d9d26e49fe6c342801de8c4c551ede0c6e7a6bdf767d748766fd5c"},
+      {"key": "candidate/jiane", "path": "res://assets/graphics/candidate_intrusion_sd/jiane.png", "sha256": "0e6dd180b5c1843aa9971df2a29eb37bd4e9fcf4e61ffbd19ebd32a8aa2fa54f"},
+      {"key": "candidate/kasuha", "path": "res://assets/graphics/candidate_intrusion_sd/kasuha.png", "sha256": "155eeaff803e27ef17f6ed5a696e180c8f27b1d9191e8fde55d10def1e17f995"},
+      {"key": "candidate/irelai", "path": "res://assets/graphics/candidate_intrusion_sd/irelai.png", "sha256": "dd2d43353ef3aa27f074a4843276bbc36f4ccc907288c4eb94b826662f81579f"},
+      {"key": "candidate/judaginda", "path": "res://assets/graphics/candidate_intrusion_sd/judaginda.png", "sha256": "e89c1dfaa7fe9ae406bd6fc3622ecbac64b8c8d006c98a3e76132858e3ade0bd"},
+      {"key": "retainer/kanda", "path": "res://assets/graphics/retainer_intrusion_sd/kanda.png", "sha256": "4db896076f89ac7dd540938911f5813765dbc52b1caf9c9ffd5f0898565c5924"},
+      {"key": "retainer/given", "path": "res://assets/graphics/retainer_intrusion_sd/given.png", "sha256": "d627409c8339022189525316cf33a94f2a33009435914386865ff11781182114"},
+      {"key": "retainer/jeomujeom", "path": "res://assets/graphics/retainer_intrusion_sd/jeomujeom.png", "sha256": "9c0d2c24d99591027c2fcad0f9e0c60d30825c18904a0b21b10512248dd6dc49"},
+      {"key": "retainer/jugdied", "path": "res://assets/graphics/retainer_intrusion_sd/jugdied.png", "sha256": "3904ddbaa89fa8808e1e77180cafa1472544ce6c7145d96453a553f316c16368"},
+      {"key": "retainer/death_vanguard", "path": "res://assets/graphics/retainer_intrusion_sd/death_vanguard.png", "sha256": "234e4c52c279eff8eec4062975f4b7bfbcdea0cfbf8f06b4075f8c1cc67221c3"},
+      {"key": "guard/partason_faction", "path": "res://assets/graphics/guard_intrusion_sd/partason_faction.png", "sha256": "f8429929f001b1f9561f17f51f25dc376f39a98845ad4a111152fc1d752d0f54"},
+      {"key": "guard/jiane_faction", "path": "res://assets/graphics/guard_intrusion_sd/jiane_faction.png", "sha256": "ec5db68a597e4ffe18629d7b66cf2f86400d422f4746e9df3f87818de5d1e628"},
+      {"key": "guard/kasuha_faction", "path": "res://assets/graphics/guard_intrusion_sd/kasuha_faction.png", "sha256": "40d34e07823527c7cd0673cb70d75afea396eee99a068097c300a8aaafded7aa"},
+      {"key": "guard/irelai_faction", "path": "res://assets/graphics/guard_intrusion_sd/irelai_faction.png", "sha256": "e4880b93fd30bc87a4321b3c43f690b142f1ca993553a091afbb89c540a1589a"},
+      {"key": "guard/judaginda_faction", "path": "res://assets/graphics/guard_intrusion_sd/judaginda_faction.png", "sha256": "a9846d8696412a53b30efcfb00e296dd3fda21d796621b5fd8a0587650cd079a"}
+    ],
+    "runtime_texture_limit": 512,
+    "android": {
+      "audit_tool": "res://tools/audit_official_intrusion_apk.ps1",
+      "apk": "TD_survival_v019_official_intrusion_m4_debug.apk",
+      "audit_report": "C:/Users/USER/Documents/GodotGames/Output/TD_survival_v019_official_intrusion_m4_debug.audit.json",
+      "apk_bytes": 69096861,
+      "apk_sha256": "01441c5bcf499a93c7ec5d51afb49f92b2dbb8eeb29a3132a22f04b6eaff33d1",
+      "build_id": "20260903.212029",
+      "package_id": "com.example.td_survival",
+      "version_name": "0.03",
+      "min_sdk": 24,
+      "target_sdk": 36,
+      "abi": "arm64-v8a",
+      "signature": "v2_v3_verified",
+      "zipalign": "verified_4_byte_and_16_byte_shared_library_alignment",
+      "permission_count": 0,
+      "import_entries": 15,
+      "ctex_entries": 15,
+      "excluded_entries": {"style_refresh_staging": 0, "tests": 0, "tools": 0, "reference": 0, "data_art": 0},
+      "device_status": "not_run_no_authorized_device"
+    },
+    "validation": {
+      "quality_gate_stages": "7/7",
+      "quality_gate_report": "C:/Users/USER/AppData/Local/Temp/td-survival-headless-quality-gate/20260903_213031_785_22328/summary.json"
+    },
+    "findings": [
+      "the 5 by 5 by 3 matrix resolves 75 valid plans and 300 slots with four unique rival factions and presentation identities per plan",
+      "all five candidate, five retainer, and five faction guard identities are exercised with direct left-facing combat art and no selected ally duplicate",
+      "the result timeline preserves the same presentation IDs while using approved portraits for candidates and retainers and dedicated SD for guards",
+      "Forward Mobile captures preserve the approved 16 by 9 composition at 1280 by 720 and 1920 by 1080 and retain explicit side letterboxing at 1600 by 720",
+      "the signed arm64 Android debug APK contains exactly 15 official intrusion import and CTEX pairs and no staging, test, tool, reference, or art-manifest entries"
+    ]
+  },
+  "m5_faction_token_migration": {
+    "status": "approved_active_token_migration_character_art_staging_only",
+    "emblem_root": "res://assets/graphics/emblems/v019",
+    "review_scene": "res://tests/character_style_refresh_m5_faction_review.tscn",
+    "capture": "res://tests/visual_reviews/character_style_refresh_m5_faction_tokens.png",
+    "ui_surfaces": ["candidate_selection", "candidate_profile", "faction_prelude_hud", "boss_warning", "boss_health", "codex", "result_timeline", "guard_cell_frame"],
+    "legacy_emblem_aliases": {
+      "partason_crown": "partason_sword_shield",
+      "jiane_star": "jiane_heart",
+      "kasuha_abyss": "kasuha_tentacle_eye",
+      "irelai_spirit": "irelai_skull_aura",
+      "judaginda_bell": "judaginda_scythe_blood"
+    },
+    "legacy_marker_aliases": {
+      "crown": "sword_shield",
+      "star": "heart",
+      "abyss": "tentacle_eye",
+      "spirit": "skull_aura",
+      "judgment": "scythe_blood"
+    },
+    "assets": [
+      {"faction_id": "partason_faction", "emblem_id": "partason_sword_shield", "marker_style": "sword_shield", "path": "res://assets/graphics/emblems/v019/partason_sword_shield.svg", "status": "active_v019_faction_token"},
+      {"faction_id": "jiane_faction", "emblem_id": "jiane_heart", "marker_style": "heart", "path": "res://assets/graphics/emblems/v019/jiane_heart.svg", "status": "active_v019_faction_token"},
+      {"faction_id": "kasuha_faction", "emblem_id": "kasuha_tentacle_eye", "marker_style": "tentacle_eye", "path": "res://assets/graphics/emblems/v019/kasuha_tentacle_eye.svg", "status": "active_v019_faction_token"},
+      {"faction_id": "irelai_faction", "emblem_id": "irelai_skull_aura", "marker_style": "skull_aura", "path": "res://assets/graphics/emblems/v019/irelai_skull_aura.svg", "status": "active_v019_faction_token"},
+      {"faction_id": "judaginda_faction", "emblem_id": "judaginda_scythe_blood", "marker_style": "scythe_blood", "path": "res://assets/graphics/emblems/v019/judaginda_scythe_blood.svg", "status": "active_v019_faction_token"}
+    ],
+    "findings": [
+      "all five active palettes exactly match the v0.19 faction tokens recorded in this manifest",
+      "all five emblem and marker silhouettes remain distinguishable in the grayscale review row",
+      "legacy emblem and marker identifiers remain one-way compatibility aliases and are not active campaign identifiers",
+      "candidate, Prelude, boss, codex, result, and guard presentation read the same faction resource instead of duplicating color constants",
+      "character PNG masters remain isolated under style_refresh_v019 until the M6 review catalog activation"
+    ]
+  },
+  "m6_catalog_activation": {
+    "status": "approved_active_character_catalog",
+    "review_catalog": "res://data/art/character_style_refresh_m6_review_catalog.json",
+    "review_scene": "res://tests/character_style_refresh_m6_catalog_review.tscn",
+    "review_audit_scene": "res://tests/character_style_refresh_m6_review_audit.tscn",
+    "captures": [
+      "res://tests/visual_reviews/character_style_refresh_m6_catalog_defenders.png",
+      "res://tests/visual_reviews/character_style_refresh_m6_catalog_candidates.png",
+      "res://tests/visual_reviews/character_style_refresh_m6_catalog_retainers.png",
+      "res://tests/visual_reviews/character_style_refresh_m6_catalog_guards.png"
+    ],
+    "approved_override_count": 54,
+    "normalized_master_count": 30,
+    "runtime_texture_limit": 512,
+    "active_category_counts": {
+      "defenders": 9,
+      "defender_icons": 9,
+      "candidates": 5,
+      "retainers": 5,
+      "candidate_sd": 5,
+      "retainer_sd": 5,
+      "towers": 6,
+      "candidate_intrusion_sd": 5,
+      "retainer_intrusion_sd": 5
+    },
+    "activation_method": "recoverable_canonical_batch_copy_with_stable_ids",
+    "legacy_backup": "44 replaced PNGs and their existing import metadata were copied outside the project before activation",
+    "findings": [
+      "all 54 approved masters are unique 1254px RGBA sources with at least seven percent alpha-safe margin after 30 deterministic 84-percent canvas normalizations",
+      "all 54 active imports are capped at 512px for mobile runtime memory while the high-resolution masters remain available for future derivation",
+      "nine normal defender full-body and icon pairs, ten candidate and retainer portrait/ally-SD pairs, six guards, and ten dedicated intrusion derivatives are active without missing content",
+      "candidate and retainer intrusion art is authored left-facing and selected without runtime flipping; external packs without the optional categories retain the ally-SD horizontal-flip fallback",
+      "the 68-content audit keeps 67 dedicated resources, one approved boss alias, and zero missing resources"
+    ]
+  },
+  "m7_mobile_device_validation": {
+    "status": "device_ready_waiting_for_authorized_android_target",
+    "validation_tool": "res://tools/android_character_m7_validation.ps1",
+    "export_preset": "Android",
+    "debug_apk": "TD_survival_v019_character_m7_debug.apk",
+    "package_id": "com.example.td_survival",
+    "build_status": "debug_build_and_v2_v3_signature_verified",
+    "connected_device_count": 0,
+    "runtime_export_exclusions": [
+      "tests/*",
+      "assets/graphics/style_refresh_v019/*",
+      "tools/*",
+      "reference/*",
+      "data/art/*",
+      "scripts/game/balance_audit_summary.gd*",
+      "scripts/meta/first_five_run_economy_audit.gd*",
+      "scenes/ui/components/icon_chip.tscn",
+      "scripts/ui/components/icon_chip.gd*"
+    ],
+    "pre_exclusion_apk_bytes": 100478360,
+    "optimized_apk_bytes": 65278805,
+    "apk_reduction_bytes": 35199555,
+    "apk_reduction_percent": 35.03,
+    "package_audit": {
+      "active_character_import_entries": 54,
+      "style_refresh_staging_entries": 0,
+      "test_entries": 0,
+      "tool_entries": 0,
+      "reference_entries": 0,
+      "review_data_entries": 0,
+      "audit_helper_entries": 0,
+      "test_only_ui_entries": 0,
+      "removed_legacy_resource_entries": 0,
+      "arm64_godot_library_count": 1,
+      "other_abi_library_count": 0
+    },
+    "required_device_samples": [
+      "startup_and_safe_area",
+      "combat_1x",
+      "combat_3x",
+      "prelude_to_boss_transition",
+      "reduced_motion_3x"
+    ],
+    "required_device_metrics": [
+      "gfxinfo_framestats",
+      "memory_start_end",
+      "thermal_end",
+      "battery_start_end",
+      "logcat",
+      "screen_start_end"
+    ],
+    "blocker": "desktop Forward Mobile and a signed debug APK do not replace direction, readability, texture pop-in, memory, heat, and battery approval on physical Android hardware"
+  },
+  "m8_attack_pose_activation": {
+    "status": "active",
+    "generation_tool": "built_in_imagegen",
+    "generation_modes": ["identity-preserve", "precise-object-edit"],
+    "prompt_contract": "Preserve the approved v0.19 identity, palette, equipment, proportions, thick outline, and right-facing direction; change only to a role-readable attack pose; output a 1254px square RGBA cutout with safe transparent margins and no detached effects, text, shadow, frame, UI, or watermark.",
+    "runtime_window_seconds": 0.18,
+    "fallback_policy": "If an optional attack texture is absent in an external concept pack, TowerColumn keeps the idle texture.",
+    "assets": [
+      {"category": "defender_attacks", "content_id": "rapid", "path": "res://assets/graphics/defender_attacks/rapid.png"},
+      {"category": "defender_attacks", "content_id": "area", "path": "res://assets/graphics/defender_attacks/area.png"},
+      {"category": "defender_attacks", "content_id": "pierce", "path": "res://assets/graphics/defender_attacks/pierce.png"},
+      {"category": "defender_attacks", "content_id": "slow", "path": "res://assets/graphics/defender_attacks/slow.png"},
+      {"category": "defender_attacks", "content_id": "knockback", "path": "res://assets/graphics/defender_attacks/knockback.png"},
+      {"category": "defender_attacks", "content_id": "execute", "path": "res://assets/graphics/defender_attacks/execute.png"},
+      {"category": "defender_attacks", "content_id": "mark", "path": "res://assets/graphics/defender_attacks/mark.png"},
+      {"category": "defender_attacks", "content_id": "chain", "path": "res://assets/graphics/defender_attacks/chain.png"},
+      {"category": "defender_attacks", "content_id": "rubber_golem", "path": "res://assets/graphics/defender_attacks/rubber_golem.png"},
+      {"category": "tower_attacks", "content_id": "emerald_guardian", "path": "res://assets/graphics/tower_attacks/emerald_guardian.png"},
+      {"category": "tower_attacks", "content_id": "sapphire_lance", "path": "res://assets/graphics/tower_attacks/sapphire_lance.png"},
+      {"category": "tower_attacks", "content_id": "amethyst_nova", "path": "res://assets/graphics/tower_attacks/amethyst_nova.png"},
+      {"category": "tower_attacks", "content_id": "jade_roulette", "path": "res://assets/graphics/tower_attacks/jade_roulette.png"},
+      {"category": "tower_attacks", "content_id": "obsidian_verdict", "path": "res://assets/graphics/tower_attacks/obsidian_verdict.png"},
+      {"category": "tower_attacks", "content_id": "obsidian_inquisitor", "path": "res://assets/graphics/tower_attacks/obsidian_inquisitor.png"}
+    ],
+    "validation": [
+      "all 15 source PNG files are 1254x1254 RGBA with transparent corners",
+      "all 15 runtime imports are capped to 512px",
+      "confirmed attacks switch to attack_texture and return to idle after 0.18 seconds",
+      "asset coverage requires 15 distinct attack textures"
+    ]
+  },
+  "enemy_p0_style_refresh": {
+    "status": "active",
+    "generation_tool": "built_in_imagegen",
+    "generation_modes": ["identity-preserve", "precise-object-edit", "deterministic-alpha-cleanup"],
+    "prompt_contract": "Preserve each enemy's role silhouette, signature equipment, faction palette, and left-facing or approved frontal-heavy direction; redraw as vivid deformed flat cartoon art with a medium deep-navy outline, three to five large color planes, two-step cel shading, limited highlights, genuine transparent background, and no floor shadow, frame, text, UI, watermark, painterly texture, photorealism, or 3D rendering.",
+    "normalization_tool": "res://tools/prepare_enemy_art_p0.ps1",
+    "review_capture": "res://tests/visual_reviews/enemy_style_refresh_p0.png",
+    "review_sizes": [48, 64, 96],
+    "master_size": 1254,
+    "runtime_texture_limit": 512,
+    "minimum_safe_margin_ratio": 0.07,
+    "assets": [
+      {
+        "content_id": "wraith_raider",
+        "staging_path": "res://assets/graphics/style_refresh_v019/enemy_p0/wraith_raider.png",
+        "active_path": "res://assets/graphics/enemies/wraith_raider.png",
+        "sha256": "03a8592244a6850296e684e9dfe81d588119629d8ccbd6fd8324b111da9ffc39",
+        "identity_contract": ["empty_hood", "root_staff", "cyan_hands", "violet_ghost_crescent", "left_facing"]
+      },
+      {
+        "content_id": "steel_golem",
+        "staging_path": "res://assets/graphics/style_refresh_v019/enemy_p0/steel_golem.png",
+        "active_path": "res://assets/graphics/enemies/steel_golem.png",
+        "sha256": "4e961ce3d3ba667422a32d369249e55c550349ca845d7385a276eca5100dc515",
+        "identity_contract": ["large_fists", "furnace_chest", "steel_armor", "orange_heat", "frontal_left_heavy"]
+      },
+      {
+        "content_id": "hound_light_infantry",
+        "staging_path": "res://assets/graphics/style_refresh_v019/enemy_p0/hound_light_infantry.png",
+        "active_path": "res://assets/graphics/enemies/hound_light_infantry.png",
+        "sha256": "7ac1ba9638c46f30878b1b8d65c591cd0abcd7a5080d0677b986a3fad84373b7",
+        "identity_contract": ["werehound", "red_mane", "light_leather", "single_curved_dagger", "left_sprint"]
+      },
+      {
+        "content_id": "kasuha_abyss_creature",
+        "staging_path": "res://assets/graphics/style_refresh_v019/enemy_p0/kasuha_abyss_creature.png",
+        "active_path": "res://assets/graphics/enemies/kasuha_abyss_creature.png",
+        "sha256": "2e364857b29cba66986ffd182ce155aa261b4b8e4d826061e640fb22954bcbbb",
+        "identity_contract": ["gorilla_stance", "bone_shell", "single_magenta_core", "restrained_kasuha_green", "frontal_left_heavy"]
+      },
+      {
+        "content_id": "irelai_skeleton_cavalry",
+        "staging_path": "res://assets/graphics/style_refresh_v019/enemy_p0/irelai_skeleton_cavalry.png",
+        "active_path": "res://assets/graphics/enemies/irelai_skeleton_cavalry.png",
+        "sha256": "38433d137eb48ee1dd08e6cbf0936d7767019ad39c3adf96a63cdb9a6b639111",
+        "identity_contract": ["one_skeletal_rider", "one_skeletal_horse", "single_lance", "cyan_soul_fire", "left_charge"]
+      },
+      {
+        "content_id": "enemy_test",
+        "staging_path": "res://assets/graphics/style_refresh_v019/enemy_p0/enemy_test.png",
+        "active_path": "res://assets/graphics/enemies/enemy_test.png",
+        "sha256": "6d7dcd0834ed7bce4d06d36cfee140b9b88aa7cb87524b758752e7c24c787f46",
+        "identity_contract": ["neutral_fallback", "red_clockwork_beetle", "four_legs", "two_eyes", "no_faction_or_boss_marker"]
+      }
+    ],
+    "findings": [
+      "all six active files exactly match their reviewed staging masters",
+      "all six 1254px RGBA masters keep more than seven percent transparent safe margin on every side",
+      "the role silhouette and dominant palette remain readable at 48px, 64px, and 96px on a dark battlefield field",
+      "the six active imports are capped to 512px for mobile runtime memory",
+      "the prior active PNGs and import metadata were copied to a recoverable external backup before replacement"
+    ],
+    "validation": {
+      "quality_gate_report": "C:/Users/USER/AppData/Local/Temp/td-survival-headless-quality-gate/20260831_211444_375_23780/summary.json",
+      "quality_gate_stages": "7/7",
+      "forward_mobile_snapshot_count": 85,
+      "android_debug_apk": "TD_survival_v019_enemy_p0_style_debug.apk",
+      "android_apk_bytes": 68662325,
+      "android_apk_sha256": "654adec51e343e25a844371a80ca851ae7476dff53fdf08e433b4adb41ad686b",
+      "android_signature": "v2_v3_verified",
+      "android_abi": "arm64-v8a",
+      "package_audit": {
+        "active_enemy_import_pairs": 6,
+        "style_refresh_staging_entries": 0,
+        "test_entries": 0,
+        "tool_entries": 0,
+        "reference_entries": 0
+      }
+    }
+  },
+  "enemy_p1_style_refresh": {
+    "status": "active",
+    "generation_tool": "built_in_imagegen",
+    "generation_modes": ["identity-preserve", "style-transfer", "deterministic-alpha-cleanup"],
+    "prompt_contract": "Preserve the common or faction enemy's stable role, species, signature weapon or shield, dominant palette, and left-facing silhouette; remove realistic anatomy, material texture, tiny fittings, repeated armor seams, gradients, painterly detail, and micro-highlights; redraw with a medium deep-navy outline, three to five large color planes, two-step cel shading, a genuine transparent background, and readable 48px massing.",
+    "normalization_tool": "res://tools/prepare_enemy_art_p1.ps1",
+    "review_scene": "res://tests/enemy_style_refresh_p1_review.tscn",
+    "review_capture": "res://tests/visual_reviews/enemy_style_refresh_p1.png",
+    "review_sizes": [48, 64, 96],
+    "master_size": 1254,
+    "runtime_texture_limit": 512,
+    "minimum_safe_margin_ratio": 0.07,
+    "assets": [
+      {
+        "content_id": "goblin_raider",
+        "staging_path": "res://assets/graphics/style_refresh_v019/enemy_p1/goblin_raider.png",
+        "active_path": "res://assets/graphics/enemies/goblin_raider.png",
+        "sha256": "ac4ea1bdbb0c0328648d272f57fe39aabbafc05061a6a042517a837af1aa0ad5",
+        "identity_contract": ["green_goblin", "red_hood_scarf", "single_short_spear", "fast_running_pose", "left_facing"]
+      },
+      {
+        "content_id": "skeleton_raider",
+        "staging_path": "res://assets/graphics/style_refresh_v019/enemy_p1/skeleton_raider.png",
+        "active_path": "res://assets/graphics/enemies/skeleton_raider.png",
+        "sha256": "37691fea1fc1d93f2523d52f74f95cec94cb7b9940f1449f5670ad326535f2ae",
+        "identity_contract": ["ivory_skeleton", "charcoal_hood", "single_blue_sash", "single_curved_saber", "left_diagonal_sprint", "left_facing"]
+      },
+      {
+        "content_id": "orc_shield",
+        "staging_path": "res://assets/graphics/style_refresh_v019/enemy_p1/orc_shield.png",
+        "active_path": "res://assets/graphics/enemies/orc_shield.png",
+        "sha256": "a49a43d207eab7a0bdca93121b6fc201b645af5dd394b06259ca6157c347bc4d",
+        "identity_contract": ["green_tusked_orc", "oversized_rectangular_shield", "single_small_axe", "heavy_braced_stance", "left_facing"]
+      },
+      {
+        "content_id": "partason_standard_shield",
+        "staging_path": "res://assets/graphics/style_refresh_v019/enemy_p1/partason_standard_shield.png",
+        "active_path": "res://assets/graphics/enemies/partason_standard_shield.png",
+        "sha256": "4072a1511317733af103ee801a89258198386b182dbe4c7e7ca1b3298f5140ec",
+        "identity_contract": ["two_horn_demon", "black_steel_and_emerald", "restrained_gold_trim", "single_sword_and_faction_shield", "left_facing"]
+      }
+    ],
+    "findings": [
+      "all four active files exactly match their reviewed staging masters",
+      "all four 1254px RGBA masters keep more than seven percent transparent safe margin on every side",
+      "speed, diagonal movement, common armor, and Partason faction frontline roles remain distinct at 48px",
+      "the four active imports are capped to 512px for mobile runtime memory",
+      "the prior active PNGs were copied to a recoverable external backup before replacement"
+    ]
+  },
+  "enemy_p2_style_refresh": {
+    "status": "active",
+    "generation_tool": "built_in_imagegen",
+    "generation_modes": ["identity-preserve", "style-transfer", "precise-object-edit", "deterministic-chroma-key-alpha-cleanup"],
+    "prompt_contract": "Preserve the enemy's stable role, species, signature prop, faction palette, and left-facing silhouette; redraw as a compact flat-cartoon SD unit with a medium deep-navy outline, three to five broad color planes, restrained two-step cel shading, no realistic anatomy or material texture, genuine transparency, and readable 36px to 96px massing.",
+    "normalization_tool": "res://tools/prepare_enemy_art_p2.ps1",
+    "review_scene": "res://tests/enemy_style_refresh_p2_review.tscn",
+    "review_capture": "res://tests/visual_reviews/enemy_style_refresh_p2.png",
+    "review_sizes": [36, 48, 64, 96],
+    "review_density_units": 8,
+    "master_size": 1254,
+    "runtime_texture_limit": 512,
+    "minimum_safe_margin_ratio": 0.07,
+    "runtime_direction_policy": "direct_left_facing_art_no_id_scoped_correction",
+    "assets": [
+      {
+        "content_id": "civilian_slime",
+        "staging_path": "res://assets/graphics/style_refresh_v019/enemy_p2/civilian_slime.png",
+        "active_path": "res://assets/graphics/enemies/civilian_slime.png",
+        "sha256": "12b708a8596e73065666e5f81bf5b3bb57a9f462c6ce05e4d580331ea4b2ce99",
+        "identity_contract": ["lime_green_slime", "single_campaign_leaflet", "single_brown_pouch", "baseline_swarm_mass", "left_facing"]
+      },
+      {
+        "content_id": "jiane_succubus_bewitcher",
+        "staging_path": "res://assets/graphics/style_refresh_v019/enemy_p2/jiane_succubus_bewitcher.png",
+        "active_path": "res://assets/graphics/enemies/jiane_succubus_bewitcher.png",
+        "sha256": "b41e1c0ef98a2380666d0ca3c1e43825b17f8d1381ddad59fa22f55742ec3691",
+        "identity_contract": ["exactly_two_horns", "single_heart_fan", "single_bat_wing_pair", "jiane_magenta_plum", "left_facing"]
+      },
+      {
+        "content_id": "judaginda_cult_applicant",
+        "staging_path": "res://assets/graphics/style_refresh_v019/enemy_p2/judaginda_cult_applicant.png",
+        "active_path": "res://assets/graphics/enemies/judaginda_cult_applicant.png",
+        "sha256": "25b3202f45265d9daf25926635ccfe4aecd4dc330a5fd44c63283ffaebc6668e",
+        "identity_contract": ["exposed_face_red_hood", "single_small_sickle", "bandaged_pack_runner", "no_reaper_mask_or_aura", "left_facing"]
+      }
+    ],
+    "findings": [
+      "all three active files exactly match their reviewed staging masters",
+      "all three 1254px RGBA masters keep more than seven percent transparent safe margin on every side",
+      "slime swarm, succubus disable, and cult pack-runner silhouettes remain distinct at 36px through 96px",
+      "all three active imports are capped to 512px for mobile runtime memory",
+      "direct left-facing Judaginda art removes the obsolete ID-scoped runtime horizontal correction",
+      "the prior active PNGs were copied to a recoverable external backup before replacement"
+    ]
+  },
+  "enemy_boss_style_refresh": {
+    "status": "active",
+    "generation_tool": "built_in_imagegen",
+    "generation_modes": ["identity-preserve", "style-transfer", "precise-object-edit", "deterministic-connected-chroma-key-alpha-cleanup"],
+    "prompt_contract": "Preserve each boss's exact silhouette, dominant prop counts, threat tier, and palette identity; redraw as a polished flat-cartoon SD boss with a medium deep-navy contour, three to five broad color planes, restrained two-step cel shading, no realistic metal texture or micro-panel noise, genuine transparency, and readable 48px to 220px massing.",
+    "normalization_tool": "res://tools/prepare_enemy_boss_art.ps1",
+    "review_scene": "res://tests/enemy_boss_style_refresh_review.tscn",
+    "review_capture": "res://tests/visual_reviews/enemy_boss_style_refresh.png",
+    "review_sizes": [48, 64, 96, 220],
+    "master_size": 1254,
+    "runtime_texture_limit": 512,
+    "minimum_safe_margin_ratio": 0.07,
+    "dedicated_identity_count": 5,
+    "removed_alias": "enemies/judgment_bell -> enemies/final_boss",
+    "assets": [
+      {
+        "content_id": "boss_5",
+        "staging_path": "res://assets/graphics/style_refresh_v019/enemy_bosses/boss_5.png",
+        "active_path": "res://assets/graphics/enemies/boss_5.png",
+        "sha256": "71583f1ed824db20b07ba7a6e30897fc0be5b81502a4171a1e54effeaf324742",
+        "identity_contract": ["rust_red_siege_beetle", "single_orange_front_reactor", "two_dominant_front_claws", "short_rear_exhausts", "frontal_left_pressure"]
+      },
+      {
+        "content_id": "boss_10",
+        "staging_path": "res://assets/graphics/style_refresh_v019/enemy_bosses/boss_10.png",
+        "active_path": "res://assets/graphics/enemies/boss_10.png",
+        "sha256": "4734e756e8864de8c0abbf5771707ae044ee3b57b64e1c9a840d1c0d9dc552ef",
+        "identity_contract": ["purple_disruption_walker", "single_violet_central_eye", "two_asymmetric_front_pincers", "exactly_four_coil_pylons", "frontal_left_pressure"]
+      },
+      {
+        "content_id": "boss_15",
+        "staging_path": "res://assets/graphics/style_refresh_v019/enemy_bosses/boss_15.png",
+        "active_path": "res://assets/graphics/enemies/boss_15.png",
+        "sha256": "cf5300959bdf48f09697d136fd80c1456fb3945e2751500ee109c14d9cad5f41",
+        "identity_contract": ["gold_command_spider", "single_gold_central_eye", "exactly_four_summoning_drones", "tall_crown_crest", "frontal_left_pressure"]
+      },
+      {
+        "content_id": "final_boss",
+        "staging_path": "res://assets/graphics/style_refresh_v019/enemy_bosses/final_boss.png",
+        "active_path": "res://assets/graphics/enemies/final_boss.png",
+        "sha256": "e23fdc99bfbb3674c8dfa7f74ae7d3d46dff19dd90acd3c17cf043890f8f9ec2",
+        "identity_contract": ["black_crimson_pressure_spider", "single_red_turbine_eye", "exactly_six_blade_legs", "heavy_domed_crown", "frontal_left_pressure"]
+      },
+      {
+        "content_id": "judgment_bell",
+        "staging_path": "res://assets/graphics/style_refresh_v019/enemy_bosses/judgment_bell.png",
+        "active_path": "res://assets/graphics/enemies/judgment_bell.png",
+        "sha256": "cc38d79b582ae11f03c312ea1d700a8f32e8d54abef690aa23db750bed05aac0",
+        "identity_contract": ["giant_black_iron_bell_torso", "single_visible_clapper", "single_striker_hammer", "judaginda_crimson_hood", "left_facing"]
+      }
+    ],
+    "findings": [
+      "all five active files exactly match their reviewed staging masters",
+      "all five 1254px RGBA masters keep more than seven percent transparent safe margin on every side",
+      "siege, disruption, summoning, final-pressure, and judgment-bell silhouettes remain distinct at 48px through 220px",
+      "all five active imports are capped to 512px for mobile runtime memory",
+      "judgment_bell now has dedicated direct art and no longer aliases final_boss",
+      "the four prior active boss PNGs were copied to a recoverable external backup before replacement"
+    ]
+  },
+  "factions": [
+    {
+      "id": "partason_faction",
+      "primary": "#252831",
+      "secondary": "#B8B9C1",
+      "accent": "#C9A75D",
+      "symbol": "sword_shield",
+      "legacy_marker": "crown"
+    },
+    {
+      "id": "jiane_faction",
+      "primary": "#D83A91",
+      "secondary": "#6E2A64",
+      "accent": "#F6A3D1",
+      "symbol": "heart",
+      "legacy_marker": "star"
+    },
+    {
+      "id": "kasuha_faction",
+      "primary": "#50B84A",
+      "secondary": "#1D4338",
+      "accent": "#B8E65C",
+      "symbol": "tentacle_eye",
+      "legacy_marker": "abyss"
+    },
+    {
+      "id": "irelai_faction",
+      "primary": "#80D9F5",
+      "secondary": "#EAFBFF",
+      "accent": "#A9C7FF",
+      "symbol": "skull_aura",
+      "legacy_marker": "spirit"
+    },
+    {
+      "id": "judaginda_faction",
+      "primary": "#D4444A",
+      "secondary": "#24242A",
+      "accent": "#A5A7B0",
+      "symbol": "scythe_blood",
+      "legacy_marker": "judgment"
+    }
+  ],
+  "references": [
+    {
+      "reference_id": "char_001",
+      "source": "res://reference/char_001.png",
+      "targets": ["defenders/rapid", "defender_icons/rapid"],
+      "identity": "goblin_spearman",
+      "decision": "approved",
+      "adaptation": "Preserve the large ears, spear, quiver, comic expression, and right-facing motion; reduce equipment color count."
+    },
+    {
+      "reference_id": "char_002",
+      "source": "res://reference/char_002.png",
+      "targets": ["defenders/pierce", "defender_icons/pierce"],
+      "identity": "orc_archer",
+      "decision": "approved",
+      "adaptation": "Simplify armor and separate the bow from the face at icon scale."
+    },
+    {
+      "reference_id": "char_003",
+      "source": "res://reference/char_003.png",
+      "targets": ["defenders/area", "defender_icons/area"],
+      "identity": "skeleton_grenadier",
+      "decision": "approved",
+      "adaptation": "Keep toxic green as an effect color and use a neutral mercenary base to avoid an Irelai faction read."
+    },
+    {
+      "reference_id": "char_004",
+      "source": "res://reference/char_004.png",
+      "targets": ["defenders/execute", "defender_icons/execute"],
+      "identity": "troll_sniper",
+      "decision": "approved",
+      "adaptation": "Keep clear separation between barrel and arms at 64px."
+    },
+    {
+      "reference_id": "char_005",
+      "source": "res://reference/char_005.png",
+      "targets": ["defenders/knockback", "defender_icons/knockback"],
+      "identity": "ki_ii_saw_machine",
+      "decision": "approved",
+      "adaptation": "Reduce blade and internal detail count; keep death-cult red as a limited rented-unit accent."
+    },
+    {
+      "reference_id": "char_006",
+      "source": "res://reference/char_006.png",
+      "targets": ["defenders/mark", "defender_icons/mark"],
+      "identity": "succubus_hexer",
+      "decision": "approved_with_motif_change",
+      "adaptation": "Replace skull props with heart and curved magenta motifs and simplify to normal-defender ornament density."
+    },
+    {
+      "reference_id": "char_007",
+      "source": "res://reference/char_007.png",
+      "targets": ["retainers/jugdied", "retainer_sd/jugdied"],
+      "identity": "jugdied_mounted_retainer",
+      "decision": "approved",
+      "adaptation": "Recolor to Irelai cyan and soul white; preserve the mount in both portrait and combat silhouette."
+    },
+    {
+      "reference_id": "char_008",
+      "source": "res://reference/char_008.png",
+      "targets": ["retainers/death_vanguard", "retainer_sd/death_vanguard"],
+      "identity": "death_vanguard_squad",
+      "decision": "approved",
+      "adaptation": "Use Judaginda red and black; preserve a squad read rather than reducing the combat asset to one rider."
+    },
+    {
+      "reference_id": "char_009",
+      "source": "res://reference/char_009.png",
+      "targets": ["candidates/judaginda", "candidate_sd/judaginda"],
+      "identity": "judaginda_candidate",
+      "decision": "approved_with_identity_split",
+      "adaptation": "This is the exposed candidate identity; summoned reapers must use a different face, scale, silhouette, and aura hierarchy."
+    },
+    {
+      "reference_id": "char_010",
+      "source": "res://reference/char_010.png",
+      "targets": ["defenders/slow", "defender_icons/slow"],
+      "identity": "abyss_pillar",
+      "decision": "approved",
+      "adaptation": "Use as the Kasuha green baseline and reduce tentacle and crack density for small-size readability."
+    },
+    {
+      "reference_id": "char_011",
+      "source": "res://reference/char_011.png",
+      "targets": ["towers/emerald_guardian"],
+      "runtime_alias": "res://assets/graphics/towers/partason_royal_guard.png",
+      "identity": "partason_royal_guard",
+      "decision": "approved_with_faction_recolor",
+      "adaptation": "Move red and gold dominance to charcoal, neutral steel, and limited metal trim; use the sword-and-shield emblem."
+    },
+    {
+      "reference_id": "char_012",
+      "source": "res://reference/char_012.png",
+      "targets": ["retainers/given", "retainer_sd/given"],
+      "identity": "given_retainer",
+      "decision": "approved_costume_accessory",
+      "adaptation": "Rabbit ears are a removable work-bunny headband, not race anatomy; preserve witch identity and whip safety margin."
+    },
+    {
+      "reference_id": "char_013",
+      "source": "res://reference/char_013.png",
+      "targets": ["retainers/jeomujeom", "retainer_sd/jeomujeom"],
+      "identity": "jeomujeom_retainer",
+      "decision": "approved",
+      "adaptation": "Use Kasuha green and make body, hands, tentacles, and eyes the first four readable masses."
+    }
+  ],
+  "pilots": [
+    {
+      "reference_id": "char_001",
+      "category": "defenders",
+      "content_id": "rapid",
+      "path": "res://assets/graphics/style_refresh_v019/defenders/rapid.png",
+      "generation_method": "reference_guided_generation",
+      "status": "approved_for_derivation"
+    },
+    {
+      "reference_id": "char_005",
+      "category": "defenders",
+      "content_id": "knockback",
+      "path": "res://assets/graphics/style_refresh_v019/defenders/knockback.png",
+      "generation_method": "reference_guided_generation_and_alpha_cleanup",
+      "status": "approved_for_derivation"
+    },
+    {
+      "reference_id": "char_011",
+      "category": "towers",
+      "content_id": "emerald_guardian",
+      "path": "res://assets/graphics/style_refresh_v019/towers/emerald_guardian.png",
+      "generation_method": "approved_mapping_text_generation_after_reference_alpha_failure",
+      "status": "approved_for_derivation"
+    },
+    {
+      "reference_id": "char_012",
+      "category": "retainer_sd",
+      "content_id": "given",
+      "path": "res://assets/graphics/style_refresh_v019/retainer_sd/given_v2.png",
+      "generation_method": "reference_guided_generation_with_compact_whip_iteration_and_alpha_cleanup",
+      "status": "approved_for_derivation"
+    },
+    {
+      "reference_id": "char_013",
+      "category": "retainer_sd",
+      "content_id": "jeomujeom",
+      "path": "res://assets/graphics/style_refresh_v019/retainer_sd/jeomujeom_v2.png",
+      "generation_method": "reference_guided_generation_with_five_eye_detail_reduction_and_alpha_cleanup",
+      "status": "approved_for_derivation"
+    }
+  ]
+}

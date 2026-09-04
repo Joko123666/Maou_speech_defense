@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="EnemySpawnProfileData" format=3]
+
+[ext_resource type="Script" path="res://resources/enemy_spawn_profile_data.gd" id="1_70rng"]
+
+[resource]
+script = ExtResource("1_70rng")
+enemy_id = &"judaginda_cult_applicant"
+spawn_cost = 4.0
+role_tags = Array[StringName]([&"faction", &"pack", &"death_buff"])
+unlock_time = 240.0
+is_faction_enemy = true
+faction_id = &"judaginda_faction"
+group_min = 4
+group_max = 6

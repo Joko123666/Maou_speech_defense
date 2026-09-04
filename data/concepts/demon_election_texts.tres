@@ -1,0 +1,45 @@
+[gd_resource type="Resource" script_class="GameTextCatalogData" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://resources/game_text_catalog_data.gd" id="1_text"]
+
+[resource]
+script = ExtResource("1_text")
+id = &"demon_election_ko"
+entries = {
+&"hud.input_desktop": "클릭/드래그: 심복 목적지 지정·자동 지원·유세 열기 회수 · SPACE: {skill} · F: 배속 · G: 사거리 · ESC: 일시정지",
+&"hud.input_touch": "터치/드래그: 심복 목적지 지정·자동 지원·유세 열기 회수 · 상단 버튼: {skill} / 배속 / 사거리 / 일시정지",
+&"hud.boss_name": "{candidate} · {faction}",
+&"hud.boss_warning": "30초 후 Y{position} 지점 공식 난입 · {candidate} / {faction}",
+&"hud.skill": "필살 공약",
+&"level_up.hint": "유세 공약 카드를 선택해 후보·심복·지원대를 강화합니다",
+&"level_up.reroll": "공약 교체  {remaining} / {limit}  [Q]",
+&"level_up.reroll_tooltip": "현재 3개의 일반 유세 공약을 다시 제안받습니다. 게임당 {limit}회 사용할 수 있습니다.",
+&"level_up.subchoice_hint": "세부 공약 하나를 선택하면 Lv.4 특화가 활성화됩니다",
+&"level_up.subchoice_title": "{parent} · 세부 공약 선택",
+&"level_up.title": "지지도 LEVEL {level} · {candidate} 공약 선택",
+&"menu.achievements_subtitle": "완수한 유세 실적과 보상을 확인합니다",
+&"menu.achievements_title": "유세 실적",
+&"menu.codex_subtitle": "후보·심복·부대와 용어·전투 규칙을 열람합니다",
+&"menu.codex_title": "마계 선거 기록부",
+&"menu.game_subtitle": "후보·심복 선택과 유세 출격",
+&"menu.game_title": "유세 출격",
+&"menu.shop_subtitle": "{tower}를 선거 자금으로 확보합니다",
+&"menu.shop_title": "선거대책본부",
+&"result.defeat": "유세 중단",
+&"result.victory": "연설 완주",
+&"setup.page_subtitle": "마왕 후보와 수석 심복을 조합합니다",
+&"setup.page_title": "후보·심복 출격 설정",
+&"setup.shop_hint": "원하는 {tower}을 자유 구매하면 관련 편대가 다음 유세부터 자동 적격화됩니다."
+}
+placeholder_contracts = {
+&"hud.input_desktop": PackedStringArray("skill"),
+&"hud.input_touch": PackedStringArray("skill"),
+&"hud.boss_name": PackedStringArray("candidate", "faction"),
+&"hud.boss_warning": PackedStringArray("position", "candidate", "faction"),
+&"level_up.reroll": PackedStringArray("remaining", "limit"),
+&"level_up.reroll_tooltip": PackedStringArray("limit"),
+&"level_up.subchoice_title": PackedStringArray("parent"),
+&"level_up.title": PackedStringArray("level", "candidate"),
+&"menu.shop_subtitle": PackedStringArray("tower"),
+&"setup.shop_hint": PackedStringArray("tower")
+}

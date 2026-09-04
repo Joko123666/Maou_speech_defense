@@ -1,0 +1,28 @@
+[gd_resource type="Resource" script_class="TutorialScenarioData" load_steps=3 format=3]
+
+[ext_resource type="Script" path="res://resources/tutorial_scenario_data.gd" id="1_scenario"]
+[ext_resource type="Resource" path="res://data/tutorial/tutorial_60s_stage.tres" id="2_stage"]
+
+[resource]
+script = ExtResource("1_scenario")
+id = &"tutorial_v0_17"
+stage_data = ExtResource("2_stage")
+core_id = &"emerald"
+cursor_id = &"iron"
+formation_id = &"guidance"
+required_formation_anchor = Vector2i(4, 1)
+fixed_upgrade_category = &"tower_type_level"
+fixed_upgrade_id = &"rapid"
+tutorial_enemy_id = &"goblin_raider"
+tutorial_boss_id = &"boss_5"
+observation_seconds = 3.0
+practice_first_wave_delay_seconds = 0.35
+practice_wave_interval_seconds = 2.6
+practice_wave_count = 3
+practice_units_per_wave = 2
+practice_enemy_health_multiplier = 0.55
+practice_enemy_speed_multiplier = 0.9
+boss_lead_in_seconds = 9.0
+boss_warning_seconds = 2.4
+expected_min_seconds = 45.0
+expected_max_seconds = 75.0

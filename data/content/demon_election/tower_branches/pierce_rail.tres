@@ -1,0 +1,23 @@
+[gd_resource type="Resource" script_class="TowerBranchData" format=3]
+
+[ext_resource type="Script" path="res://resources/tower_branch_data.gd" id="1_lkxpm"]
+
+[resource]
+script = ExtResource("1_lkxpm")
+id = &"pierce_rail"
+display_name = "폭파각인 화살"
+description = "관통을 포기하고 첫 대상 위치에 부착한 뒤 짧은 지연 후 범위 폭발"
+tower_id = &"pierce"
+branch_type = &"playstyle"
+level_4_modifiers = {
+"explosion_damage": 1.45,
+"explosion_delay": 0.32,
+"explosion_radius": 92.0,
+"explosive_arrow": true
+}
+level_7_modifiers = {
+"explosion_damage": 1.9,
+"explosion_delay": 0.24,
+"explosion_radius": 126.0,
+"explosive_arrow": true
+}

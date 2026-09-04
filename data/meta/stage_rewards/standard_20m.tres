@@ -1,0 +1,27 @@
+[gd_resource type="Resource" script_class="StageRewardData" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://resources/stage_reward_data.gd" id="1_reward"]
+
+[resource]
+script = ExtResource("1_reward")
+stage_id = &"standard_20m"
+stage_duration_seconds = 600.0
+base_progress_funds = 180
+progress_curve_power = 1.7
+boss_funds_by_id = {
+&"boss_10": 25,
+&"boss_15": 35,
+&"boss_5": 15,
+&"final_boss": 50,
+&"judgment_bell": 42
+}
+victory_bonus = 75
+challenge_funds_per_level = 0.06
+stage_first_clear_bonus = 150
+challenge_first_clear_funds = {
+3: 100,
+5: 150,
+7: 200,
+10: 300
+}
+abandon_minimum_seconds = 30.0

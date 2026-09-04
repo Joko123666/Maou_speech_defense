@@ -1,0 +1,85 @@
+[gd_resource type="Resource" script_class="GameAssetCatalogData" load_steps=36 format=3]
+
+[ext_resource type="Script" path="res://resources/game_asset_catalog_data.gd" id="1_script"]
+[ext_resource type="Texture2D" path="res://assets/graphics/backgrounds/formation_campaign_arena_v019.png" id="2_background"]
+[ext_resource type="Texture2D" path="res://assets/graphics/cores/core_test.png" id="3_core"]
+[ext_resource type="Texture2D" path="res://assets/graphics/cursors/iron.png" id="4_cursor"]
+[ext_resource type="Texture2D" path="res://assets/graphics/towers/tower_test.png" id="5_tower"]
+[ext_resource type="Texture2D" path="res://assets/graphics/enemies/enemy_test.png" id="6_enemy"]
+[ext_resource type="Texture2D" path="res://assets/graphics/projectiles/plasma_bolt.png" id="7_plasma"]
+[ext_resource type="Texture2D" path="res://assets/graphics/projectiles/artillery_shell.png" id="8_artillery"]
+[ext_resource type="AudioStream" path="res://assets/audio/ui/ui_click.wav" id="9_ui"]
+[ext_resource type="AudioStream" path="res://assets/audio/gameplay/level_up.wav" id="10_level"]
+[ext_resource type="AudioStream" path="res://assets/audio/events/boss_warning.wav" id="11_warning"]
+[ext_resource type="AudioStream" path="res://assets/audio/events/boss_spawn.wav" id="12_spawn"]
+[ext_resource type="AudioStream" path="res://assets/audio/gameplay/core_skill.wav" id="13_skill"]
+[ext_resource type="AudioStream" path="res://assets/audio/combat/hit_light.wav" id="14_light"]
+[ext_resource type="AudioStream" path="res://assets/audio/combat/hit_heavy.wav" id="15_heavy"]
+[ext_resource type="AudioStream" path="res://assets/audio/combat/core_hit.wav" id="16_core_hit"]
+[ext_resource type="AudioStream" path="res://assets/audio/events/victory.wav" id="17_victory"]
+[ext_resource type="AudioStream" path="res://assets/audio/events/defeat.wav" id="18_defeat"]
+[ext_resource type="Texture2D" path="res://assets/graphics/cores/obsidian.svg" id="19_obsidian"]
+[ext_resource type="Texture2D" path="res://assets/graphics/cursors/vanguard.svg" id="20_vanguard"]
+[ext_resource type="Texture2D" path="res://assets/graphics/cores/emerald.svg" id="21_emerald"]
+[ext_resource type="Texture2D" path="res://assets/graphics/cores/sapphire.svg" id="22_sapphire"]
+[ext_resource type="Texture2D" path="res://assets/graphics/cores/amethyst.svg" id="23_amethyst"]
+[ext_resource type="Texture2D" path="res://assets/graphics/cores/jade.svg" id="24_jade"]
+[ext_resource type="AudioStream" path="res://assets/audio/gameplay/core_skill_emerald.wav" id="25_skill_emerald"]
+[ext_resource type="AudioStream" path="res://assets/audio/gameplay/core_skill_sapphire.wav" id="26_skill_sapphire"]
+[ext_resource type="AudioStream" path="res://assets/audio/gameplay/core_skill_amethyst.wav" id="27_skill_amethyst"]
+[ext_resource type="AudioStream" path="res://assets/audio/gameplay/core_skill_jade.wav" id="28_skill_jade"]
+[ext_resource type="AudioStream" path="res://assets/audio/gameplay/core_skill_obsidian.wav" id="29_skill_obsidian"]
+[ext_resource type="AudioStream" path="res://assets/audio/combat/tower_rapid.wav" id="30_tower_rapid"]
+[ext_resource type="AudioStream" path="res://assets/audio/combat/tower_blast.wav" id="31_tower_blast"]
+[ext_resource type="AudioStream" path="res://assets/audio/combat/tower_energy.wav" id="32_tower_energy"]
+[ext_resource type="AudioStream" path="res://assets/audio/combat/tower_saw.wav" id="33_tower_saw"]
+[ext_resource type="AudioStream" path="res://assets/audio/combat/tower_arcane.wav" id="34_tower_arcane"]
+[ext_resource type="Texture2D" path="res://assets/graphics/towers/economy.png" id="35_rubber_golem"]
+
+[resource]
+script = ExtResource("1_script")
+id = &"formation_defense_assets"
+graphics_root = "res://assets/graphics"
+content_texture_overrides = {
+"cores/emerald": ExtResource("21_emerald"),
+"cores/sapphire": ExtResource("22_sapphire"),
+"cores/amethyst": ExtResource("23_amethyst"),
+"cores/jade": ExtResource("24_jade"),
+"cores/obsidian": ExtResource("19_obsidian"),
+"cursors/vanguard": ExtResource("20_vanguard"),
+"towers/rubber_golem": ExtResource("35_rubber_golem")
+}
+approved_content_aliases = {
+"enemies/zigzag": "enemies/shifter",
+"enemies/taunter": "enemies/disruptor"
+}
+audio_overrides = {
+"core_skill_emerald": ExtResource("25_skill_emerald"),
+"core_skill_sapphire": ExtResource("26_skill_sapphire"),
+"core_skill_amethyst": ExtResource("27_skill_amethyst"),
+"core_skill_jade": ExtResource("28_skill_jade"),
+"core_skill_obsidian": ExtResource("29_skill_obsidian"),
+"tower_rapid": ExtResource("30_tower_rapid"),
+"tower_blast": ExtResource("31_tower_blast"),
+"tower_energy": ExtResource("32_tower_energy"),
+"tower_saw": ExtResource("33_tower_saw"),
+"tower_arcane": ExtResource("34_tower_arcane")
+}
+menu_background = ExtResource("2_background")
+battlefield_background = ExtResource("2_background")
+core_fallback = ExtResource("3_core")
+cursor_fallback = ExtResource("4_cursor")
+tower_fallback = ExtResource("5_tower")
+enemy_fallback = ExtResource("6_enemy")
+projectile_plasma = ExtResource("7_plasma")
+projectile_artillery = ExtResource("8_artillery")
+audio_ui_click = ExtResource("9_ui")
+audio_level_up = ExtResource("10_level")
+audio_boss_warning = ExtResource("11_warning")
+audio_boss_spawn = ExtResource("12_spawn")
+audio_core_skill = ExtResource("13_skill")
+audio_hit_light = ExtResource("14_light")
+audio_hit_heavy = ExtResource("15_heavy")
+audio_core_hit = ExtResource("16_core_hit")
+audio_victory = ExtResource("17_victory")
+audio_defeat = ExtResource("18_defeat")

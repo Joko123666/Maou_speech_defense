@@ -1,0 +1,22 @@
+[gd_resource type="Resource" script_class="TowerData" format=3]
+
+[ext_resource type="Texture2D" path="res://assets/graphics/defender_attacks/execute.png" id="1_et6px"]
+[ext_resource type="Script" path="res://resources/tower_data.gd" id="2_ubhol"]
+[ext_resource type="Texture2D" path="res://assets/graphics/defenders/execute.png" id="3_stcoe"]
+
+[resource]
+script = ExtResource("2_ubhol")
+id = &"execute"
+display_name = "트롤 스나이퍼"
+description = "매우 긴 사거리에서 현재 체력이 높은 정예·공식 난입을 우선 저격"
+behavior = &"execute"
+target_rule = &"highest_health"
+damage = 62.0
+attack_interval = 2.4
+attack_range_cells = 6.0
+color = Color(1, 0.39607844, 0.49019608, 1)
+tags = Array[StringName]([&"execute"])
+technology_name = "트롤 정예 저격술"
+texture = ExtResource("3_stcoe")
+attack_texture = ExtResource("1_et6px")
+formation_power_rating = 140.0

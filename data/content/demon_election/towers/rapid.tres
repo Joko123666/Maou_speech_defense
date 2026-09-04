@@ -1,0 +1,22 @@
+[gd_resource type="Resource" script_class="TowerData" format=3]
+
+[ext_resource type="Texture2D" path="res://assets/graphics/defender_attacks/rapid.png" id="1_558jc"]
+[ext_resource type="Script" path="res://resources/tower_data.gd" id="2_7v08u"]
+[ext_resource type="Texture2D" path="res://assets/graphics/defenders/rapid.png" id="3_k7fxb"]
+
+[resource]
+script = ExtResource("2_7v08u")
+id = &"rapid"
+display_name = "고블린 창병"
+description = "한 칸 거리에서 안정적으로 단일 대상을 공격하는 기본 수비병력"
+target_rule = &"closest_tower"
+damage = 12.0
+attack_interval = 0.46
+attack_range_cells = 1.0
+color = Color(0.4, 0.8509804, 1, 1)
+tags = Array[StringName]([&"rapid"])
+technology_name = "고블린 용병 창술"
+texture = ExtResource("3_k7fxb")
+attack_texture = ExtResource("1_558jc")
+projectile_texture_id = &"goblin_javelin"
+formation_power_rating = 80.0

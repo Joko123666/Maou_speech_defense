@@ -1,0 +1,27 @@
+[gd_resource type="Resource" script_class="TowerFormationData" format=3]
+
+[ext_resource type="Script" path="res://resources/formation_cell_data.gd" id="1_xjnff"]
+[ext_resource type="Script" path="res://resources/tower_formation_data.gd" id="2_redpp"]
+
+[sub_resource type="Resource" id="Resource_pneru"]
+script = ExtResource("1_xjnff")
+tower_id = &"rubber_golem"
+
+[sub_resource type="Resource" id="Resource_q41hv"]
+script = ExtResource("1_xjnff")
+offset = Vector2i(0, 1)
+tower_id = &"rubber_golem"
+
+[resource]
+script = ExtResource("2_redpp")
+id = &"duo"
+display_name = "고무 방벽진"
+description = "두 고무골렘이 세로 2칸 방벽에서 적을 밀어냄"
+cells = Array[ExtResource("1_xjnff")]([SubResource("Resource_pneru"), SubResource("Resource_q41hv")])
+role_tags = Array[StringName]([&"knockback", &"control"])
+shape_class = &"LONG"
+rarity = 2
+formation_score = 140
+raw_power_score = 140.0
+output_multiplier = 2.142857142857143
+expected_power_score = 300.0

@@ -1,0 +1,28 @@
+[gd_resource type="Resource" script_class="EnemyData" format=3]
+
+[ext_resource type="Script" path="res://resources/control_resistance_profile_data.gd" id="1_xc34q"]
+[ext_resource type="Script" path="res://resources/enemy_data.gd" id="2_jr1mk"]
+[ext_resource type="Texture2D" path="res://assets/graphics/enemies/boss_15.png" id="3_x6jg1"]
+
+[sub_resource type="Resource" id="Resource_6v3de"]
+script = ExtResource("1_xc34q")
+
+[resource]
+script = ExtResource("2_jr1mk")
+id = &"boss_15"
+display_name = "경쟁 진영 근위대장"
+max_health = 6200.0
+move_speed = 38.0
+core_damage = 45.0
+experience_value = 280.0
+armor = 12.0
+knockback_resistance = 0.87
+status_resistance = 0.55
+control_resistance_profile = SubResource("Resource_6v3de")
+available_from_seconds = 450.0
+behavior = &"boss_summon"
+is_boss = true
+boss_tier = 3
+body_color = Color(0.81960785, 0.60784316, 0.30588236, 1)
+radius = 46.0
+texture = ExtResource("3_x6jg1")

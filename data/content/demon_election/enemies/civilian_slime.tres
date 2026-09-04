@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="EnemyData" format=3]
+
+[ext_resource type="Script" path="res://resources/enemy_data.gd" id="1_o2obq"]
+[ext_resource type="Texture2D" path="res://assets/graphics/enemies/civilian_slime.png" id="2_6rx52"]
+
+[resource]
+script = ExtResource("1_o2obq")
+id = &"civilian_slime"
+display_name = "민간 슬라임"
+max_health = 22.0
+move_speed = 58.0
+core_damage = 5.0
+experience_value = 2.0
+spawn_cost = 3.0
+role_tags = Array[StringName]([&"basic", &"swarm"])
+body_color = Color(0.45882353, 0.8352941, 0.60784316, 1)
+radius = 14.0
+texture = ExtResource("2_6rx52")

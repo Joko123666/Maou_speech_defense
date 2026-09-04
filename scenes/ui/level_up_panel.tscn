@@ -1,0 +1,130 @@
+[gd_scene load_steps=4 format=3]
+
+[ext_resource type="Script" path="res://scripts/ui/level_up_panel.gd" id="1_panel"]
+[ext_resource type="PackedScene" path="res://scenes/ui/components/choice_card.tscn" id="2_card"]
+[ext_resource type="Theme" path="res://data/ui/demon_election_ui_theme.tres" id="3_theme"]
+
+[node name="LevelUpPanel" type="Control"]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 0
+theme = ExtResource("3_theme")
+script = ExtResource("1_panel")
+
+[node name="Dim" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0.0784314, 0.0431373, 0.113725, 0.9)
+
+[node name="Layout" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 54.0
+offset_top = 46.0
+offset_right = -54.0
+offset_bottom = -46.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 16
+
+[node name="Title" type="Label" parent="Layout"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0.956863, 0.8, 0.388235, 1)
+theme_override_font_sizes/font_size = 36
+text = "LEVEL UP · 특전 선택"
+horizontal_alignment = 1
+
+[node name="Cards" type="HBoxContainer" parent="Layout"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/separation = 16
+
+[node name="ChoiceSlot1" type="Control" parent="Layout/Cards"]
+custom_minimum_size = Vector2(0, 460)
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_filter = 2
+
+[node name="Choice1" parent="Layout/Cards/ChoiceSlot1" instance=ExtResource("2_card")]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ChoiceSlot2" type="Control" parent="Layout/Cards"]
+custom_minimum_size = Vector2(0, 460)
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_filter = 2
+
+[node name="Choice2" parent="Layout/Cards/ChoiceSlot2" instance=ExtResource("2_card")]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ChoiceSlot3" type="Control" parent="Layout/Cards"]
+custom_minimum_size = Vector2(0, 460)
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_filter = 2
+
+[node name="Choice3" parent="Layout/Cards/ChoiceSlot3" instance=ExtResource("2_card")]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Footer" type="HBoxContainer" parent="Layout"]
+layout_mode = 2
+theme_override_constants/separation = 18
+
+[node name="Hint" type="Label" parent="Layout/Footer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0.894118, 0.823529, 0.709804, 1)
+theme_override_font_sizes/font_size = 17
+text = "카드를 터치하거나 1 · 2 · 3 키로 선택"
+vertical_alignment = 1
+
+[node name="RerollButton" type="Button" parent="Layout/Footer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(230, 48)
+layout_mode = 2
+text = "특성 리롤  3 / 3  [Q]"
+
+[node name="BackButton" type="Button" parent="."]
+unique_name_in_owner = true
+visible = false
+z_index = 40
+custom_minimum_size = Vector2(170, 48)
+layout_mode = 0
+offset_left = 24.0
+offset_top = 20.0
+offset_right = 194.0
+offset_bottom = 70.0
+theme_override_font_sizes/font_size = 17
+text = "‹ 이전 선택  [ESC]"

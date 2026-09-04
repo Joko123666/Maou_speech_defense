@@ -1,0 +1,22 @@
+[gd_resource type="Resource" script_class="SpecializationBranchData" format=3]
+
+[ext_resource type="Script" path="res://resources/specialization_branch_data.gd" id="1_frgw8"]
+
+[resource]
+script = ExtResource("1_frgw8")
+id = &"vanguard_hunt"
+owner_kind = &"cursor"
+owner_id = &"vanguard"
+display_name = "정기 희생"
+level_4_description = "9초마다 1명을 희생해 넓은 충격파"
+level_7_description = "희생 주기 단축 · 피해와 처형선 증가"
+level_4_modifiers = {
+"vanguard_sacrifice_damage": 1.6,
+"vanguard_sacrifice_interval": 9.0
+}
+level_7_modifiers = {
+"vanguard_execute_bonus": 0.04,
+"vanguard_sacrifice_damage": 2.2,
+"vanguard_sacrifice_interval": 6.5
+}
+impact_keys = Array[StringName]([&"retainer", &"squad", &"damage"])

@@ -1,0 +1,24 @@
+[gd_resource type="Resource" script_class="TowerData" format=3]
+
+[ext_resource type="Texture2D" path="res://assets/graphics/defender_attacks/rubber_golem.png" id="1_jt18b"]
+[ext_resource type="Script" path="res://resources/tower_data.gd" id="2_4pjty"]
+[ext_resource type="Texture2D" path="res://assets/graphics/defenders/rubber_golem.png" id="3_ardit"]
+
+[resource]
+script = ExtResource("2_4pjty")
+id = &"rubber_golem"
+display_name = "고무골렘"
+description = "설치 지점 주변에서 위험한 적을 밀어내는 순수 제어 수비대"
+behavior = &"golem"
+target_rule = &"breach_pressure"
+damage = 0.0
+attack_interval = 1.5
+attack_range_cells = 1.25
+area_radius = 88.0
+status_power = 72.0
+color = Color(0.4745098, 0.8980392, 0.6039216, 1)
+tags = Array[StringName]([&"golem"])
+technology_name = "탄성 골렘 집적 제어"
+texture = ExtResource("3_ardit")
+attack_texture = ExtResource("1_jt18b")
+formation_power_rating = 70.0

@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="TowerData" format=3]
+
+[ext_resource type="Texture2D" path="res://assets/graphics/defender_attacks/pierce.png" id="1_3fdp5"]
+[ext_resource type="Script" path="res://resources/tower_data.gd" id="2_0mxt2"]
+[ext_resource type="Texture2D" path="res://assets/graphics/defenders/pierce.png" id="3_h260q"]
+
+[resource]
+script = ExtResource("2_0mxt2")
+id = &"pierce"
+display_name = "오크 궁병"
+description = "목표 방향으로 화살을 발사해 직선상의 적을 관통"
+behavior = &"pierce"
+damage = 18.0
+attack_range_cells = 4.5
+color = Color(0.5137255, 0.6431373, 1, 1)
+tags = Array[StringName]([&"pierce"])
+technology_name = "오크 관통 궁술"
+texture = ExtResource("3_h260q")
+attack_texture = ExtResource("1_3fdp5")

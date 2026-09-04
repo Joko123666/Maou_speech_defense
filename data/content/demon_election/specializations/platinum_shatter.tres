@@ -1,0 +1,22 @@
+[gd_resource type="Resource" script_class="SpecializationBranchData" format=3]
+
+[ext_resource type="Script" path="res://resources/specialization_branch_data.gd" id="1_0ywml"]
+
+[resource]
+script = ExtResource("1_0ywml")
+id = &"platinum_shatter"
+owner_kind = &"cursor"
+owner_id = &"platinum"
+display_name = "파멸 돌격"
+level_4_description = "합동 돌격 피해 +65% · 재구성 시간 +50%"
+level_7_description = "피해 +110% · 경로 폭 +30% · 재구성 시간 +80%"
+level_4_modifiers = {
+"combo_damage": 1.65,
+"reconstruction_duration": 1.5
+}
+level_7_modifiers = {
+"combo_damage": 2.1,
+"combo_path_width": 1.3,
+"reconstruction_duration": 1.8
+}
+impact_keys = Array[StringName]([&"retainer", &"combo", &"risk"])

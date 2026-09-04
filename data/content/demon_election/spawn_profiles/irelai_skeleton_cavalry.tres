@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="EnemySpawnProfileData" format=3]
+
+[ext_resource type="Script" path="res://resources/enemy_spawn_profile_data.gd" id="1_tw8lf"]
+
+[resource]
+script = ExtResource("1_tw8lf")
+enemy_id = &"irelai_skeleton_cavalry"
+spawn_cost = 6.0
+role_tags = Array[StringName]([&"faction", &"fast", &"pack"])
+unlock_time = 240.0
+is_faction_enemy = true
+faction_id = &"irelai_faction"
+group_min = 3
+group_max = 5

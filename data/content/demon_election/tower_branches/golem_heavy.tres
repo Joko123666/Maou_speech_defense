@@ -1,0 +1,24 @@
+[gd_resource type="Resource" script_class="TowerBranchData" format=3]
+
+[ext_resource type="Script" path="res://resources/tower_branch_data.gd" id="1_qdypb"]
+
+[resource]
+script = ExtResource("1_qdypb")
+id = &"golem_heavy"
+display_name = "육중함"
+description = "이동과 활동 범위를 줄이는 대신 넉백 범위를 넓힘"
+tower_id = &"rubber_golem"
+branch_type = &"playstyle"
+level_4_modifiers = {
+"activity_range": 0.72,
+"control_radius": 1.3,
+"movement": 0.68,
+"speed": 0.86
+}
+level_7_modifiers = {
+"activity_range": 0.6,
+"control_radius": 1.6,
+"movement": 0.52,
+"push": 1.4,
+"speed": 0.78
+}

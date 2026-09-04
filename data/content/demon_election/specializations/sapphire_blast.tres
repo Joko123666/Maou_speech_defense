@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="SpecializationBranchData" format=3]
+
+[ext_resource type="Script" path="res://resources/specialization_branch_data.gd" id="1_65in0"]
+
+[resource]
+script = ExtResource("1_65in0")
+id = &"sapphire_blast"
+owner_kind = &"core"
+owner_id = &"sapphire"
+display_name = "관통 폭발"
+level_4_description = "마지막 관통 대상 주변에 45% 폭발"
+level_7_description = "폭발이 인접 적에게 55% 피해로 연쇄"
+level_4_modifiers = {
+"pierce_explosion": 0.45
+}
+level_7_modifiers = {
+"pierce_explosion": 0.7,
+"pierce_explosion_chain": 0.55
+}
+impact_keys = Array[StringName]([&"core", &"area", &"damage"])

@@ -1,0 +1,22 @@
+[gd_resource type="Resource" script_class="SpecializationBranchData" format=3]
+
+[ext_resource type="Script" path="res://resources/specialization_branch_data.gd" id="1_psf42"]
+
+[resource]
+script = ExtResource("1_psf42")
+id = &"emerald_prism"
+owner_kind = &"core"
+owner_id = &"emerald"
+display_name = "프리즘 광선"
+level_4_description = "핵 공격·광선 피해 +30%, 광선 폭 증가"
+level_7_description = "목표지점에서 가장 가까운 적에게 55% 굴절"
+level_4_modifiers = {
+"beam_width": 1.35,
+"damage": 1.3
+}
+level_7_modifiers = {
+"beam_width": 1.65,
+"damage": 1.55,
+"prism_refract": 0.55
+}
+impact_keys = Array[StringName]([&"core", &"damage", &"area"])

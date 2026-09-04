@@ -1,0 +1,22 @@
+[gd_resource type="Resource" script_class="SpecializationBranchData" format=3]
+
+[ext_resource type="Script" path="res://resources/specialization_branch_data.gd" id="1_rkhd3"]
+
+[resource]
+script = ExtResource("1_rkhd3")
+id = &"gold_zone"
+owner_kind = &"cursor"
+owner_id = &"gold"
+display_name = "심연 침식"
+level_4_description = "장판 누적 침식이 공포를 부여하며 제어 저항 적용"
+level_7_description = "공포가 인접 적 2명에게 약화 전파"
+level_4_modifiers = {
+"jeomujeom_erosion_fear": true,
+"jeomujeom_fear_duration": 1.2
+}
+level_7_modifiers = {
+"jeomujeom_erosion_fear": true,
+"jeomujeom_fear_duration": 1.7,
+"jeomujeom_fear_spread": 2
+}
+impact_keys = Array[StringName]([&"retainer", &"fear", &"control"])

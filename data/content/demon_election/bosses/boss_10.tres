@@ -1,0 +1,28 @@
+[gd_resource type="Resource" script_class="EnemyData" format=3]
+
+[ext_resource type="Script" path="res://resources/control_resistance_profile_data.gd" id="1_rd81d"]
+[ext_resource type="Script" path="res://resources/enemy_data.gd" id="2_vxn0t"]
+[ext_resource type="Texture2D" path="res://assets/graphics/enemies/boss_10.png" id="3_0lltw"]
+
+[sub_resource type="Resource" id="Resource_6v3de"]
+script = ExtResource("1_rd81d")
+
+[resource]
+script = ExtResource("2_vxn0t")
+id = &"boss_10"
+display_name = "유세 방해 책임자"
+max_health = 3600.0
+move_speed = 35.0
+core_damage = 35.0
+experience_value = 180.0
+armor = 9.0
+knockback_resistance = 0.81
+status_resistance = 0.44999999999999996
+control_resistance_profile = SubResource("Resource_6v3de")
+available_from_seconds = 300.0
+behavior = &"boss_disrupt"
+is_boss = true
+boss_tier = 2
+body_color = Color(0.7058824, 0.37254903, 0.73333335, 1)
+radius = 42.0
+texture = ExtResource("3_0lltw")

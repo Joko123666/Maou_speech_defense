@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="TowerBranchData" format=3]
+
+[ext_resource type="Script" path="res://resources/tower_branch_data.gd" id="1_l6dyb"]
+
+[resource]
+script = ExtResource("1_l6dyb")
+id = &"area_stun"
+display_name = "번개정령과의 협업"
+description = "폭탄 착탄 지점에 추가 번개 피해와 감전을 부여"
+tower_id = &"area"
+branch_type = &"playstyle"
+level_4_modifiers = {
+"lightning_damage": 0.42,
+"shock": true
+}
+level_7_modifiers = {
+"lightning_damage": 0.72,
+"shock": true
+}

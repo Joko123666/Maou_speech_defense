@@ -1,0 +1,256 @@
+[gd_resource type="Resource" script_class="DefenseStatCatalogData" load_steps=33 format=3]
+
+[ext_resource type="Script" path="res://resources/defense_stat_catalog_data.gd" id="1_catalog"]
+[ext_resource type="Script" path="res://resources/defense_stat_axis_data.gd" id="2_axis"]
+[ext_resource type="Script" path="res://resources/defense_stat_mapping_data.gd" id="3_mapping"]
+
+[sub_resource type="Resource" id="Axis_power"]
+script = ExtResource("2_axis")
+id = &"power"
+display_name = "위력"
+icon_key = &"damage"
+color = Color(1, 0.314, 0.302, 1)
+
+[sub_resource type="Resource" id="Axis_speed"]
+script = ExtResource("2_axis")
+id = &"speed"
+display_name = "속도"
+icon_key = &"speed"
+color = Color(0.47, 0.91, 0.45, 1)
+
+[sub_resource type="Resource" id="Axis_range"]
+script = ExtResource("2_axis")
+id = &"range"
+display_name = "범위"
+icon_key = &"area"
+color = Color(0.31, 0.68, 1, 1)
+
+[sub_resource type="Resource" id="Map_rapid_power"]
+script = ExtResource("3_mapping")
+tower_id = &"rapid"
+axis_id = &"power"
+display_name = "기본 공격 피해"
+modifier_keys = Array[StringName]([&"damage"])
+cap = 2.0
+
+[sub_resource type="Resource" id="Map_rapid_speed"]
+script = ExtResource("3_mapping")
+tower_id = &"rapid"
+axis_id = &"speed"
+display_name = "공격속도"
+modifier_keys = Array[StringName]([&"attack_speed"])
+cap = 1.8
+
+[sub_resource type="Resource" id="Map_rapid_range"]
+script = ExtResource("3_mapping")
+tower_id = &"rapid"
+axis_id = &"range"
+display_name = "공격 사거리"
+modifier_keys = Array[StringName]([&"attack_range"])
+value_mode = &"fixed"
+cap = 96.0
+
+[sub_resource type="Resource" id="Map_pierce_power"]
+script = ExtResource("3_mapping")
+tower_id = &"pierce"
+axis_id = &"power"
+display_name = "화살·관통 피해"
+modifier_keys = Array[StringName]([&"damage"])
+cap = 2.0
+
+[sub_resource type="Resource" id="Map_pierce_speed"]
+script = ExtResource("3_mapping")
+tower_id = &"pierce"
+axis_id = &"speed"
+display_name = "발사속도"
+modifier_keys = Array[StringName]([&"fire_speed"])
+cap = 1.8
+
+[sub_resource type="Resource" id="Map_pierce_range"]
+script = ExtResource("3_mapping")
+tower_id = &"pierce"
+axis_id = &"range"
+display_name = "공격 사거리"
+modifier_keys = Array[StringName]([&"attack_range"])
+value_mode = &"fixed"
+cap = 144.0
+
+[sub_resource type="Resource" id="Map_execute_power"]
+script = ExtResource("3_mapping")
+tower_id = &"execute"
+axis_id = &"power"
+display_name = "탄환 피해"
+modifier_keys = Array[StringName]([&"damage"])
+cap = 2.0
+
+[sub_resource type="Resource" id="Map_execute_speed"]
+script = ExtResource("3_mapping")
+tower_id = &"execute"
+axis_id = &"speed"
+display_name = "장전·발사속도"
+modifier_keys = Array[StringName]([&"reload_speed", &"fire_speed"])
+cap = 1.75
+
+[sub_resource type="Resource" id="Map_execute_range"]
+script = ExtResource("3_mapping")
+tower_id = &"execute"
+axis_id = &"range"
+display_name = "저격 사거리"
+modifier_keys = Array[StringName]([&"attack_range"])
+value_mode = &"fixed"
+cap = 192.0
+
+[sub_resource type="Resource" id="Map_slow_power"]
+script = ExtResource("3_mapping")
+tower_id = &"slow"
+axis_id = &"power"
+display_name = "둔화 강도"
+modifier_keys = Array[StringName]([&"slow_strength"])
+cap = 1.6
+
+[sub_resource type="Resource" id="Map_slow_speed"]
+script = ExtResource("3_mapping")
+tower_id = &"slow"
+axis_id = &"speed"
+display_name = "둔화 적용·갱신속도"
+modifier_keys = Array[StringName]([&"refresh_speed"])
+cap = 1.75
+
+[sub_resource type="Resource" id="Map_slow_range"]
+script = ExtResource("3_mapping")
+tower_id = &"slow"
+axis_id = &"range"
+display_name = "둔화 영역 반경"
+modifier_keys = Array[StringName]([&"effect_radius"])
+value_mode = &"fixed"
+cap = 120.0
+
+[sub_resource type="Resource" id="Map_area_power"]
+script = ExtResource("3_mapping")
+tower_id = &"area"
+axis_id = &"power"
+display_name = "폭발 피해"
+modifier_keys = Array[StringName]([&"damage"])
+cap = 2.0
+
+[sub_resource type="Resource" id="Map_area_speed"]
+script = ExtResource("3_mapping")
+tower_id = &"area"
+axis_id = &"speed"
+display_name = "투척속도"
+modifier_keys = Array[StringName]([&"throw_speed"])
+cap = 1.75
+
+[sub_resource type="Resource" id="Map_area_range"]
+script = ExtResource("3_mapping")
+tower_id = &"area"
+axis_id = &"range"
+display_name = "투척 사거리"
+modifier_keys = Array[StringName]([&"throw_range"])
+value_mode = &"fixed"
+cap = 144.0
+
+[sub_resource type="Resource" id="Map_knockback_power"]
+script = ExtResource("3_mapping")
+tower_id = &"knockback"
+axis_id = &"power"
+display_name = "톱날 피해·넉백 강도"
+modifier_keys = Array[StringName]([&"damage", &"knockback_strength"])
+cap = 2.0
+
+[sub_resource type="Resource" id="Map_knockback_speed"]
+script = ExtResource("3_mapping")
+tower_id = &"knockback"
+axis_id = &"speed"
+display_name = "톱날 회전속도"
+modifier_keys = Array[StringName]([&"rotation_speed"])
+cap = 1.75
+
+[sub_resource type="Resource" id="Map_knockback_range"]
+script = ExtResource("3_mapping")
+tower_id = &"knockback"
+axis_id = &"range"
+display_name = "톱날 공전 반경"
+modifier_keys = Array[StringName]([&"orbit_radius"])
+value_mode = &"fixed"
+cap = 96.0
+
+[sub_resource type="Resource" id="Map_chain_power"]
+script = ExtResource("3_mapping")
+tower_id = &"chain"
+axis_id = &"power"
+display_name = "빔 피해"
+modifier_keys = Array[StringName]([&"damage"])
+cap = 2.0
+
+[sub_resource type="Resource" id="Map_chain_speed"]
+script = ExtResource("3_mapping")
+tower_id = &"chain"
+axis_id = &"speed"
+display_name = "방전·행동속도"
+modifier_keys = Array[StringName]([&"discharge_speed"])
+cap = 1.75
+
+[sub_resource type="Resource" id="Map_chain_range"]
+script = ExtResource("3_mapping")
+tower_id = &"chain"
+axis_id = &"range"
+display_name = "마력 연결 거리"
+modifier_keys = Array[StringName]([&"link_range"])
+value_mode = &"fixed"
+cap = 192.0
+
+[sub_resource type="Resource" id="Map_golem_power"]
+script = ExtResource("3_mapping")
+tower_id = &"rubber_golem"
+axis_id = &"power"
+display_name = "넉백 강도"
+modifier_keys = Array[StringName]([&"knockback_strength"])
+cap = 1.8
+
+[sub_resource type="Resource" id="Map_golem_speed"]
+script = ExtResource("3_mapping")
+tower_id = &"rubber_golem"
+axis_id = &"speed"
+display_name = "복귀·회복속도"
+modifier_keys = Array[StringName]([&"recovery_speed"])
+cap = 1.75
+
+[sub_resource type="Resource" id="Map_golem_range"]
+script = ExtResource("3_mapping")
+tower_id = &"rubber_golem"
+axis_id = &"range"
+display_name = "활동 반경"
+modifier_keys = Array[StringName]([&"activity_radius"])
+value_mode = &"fixed"
+cap = 120.0
+
+[sub_resource type="Resource" id="Map_mark_power"]
+script = ExtResource("3_mapping")
+tower_id = &"mark"
+axis_id = &"power"
+display_name = "취약 강도"
+modifier_keys = Array[StringName]([&"vulnerability_strength"])
+cap = 1.6
+
+[sub_resource type="Resource" id="Map_mark_speed"]
+script = ExtResource("3_mapping")
+tower_id = &"mark"
+axis_id = &"speed"
+display_name = "시전속도"
+modifier_keys = Array[StringName]([&"cast_speed"])
+cap = 1.75
+
+[sub_resource type="Resource" id="Map_mark_range"]
+script = ExtResource("3_mapping")
+tower_id = &"mark"
+axis_id = &"range"
+display_name = "주술 사거리"
+modifier_keys = Array[StringName]([&"spell_range"])
+value_mode = &"fixed"
+cap = 144.0
+
+[resource]
+script = ExtResource("1_catalog")
+axes = Array[ExtResource("2_axis")]([SubResource("Axis_power"), SubResource("Axis_speed"), SubResource("Axis_range")])
+mappings = Array[ExtResource("3_mapping")]([SubResource("Map_rapid_power"), SubResource("Map_rapid_speed"), SubResource("Map_rapid_range"), SubResource("Map_pierce_power"), SubResource("Map_pierce_speed"), SubResource("Map_pierce_range"), SubResource("Map_execute_power"), SubResource("Map_execute_speed"), SubResource("Map_execute_range"), SubResource("Map_slow_power"), SubResource("Map_slow_speed"), SubResource("Map_slow_range"), SubResource("Map_area_power"), SubResource("Map_area_speed"), SubResource("Map_area_range"), SubResource("Map_knockback_power"), SubResource("Map_knockback_speed"), SubResource("Map_knockback_range"), SubResource("Map_chain_power"), SubResource("Map_chain_speed"), SubResource("Map_chain_range"), SubResource("Map_golem_power"), SubResource("Map_golem_speed"), SubResource("Map_golem_range"), SubResource("Map_mark_power"), SubResource("Map_mark_speed"), SubResource("Map_mark_range")])

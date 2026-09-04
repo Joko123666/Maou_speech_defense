@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="TowerBranchData" format=3]
+
+[ext_resource type="Script" path="res://resources/tower_branch_data.gd" id="1_6kq4y"]
+
+[resource]
+script = ExtResource("1_6kq4y")
+id = &"mark_power"
+display_name = "약점노출"
+description = "지속시간을 줄이는 대신 받는 피해 증가율을 크게 높여 강적에 집중"
+tower_id = &"mark"
+branch_type = &"synergy"
+level_4_modifiers = {
+"mark": 0.45,
+"mark_duration": 2.8
+}
+level_7_modifiers = {
+"mark": 0.62,
+"mark_duration": 2.2
+}

@@ -1,0 +1,28 @@
+[gd_resource type="Resource" script_class="EnemyData" format=3]
+
+[ext_resource type="Script" path="res://resources/control_resistance_profile_data.gd" id="1_8rb20"]
+[ext_resource type="Script" path="res://resources/enemy_data.gd" id="2_chxqm"]
+[ext_resource type="Texture2D" path="res://assets/graphics/enemies/boss_5.png" id="3_m7sdl"]
+
+[sub_resource type="Resource" id="Resource_6v3de"]
+script = ExtResource("1_8rb20")
+
+[resource]
+script = ExtResource("2_chxqm")
+id = &"boss_5"
+display_name = "공식 난입 선봉장"
+max_health = 1900.0
+move_speed = 30.0
+core_damage = 28.0
+experience_value = 100.0
+armor = 7.0
+knockback_resistance = 0.75
+status_resistance = 0.35
+control_resistance_profile = SubResource("Resource_6v3de")
+available_from_seconds = 150.0
+behavior = &"boss_enrage"
+is_boss = true
+boss_tier = 1
+body_color = Color(0.72156864, 0.41960785, 0.33333334, 1)
+radius = 38.0
+texture = ExtResource("3_m7sdl")

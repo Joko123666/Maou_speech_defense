@@ -1,0 +1,26 @@
+[gd_resource type="Resource" script_class="EnemyData" format=3]
+
+[ext_resource type="Script" path="res://resources/enemy_decay_profile_data.gd" id="1_w5b1f"]
+[ext_resource type="Script" path="res://resources/enemy_data.gd" id="2_gfv8k"]
+[ext_resource type="Texture2D" path="res://assets/graphics/enemies/kasuha_abyss_creature.png" id="3_n65ev"]
+
+[sub_resource type="Resource" id="Resource_45b4n"]
+script = ExtResource("1_w5b1f")
+
+[resource]
+script = ExtResource("2_gfv8k")
+id = &"kasuha_abyss_creature"
+display_name = "심연의 피조물"
+max_health = 380.0
+move_speed = 44.0
+core_damage = 20.0
+experience_value = 18.0
+spawn_cost = 22.0
+role_tags = Array[StringName]([&"faction", &"heavy", &"decay"])
+armor = 3.0
+decay_profile = SubResource("Resource_45b4n")
+available_from_seconds = 240.0
+behavior = &"self_decay"
+body_color = Color(0.6117647, 0.44705883, 0.84705883, 1)
+radius = 28.0
+texture = ExtResource("3_n65ev")

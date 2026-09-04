@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="TowerBranchData" format=3]
+
+[ext_resource type="Script" path="res://resources/tower_branch_data.gd" id="1_1xgma"]
+
+[resource]
+script = ExtResource("1_1xgma")
+id = &"chain_power"
+display_name = "고전압 방전"
+description = "기본 빔 피해와 추가 중계기당 네트워크 증폭을 함께 강화"
+tower_id = &"chain"
+branch_type = &"role"
+level_4_modifiers = {
+"damage": 1.35,
+"network_damage_per_relay": 0.12
+}
+level_7_modifiers = {
+"damage": 1.65,
+"network_damage_per_relay": 0.16
+}

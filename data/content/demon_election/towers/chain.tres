@@ -1,0 +1,21 @@
+[gd_resource type="Resource" script_class="TowerData" format=3]
+
+[ext_resource type="Texture2D" path="res://assets/graphics/defender_attacks/chain.png" id="1_8hhxu"]
+[ext_resource type="Script" path="res://resources/tower_data.gd" id="2_e3p5c"]
+[ext_resource type="Texture2D" path="res://assets/graphics/defenders/chain.png" id="3_mqfka"]
+
+[resource]
+script = ExtResource("2_e3p5c")
+id = &"chain"
+display_name = "마력 전도탑"
+description = "다른 전도탑과 감쇠 빔 망을 형성해 배치에 따라 화력이 증가"
+behavior = &"chain"
+damage = 26.0
+attack_range_cells = 99.0
+link_range_cells = 1.5
+color = Color(1, 0.9411765, 0.4745098, 1)
+tags = Array[StringName]([&"chain"])
+technology_name = "마력 전도 회로"
+texture = ExtResource("3_mqfka")
+attack_texture = ExtResource("1_8hhxu")
+formation_power_rating = 90.0

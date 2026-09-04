@@ -1,0 +1,38 @@
+[gd_resource type="Resource" script_class="TowerFormationData" format=3]
+
+[ext_resource type="Script" path="res://resources/formation_cell_data.gd" id="1_haqil"]
+[ext_resource type="Script" path="res://resources/tower_formation_data.gd" id="2_ihqsq"]
+
+[sub_resource type="Resource" id="Resource_lklfn"]
+script = ExtResource("1_haqil")
+tower_id = &"mark"
+
+[sub_resource type="Resource" id="Resource_2xmxg"]
+script = ExtResource("1_haqil")
+offset = Vector2i(0, 1)
+tower_id = &"slow"
+
+[sub_resource type="Resource" id="Resource_4h6f6"]
+script = ExtResource("1_haqil")
+offset = Vector2i(0, 2)
+tower_id = &"mark"
+
+[sub_resource type="Resource" id="Resource_cgciw"]
+script = ExtResource("1_haqil")
+offset = Vector2i(0, 3)
+tower_id = &"area"
+
+[resource]
+script = ExtResource("2_ihqsq")
+id = &"vulnerable_bombardment_line"
+display_name = "취약 포격 종대"
+description = "두 서큐버스의 취약과 심연 둔화 위에 해골 척탄병이 세로 화력을 투입"
+cells = Array[ExtResource("1_haqil")]([SubResource("Resource_lklfn"), SubResource("Resource_2xmxg"), SubResource("Resource_4h6f6"), SubResource("Resource_cgciw")])
+role_tags = Array[StringName]([&"amplify", &"control", &"aoe"])
+shape_class = &"LONG"
+placement_difficulty = 2
+base_weight = 0.9
+formation_score = 400
+raw_power_score = 400.0
+output_multiplier = 0.75
+expected_power_score = 300.0

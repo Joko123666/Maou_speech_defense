@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="EnemySpawnProfileData" format=3]
+
+[ext_resource type="Script" path="res://resources/enemy_spawn_profile_data.gd" id="1_ftwg2"]
+
+[resource]
+script = ExtResource("1_ftwg2")
+enemy_id = &"steel_golem"
+spawn_cost = 26.0
+role_tags = Array[StringName]([&"heavy", &"cc_resist"])
+unlock_time = 450.0
+rare_spawn_cooldown = 30.0

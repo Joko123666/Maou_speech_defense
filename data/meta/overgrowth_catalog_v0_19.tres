@@ -1,0 +1,80 @@
+[gd_resource type="Resource" script_class="OvergrowthCatalogData" load_steps=9 format=3]
+
+[ext_resource type="Script" path="res://resources/overgrowth_catalog_data.gd" id="1_catalog"]
+[ext_resource type="Script" path="res://resources/overgrowth_option_data.gd" id="2_option"]
+
+[sub_resource type="Resource" id="CandidateDamage"]
+script = ExtResource("2_option")
+id = &"candidate_damage"
+target_group = &"candidate"
+display_name = "후보 초과성장 · 직접 피해"
+description = "완성된 후보의 직접 공격 피해를 소폭 반복 강화합니다."
+stat_key = &"damage"
+bonus_per_stack = 0.04
+offer_weight = 1.0
+icon_key = &"damage"
+color = Color(1, 0.502, 0.49, 1)
+
+[sub_resource type="Resource" id="CandidateSkill"]
+script = ExtResource("2_option")
+id = &"candidate_skill"
+target_group = &"candidate"
+display_name = "후보 초과성장 · 고유 기술"
+description = "완성된 후보의 고유 기술 피해를 소폭 반복 강화합니다."
+stat_key = &"skill"
+bonus_per_stack = 0.025
+offer_weight = 0.85
+icon_key = &"area"
+color = Color(0.843, 0.506, 1, 1)
+
+[sub_resource type="Resource" id="RetainerDamage"]
+script = ExtResource("2_option")
+id = &"retainer_damage"
+target_group = &"retainer"
+display_name = "심복 초과성장 · 피해"
+description = "Lv.7을 완성한 심복의 직접 피해를 소폭 반복 강화합니다."
+stat_key = &"damage"
+bonus_per_stack = 0.045
+offer_weight = 1.0
+icon_key = &"damage"
+color = Color(1, 0.502, 0.49, 1)
+
+[sub_resource type="Resource" id="RetainerActionSpeed"]
+script = ExtResource("2_option")
+id = &"retainer_action_speed"
+target_group = &"retainer"
+display_name = "심복 초과성장 · 행동속도"
+description = "Lv.7을 완성한 심복의 공격·행동속도를 소폭 반복 강화합니다."
+stat_key = &"action_speed"
+bonus_per_stack = 0.025
+offer_weight = 0.9
+icon_key = &"speed"
+color = Color(1, 0.941, 0.475, 1)
+
+[sub_resource type="Resource" id="RetainerMovement"]
+script = ExtResource("2_option")
+id = &"retainer_movement"
+target_group = &"retainer"
+display_name = "심복 초과성장 · 기동"
+description = "Lv.7을 완성한 심복의 이동속도를 소폭 반복 강화합니다."
+stat_key = &"movement"
+bonus_per_stack = 0.03
+offer_weight = 0.75
+icon_key = &"speed"
+color = Color(0.561, 0.91, 1, 1)
+
+[sub_resource type="Resource" id="RetainerCollection"]
+script = ExtResource("2_option")
+id = &"retainer_collection"
+target_group = &"retainer"
+display_name = "심복 초과성장 · 수집 범위"
+description = "Lv.7을 완성한 심복의 공격·경험치 수집 범위를 소폭 반복 강화합니다."
+stat_key = &"collection"
+bonus_per_stack = 0.025
+offer_weight = 0.65
+icon_key = &"area"
+color = Color(0.498, 0.91, 0.875, 1)
+
+[resource]
+script = ExtResource("1_catalog")
+options = Array[ExtResource("2_option")]([SubResource("CandidateDamage"), SubResource("CandidateSkill"), SubResource("RetainerDamage"), SubResource("RetainerActionSpeed"), SubResource("RetainerMovement"), SubResource("RetainerCollection")])

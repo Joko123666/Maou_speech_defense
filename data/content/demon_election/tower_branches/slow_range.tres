@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="TowerBranchData" format=3]
+
+[ext_resource type="Script" path="res://resources/tower_branch_data.gd" id="1_gs0f8"]
+
+[resource]
+script = ExtResource("1_gs0f8")
+id = &"slow_range"
+display_name = "거대기둥"
+description = "영향 범위와 둔화율을 함께 높여 특정 지점 통제에 집중"
+tower_id = &"slow"
+branch_type = &"playstyle"
+level_4_modifiers = {
+"range": 1.35,
+"slow_multiplier": 1.3
+}
+level_7_modifiers = {
+"range": 1.6,
+"slow_multiplier": 1.55
+}

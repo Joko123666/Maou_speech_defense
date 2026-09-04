@@ -1,0 +1,32 @@
+[gd_resource type="Resource" script_class="TowerFormationData" format=3]
+
+[ext_resource type="Script" path="res://resources/formation_cell_data.gd" id="1_0kjw7"]
+[ext_resource type="Script" path="res://resources/tower_formation_data.gd" id="2_twrxa"]
+
+[sub_resource type="Resource" id="Resource_bf523"]
+script = ExtResource("1_0kjw7")
+tower_id = &"execute"
+
+[sub_resource type="Resource" id="Resource_tmnrv"]
+script = ExtResource("1_0kjw7")
+offset = Vector2i(0, 1)
+tower_id = &"area"
+
+[sub_resource type="Resource" id="Resource_1uu82"]
+script = ExtResource("1_0kjw7")
+offset = Vector2i(1, 1)
+tower_id = &"rubber_golem"
+
+[resource]
+script = ExtResource("2_twrxa")
+id = &"grenadier_snipers"
+display_name = "척탄 저격대"
+description = "트롤이 강적을 맡고 척탄과 집적으로 물량을 정리"
+cells = Array[ExtResource("1_0kjw7")]([SubResource("Resource_bf523"), SubResource("Resource_tmnrv"), SubResource("Resource_1uu82")])
+role_tags = Array[StringName]([&"elite", &"aoe", &"knockback"])
+shape_class = &"BEND"
+placement_difficulty = 1
+formation_score = 330
+raw_power_score = 330.0
+output_multiplier = 0.9090909090909091
+expected_power_score = 300.0

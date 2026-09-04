@@ -1,0 +1,22 @@
+[gd_resource type="Resource" script_class="SpecializationBranchData" format=3]
+
+[ext_resource type="Script" path="res://resources/specialization_branch_data.gd" id="1_os4r4"]
+
+[resource]
+script = ExtResource("1_os4r4")
+id = &"obsidian_bell"
+owner_kind = &"core"
+owner_id = &"obsidian"
+display_name = "심판의 종"
+level_4_description = "공격 5회마다 80% 범위 충격파"
+level_7_description = "충격파가 취약 표식과 강한 넉백을 함께 부여"
+level_4_modifiers = {
+"ritual_damage": 0.8,
+"ritual_hits": 5
+}
+level_7_modifiers = {
+"collision_mark": 0.22,
+"ritual_damage": 1.15,
+"ritual_hits": 4
+}
+impact_keys = Array[StringName]([&"core", &"area", &"control"])

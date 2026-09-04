@@ -1,0 +1,24 @@
+[gd_resource type="Resource" script_class="TowerData" format=3]
+
+[ext_resource type="Texture2D" path="res://assets/graphics/defender_attacks/area.png" id="1_t68u4"]
+[ext_resource type="Script" path="res://resources/tower_data.gd" id="2_al7x5"]
+[ext_resource type="Texture2D" path="res://assets/graphics/defenders/area.png" id="3_qw6qo"]
+
+[resource]
+script = ExtResource("2_al7x5")
+id = &"area"
+display_name = "해골 척탄병"
+description = "느린 해골 화염탄을 밀집 지점에 던져 근·중거리 범위 피해를 가함"
+behavior = &"area"
+target_rule = &"density"
+damage = 30.0
+attack_interval = 1.5
+attack_range_cells = 2.0
+area_radius = 90.0
+color = Color(1, 0.62352943, 0.4, 1)
+tags = Array[StringName]([&"area"])
+technology_name = "해골 화염탄 척탄술"
+texture = ExtResource("3_qw6qo")
+attack_texture = ExtResource("1_t68u4")
+projectile_texture_id = &"skeleton_grenade"
+formation_power_rating = 120.0

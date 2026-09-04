@@ -1,0 +1,38 @@
+[gd_resource type="Resource" script_class="TowerFormationData" format=3]
+
+[ext_resource type="Script" path="res://resources/formation_cell_data.gd" id="1_q8orr"]
+[ext_resource type="Script" path="res://resources/tower_formation_data.gd" id="2_mejct"]
+
+[sub_resource type="Resource" id="Resource_c86ch"]
+script = ExtResource("1_q8orr")
+tower_id = &"execute"
+
+[sub_resource type="Resource" id="Resource_a2agp"]
+script = ExtResource("1_q8orr")
+offset = Vector2i(1, 0)
+tower_id = &"rapid"
+
+[sub_resource type="Resource" id="Resource_36bg5"]
+script = ExtResource("1_q8orr")
+offset = Vector2i(2, 0)
+tower_id = &"rapid"
+
+[sub_resource type="Resource" id="Resource_fy3u7"]
+script = ExtResource("1_q8orr")
+offset = Vector2i(3, 0)
+tower_id = &"rapid"
+
+[resource]
+script = ExtResource("2_mejct")
+id = &"long_range_fireteam"
+display_name = "중장거리 혼성진"
+description = "트롤의 저격선을 세 고블린 창병이 가로 4칸에서 엄호"
+cells = Array[ExtResource("1_q8orr")]([SubResource("Resource_c86ch"), SubResource("Resource_a2agp"), SubResource("Resource_36bg5"), SubResource("Resource_fy3u7")])
+role_tags = Array[StringName]([&"elite", &"single"])
+shape_class = &"LONG"
+placement_difficulty = 2
+base_weight = 0.85
+formation_score = 380
+raw_power_score = 380.0
+output_multiplier = 0.7894736842105263
+expected_power_score = 300.0

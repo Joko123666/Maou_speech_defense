@@ -1,0 +1,118 @@
+[gd_resource type="Resource" script_class="CodexRuleCatalogData" load_steps=12 format=3]
+
+[ext_resource type="Script" path="res://resources/codex_rule_catalog_data.gd" id="1_catalog"]
+[ext_resource type="Script" path="res://resources/codex_rule_entry_data.gd" id="2_entry"]
+
+[sub_resource type="Resource" id="Rule_poison"]
+script = ExtResource("2_entry")
+id = &"poison"
+display_name = "독"
+subtitle = "공통 피해 상태이상"
+description = "일정 시간 초당 피해를 주며 공용 중첩 한도를 사용합니다. 레벨에 따라 피해·지속시간·중첩 한도가 함께 성장합니다."
+icon_key = &"poison"
+accent_color = Color(0.447, 0.839, 0.42, 1)
+resolver_id = &"status:poison"
+related_lines = ["상태이상 중첩", "독 성장"]
+
+[sub_resource type="Resource" id="Rule_bleed"]
+script = ExtResource("2_entry")
+id = &"bleed"
+display_name = "출혈"
+subtitle = "공통 피해 상태이상"
+description = "대상의 최대 체력에 비례한 피해를 주되 피해 상한이 있습니다. 중첩은 출혈을 건 소스 종류별로 따로 계산합니다."
+icon_key = &"bleed"
+accent_color = Color(0.91, 0.298, 0.396, 1)
+resolver_id = &"status:bleed"
+related_lines = ["상태이상 중첩", "소스별 중첩"]
+
+[sub_resource type="Resource" id="Rule_shock"]
+script = ExtResource("2_entry")
+id = &"shock"
+display_name = "감전"
+subtitle = "공통 피해 상태이상"
+description = "중첩 피해를 주고 주변 적에게 전이합니다. 성장할수록 피해·중첩 한도·전이 횟수와 연결 반경이 증가합니다."
+icon_key = &"shock"
+accent_color = Color(0.471, 0.843, 1, 1)
+resolver_id = &"status:shock"
+related_lines = ["상태이상 중첩", "연쇄 전이"]
+
+[sub_resource type="Resource" id="Rule_burn"]
+script = ExtResource("2_entry")
+id = &"burn"
+display_name = "화상"
+subtitle = "공통 피해 상태이상"
+description = "최초 공격 피해의 일부를 기준으로 지속 피해를 주며 시간이 지날수록 감쇠합니다. 재적용하면 감쇠가 초기화됩니다."
+icon_key = &"burn"
+accent_color = Color(1, 0.541, 0.298, 1)
+resolver_id = &"status:burn"
+related_lines = ["상태이상 중첩", "시간 감쇠"]
+
+[sub_resource type="Resource" id="Rule_cc"]
+script = ExtResource("2_entry")
+id = &"crowd_control"
+display_name = "CC와 저항"
+subtitle = "군중 제어 규칙"
+description = "넉백·끌어당김·둔화·공포·기절·환혹처럼 적의 이동이나 행동을 방해하는 효과입니다. 보스는 완전 면역 대신 강도·지속시간 감소와 재적용 회복시간을 사용합니다."
+icon_key = &"control"
+accent_color = Color(0.514, 0.714, 1, 1)
+resolver_id = &"control_resistance"
+related_lines = ["소프트 카운터", "반복 CC 저항"]
+
+[sub_resource type="Resource" id="Rule_formation_score"]
+script = ExtResource("2_entry")
+id = &"formation_score"
+display_name = "편성점수"
+subtitle = "편대 기초 전력 지표"
+description = "편대에 포함된 수비병력의 기초 점수를 합산한 값입니다. 형태 난도는 이 점수에 섞지 않고 별도 정보로 표시합니다."
+icon_key = &"formation"
+accent_color = Color(0.396, 0.851, 0.741, 1)
+resolver_id = &"formation_score"
+related_lines = ["편대", "배치 난도", "병종 수"]
+
+[sub_resource type="Resource" id="Rule_prelude"]
+script = ExtResource("2_entry")
+id = &"faction_prelude"
+display_name = "Faction Prelude"
+subtitle = "공식 난입 예고 구간"
+description = "보스 등장 직전 해당 후보 진영의 팩션 적이 기존 공격대 예산 일부를 대체하는 구간입니다. 추가 예산으로 적 총량을 폭증시키는 규칙이 아닙니다."
+icon_key = &"warning"
+accent_color = Color(0.949, 0.659, 0.286, 1)
+resolver_id = &"faction_prelude"
+related_lines = ["공식 난입", "팩션 적", "보스 예고"]
+
+[sub_resource type="Resource" id="Rule_exit_return"]
+script = ExtResource("2_entry")
+id = &"exit_and_return"
+display_name = "퇴장과 강제 귀환"
+subtitle = "세계관 전투 용어"
+description = "전투에서의 패배는 영구 사망이 아닙니다. 일반 적은 본부로 강제 귀환하고, 정예와 보스는 퇴각하며, 아군은 기능 정지 뒤 재가동·충원됩니다."
+icon_key = &"return"
+accent_color = Color(0.78, 0.68, 0.91, 1)
+stat_lines = ["퇴장 · 전장 개체 제거", "강제 귀환 · 일반 적의 공식 처리", "공식 난입 제압 · 보스 격퇴"]
+related_lines = ["유세 중단", "부활 대기"]
+
+[sub_resource type="Resource" id="Rule_spawn"]
+script = ExtResource("2_entry")
+id = &"base_bonus_spawn"
+display_name = "Base / Bonus Spawn"
+subtitle = "난입과 보상 성장"
+description = "Base Spawn은 시간에 따른 필수 성장선을 만들고, Bonus Spawn은 빠른 처치로 여유가 생긴 런에 추가 전투와 경험치를 제공합니다."
+icon_key = &"speed"
+accent_color = Color(0.498, 0.882, 0.58, 1)
+stat_lines = ["Base · 표준 난도 클리어에 필요한 기본 성장선", "Bonus · 생존 압력 여유를 소비하는 보상 웨이브", "Bonus가 없어도 최종 보스 처치 가능이 목표"]
+related_lines = ["Spawn Budget", "Alive Pressure"]
+
+[sub_resource type="Resource" id="Rule_formation"]
+script = ExtResource("2_entry")
+id = &"formation"
+display_name = "편대"
+subtitle = "검수된 블록 배치"
+description = "2~4칸의 등록된 수비병력 조합을 한 번에 배치합니다. 필요한 병력을 모두 보유하면 별도 구매 없이 해당 편대가 자동으로 적격화됩니다."
+icon_key = &"formation"
+accent_color = Color(0.396, 0.851, 0.741, 1)
+stat_lines = ["일반 편대 · 구성 병력 보유 시 자동 적격", "유니크 편대 · 해당 후보 선택 시 런당 1회", "형태 · 장축 / 굴곡 / 밀집 / 계단"]
+related_lines = ["편성점수", "배치 난도"]
+
+[resource]
+script = ExtResource("1_catalog")
+entries = Array[ExtResource("2_entry")]([SubResource("Rule_poison"), SubResource("Rule_bleed"), SubResource("Rule_shock"), SubResource("Rule_burn"), SubResource("Rule_cc"), SubResource("Rule_formation_score"), SubResource("Rule_prelude"), SubResource("Rule_exit_return"), SubResource("Rule_spawn"), SubResource("Rule_formation")])

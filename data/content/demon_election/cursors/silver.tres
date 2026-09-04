@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="CursorData" format=3]
+
+[ext_resource type="Script" path="res://resources/cursor_data.gd" id="1_8anj8"]
+[ext_resource type="Texture2D" path="res://assets/graphics/cursors/silver.png" id="2_05em3"]
+
+[resource]
+script = ExtResource("1_8anj8")
+id = &"silver"
+display_name = "고통과 쾌락의 마녀 기븐 즈타"
+description = "빠르게 전장을 오가며 채찍·출혈·환혹으로 근거리를 제압하는 제어형 마녀"
+attack_type = &"single"
+damage = 16.0
+attack_interval = 0.17
+attack_radius = 34.0
+knockback = 22.0
+collection_radius = 96.0
+movement_speed = 470.0
+color = Color(0.88235295, 0.92156863, 0.9607843, 1)
+texture = ExtResource("2_05em3")

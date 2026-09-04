@@ -1,0 +1,32 @@
+[gd_resource type="Resource" script_class="CoreData" format=3]
+
+[ext_resource type="Script" path="res://resources/execution_profile_data.gd" id="1_6h8q4"]
+[ext_resource type="Script" path="res://resources/judgment_profile_data.gd" id="2_iagvv"]
+[ext_resource type="Script" path="res://resources/core_data.gd" id="3_t7jaw"]
+[ext_resource type="Texture2D" path="res://assets/graphics/emblems/v019/judaginda_scythe_blood.svg" id="4_4fcsf"]
+
+[sub_resource type="Resource" id="Resource_17ax4"]
+script = ExtResource("1_6h8q4")
+
+[sub_resource type="Resource" id="Resource_0r61j"]
+script = ExtResource("2_iagvv")
+execution_profile = SubResource("Resource_17ax4")
+
+[resource]
+script = ExtResource("3_t7jaw")
+id = &"obsidian"
+display_name = "죽음교주 주다긴다"
+description = "짧은 사거리의 강한 판결과 처형, 사신 소환으로 정예와 보스를 마무리하는 결전형 후보"
+passive_type = &"judgment"
+damage = 27.0
+attack_interval = 0.88
+max_health = 200.0
+regeneration = 0.3
+skill_damage = 235.0
+skill_cast_seconds = 1.05
+suppress_basic_attack_during_skill_cast = true
+unique_tower_id = &"obsidian_verdict"
+unique_formation_id = &"obsidian_tribunal"
+judgment_profile = SubResource("Resource_0r61j")
+color = Color(0.8509804, 0.29411766, 0.3372549, 1)
+texture = ExtResource("4_4fcsf")

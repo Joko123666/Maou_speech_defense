@@ -1,0 +1,194 @@
+[gd_scene load_steps=3 format=3]
+
+[ext_resource type="Script" path="res://scripts/ui/components/choice_card.gd" id="1_card"]
+[ext_resource type="Script" path="res://scripts/ui/flat_effect_icon.gd" id="2_flat_icon"]
+
+[node name="ChoiceCard" type="Button"]
+custom_minimum_size = Vector2(280, 460)
+clip_contents = true
+focus_mode = 2
+mouse_default_cursor_shape = 2
+script = ExtResource("1_card")
+
+[node name="ContentMargin" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 14.0
+offset_top = 12.0
+offset_right = -14.0
+offset_bottom = -12.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Layout" type="VBoxContainer" parent="ContentMargin"]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/separation = 4
+
+[node name="HeaderPanel" type="PanelContainer" parent="ContentMargin/Layout"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 132)
+layout_mode = 2
+mouse_filter = 2
+
+[node name="Header" type="VBoxContainer" parent="ContentMargin/Layout/HeaderPanel"]
+unique_name_in_owner = true
+layout_mode = 2
+mouse_filter = 2
+alignment = 1
+theme_override_constants/separation = 4
+
+[node name="Eyebrow" type="Label" parent="ContentMargin/Layout/HeaderPanel/Header"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 18)
+layout_mode = 2
+mouse_filter = 2
+theme_override_font_sizes/font_size = 13
+text = "분류"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="IconCenter" type="CenterContainer" parent="ContentMargin/Layout/HeaderPanel/Header"]
+custom_minimum_size = Vector2(0, 52)
+layout_mode = 2
+mouse_filter = 2
+
+[node name="IconFrame" type="PanelContainer" parent="ContentMargin/Layout/HeaderPanel/Header/IconCenter"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(52, 52)
+layout_mode = 2
+mouse_filter = 2
+
+[node name="IconStack" type="Control" parent="ContentMargin/Layout/HeaderPanel/Header/IconCenter/IconFrame"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(44, 44)
+layout_mode = 2
+mouse_filter = 2
+
+[node name="Icon" type="TextureRect" parent="ContentMargin/Layout/HeaderPanel/Header/IconCenter/IconFrame/IconStack"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 4.0
+offset_top = 4.0
+offset_right = -4.0
+offset_bottom = -4.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+expand_mode = 1
+stretch_mode = 5
+
+[node name="FallbackIcon" type="Control" parent="ContentMargin/Layout/HeaderPanel/Header/IconCenter/IconFrame/IconStack"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 7.0
+offset_top = 7.0
+offset_right = -7.0
+offset_bottom = -7.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("2_flat_icon")
+
+[node name="Title" type="Label" parent="ContentMargin/Layout/HeaderPanel/Header"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 44)
+layout_mode = 2
+mouse_filter = 2
+theme_override_font_sizes/font_size = 19
+text = "선택 항목"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+text_overrun_behavior = 3
+max_lines_visible = 2
+
+[node name="ChangePanel" type="PanelContainer" parent="ContentMargin/Layout"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 52)
+layout_mode = 2
+mouse_filter = 2
+
+[node name="Effect" type="RichTextLabel" parent="ContentMargin/Layout/ChangePanel"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 44)
+layout_mode = 2
+mouse_filter = 2
+theme_override_colors/default_color = Color(0.223529, 0.137255, 0.309804, 1)
+theme_override_font_sizes/normal_font_size = 15
+bbcode_enabled = true
+text = "[center]핵심 효과[/center]"
+fit_content = false
+scroll_active = false
+
+[node name="VisualHost" type="HBoxContainer" parent="ContentMargin/Layout"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 58)
+layout_mode = 2
+mouse_filter = 2
+alignment = 1
+theme_override_constants/separation = 6
+
+[node name="Tags" type="HBoxContainer" parent="ContentMargin/Layout"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 24)
+layout_mode = 2
+mouse_filter = 2
+alignment = 1
+theme_override_constants/separation = 6
+
+[node name="DescriptionPanel" type="PanelContainer" parent="ContentMargin/Layout"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+mouse_filter = 2
+
+[node name="Description" type="Label" parent="ContentMargin/Layout/DescriptionPanel"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 32)
+layout_mode = 2
+mouse_filter = 2
+theme_override_colors/font_color = Color(0.435294, 0.376471, 0.47451, 1)
+theme_override_font_sizes/font_size = 13
+text = "상세 설명"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+clip_text = true
+text_overrun_behavior = 3
+max_lines_visible = 1
+
+[node name="Spacer" type="Control" parent="ContentMargin/Layout"]
+layout_mode = 2
+size_flags_vertical = 3
+mouse_filter = 2
+
+[node name="DetailRail" type="Control" parent="ContentMargin/Layout"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 48)
+layout_mode = 2
+mouse_filter = 2
+
+[node name="SelectionPanel" type="PanelContainer" parent="ContentMargin/Layout"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 52)
+layout_mode = 2
+mouse_filter = 2
+
+[node name="SelectionLabel" type="Label" parent="ContentMargin/Layout/SelectionPanel"]
+unique_name_in_owner = true
+layout_mode = 2
+mouse_filter = 2
+theme_override_font_sizes/font_size = 16
+text = "선택"
+horizontal_alignment = 1
+vertical_alignment = 1

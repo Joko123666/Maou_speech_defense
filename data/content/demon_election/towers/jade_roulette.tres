@@ -1,0 +1,28 @@
+[gd_resource type="Resource" script_class="TowerData" format=3]
+
+[ext_resource type="Texture2D" path="res://assets/graphics/tower_attacks/jade_roulette.png" id="1_v6pvd"]
+[ext_resource type="Script" path="res://resources/retainer_reactivation_profile_data.gd" id="2_w2dhw"]
+[ext_resource type="Script" path="res://resources/tower_data.gd" id="3_aib5e"]
+[ext_resource type="Texture2D" path="res://assets/graphics/towers/jade_roulette.png" id="4_5u0mj"]
+
+[sub_resource type="Resource" id="Resource_rk3sv"]
+script = ExtResource("2_w2dhw")
+
+[resource]
+script = ExtResource("3_aib5e")
+id = &"jade_roulette"
+display_name = "망자 부활진"
+description = "강한 망령을 최대 네 대상에게 출격시키며 활동 체력이 소진되면 잠시 행동불능 후 완전 재가동"
+behavior = &"unique_random"
+target_rule = &"reward_value"
+damage = 26.0
+attack_interval = 0.62
+attack_range_cells = 4.0
+max_level = 1
+color = Color(0.6156863, 0.8666667, 0.33333334, 1)
+tags = Array[StringName]([&"unique", &"jade", &"unique_random"])
+texture = ExtResource("4_5u0mj")
+attack_texture = ExtResource("1_v6pvd")
+unique_core_id = &"jade"
+reactivation_profile = SubResource("Resource_rk3sv")
+formation_power_rating = 200.0

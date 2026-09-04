@@ -1,0 +1,37 @@
+[gd_resource type="Resource" script_class="TowerFormationData" format=3]
+
+[ext_resource type="Script" path="res://resources/formation_cell_data.gd" id="1_k5ico"]
+[ext_resource type="Script" path="res://resources/tower_formation_data.gd" id="2_2t1bk"]
+
+[sub_resource type="Resource" id="Resource_ghyh4"]
+script = ExtResource("1_k5ico")
+tower_id = &"rapid"
+
+[sub_resource type="Resource" id="Resource_rslq1"]
+script = ExtResource("1_k5ico")
+offset = Vector2i(1, 0)
+tower_id = &"pierce"
+
+[sub_resource type="Resource" id="Resource_lk2dq"]
+script = ExtResource("1_k5ico")
+offset = Vector2i(2, 0)
+tower_id = &"rapid"
+
+[sub_resource type="Resource" id="Resource_5yvc1"]
+script = ExtResource("1_k5ico")
+offset = Vector2i(3, 0)
+tower_id = &"pierce"
+
+[resource]
+script = ExtResource("2_2t1bk")
+id = &"orc_mixed"
+display_name = "오크 혼성 장사진"
+description = "가로 4칸에서 고블린 둘이 오크 궁병 둘의 관통선을 엄호"
+cells = Array[ExtResource("1_k5ico")]([SubResource("Resource_ghyh4"), SubResource("Resource_rslq1"), SubResource("Resource_lk2dq"), SubResource("Resource_5yvc1")])
+role_tags = Array[StringName]([&"pierce", &"basic"])
+shape_class = &"LONG"
+placement_difficulty = 2
+formation_score = 360
+raw_power_score = 360.0
+output_multiplier = 0.8333333333333334
+expected_power_score = 300.0

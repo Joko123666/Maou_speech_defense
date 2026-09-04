@@ -1,0 +1,37 @@
+[gd_resource type="Resource" script_class="TowerFormationData" format=3]
+
+[ext_resource type="Script" path="res://resources/formation_cell_data.gd" id="1_git1s"]
+[ext_resource type="Script" path="res://resources/tower_formation_data.gd" id="2_6htry"]
+
+[sub_resource type="Resource" id="Resource_jnpy8"]
+script = ExtResource("1_git1s")
+tower_id = &"area"
+
+[sub_resource type="Resource" id="Resource_hublp"]
+script = ExtResource("1_git1s")
+offset = Vector2i(0, 1)
+tower_id = &"rubber_golem"
+
+[sub_resource type="Resource" id="Resource_oe3c0"]
+script = ExtResource("1_git1s")
+offset = Vector2i(1, 1)
+tower_id = &"area"
+
+[sub_resource type="Resource" id="Resource_2gkt7"]
+script = ExtResource("1_git1s")
+offset = Vector2i(0, 2)
+tower_id = &"rubber_golem"
+
+[resource]
+script = ExtResource("2_6htry")
+id = &"compressed_bombardment"
+display_name = "압축 포격진"
+description = "해골 척탄병 둘을 고무골렘 둘이 받치는 굴곡형 압축 포격진"
+cells = Array[ExtResource("1_git1s")]([SubResource("Resource_jnpy8"), SubResource("Resource_hublp"), SubResource("Resource_oe3c0"), SubResource("Resource_2gkt7")])
+role_tags = Array[StringName]([&"aoe", &"knockback"])
+shape_class = &"BEND"
+placement_difficulty = 1
+formation_score = 380
+raw_power_score = 380.0
+output_multiplier = 0.7894736842105263
+expected_power_score = 300.0

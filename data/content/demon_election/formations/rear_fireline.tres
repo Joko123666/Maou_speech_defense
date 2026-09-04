@@ -1,0 +1,38 @@
+[gd_resource type="Resource" script_class="TowerFormationData" format=3]
+
+[ext_resource type="Script" path="res://resources/formation_cell_data.gd" id="1_6saqu"]
+[ext_resource type="Script" path="res://resources/tower_formation_data.gd" id="2_2wsk0"]
+
+[sub_resource type="Resource" id="Resource_ngcmo"]
+script = ExtResource("1_6saqu")
+tower_id = &"execute"
+
+[sub_resource type="Resource" id="Resource_qf33m"]
+script = ExtResource("1_6saqu")
+offset = Vector2i(0, 1)
+tower_id = &"pierce"
+
+[sub_resource type="Resource" id="Resource_832ig"]
+script = ExtResource("1_6saqu")
+offset = Vector2i(0, 2)
+tower_id = &"rapid"
+
+[sub_resource type="Resource" id="Resource_ggvnw"]
+script = ExtResource("1_6saqu")
+offset = Vector2i(1, 2)
+tower_id = &"rapid"
+
+[resource]
+script = ExtResource("2_2wsk0")
+id = &"rear_fireline"
+display_name = "후방 화력진"
+description = "트롤·오크·고블린이 긴 ㄴ자 후방 화력선을 구성"
+cells = Array[ExtResource("1_6saqu")]([SubResource("Resource_ngcmo"), SubResource("Resource_qf33m"), SubResource("Resource_832ig"), SubResource("Resource_ggvnw")])
+role_tags = Array[StringName]([&"elite", &"pierce", &"basic"])
+shape_class = &"BEND"
+placement_difficulty = 1
+base_weight = 0.9
+formation_score = 400
+raw_power_score = 400.0
+output_multiplier = 0.75
+expected_power_score = 300.0

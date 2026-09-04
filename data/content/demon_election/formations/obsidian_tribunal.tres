@@ -1,0 +1,40 @@
+[gd_resource type="Resource" script_class="TowerFormationData" format=3]
+
+[ext_resource type="Script" path="res://resources/formation_cell_data.gd" id="1_egvoh"]
+[ext_resource type="Script" path="res://resources/tower_formation_data.gd" id="2_klfw2"]
+
+[sub_resource type="Resource" id="Resource_ohtl8"]
+script = ExtResource("1_egvoh")
+tower_id = &"obsidian_inquisitor"
+
+[sub_resource type="Resource" id="Resource_7vbby"]
+script = ExtResource("1_egvoh")
+offset = Vector2i(1, 0)
+tower_id = &"obsidian_verdict"
+
+[sub_resource type="Resource" id="Resource_m2gme"]
+script = ExtResource("1_egvoh")
+offset = Vector2i(0, 1)
+tower_id = &"obsidian_inquisitor"
+
+[sub_resource type="Resource" id="Resource_n24kv"]
+script = ExtResource("1_egvoh")
+offset = Vector2i(1, 1)
+tower_id = &"obsidian_verdict"
+
+[resource]
+script = ExtResource("2_klfw2")
+id = &"obsidian_tribunal"
+display_name = "죽음교도 집행대"
+description = "전열 판결관 둘과 후열 원거리 집행관 둘이 선고와 처형을 이어가는 2×2 죽음교 친위대"
+cells = Array[ExtResource("1_egvoh")]([SubResource("Resource_ohtl8"), SubResource("Resource_7vbby"), SubResource("Resource_m2gme"), SubResource("Resource_n24kv")])
+role_tags = Array[StringName]([&"unique", &"obsidian", &"execution"])
+shape_class = &"COMPACT"
+rarity = 3
+formation_score = 800
+is_guard = true
+candidate_id = &"obsidian"
+raw_power_score = 800.0
+output_multiplier = 0.45
+expected_power_score = 360.0
+unique_core_id = &"obsidian"

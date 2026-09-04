@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="CoreData" format=3]
+
+[ext_resource type="Script" path="res://resources/core_data.gd" id="1_hpgxb"]
+[ext_resource type="Texture2D" path="res://assets/graphics/emblems/v019/partason_sword_shield.svg" id="2_b10l8"]
+
+[resource]
+script = ExtResource("1_hpgxb")
+id = &"emerald"
+display_name = "파르태손 VIII 마아앙"
+description = "정석적인 직접 공격과 왕실 친위대, 다종족 수비병력을 안정적으로 지휘하는 균형형 후보"
+damage = 13.0
+attack_interval = 0.65
+max_health = 170.0
+regeneration = 0.35
+skill_damage = 150.0
+skill_cast_seconds = 0.85
+unique_tower_id = &"emerald_guardian"
+unique_formation_id = &"emerald_guard"
+texture = ExtResource("2_b10l8")

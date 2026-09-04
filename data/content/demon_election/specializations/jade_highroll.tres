@@ -1,0 +1,21 @@
+[gd_resource type="Resource" script_class="SpecializationBranchData" format=3]
+
+[ext_resource type="Script" path="res://resources/specialization_branch_data.gd" id="1_w0xmb"]
+
+[resource]
+script = ExtResource("1_w0xmb")
+id = &"jade_highroll"
+owner_kind = &"core"
+owner_id = &"jade"
+display_name = "즉시 재고용"
+level_4_description = "일반 적 사령 획득 확률 +15% · 친위대 재가동 속도 +35%"
+level_7_description = "획득 확률 총 40% · 재가동 속도 +75%"
+level_4_modifiers = {
+"reactivation_speed": 1.35,
+"spirit_gain_chance_bonus": 0.15
+}
+level_7_modifiers = {
+"reactivation_speed": 1.75,
+"spirit_gain_chance_bonus": 0.25
+}
+impact_keys = Array[StringName]([&"core", &"necromancy", &"speed"])

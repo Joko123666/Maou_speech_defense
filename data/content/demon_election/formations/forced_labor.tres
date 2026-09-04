@@ -1,0 +1,32 @@
+[gd_resource type="Resource" script_class="TowerFormationData" format=3]
+
+[ext_resource type="Script" path="res://resources/formation_cell_data.gd" id="1_d81ub"]
+[ext_resource type="Script" path="res://resources/tower_formation_data.gd" id="2_1c4ts"]
+
+[sub_resource type="Resource" id="Resource_5j5hm"]
+script = ExtResource("1_d81ub")
+tower_id = &"knockback"
+
+[sub_resource type="Resource" id="Resource_pvonj"]
+script = ExtResource("1_d81ub")
+offset = Vector2i(1, 0)
+tower_id = &"rubber_golem"
+
+[sub_resource type="Resource" id="Resource_t5vf2"]
+script = ExtResource("1_d81ub")
+offset = Vector2i(2, 0)
+tower_id = &"area"
+
+[resource]
+script = ExtResource("2_1c4ts")
+id = &"forced_labor"
+display_name = "강제 노동진"
+description = "KI-Ⅱ와 고무골렘이 해골 척탄병의 가로 폭발선으로 적을 운반"
+cells = Array[ExtResource("1_d81ub")]([SubResource("Resource_5j5hm"), SubResource("Resource_pvonj"), SubResource("Resource_t5vf2")])
+role_tags = Array[StringName]([&"contact", &"aoe", &"knockback"])
+shape_class = &"LONG"
+placement_difficulty = 1
+formation_score = 270
+raw_power_score = 270.0
+output_multiplier = 1.1111111111111112
+expected_power_score = 300.0

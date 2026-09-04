@@ -1,0 +1,26 @@
+[gd_resource type="Resource" script_class="TowerFormationData" format=3]
+
+[ext_resource type="Script" path="res://resources/formation_cell_data.gd" id="1_5n0vx"]
+[ext_resource type="Script" path="res://resources/tower_formation_data.gd" id="2_6n68h"]
+
+[sub_resource type="Resource" id="Resource_fwrkv"]
+script = ExtResource("1_5n0vx")
+tower_id = &"area"
+
+[sub_resource type="Resource" id="Resource_aapmb"]
+script = ExtResource("1_5n0vx")
+offset = Vector2i(0, 1)
+tower_id = &"area"
+
+[resource]
+script = ExtResource("2_6n68h")
+id = &"barrage"
+display_name = "척탄 종대"
+description = "두 해골 척탄병이 세로 종대에서 같은 밀집 지점을 연속 폭격"
+cells = Array[ExtResource("1_5n0vx")]([SubResource("Resource_fwrkv"), SubResource("Resource_aapmb")])
+role_tags = Array[StringName]([&"aoe"])
+shape_class = &"LONG"
+formation_score = 240
+raw_power_score = 240.0
+output_multiplier = 1.25
+expected_power_score = 300.0

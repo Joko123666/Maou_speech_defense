@@ -1,0 +1,39 @@
+[gd_resource type="Resource" script_class="TowerFormationData" format=3]
+
+[ext_resource type="Script" path="res://resources/formation_cell_data.gd" id="1_dar65"]
+[ext_resource type="Script" path="res://resources/tower_formation_data.gd" id="2_gn8uw"]
+
+[sub_resource type="Resource" id="Resource_r0lpo"]
+script = ExtResource("1_dar65")
+offset = Vector2i(1, 0)
+tower_id = &"chain"
+
+[sub_resource type="Resource" id="Resource_wjj03"]
+script = ExtResource("1_dar65")
+offset = Vector2i(0, 1)
+tower_id = &"knockback"
+
+[sub_resource type="Resource" id="Resource_f76r2"]
+script = ExtResource("1_dar65")
+offset = Vector2i(1, 1)
+tower_id = &"chain"
+
+[sub_resource type="Resource" id="Resource_6e16t"]
+script = ExtResource("1_dar65")
+offset = Vector2i(0, 2)
+tower_id = &"knockback"
+
+[resource]
+script = ExtResource("2_gn8uw")
+id = &"overload_mission_grid"
+display_name = "과부하 포교망"
+description = "전도탑 둘과 KI-Ⅱ 둘이 세로 계단형 기계 제어망을 형성"
+cells = Array[ExtResource("1_dar65")]([SubResource("Resource_r0lpo"), SubResource("Resource_wjj03"), SubResource("Resource_f76r2"), SubResource("Resource_6e16t")])
+role_tags = Array[StringName]([&"network", &"contact", &"knockback"])
+shape_class = &"STEP"
+placement_difficulty = 2
+base_weight = 0.85
+formation_score = 340
+raw_power_score = 340.0
+output_multiplier = 0.8823529411764706
+expected_power_score = 300.0

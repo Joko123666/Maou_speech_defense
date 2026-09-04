@@ -1,0 +1,34 @@
+[gd_resource type="Resource" script_class="GameConceptData" load_steps=6 format=3]
+
+[ext_resource type="Script" path="res://resources/game_concept_data.gd" id="1_script"]
+[ext_resource type="Resource" path="res://data/concepts/formation_defense_assets.tres" id="2_assets"]
+[ext_resource type="Resource" path="res://data/stages/standard_20m.tres" id="3_stage"]
+[ext_resource type="Resource" path="res://data/meta/stage_rewards/standard_20m.tres" id="4_reward"]
+[ext_resource type="Resource" path="res://data/concepts/formation_defense_texts.tres" id="5_text"]
+
+[resource]
+script = ExtResource("1_script")
+id = &"example_arcane_reskin"
+project_title = "RUNIC LAST STAND"
+project_eyebrow = "ARCANE COVENANT / BATTLE LATTICE"
+chapter_title = "CITADEL I · SIEGE RITUAL"
+hero_title = "마력석을 지키고\n룬진을 완성하라"
+hero_description = "침략자의 흐름을 읽고 여섯 개의 룬열을 설계하세요.\n성장할 때마다 수호탑과 유물을 선택해 공성전을 버팁니다."
+ready_status = "●  결계 의식 준비 완료"
+core_term = "마력석"
+cursor_term = "지휘 룬"
+tower_term = "수호탑"
+formation_term = "룬진"
+enemy_term = "침략자"
+currency_term = "왕국 인장"
+stage_term = "전장"
+accent_color = Color(0.95, 0.71, 0.3, 1)
+secondary_color = Color(0.73, 0.47, 0.98, 1)
+danger_color = Color(0.96, 0.29, 0.39, 1)
+background_tint = Color(0.66, 0.57, 0.86, 1)
+background_overlay = Color(0.04, 0.015, 0.075, 0.46)
+battlefield_fill = Color(0.18, 0.08, 0.25, 0.38)
+assets = ExtResource("2_assets")
+text_catalog = ExtResource("5_text")
+default_stage = ExtResource("3_stage")
+stage_reward = ExtResource("4_reward")

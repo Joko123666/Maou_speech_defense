@@ -1,0 +1,24 @@
+[gd_resource type="Resource" script_class="CoreData" format=3]
+
+[ext_resource type="Script" path="res://resources/core_data.gd" id="1_86dwi"]
+[ext_resource type="Texture2D" path="res://assets/graphics/emblems/v019/kasuha_tentacle_eye.svg" id="2_q0rh3"]
+
+[resource]
+script = ExtResource("1_86dwi")
+id = &"amethyst"
+display_name = "카스하 르짜르"
+description = "긴 예고 뒤 밀집 지점과 중심부를 강타하고 심연 생명체를 부리는 순간 화력형 후보"
+attack_type = &"radial"
+skill_type = &"wall"
+passive_type = &"fortress"
+damage = 24.0
+attack_interval = 1.15
+attack_range = 320.0
+max_health = 225.0
+regeneration = 0.55
+skill_damage = 260.0
+skill_cast_seconds = 1.05
+unique_tower_id = &"amethyst_nova"
+unique_formation_id = &"amethyst_bastion"
+color = Color(0.7176471, 0.47058824, 1, 1)
+texture = ExtResource("2_q0rh3")

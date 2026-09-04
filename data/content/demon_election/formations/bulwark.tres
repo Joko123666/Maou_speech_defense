@@ -1,0 +1,32 @@
+[gd_resource type="Resource" script_class="TowerFormationData" format=3]
+
+[ext_resource type="Script" path="res://resources/formation_cell_data.gd" id="1_ju2to"]
+[ext_resource type="Script" path="res://resources/tower_formation_data.gd" id="2_a2jnf"]
+
+[sub_resource type="Resource" id="Resource_x528g"]
+script = ExtResource("1_ju2to")
+tower_id = &"rubber_golem"
+
+[sub_resource type="Resource" id="Resource_wfado"]
+script = ExtResource("1_ju2to")
+offset = Vector2i(0, 1)
+tower_id = &"area"
+
+[sub_resource type="Resource" id="Resource_c8q1a"]
+script = ExtResource("1_ju2to")
+offset = Vector2i(1, 1)
+tower_id = &"rubber_golem"
+
+[resource]
+script = ExtResource("2_a2jnf")
+id = &"bulwark"
+display_name = "골렘 포격 방벽"
+description = "고무골렘 둘이 해골 척탄병의 포격 위치를 굴곡형으로 보호"
+cells = Array[ExtResource("1_ju2to")]([SubResource("Resource_x528g"), SubResource("Resource_wfado"), SubResource("Resource_c8q1a")])
+role_tags = Array[StringName]([&"aoe", &"knockback"])
+shape_class = &"BEND"
+placement_difficulty = 1
+formation_score = 260
+raw_power_score = 260.0
+output_multiplier = 1.1538461538461537
+expected_power_score = 300.0

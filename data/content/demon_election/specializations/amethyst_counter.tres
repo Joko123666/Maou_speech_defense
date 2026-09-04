@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="SpecializationBranchData" format=3]
+
+[ext_resource type="Script" path="res://resources/specialization_branch_data.gd" id="1_t86xd"]
+
+[resource]
+script = ExtResource("1_t86xd")
+id = &"amethyst_counter"
+owner_kind = &"core"
+owner_id = &"amethyst"
+display_name = "반격 결정"
+level_4_description = "핵 피격 시 공격자에게 핵 피해 80% 반격"
+level_7_description = "반격이 주변 적 3명에게 45% 파편으로 분열"
+level_4_modifiers = {
+"counter": 0.8
+}
+level_7_modifiers = {
+"counter": 1.2,
+"counter_shards": 0.45
+}
+impact_keys = Array[StringName]([&"core", &"damage", &"health"])

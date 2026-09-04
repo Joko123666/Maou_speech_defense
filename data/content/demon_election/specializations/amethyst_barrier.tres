@@ -1,0 +1,21 @@
+[gd_resource type="Resource" script_class="SpecializationBranchData" format=3]
+
+[ext_resource type="Script" path="res://resources/specialization_branch_data.gd" id="1_s8jfu"]
+
+[resource]
+script = ExtResource("1_s8jfu")
+id = &"amethyst_barrier"
+owner_kind = &"core"
+owner_id = &"amethyst"
+display_name = "충격 장벽"
+level_4_description = "둔화벽 지속시간과 폭 증가"
+level_7_description = "장벽이 지속 피해와 넉백을 추가"
+level_4_modifiers = {
+"wall_width": 1.35
+}
+level_7_modifiers = {
+"wall_damage": 0.25,
+"wall_push": 70.0,
+"wall_width": 1.65
+}
+impact_keys = Array[StringName]([&"core", &"control", &"area"])

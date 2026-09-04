@@ -1,0 +1,26 @@
+[gd_resource type="Resource" script_class="EnemyData" format=3]
+
+[ext_resource type="Script" path="res://resources/enemy_movement_profile_data.gd" id="1_uolex"]
+[ext_resource type="Script" path="res://resources/enemy_data.gd" id="2_kriug"]
+[ext_resource type="Texture2D" path="res://assets/graphics/enemies/skeleton_raider.png" id="3_2mdyc"]
+
+[sub_resource type="Resource" id="Resource_56kwp"]
+script = ExtResource("1_uolex")
+kind = &"fixed_diagonal"
+
+[resource]
+script = ExtResource("2_kriug")
+id = &"skeleton_raider"
+display_name = "해골 습격병"
+max_health = 55.0
+move_speed = 74.0
+core_damage = 9.0
+experience_value = 5.0
+spawn_cost = 8.0
+role_tags = Array[StringName]([&"fast", &"diagonal"])
+movement_profile = SubResource("Resource_56kwp")
+available_from_seconds = 150.0
+behavior = &"fixed_diagonal"
+body_color = Color(0.84705883, 0.83137256, 0.77254903, 1)
+radius = 17.0
+texture = ExtResource("3_2mdyc")

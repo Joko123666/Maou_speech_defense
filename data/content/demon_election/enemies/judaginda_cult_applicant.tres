@@ -1,0 +1,36 @@
+[gd_resource type="Resource" script_class="EnemyData" format=3]
+
+[ext_resource type="Script" path="res://resources/enemy_formation_profile_data.gd" id="1_1bhu0"]
+[ext_resource type="Script" path="res://resources/enemy_group_acceleration_profile_data.gd" id="2_2gi3s"]
+[ext_resource type="Script" path="res://resources/enemy_data.gd" id="3_865r7"]
+[ext_resource type="Texture2D" path="res://assets/graphics/enemies/judaginda_cult_applicant.png" id="4_i0bjl"]
+
+[sub_resource type="Resource" id="Resource_rxt0n"]
+script = ExtResource("1_1bhu0")
+tier_unit_counts = Array[int]([4, 5, 8])
+tier_cohort_counts = Array[int]([1, 1, 2])
+tier_stagger_seconds = Array[float]([0.0, 0.0, 1.5])
+unit_spacing_ratio = 0.028
+cohort_axis_spacing_ratio = 0.12
+separate_group_per_cohort = true
+
+[sub_resource type="Resource" id="Resource_qu2l6"]
+script = ExtResource("2_2gi3s")
+
+[resource]
+script = ExtResource("3_865r7")
+id = &"judaginda_cult_applicant"
+display_name = "죽음교 입교 희망자"
+max_health = 34.0
+move_speed = 70.0
+core_damage = 6.0
+experience_value = 3.0
+spawn_cost = 4.0
+role_tags = Array[StringName]([&"faction", &"pack", &"death_buff"])
+group_acceleration_profile = SubResource("Resource_qu2l6")
+formation_profile = SubResource("Resource_rxt0n")
+available_from_seconds = 240.0
+behavior = &"group_death_speed"
+body_color = Color(0.8509804, 0.3372549, 0.40784314, 1)
+radius = 15.0
+texture = ExtResource("4_i0bjl")

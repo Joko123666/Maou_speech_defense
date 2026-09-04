@@ -1,0 +1,22 @@
+[gd_resource type="Resource" script_class="SpecializationBranchData" format=3]
+
+[ext_resource type="Script" path="res://resources/specialization_branch_data.gd" id="1_uf8ir"]
+
+[resource]
+script = ExtResource("1_uf8ir")
+id = &"amethyst_fortress"
+owner_kind = &"core"
+owner_id = &"amethyst"
+display_name = "근접 요새"
+level_4_description = "핵 내구도 +35% · 방사 공격 피해 +25%"
+level_7_description = "핵 주변 타워와 핵이 서로 피해를 강화"
+level_4_modifiers = {
+"damage": 1.25,
+"health": 1.35
+}
+level_7_modifiers = {
+"damage": 1.45,
+"fortress_aura": 1.22,
+"health": 1.65
+}
+impact_keys = Array[StringName]([&"core", &"health", &"global"])

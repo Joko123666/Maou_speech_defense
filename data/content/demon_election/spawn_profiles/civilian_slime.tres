@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="EnemySpawnProfileData" format=3]
+
+[ext_resource type="Script" path="res://resources/enemy_spawn_profile_data.gd" id="1_trauo"]
+
+[resource]
+script = ExtResource("1_trauo")
+enemy_id = &"civilian_slime"
+spawn_cost = 3.0
+role_tags = Array[StringName]([&"basic", &"swarm"])
+group_min = 3
+group_max = 5

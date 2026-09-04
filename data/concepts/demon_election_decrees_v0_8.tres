@@ -1,0 +1,144 @@
+[gd_resource type="Resource" script_class="CandidateDecreeCatalogData" load_steps=18 format=3]
+
+[ext_resource type="Script" path="res://resources/candidate_decree_catalog_data.gd" id="1_catalog"]
+[ext_resource type="Script" path="res://resources/candidate_decree_data.gd" id="2_decree"]
+
+[sub_resource type="Resource" id="Decree_royal_barrier"]
+script = ExtResource("2_decree")
+id = &"royal_barrier"
+candidate_id = &"partason"
+display_name = "왕실 호위"
+description = "연설대를 두텁게 보호하지만 후보의 직접 공격은 신중해집니다."
+effect_summary = "후보 체력 +18% · 후보 피해 -12%"
+stat_multipliers = {"core_health": 1.18, "core_damage": 0.88}
+
+[sub_resource type="Resource" id="Decree_orthodox_army"]
+script = ExtResource("2_decree")
+id = &"orthodox_army"
+candidate_id = &"partason"
+display_name = "공용 지원대"
+description = "일반 지원대의 화력을 집중 지원하는 대신 필살 공약의 위력을 낮춥니다."
+effect_summary = "유세 지원대 피해 +15% · 필살 공약 피해 -15%"
+stat_multipliers = {"tower_damage": 1.15, "core_skill_damage": 0.85}
+
+[sub_resource type="Resource" id="Decree_royal_command"]
+script = ExtResource("2_decree")
+id = &"royal_command"
+candidate_id = &"partason"
+display_name = "왕가의 호령"
+description = "필살 공약을 강하게 선포하지만 다음 공약까지 더 오래 준비합니다."
+effect_summary = "필살 공약 피해 +35% · 충전 속도 -18%"
+stat_multipliers = {"core_skill_damage": 1.35, "skill_charge": 0.82}
+
+[sub_resource type="Resource" id="Decree_charmed_march"]
+script = ExtResource("2_decree")
+id = &"charmed_march"
+candidate_id = &"jiane"
+display_name = "환혹 행진"
+description = "심복의 제어력을 확대하지만 후보의 직접 피해를 줄입니다."
+effect_summary = "심복 제어 +28% · 후보 피해 -12%"
+stat_multipliers = {"cursor_control": 1.28, "core_damage": 0.88}
+
+[sub_resource type="Resource" id="Decree_elegant_proxy_war"]
+script = ExtResource("2_decree")
+id = &"elegant_proxy_war"
+candidate_id = &"jiane"
+display_name = "우아한 대리전"
+description = "지원대 전체의 공세를 강화하는 대신 심복의 직접 공격을 억제합니다."
+effect_summary = "유세 지원대 피해 +14% · 심복 피해 -15%"
+stat_multipliers = {"tower_damage": 1.14, "cursor_damage": 0.85}
+
+[sub_resource type="Resource" id="Decree_gaze_of_support"]
+script = ExtResource("2_decree")
+id = &"gaze_of_support"
+candidate_id = &"jiane"
+display_name = "심복 협공"
+description = "수석 심복이 전투의 중심이 되는 대신 후보의 기본 화력이 감소합니다."
+effect_summary = "심복 피해 +30% · 후보 피해 -18%"
+stat_multipliers = {"cursor_damage": 1.30, "core_damage": 0.82}
+
+[sub_resource type="Resource" id="Decree_abyss_collapse"]
+script = ExtResource("2_decree")
+id = &"abyss_collapse"
+candidate_id = &"kasuha"
+display_name = "심연 붕괴"
+description = "필살 공약의 폭발력을 높이는 대신 충전 주기가 길어집니다."
+effect_summary = "필살 공약 피해 +40% · 충전 속도 -22%"
+stat_multipliers = {"core_skill_damage": 1.40, "skill_charge": 0.78}
+
+[sub_resource type="Resource" id="Decree_observation_network"]
+script = ExtResource("2_decree")
+id = &"observation_network"
+candidate_id = &"kasuha"
+display_name = "관측망"
+description = "심복의 영향 범위를 넓히지만 이동 명령에 대한 반응이 느려집니다."
+effect_summary = "심복 범위 +30% · 이동속도 -15%"
+stat_multipliers = {"cursor_area": 1.30, "cursor_movement": 0.85}
+
+[sub_resource type="Resource" id="Decree_forbidden_research"]
+script = ExtResource("2_decree")
+id = &"forbidden_research"
+candidate_id = &"kasuha"
+display_name = "금지 연구"
+description = "지원대의 실험 화력을 개방하지만 후보의 연설 지속력이 감소합니다."
+effect_summary = "유세 지원대 피해 +18% · 후보 체력 -15%"
+stat_multipliers = {"tower_damage": 1.18, "core_health": 0.85}
+
+[sub_resource type="Resource" id="Decree_instant_rehire"]
+script = ExtResource("2_decree")
+id = &"instant_rehire"
+candidate_id = &"irelai"
+display_name = "즉시 재고용"
+description = "후보의 공격과 사령 순환을 재촉하지만 지원대 화력은 낮아집니다."
+effect_summary = "후보 공격속도 +20% · 유세 지원대 피해 -10%"
+stat_multipliers = {"core_attack_speed": 1.20, "tower_damage": 0.90}
+
+[sub_resource type="Resource" id="Decree_mass_revival"]
+script = ExtResource("2_decree")
+id = &"mass_revival"
+candidate_id = &"irelai"
+display_name = "집단 부활"
+description = "필살 공약을 강화하는 대신 후보의 평상시 공격 주기가 느려집니다."
+effect_summary = "필살 공약 피해 +32% · 후보 공격속도 -15%"
+stat_multipliers = {"core_skill_damage": 1.32, "core_attack_speed": 0.85}
+
+[sub_resource type="Resource" id="Decree_afterlife_welfare"]
+script = ExtResource("2_decree")
+id = &"afterlife_welfare"
+candidate_id = &"irelai"
+display_name = "사후 복지"
+description = "후보의 연설 지속력을 강화하지만 심복의 기동성을 낮춥니다."
+effect_summary = "후보 체력 +16% · 심복 이동속도 -12%"
+stat_multipliers = {"core_health": 1.16, "cursor_movement": 0.88}
+
+[sub_resource type="Resource" id="Decree_final_sentence"]
+script = ExtResource("2_decree")
+id = &"final_sentence"
+candidate_id = &"judaginda"
+display_name = "최종 선고"
+description = "후보의 단일 판결을 강화하지만 공격 준비가 길어집니다."
+effect_summary = "후보 피해 +27% · 공격속도 -15%"
+stat_multipliers = {"core_damage": 1.27, "core_attack_speed": 0.85}
+
+[sub_resource type="Resource" id="Decree_vanguard_mobilization"]
+script = ExtResource("2_decree")
+id = &"vanguard_mobilization"
+candidate_id = &"judaginda"
+display_name = "돌격대 동원"
+description = "수석 심복의 집행력을 강화하지만 전장 이동은 느려집니다."
+effect_summary = "심복 피해 +28% · 이동속도 -15%"
+stat_multipliers = {"cursor_damage": 1.28, "cursor_movement": 0.85}
+
+[sub_resource type="Resource" id="Decree_bell_of_judgment"]
+script = ExtResource("2_decree")
+id = &"bell_of_judgment"
+candidate_id = &"judaginda"
+display_name = "심판의 종"
+description = "필살 공약을 강화하지만 연설대 최대 체력이 감소합니다."
+effect_summary = "필살 공약 피해 +38% · 후보 체력 -15%"
+stat_multipliers = {"core_skill_damage": 1.38, "core_health": 0.85}
+
+[resource]
+script = ExtResource("1_catalog")
+expected_decrees_per_candidate = 3
+decrees = Array[ExtResource("2_decree")]([SubResource("Decree_royal_barrier"), SubResource("Decree_orthodox_army"), SubResource("Decree_royal_command"), SubResource("Decree_charmed_march"), SubResource("Decree_elegant_proxy_war"), SubResource("Decree_gaze_of_support"), SubResource("Decree_abyss_collapse"), SubResource("Decree_observation_network"), SubResource("Decree_forbidden_research"), SubResource("Decree_instant_rehire"), SubResource("Decree_mass_revival"), SubResource("Decree_afterlife_welfare"), SubResource("Decree_final_sentence"), SubResource("Decree_vanguard_mobilization"), SubResource("Decree_bell_of_judgment")])

@@ -1,0 +1,33 @@
+[gd_resource type="Resource" script_class="TowerFormationData" format=3]
+
+[ext_resource type="Script" path="res://resources/formation_cell_data.gd" id="1_aiasd"]
+[ext_resource type="Script" path="res://resources/tower_formation_data.gd" id="2_0snk2"]
+
+[sub_resource type="Resource" id="Resource_pe0sw"]
+script = ExtResource("1_aiasd")
+tower_id = &"mark"
+
+[sub_resource type="Resource" id="Resource_mgapt"]
+script = ExtResource("1_aiasd")
+offset = Vector2i(0, 1)
+tower_id = &"mark"
+
+[sub_resource type="Resource" id="Resource_qjx3g"]
+script = ExtResource("1_aiasd")
+offset = Vector2i(0, 2)
+tower_id = &"execute"
+
+[resource]
+script = ExtResource("2_0snk2")
+id = &"elite_hunt"
+display_name = "정예 사냥조"
+description = "서큐버스 둘이 세로 후열의 트롤 저격을 연속 증폭"
+cells = Array[ExtResource("1_aiasd")]([SubResource("Resource_pe0sw"), SubResource("Resource_mgapt"), SubResource("Resource_qjx3g")])
+role_tags = Array[StringName]([&"elite", &"amplify"])
+shape_class = &"LONG"
+placement_difficulty = 1
+base_weight = 1.05
+formation_score = 320
+raw_power_score = 320.0
+output_multiplier = 0.9375
+expected_power_score = 300.0

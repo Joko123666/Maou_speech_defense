@@ -1,0 +1,33 @@
+[gd_resource type="Resource" script_class="TowerFormationData" format=3]
+
+[ext_resource type="Script" path="res://resources/formation_cell_data.gd" id="1_uk6le"]
+[ext_resource type="Script" path="res://resources/tower_formation_data.gd" id="2_tpxns"]
+
+[sub_resource type="Resource" id="Resource_e35fn"]
+script = ExtResource("1_uk6le")
+tower_id = &"slow"
+
+[sub_resource type="Resource" id="Resource_2jlyp"]
+script = ExtResource("1_uk6le")
+offset = Vector2i(0, 1)
+tower_id = &"rubber_golem"
+
+[sub_resource type="Resource" id="Resource_nnh8n"]
+script = ExtResource("1_uk6le")
+offset = Vector2i(1, 1)
+tower_id = &"area"
+
+[resource]
+script = ExtResource("2_tpxns")
+id = &"abyss_compressed_bombardment"
+display_name = "심연 압축포격"
+description = "둔화와 집적으로 모은 적을 척탄으로 폭격"
+cells = Array[ExtResource("1_uk6le")]([SubResource("Resource_e35fn"), SubResource("Resource_2jlyp"), SubResource("Resource_nnh8n")])
+role_tags = Array[StringName]([&"control", &"aoe", &"knockback"])
+shape_class = &"BEND"
+placement_difficulty = 1
+base_weight = 1.1
+formation_score = 290
+raw_power_score = 290.0
+output_multiplier = 1.0344827586206897
+expected_power_score = 300.0

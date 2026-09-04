@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="TowerBranchData" format=3]
+
+[ext_resource type="Script" path="res://resources/tower_branch_data.gd" id="1_crp0g"]
+
+[resource]
+script = ExtResource("1_crp0g")
+id = &"chain_mark"
+display_name = "초전도 코어"
+description = "네트워크 형태는 유지하면서 연쇄 빔 공격속도를 집중 강화"
+tower_id = &"chain"
+branch_type = &"playstyle"
+level_4_modifiers = {
+"speed": 1.5
+}
+level_7_modifiers = {
+"speed": 2.0
+}

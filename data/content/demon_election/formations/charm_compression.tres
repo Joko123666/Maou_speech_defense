@@ -1,0 +1,33 @@
+[gd_resource type="Resource" script_class="TowerFormationData" format=3]
+
+[ext_resource type="Script" path="res://resources/formation_cell_data.gd" id="1_pu7e4"]
+[ext_resource type="Script" path="res://resources/tower_formation_data.gd" id="2_m6l0a"]
+
+[sub_resource type="Resource" id="Resource_jsqas"]
+script = ExtResource("1_pu7e4")
+tower_id = &"mark"
+
+[sub_resource type="Resource" id="Resource_7ax88"]
+script = ExtResource("1_pu7e4")
+offset = Vector2i(0, 1)
+tower_id = &"rubber_golem"
+
+[sub_resource type="Resource" id="Resource_l85yb"]
+script = ExtResource("1_pu7e4")
+offset = Vector2i(1, 1)
+tower_id = &"area"
+
+[resource]
+script = ExtResource("2_m6l0a")
+id = &"charm_compression"
+display_name = "매혹 압축조"
+description = "피해 증폭과 집적 뒤 범위 포격을 연계"
+cells = Array[ExtResource("1_pu7e4")]([SubResource("Resource_jsqas"), SubResource("Resource_7ax88"), SubResource("Resource_l85yb")])
+role_tags = Array[StringName]([&"amplify", &"aoe", &"knockback"])
+shape_class = &"BEND"
+placement_difficulty = 1
+base_weight = 1.05
+formation_score = 280
+raw_power_score = 280.0
+output_multiplier = 1.0714285714285714
+expected_power_score = 300.0

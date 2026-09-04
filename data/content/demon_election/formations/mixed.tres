@@ -1,0 +1,33 @@
+[gd_resource type="Resource" script_class="TowerFormationData" format=3]
+
+[ext_resource type="Script" path="res://resources/formation_cell_data.gd" id="1_kqcun"]
+[ext_resource type="Script" path="res://resources/tower_formation_data.gd" id="2_4w312"]
+
+[sub_resource type="Resource" id="Resource_t3pmw"]
+script = ExtResource("1_kqcun")
+tower_id = &"pierce"
+
+[sub_resource type="Resource" id="Resource_waaby"]
+script = ExtResource("1_kqcun")
+offset = Vector2i(1, 0)
+tower_id = &"rubber_golem"
+
+[sub_resource type="Resource" id="Resource_2hfos"]
+script = ExtResource("1_kqcun")
+offset = Vector2i(2, 0)
+tower_id = &"area"
+
+[resource]
+script = ExtResource("2_4w312")
+id = &"mixed"
+display_name = "삼종 사격선"
+description = "오크·고무골렘·해골이 가로 3칸 혼성 화망을 구성"
+cells = Array[ExtResource("1_kqcun")]([SubResource("Resource_t3pmw"), SubResource("Resource_waaby"), SubResource("Resource_2hfos")])
+role_tags = Array[StringName]([&"aoe", &"pierce", &"knockback"])
+shape_class = &"LONG"
+placement_difficulty = 1
+rarity = 2
+formation_score = 290
+raw_power_score = 290.0
+output_multiplier = 1.0344827586206897
+expected_power_score = 300.0

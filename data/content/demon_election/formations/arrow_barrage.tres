@@ -1,0 +1,26 @@
+[gd_resource type="Resource" script_class="TowerFormationData" format=3]
+
+[ext_resource type="Script" path="res://resources/formation_cell_data.gd" id="1_h1twt"]
+[ext_resource type="Script" path="res://resources/tower_formation_data.gd" id="2_txi3q"]
+
+[sub_resource type="Resource" id="Resource_5icbw"]
+script = ExtResource("1_h1twt")
+tower_id = &"pierce"
+
+[sub_resource type="Resource" id="Resource_neosu"]
+script = ExtResource("1_h1twt")
+offset = Vector2i(1, 0)
+tower_id = &"pierce"
+
+[resource]
+script = ExtResource("2_txi3q")
+id = &"arrow_barrage"
+display_name = "오크 장궁대"
+description = "두 오크 궁병이 가로 사격선에서 관통 화살을 연계"
+cells = Array[ExtResource("1_h1twt")]([SubResource("Resource_5icbw"), SubResource("Resource_neosu")])
+role_tags = Array[StringName]([&"pierce"])
+shape_class = &"LONG"
+formation_score = 200
+raw_power_score = 200.0
+output_multiplier = 1.5
+expected_power_score = 300.0

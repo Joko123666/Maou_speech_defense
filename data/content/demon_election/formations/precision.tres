@@ -1,0 +1,32 @@
+[gd_resource type="Resource" script_class="TowerFormationData" format=3]
+
+[ext_resource type="Script" path="res://resources/formation_cell_data.gd" id="1_ufh0h"]
+[ext_resource type="Script" path="res://resources/tower_formation_data.gd" id="2_14adg"]
+
+[sub_resource type="Resource" id="Resource_1nbs1"]
+script = ExtResource("1_ufh0h")
+tower_id = &"rapid"
+
+[sub_resource type="Resource" id="Resource_35sxo"]
+script = ExtResource("1_ufh0h")
+offset = Vector2i(0, 1)
+tower_id = &"pierce"
+
+[sub_resource type="Resource" id="Resource_laa86"]
+script = ExtResource("1_ufh0h")
+offset = Vector2i(0, 2)
+tower_id = &"pierce"
+
+[resource]
+script = ExtResource("2_14adg")
+id = &"precision"
+display_name = "기초 정밀진"
+description = "고블린 창병이 세로로 배치된 오크 궁병 둘의 사격선을 엄호"
+cells = Array[ExtResource("1_ufh0h")]([SubResource("Resource_1nbs1"), SubResource("Resource_35sxo"), SubResource("Resource_laa86")])
+role_tags = Array[StringName]([&"pierce", &"basic"])
+shape_class = &"LONG"
+placement_difficulty = 1
+formation_score = 280
+raw_power_score = 280.0
+output_multiplier = 1.0714285714285714
+expected_power_score = 300.0

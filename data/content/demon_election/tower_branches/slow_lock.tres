@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="TowerBranchData" format=3]
+
+[ext_resource type="Script" path="res://resources/tower_branch_data.gd" id="1_hc763"]
+
+[resource]
+script = ExtResource("1_hc763")
+id = &"slow_lock"
+display_name = "침식하는 기둥"
+description = "영향권을 주기적으로 침식해 짧은 기절을 부여하고 공식 난입 공통 제어 저항을 따름"
+tower_id = &"slow"
+branch_type = &"synergy"
+level_4_modifiers = {
+"erosion_cycle": 5,
+"erosion_stun": 0.32
+}
+level_7_modifiers = {
+"erosion_cycle": 4,
+"erosion_stun": 0.58
+}

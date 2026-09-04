@@ -1,0 +1,23 @@
+[gd_resource type="Resource" script_class="SpecializationBranchData" format=3]
+
+[ext_resource type="Script" path="res://resources/specialization_branch_data.gd" id="1_qqro4"]
+
+[resource]
+script = ExtResource("1_qqro4")
+id = &"gold_chain"
+owner_kind = &"cursor"
+owner_id = &"gold"
+display_name = "심연 재소환"
+level_4_description = "직접 이동을 제거하고 지정 위치로 재소환"
+level_7_description = "도착 지점에 피해와 둔화 충격"
+level_4_modifiers = {
+"jeomujeom_teleport": true,
+"movement": 0.01
+}
+level_7_modifiers = {
+"jeomujeom_arrival_damage": 1.2,
+"jeomujeom_arrival_slow": 0.5,
+"jeomujeom_teleport": true,
+"movement": 0.01
+}
+impact_keys = Array[StringName]([&"retainer", &"movement", &"area"])

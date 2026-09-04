@@ -1,0 +1,38 @@
+[gd_resource type="Resource" script_class="TowerFormationData" format=3]
+
+[ext_resource type="Script" path="res://resources/formation_cell_data.gd" id="1_0cwcc"]
+[ext_resource type="Script" path="res://resources/tower_formation_data.gd" id="2_py684"]
+
+[sub_resource type="Resource" id="Resource_qsjhs"]
+script = ExtResource("1_0cwcc")
+tower_id = &"knockback"
+
+[sub_resource type="Resource" id="Resource_82nu1"]
+script = ExtResource("1_0cwcc")
+offset = Vector2i(1, 0)
+tower_id = &"mark"
+
+[sub_resource type="Resource" id="Resource_n7f5v"]
+script = ExtResource("1_0cwcc")
+offset = Vector2i(0, 1)
+tower_id = &"knockback"
+
+[sub_resource type="Resource" id="Resource_vw0yc"]
+script = ExtResource("1_0cwcc")
+offset = Vector2i(0, 2)
+tower_id = &"area"
+
+[resource]
+script = ExtResource("2_py684")
+id = &"compressed_mission"
+display_name = "압축 포교진"
+description = "KI-Ⅱ 둘과 서큐버스가 해골 척탄병의 ㄴ자 포격선을 지원"
+cells = Array[ExtResource("1_0cwcc")]([SubResource("Resource_qsjhs"), SubResource("Resource_82nu1"), SubResource("Resource_n7f5v"), SubResource("Resource_vw0yc")])
+role_tags = Array[StringName]([&"contact", &"amplify", &"aoe"])
+shape_class = &"BEND"
+placement_difficulty = 1
+base_weight = 0.9
+formation_score = 370
+raw_power_score = 370.0
+output_multiplier = 0.8108108108108109
+expected_power_score = 300.0

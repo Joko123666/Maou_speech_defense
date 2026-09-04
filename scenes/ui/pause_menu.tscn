@@ -1,0 +1,241 @@
+[gd_scene load_steps=8 format=3]
+
+[ext_resource type="Script" path="res://scripts/ui/pause_menu.gd" id="1_pause"]
+[ext_resource type="PackedScene" path="res://scenes/ui/components/modal_shell.tscn" id="2_modal"]
+
+[sub_resource type="StyleBoxFlat" id="StyleButton"]
+bg_color = Color(0.045, 0.105, 0.135, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.23, 0.46, 0.53, 0.9)
+corner_radius_top_left = 9
+corner_radius_top_right = 9
+corner_radius_bottom_right = 9
+corner_radius_bottom_left = 9
+
+[sub_resource type="StyleBoxFlat" id="StyleButtonHover"]
+bg_color = Color(0.07, 0.29, 0.27, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.39, 0.94, 0.77, 1)
+corner_radius_top_left = 9
+corner_radius_top_right = 9
+corner_radius_bottom_right = 9
+corner_radius_bottom_left = 9
+
+[sub_resource type="StyleBoxFlat" id="StyleQuit"]
+bg_color = Color(0.18, 0.065, 0.085, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.65, 0.24, 0.3, 0.9)
+corner_radius_top_left = 9
+corner_radius_top_right = 9
+corner_radius_bottom_right = 9
+corner_radius_bottom_left = 9
+
+[sub_resource type="StyleBoxFlat" id="StyleQuitHover"]
+bg_color = Color(0.34, 0.08, 0.12, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(1, 0.4, 0.46, 1)
+corner_radius_top_left = 9
+corner_radius_top_right = 9
+corner_radius_bottom_right = 9
+corner_radius_bottom_left = 9
+
+[sub_resource type="StyleBoxFlat" id="StyleOption"]
+bg_color = Color(0.035, 0.082, 0.105, 0.96)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.18, 0.37, 0.43, 0.8)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+content_margin_left = 16.0
+content_margin_right = 16.0
+
+[node name="PauseMenu" instance=ExtResource("2_modal")]
+script = ExtResource("1_pause")
+
+[node name="MainPage" type="VBoxContainer" parent="SafeArea/Center/Panel/Layout/BodyScroll/Body"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_constants/separation = 12
+
+[node name="Eyebrow" type="Label" parent="SafeArea/Center/Panel/Layout/BodyScroll/Body/MainPage"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.34, 0.86, 0.72, 1)
+theme_override_font_sizes/font_size = 13
+text = "DEFENSE PROTOCOL / PAUSED"
+horizontal_alignment = 1
+
+[node name="Title" type="Label" parent="SafeArea/Center/Panel/Layout/BodyScroll/Body/MainPage"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.92, 0.98, 0.98, 1)
+theme_override_font_sizes/font_size = 36
+text = "일시정지"
+horizontal_alignment = 1
+
+[node name="Status" type="Label" parent="SafeArea/Center/Panel/Layout/BodyScroll/Body/MainPage"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0.62, 0.73, 0.77, 1)
+theme_override_font_sizes/font_size = 15
+text = "전투 시뮬레이션이 정지되었습니다"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ContinueButton" type="Button" parent="SafeArea/Center/Panel/Layout/BodyScroll/Body/MainPage"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 58)
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleButton")
+theme_override_styles/hover = SubResource("StyleButtonHover")
+theme_override_styles/pressed = SubResource("StyleButtonHover")
+theme_override_styles/focus = SubResource("StyleButtonHover")
+text = "계속하기"
+
+[node name="OptionsButton" type="Button" parent="SafeArea/Center/Panel/Layout/BodyScroll/Body/MainPage"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 58)
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleButton")
+theme_override_styles/hover = SubResource("StyleButtonHover")
+theme_override_styles/pressed = SubResource("StyleButtonHover")
+theme_override_styles/focus = SubResource("StyleButtonHover")
+text = "옵션"
+
+[node name="QuitButton" type="Button" parent="SafeArea/Center/Panel/Layout/BodyScroll/Body/MainPage"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 58)
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.74, 0.76, 1)
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleQuit")
+theme_override_styles/hover = SubResource("StyleQuitHover")
+theme_override_styles/pressed = SubResource("StyleQuitHover")
+theme_override_styles/focus = SubResource("StyleQuitHover")
+text = "게임 종료"
+
+[node name="QuitHint" type="Label" parent="SafeArea/Center/Panel/Layout/BodyScroll/Body/MainPage"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.52, 0.61, 0.65, 1)
+theme_override_font_sizes/font_size = 12
+text = "게임 종료 시 현재 출격을 중단하고 타이틀로 돌아갑니다"
+horizontal_alignment = 1
+
+[node name="Shortcut" type="Label" parent="SafeArea/Center/Panel/Layout/BodyScroll/Body/MainPage"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.42, 0.55, 0.6, 1)
+theme_override_font_sizes/font_size = 12
+text = "ESC  계속하기"
+horizontal_alignment = 1
+
+[node name="OptionsPage" type="VBoxContainer" parent="SafeArea/Center/Panel/Layout/BodyScroll/Body"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+theme_override_constants/separation = 12
+
+[node name="Eyebrow" type="Label" parent="SafeArea/Center/Panel/Layout/BodyScroll/Body/OptionsPage"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.34, 0.86, 0.72, 1)
+theme_override_font_sizes/font_size = 13
+text = "PAUSE MENU / OPTIONS"
+horizontal_alignment = 1
+
+[node name="Title" type="Label" parent="SafeArea/Center/Panel/Layout/BodyScroll/Body/OptionsPage"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.92, 0.98, 0.98, 1)
+theme_override_font_sizes/font_size = 32
+text = "옵션"
+horizontal_alignment = 1
+
+[node name="Description" type="Label" parent="SafeArea/Center/Panel/Layout/BodyScroll/Body/OptionsPage"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.6, 0.71, 0.75, 1)
+text = "전투 연출 설정은 즉시 적용됩니다"
+horizontal_alignment = 1
+
+[node name="SoundPanel" type="PanelContainer" parent="SafeArea/Center/Panel/Layout/BodyScroll/Body/OptionsPage"]
+custom_minimum_size = Vector2(0, 66)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleOption")
+
+[node name="SoundToggle" type="CheckButton" parent="SafeArea/Center/Panel/Layout/BodyScroll/Body/OptionsPage/SoundPanel"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 17
+text = "효과음"
+button_pressed = true
+
+[node name="ShakePanel" type="PanelContainer" parent="SafeArea/Center/Panel/Layout/BodyScroll/Body/OptionsPage"]
+custom_minimum_size = Vector2(0, 66)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleOption")
+
+[node name="ShakeToggle" type="CheckButton" parent="SafeArea/Center/Panel/Layout/BodyScroll/Body/OptionsPage/ShakePanel"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 17
+text = "화면 흔들림"
+button_pressed = true
+
+[node name="FlashPanel" type="PanelContainer" parent="SafeArea/Center/Panel/Layout/BodyScroll/Body/OptionsPage"]
+custom_minimum_size = Vector2(0, 66)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleOption")
+
+[node name="FlashToggle" type="CheckButton" parent="SafeArea/Center/Panel/Layout/BodyScroll/Body/OptionsPage/FlashPanel"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 17
+text = "화면 섬광"
+button_pressed = true
+
+[node name="ReducedMotionPanel" type="PanelContainer" parent="SafeArea/Center/Panel/Layout/BodyScroll/Body/OptionsPage"]
+custom_minimum_size = Vector2(0, 66)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleOption")
+
+[node name="ReducedMotionToggle" type="CheckButton" parent="SafeArea/Center/Panel/Layout/BodyScroll/Body/OptionsPage/ReducedMotionPanel"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 17
+tooltip_text = "카드 등장, 결과 카운터, HUD 강조 움직임과 화면 흔들림을 즉시 줄입니다."
+text = "감소 모션"
+
+[node name="OptionsSpacer" type="Control" parent="SafeArea/Center/Panel/Layout/BodyScroll/Body/OptionsPage"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="OptionsBackButton" type="Button" parent="SafeArea/Center/Panel/Layout/BodyScroll/Body/OptionsPage"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 56)
+layout_mode = 2
+theme_override_font_sizes/font_size = 18
+theme_override_styles/normal = SubResource("StyleButton")
+theme_override_styles/hover = SubResource("StyleButtonHover")
+theme_override_styles/pressed = SubResource("StyleButtonHover")
+theme_override_styles/focus = SubResource("StyleButtonHover")
+text = "메뉴로 돌아가기"
+
+[node name="Shortcut" type="Label" parent="SafeArea/Center/Panel/Layout/BodyScroll/Body/OptionsPage"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.42, 0.55, 0.6, 1)
+theme_override_font_sizes/font_size = 12
+text = "ESC  메뉴로 돌아가기"
+horizontal_alignment = 1

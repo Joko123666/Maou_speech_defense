@@ -1,0 +1,21 @@
+[gd_resource type="Resource" script_class="SpecializationBranchData" format=3]
+
+[ext_resource type="Script" path="res://resources/specialization_branch_data.gd" id="1_k3b12"]
+
+[resource]
+script = ExtResource("1_k3b12")
+id = &"silver_weakness"
+owner_kind = &"cursor"
+owner_id = &"silver"
+display_name = "긴 채찍"
+level_4_description = "채찍 사거리 +40% · 가장자리 적 넉백 +55%"
+level_7_description = "사거리 +65% · 가장자리 넉백 +90%"
+level_4_modifiers = {
+"area": 1.4,
+"given_edge_knockback": 1.55
+}
+level_7_modifiers = {
+"area": 1.65,
+"given_edge_knockback": 1.9
+}
+impact_keys = Array[StringName]([&"retainer", &"area", &"control"])

@@ -1,0 +1,33 @@
+[gd_resource type="Resource" script_class="TowerFormationData" format=3]
+
+[ext_resource type="Script" path="res://resources/formation_cell_data.gd" id="1_uctlw"]
+[ext_resource type="Script" path="res://resources/tower_formation_data.gd" id="2_sqnm1"]
+
+[sub_resource type="Resource" id="Resource_lsygk"]
+script = ExtResource("1_uctlw")
+tower_id = &"chain"
+
+[sub_resource type="Resource" id="Resource_ngcax"]
+script = ExtResource("1_uctlw")
+offset = Vector2i(1, 0)
+tower_id = &"chain"
+
+[sub_resource type="Resource" id="Resource_q2kko"]
+script = ExtResource("1_uctlw")
+offset = Vector2i(0, 1)
+tower_id = &"rubber_golem"
+
+[resource]
+script = ExtResource("2_sqnm1")
+id = &"conduction_concentration"
+display_name = "전도 압축진"
+description = "두 전도탑 사이로 고무골렘이 적을 모으는 굴곡형 연결망"
+cells = Array[ExtResource("1_uctlw")]([SubResource("Resource_lsygk"), SubResource("Resource_ngcax"), SubResource("Resource_q2kko")])
+role_tags = Array[StringName]([&"network", &"knockback"])
+shape_class = &"BEND"
+placement_difficulty = 1
+base_weight = 1.05
+formation_score = 250
+raw_power_score = 250.0
+output_multiplier = 1.2
+expected_power_score = 300.0

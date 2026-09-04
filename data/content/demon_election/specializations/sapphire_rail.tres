@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="SpecializationBranchData" format=3]
+
+[ext_resource type="Script" path="res://resources/specialization_branch_data.gd" id="1_jkadg"]
+
+[resource]
+script = ExtResource("1_jkadg")
+id = &"sapphire_rail"
+owner_kind = &"core"
+owner_id = &"sapphire"
+display_name = "좌표 레일"
+level_4_description = "핵과 목표지점을 잇는 대역의 적 공격"
+level_7_description = "좌표 레일 폭 증가 · 전체 다중 관통"
+level_4_modifiers = {
+"coordinate_rail": true
+}
+level_7_modifiers = {
+"coordinate_rail": true,
+"rail_width": 96.0
+}
+impact_keys = Array[StringName]([&"core", &"cursor", &"area"])

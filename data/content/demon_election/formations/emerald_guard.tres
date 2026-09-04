@@ -1,0 +1,41 @@
+[gd_resource type="Resource" script_class="TowerFormationData" format=3]
+
+[ext_resource type="Script" path="res://resources/formation_cell_data.gd" id="1_xfqa5"]
+[ext_resource type="Script" path="res://resources/tower_formation_data.gd" id="2_x62gj"]
+
+[sub_resource type="Resource" id="Resource_rqt1e"]
+script = ExtResource("1_xfqa5")
+tower_id = &"emerald_guardian"
+
+[sub_resource type="Resource" id="Resource_tlqjc"]
+script = ExtResource("1_xfqa5")
+offset = Vector2i(0, 1)
+tower_id = &"emerald_guardian"
+
+[sub_resource type="Resource" id="Resource_m7l0l"]
+script = ExtResource("1_xfqa5")
+offset = Vector2i(0, 2)
+tower_id = &"emerald_guardian"
+
+[sub_resource type="Resource" id="Resource_mljay"]
+script = ExtResource("1_xfqa5")
+offset = Vector2i(0, 3)
+tower_id = &"emerald_guardian"
+
+[resource]
+script = ExtResource("2_x62gj")
+id = &"emerald_guard"
+display_name = "파르태손 왕실 친위대"
+description = "세로 4칸을 지키는 왕실 정예 친위대"
+cells = Array[ExtResource("1_xfqa5")]([SubResource("Resource_rqt1e"), SubResource("Resource_tlqjc"), SubResource("Resource_m7l0l"), SubResource("Resource_mljay")])
+role_tags = Array[StringName]([&"unique", &"emerald", &"royal_guard"])
+shape_class = &"LONG"
+placement_difficulty = 2
+rarity = 3
+formation_score = 800
+is_guard = true
+candidate_id = &"emerald"
+raw_power_score = 800.0
+output_multiplier = 0.45
+expected_power_score = 360.0
+unique_core_id = &"emerald"

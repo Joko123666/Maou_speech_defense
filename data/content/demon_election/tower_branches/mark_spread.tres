@@ -1,0 +1,21 @@
+[gd_resource type="Resource" script_class="TowerBranchData" format=3]
+
+[ext_resource type="Script" path="res://resources/tower_branch_data.gd" id="1_jx8ah"]
+
+[resource]
+script = ExtResource("1_jx8ah")
+id = &"mark_spread"
+display_name = "교대근무"
+description = "주술 시전속도와 지속시간을 높여 여러 적에게 빠르게 취약을 순환"
+tower_id = &"mark"
+branch_type = &"playstyle"
+level_4_modifiers = {
+"mark": 0.22,
+"mark_duration": 6.0,
+"speed": 1.8
+}
+level_7_modifiers = {
+"mark": 0.25,
+"mark_duration": 7.5,
+"speed": 2.5
+}

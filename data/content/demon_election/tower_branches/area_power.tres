@@ -1,0 +1,21 @@
+[gd_resource type="Resource" script_class="TowerBranchData" format=3]
+
+[ext_resource type="Script" path="res://resources/tower_branch_data.gd" id="1_6mpqm"]
+
+[resource]
+script = ExtResource("1_6mpqm")
+id = &"area_power"
+display_name = "화염병 배치"
+description = "착탄 지점에 화상 장판을 남기고 같은 장판은 각 적에게 한 번만 화상을 부여"
+tower_id = &"area"
+branch_type = &"role"
+level_4_modifiers = {
+"fire_zone_burn_ratio": 0.12,
+"fire_zone_duration": 3.5,
+"fire_zone_radius": 72.0
+}
+level_7_modifiers = {
+"fire_zone_burn_ratio": 0.18,
+"fire_zone_duration": 5.0,
+"fire_zone_radius": 92.0
+}

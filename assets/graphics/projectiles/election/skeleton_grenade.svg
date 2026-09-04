@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="192" height="128" viewBox="0 0 192 128">
+  <defs>
+    <radialGradient id="fire"><stop stop-color="#fff18a"/><stop offset="0.45" stop-color="#ff9d32"/><stop offset="1" stop-color="#b93422"/></radialGradient>
+    <radialGradient id="bone"><stop stop-color="#fff4cf"/><stop offset="0.72" stop-color="#d4bd87"/><stop offset="1" stop-color="#6e593f"/></radialGradient>
+  </defs>
+  <path d="M121 32c17-24 32-20 44-10-11 2-14 9-9 19-15-6-23-3-31 5z" fill="url(#fire)" stroke="#431e16" stroke-width="6" stroke-linejoin="round"/>
+  <path d="M116 43l25-22" stroke="#6c4928" stroke-width="9" stroke-linecap="round"/>
+  <circle cx="83" cy="72" r="48" fill="#17191b" stroke="#533c2b" stroke-width="8"/>
+  <circle cx="83" cy="72" r="40" fill="#2a2c2e" stroke="#d49b3e" stroke-width="4" stroke-dasharray="10 8"/>
+  <path d="M56 59c0-17 12-28 27-28s28 11 28 28c0 11-5 17-12 23v21H68V82c-7-6-12-12-12-23z" fill="url(#bone)" stroke="#4b3f32" stroke-width="5"/>
+  <circle cx="72" cy="61" r="7" fill="#27231d"/><circle cx="95" cy="61" r="7" fill="#27231d"/>
+  <path d="M83 68l-7 12h14zM69 90h29" fill="none" stroke="#5d4c38" stroke-width="5" stroke-linecap="round"/>
+</svg>

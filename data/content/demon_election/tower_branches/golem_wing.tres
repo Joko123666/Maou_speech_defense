@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="TowerBranchData" format=3]
+
+[ext_resource type="Script" path="res://resources/tower_branch_data.gd" id="1_1884w"]
+
+[resource]
+script = ExtResource("1_1884w")
+id = &"golem_wing"
+display_name = "학익진"
+description = "넉백 방향을 중심 집적으로 바꿔 범위 공격을 지원"
+tower_id = &"rubber_golem"
+branch_type = &"synergy"
+level_4_modifiers = {
+"area": 1.15,
+"gather": 0.55
+}
+level_7_modifiers = {
+"area": 1.35,
+"gather": 0.8
+}

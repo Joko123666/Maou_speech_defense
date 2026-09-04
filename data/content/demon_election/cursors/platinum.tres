@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="CursorData" format=3]
+
+[ext_resource type="Script" path="res://resources/cursor_data.gd" id="1_71ri2"]
+[ext_resource type="Texture2D" path="res://assets/graphics/cursors/platinum.png" id="2_xenva"]
+
+[resource]
+script = ExtResource("1_71ri2")
+id = &"platinum"
+display_name = "사령기사 주그디에드 야그니야"
+description = "기마 참격과 후보 액티브 합동 돌격, 재구성으로 전장을 관리하는 기동형 사령기사"
+attack_type = &"heavy"
+damage = 68.0
+attack_interval = 0.98
+attack_radius = 56.0
+knockback = 48.0
+collection_radius = 112.0
+movement_speed = 220.0
+color = Color(0.84705883, 0.9372549, 1, 1)
+texture = ExtResource("2_xenva")

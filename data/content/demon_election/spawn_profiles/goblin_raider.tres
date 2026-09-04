@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="EnemySpawnProfileData" format=3]
+
+[ext_resource type="Script" path="res://resources/enemy_spawn_profile_data.gd" id="1_ir4so"]
+
+[resource]
+script = ExtResource("1_ir4so")
+enemy_id = &"goblin_raider"
+spawn_cost = 5.0
+role_tags = Array[StringName]([&"basic", &"fast"])
+group_min = 2
+group_max = 3

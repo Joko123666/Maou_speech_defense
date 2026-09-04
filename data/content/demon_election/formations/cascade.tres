@@ -1,0 +1,27 @@
+[gd_resource type="Resource" script_class="TowerFormationData" format=3]
+
+[ext_resource type="Script" path="res://resources/formation_cell_data.gd" id="1_wi6ux"]
+[ext_resource type="Script" path="res://resources/tower_formation_data.gd" id="2_j5lua"]
+
+[sub_resource type="Resource" id="Resource_1w4b1"]
+script = ExtResource("1_wi6ux")
+tower_id = &"chain"
+
+[sub_resource type="Resource" id="Resource_dta8u"]
+script = ExtResource("1_wi6ux")
+offset = Vector2i(1, 0)
+tower_id = &"chain"
+
+[resource]
+script = ExtResource("2_j5lua")
+id = &"cascade"
+display_name = "최소 전도망"
+description = "두 전도탑이 최소 연결망을 형성"
+cells = Array[ExtResource("1_wi6ux")]([SubResource("Resource_1w4b1"), SubResource("Resource_dta8u")])
+role_tags = Array[StringName]([&"network", &"status"])
+shape_class = &"LONG"
+base_weight = 1.2
+formation_score = 180
+raw_power_score = 180.0
+output_multiplier = 1.6666666666666667
+expected_power_score = 300.0

@@ -1,0 +1,32 @@
+[gd_resource type="Resource" script_class="TowerFormationData" format=3]
+
+[ext_resource type="Script" path="res://resources/formation_cell_data.gd" id="1_suwty"]
+[ext_resource type="Script" path="res://resources/tower_formation_data.gd" id="2_87jyb"]
+
+[sub_resource type="Resource" id="Resource_q3rw6"]
+script = ExtResource("1_suwty")
+tower_id = &"mark"
+
+[sub_resource type="Resource" id="Resource_iefo0"]
+script = ExtResource("1_suwty")
+offset = Vector2i(1, 0)
+tower_id = &"pierce"
+
+[sub_resource type="Resource" id="Resource_78yns"]
+script = ExtResource("1_suwty")
+offset = Vector2i(0, 1)
+tower_id = &"pierce"
+
+[resource]
+script = ExtResource("2_87jyb")
+id = &"weakpoint_blockade"
+display_name = "약점 봉쇄진"
+description = "서큐버스가 오크 궁병 둘의 관통 사격에 취약 표식을 제공"
+cells = Array[ExtResource("1_suwty")]([SubResource("Resource_q3rw6"), SubResource("Resource_iefo0"), SubResource("Resource_78yns")])
+role_tags = Array[StringName]([&"amplify", &"pierce"])
+shape_class = &"BEND"
+placement_difficulty = 1
+formation_score = 290
+raw_power_score = 290.0
+output_multiplier = 1.0344827586206897
+expected_power_score = 300.0

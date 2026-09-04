@@ -1,0 +1,102 @@
+[gd_scene load_steps=21 format=3]
+
+[ext_resource type="Script" path="res://scripts/game/game_controller.gd" id="1_game"]
+[ext_resource type="PackedScene" path="res://scenes/battlefield/battlefield.tscn" id="2_battlefield"]
+[ext_resource type="PackedScene" path="res://scenes/actors/core.tscn" id="3_core"]
+[ext_resource type="PackedScene" path="res://scenes/actors/target_cursor.tscn" id="4_cursor"]
+[ext_resource type="Script" path="res://scripts/battlefield/enemy_spawner.gd" id="5_spawner"]
+[ext_resource type="PackedScene" path="res://scenes/actors/enemy.tscn" id="6_enemy"]
+[ext_resource type="PackedScene" path="res://scenes/ui/hud.tscn" id="7_hud"]
+[ext_resource type="PackedScene" path="res://scenes/pickups/experience_orb.tscn" id="9_orb"]
+[ext_resource type="Script" path="res://scripts/progression/loadout_manager.gd" id="10_loadout"]
+[ext_resource type="Script" path="res://scripts/progression/experience_manager.gd" id="11_experience"]
+[ext_resource type="PackedScene" path="res://scenes/ui/level_up_panel.tscn" id="12_levelup"]
+[ext_resource type="Script" path="res://scripts/game/run_metrics.gd" id="13_metrics"]
+[ext_resource type="Script" path="res://scripts/effects/screen_effects.gd" id="14_screenfx"]
+[ext_resource type="PackedScene" path="res://scenes/ui/pause_menu.tscn" id="15_pause"]
+[ext_resource type="Script" path="res://scripts/combat/combat_range_overlay.gd" id="16_range_overlay"]
+[ext_resource type="Script" path="res://scripts/progression/experience_reward_service.gd" id="17_experience_rewards"]
+[ext_resource type="PackedScene" path="res://scenes/ui/artifact_resolution_panel.tscn" id="18_artifact_resolution"]
+[ext_resource type="PackedScene" path="res://scenes/ui/components/unit_info_popover.tscn" id="19_unit_info"]
+[ext_resource type="Script" path="res://scripts/presentation/audience_reaction_stage.gd" id="20_audience_stage"]
+[ext_resource type="Texture2D" path="res://assets/graphics/audience/demon_spectator_ribbon_v019.png" id="21_audience_crowd"]
+
+[node name="Game" type="Node2D"]
+script = ExtResource("1_game")
+enemy_scene = ExtResource("6_enemy")
+
+[node name="Battlefield" parent="." instance=ExtResource("2_battlefield")]
+
+[node name="AudienceStage" type="Node2D" parent="."]
+z_index = 1
+script = ExtResource("20_audience_stage")
+crowd_texture = ExtResource("21_audience_crowd")
+
+[node name="RangeOverlay" type="Node2D" parent="."]
+script = ExtResource("16_range_overlay")
+
+[node name="Enemies" type="Node2D" parent="."]
+z_index = 2
+
+[node name="TowerColumns" type="Node2D" parent="."]
+
+[node name="Summons" type="Node2D" parent="."]
+z_index = 4
+
+[node name="Pickups" type="Node2D" parent="."]
+
+[node name="ExperienceRewards" type="Node" parent="Pickups"]
+script = ExtResource("17_experience_rewards")
+experience_orb_scene = ExtResource("9_orb")
+
+[node name="Effects" type="Node2D" parent="."]
+z_index = 6
+
+[node name="ScreenEffects" type="Node" parent="."]
+process_mode = 3
+script = ExtResource("14_screenfx")
+[node name="Camera2D" type="Camera2D" parent="ScreenEffects"]
+position = Vector2(640, 360)
+enabled = true
+ignore_rotation = false
+[node name="FlashLayer" type="CanvasLayer" parent="ScreenEffects"]
+layer = 9
+[node name="FlashRect" type="ColorRect" parent="ScreenEffects/FlashLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(1, 1, 1, 0)
+
+[node name="Core" parent="." instance=ExtResource("3_core")]
+z_index = 3
+
+[node name="TargetCursor" parent="." instance=ExtResource("4_cursor")]
+z_index = 5
+
+[node name="EnemySpawner" type="Node" parent="."]
+script = ExtResource("5_spawner")
+
+[node name="LoadoutManager" type="Node" parent="."]
+script = ExtResource("10_loadout")
+
+[node name="ExperienceManager" type="Node" parent="."]
+script = ExtResource("11_experience")
+
+[node name="RunMetrics" type="Node" parent="."]
+script = ExtResource("13_metrics")
+
+[node name="UI" type="CanvasLayer" parent="."]
+layer = 10
+
+[node name="HUD" parent="UI" instance=ExtResource("7_hud")]
+
+[node name="UnitInfoPopover" parent="UI" instance=ExtResource("19_unit_info")]
+
+[node name="LevelUpPanel" parent="UI" instance=ExtResource("12_levelup")]
+
+[node name="ArtifactResolutionPanel" parent="UI" instance=ExtResource("18_artifact_resolution")]
+
+[node name="PauseMenu" parent="UI" instance=ExtResource("15_pause")]

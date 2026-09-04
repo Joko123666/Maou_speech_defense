@@ -1,0 +1,27 @@
+[gd_resource type="Resource" script_class="TowerFormationData" format=3]
+
+[ext_resource type="Script" path="res://resources/formation_cell_data.gd" id="1_r8mei"]
+[ext_resource type="Script" path="res://resources/tower_formation_data.gd" id="2_btrue"]
+
+[sub_resource type="Resource" id="Resource_f6s16"]
+script = ExtResource("1_r8mei")
+tower_id = &"execute"
+
+[sub_resource type="Resource" id="Resource_tktv8"]
+script = ExtResource("1_r8mei")
+offset = Vector2i(0, 1)
+tower_id = &"rubber_golem"
+
+[resource]
+script = ExtResource("2_btrue")
+id = &"recoil_hunt"
+display_name = "반동 사냥조"
+description = "고무골렘이 강적을 트롤의 조준선으로 밀어냄"
+cells = Array[ExtResource("1_r8mei")]([SubResource("Resource_f6s16"), SubResource("Resource_tktv8")])
+role_tags = Array[StringName]([&"elite", &"knockback"])
+shape_class = &"LONG"
+base_weight = 1.05
+formation_score = 210
+raw_power_score = 210.0
+output_multiplier = 1.4285714285714286
+expected_power_score = 300.0

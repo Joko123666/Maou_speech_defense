@@ -1,0 +1,22 @@
+[gd_resource type="Resource" script_class="SpecializationBranchData" format=3]
+
+[ext_resource type="Script" path="res://resources/specialization_branch_data.gd" id="1_3ivc7"]
+
+[resource]
+script = ExtResource("1_3ivc7")
+id = &"iron_relay"
+owner_kind = &"cursor"
+owner_id = &"iron"
+display_name = "회오리 검무"
+level_4_description = "4번째 검격마다 주변을 휩쓰는 회오리 참격"
+level_7_description = "회오리 뒤 전방 마무리 참격 추가"
+level_4_modifiers = {
+"kanda_whirlwind_cycle": 4,
+"kanda_whirlwind_damage": 0.7
+}
+level_7_modifiers = {
+"kanda_final_slash": true,
+"kanda_whirlwind_cycle": 4,
+"kanda_whirlwind_damage": 1.0
+}
+impact_keys = Array[StringName]([&"retainer", &"area", &"damage"])

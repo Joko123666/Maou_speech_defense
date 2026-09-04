@@ -1,0 +1,21 @@
+[gd_resource type="Resource" script_class="TowerBranchData" format=3]
+
+[ext_resource type="Script" path="res://resources/tower_branch_data.gd" id="1_iqst2"]
+
+[resource]
+script = ExtResource("1_iqst2")
+id = &"golem_elastic"
+display_name = "고탄성 소재"
+description = "넉백이 강해지고 공격 반동으로 활동 위치가 흔들림"
+tower_id = &"rubber_golem"
+branch_type = &"role"
+level_4_modifiers = {
+"push": 1.7,
+"self_recoil": 32.0,
+"speed": 1.15
+}
+level_7_modifiers = {
+"push": 2.3,
+"self_recoil": 48.0,
+"speed": 1.3
+}

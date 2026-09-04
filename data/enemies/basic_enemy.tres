@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="EnemyData" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://resources/enemy_data.gd" id="1_enemy"]
+
+[resource]
+script = ExtResource("1_enemy")
+id = &"basic"
+display_name = "기본 적"
+max_health = 36.0
+move_speed = 72.0
+core_damage = 10.0
+experience_value = 1.0
+body_color = Color(0.902, 0.373, 0.361, 1)
+radius = 18.0

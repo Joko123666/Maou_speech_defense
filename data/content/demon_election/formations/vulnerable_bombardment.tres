@@ -1,0 +1,27 @@
+[gd_resource type="Resource" script_class="TowerFormationData" format=3]
+
+[ext_resource type="Script" path="res://resources/formation_cell_data.gd" id="1_c2svv"]
+[ext_resource type="Script" path="res://resources/tower_formation_data.gd" id="2_7puia"]
+
+[sub_resource type="Resource" id="Resource_5gjnn"]
+script = ExtResource("1_c2svv")
+tower_id = &"mark"
+
+[sub_resource type="Resource" id="Resource_3n6i8"]
+script = ExtResource("1_c2svv")
+offset = Vector2i(0, 1)
+tower_id = &"area"
+
+[resource]
+script = ExtResource("2_7puia")
+id = &"vulnerable_bombardment"
+display_name = "취약 포격조"
+description = "취약 표식 위에 척탄 범위 피해를 집중"
+cells = Array[ExtResource("1_c2svv")]([SubResource("Resource_5gjnn"), SubResource("Resource_3n6i8")])
+role_tags = Array[StringName]([&"amplify", &"aoe"])
+shape_class = &"LONG"
+base_weight = 1.1
+formation_score = 210
+raw_power_score = 210.0
+output_multiplier = 1.4285714285714286
+expected_power_score = 300.0

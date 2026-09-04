@@ -1,0 +1,21 @@
+[gd_resource type="Resource" script_class="TowerBranchData" format=3]
+
+[ext_resource type="Script" path="res://resources/tower_branch_data.gd" id="1_26gun"]
+
+[resource]
+script = ExtResource("1_26gun")
+id = &"push_force"
+display_name = "터보엔진 DEATH-3000 장착"
+description = "톱 회전속도를 대폭 높이되 일정 공격마다 과열되어 잠시 자동 정지"
+tower_id = &"knockback"
+branch_type = &"role"
+level_4_modifiers = {
+"overheat_cycle": 7,
+"overheat_duration": 1.1,
+"speed": 2.35
+}
+level_7_modifiers = {
+"overheat_cycle": 6,
+"overheat_duration": 0.9,
+"speed": 3.2
+}

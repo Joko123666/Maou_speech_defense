@@ -1,0 +1,24 @@
+[gd_resource type="Resource" script_class="SpecializationBranchData" format=3]
+
+[ext_resource type="Script" path="res://resources/specialization_branch_data.gd" id="1_d6vxj"]
+
+[resource]
+script = ExtResource("1_d6vxj")
+id = &"vanguard_march"
+owner_kind = &"cursor"
+owner_id = &"vanguard"
+display_name = "사신 소환진"
+level_4_description = "후보 액티브 시 현재 인원을 스냅샷하고 전원 희생해 사신 소환"
+level_7_description = "사신 피해·넉백·처형선 증가"
+level_4_modifiers = {
+"vanguard_reaper_circle": true,
+"vanguard_reaper_damage": 2.2,
+"vanguard_reaper_knockback": 95.0
+}
+level_7_modifiers = {
+"vanguard_execute_bonus": 0.06,
+"vanguard_reaper_circle": true,
+"vanguard_reaper_damage": 3.2,
+"vanguard_reaper_knockback": 140.0
+}
+impact_keys = Array[StringName]([&"retainer", &"squad", &"active"])

@@ -1,0 +1,21 @@
+[gd_resource type="Resource" script_class="TowerBranchData" format=3]
+
+[ext_resource type="Script" path="res://resources/tower_branch_data.gd" id="1_txq0b"]
+
+[resource]
+script = ExtResource("1_txq0b")
+id = &"area_shrapnel"
+display_name = "뼈뭉치 폭탄 개발"
+description = "착탄 뒤 무작위 방향으로 적중 상한이 있는 일반 뼈 투사체를 확산"
+tower_id = &"area"
+branch_type = &"synergy"
+level_4_modifiers = {
+"bone_shard_count": 5,
+"bone_shard_damage": 0.3,
+"bone_shard_range": 150.0
+}
+level_7_modifiers = {
+"bone_shard_count": 8,
+"bone_shard_damage": 0.38,
+"bone_shard_range": 190.0
+}

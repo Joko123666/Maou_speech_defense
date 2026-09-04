@@ -1,0 +1,21 @@
+[gd_resource type="Resource" script_class="SpecializationBranchData" format=3]
+
+[ext_resource type="Script" path="res://resources/specialization_branch_data.gd" id="1_t3mvh"]
+
+[resource]
+script = ExtResource("1_t3mvh")
+id = &"vanguard_impact"
+owner_kind = &"cursor"
+owner_id = &"vanguard"
+display_name = "대부대 편성"
+level_4_description = "최대 인원 +2 · 인원 손실당 화력 감소 완화"
+level_7_description = "최대 인원 +3 · 손실 페널티 추가 완화"
+level_4_modifiers = {
+"vanguard_loss_penalty": 0.72,
+"vanguard_member_bonus": 2
+}
+level_7_modifiers = {
+"vanguard_loss_penalty": 0.52,
+"vanguard_member_bonus": 3
+}
+impact_keys = Array[StringName]([&"retainer", &"squad", &"sustain"])

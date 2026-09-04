@@ -1,0 +1,39 @@
+[gd_resource type="Resource" script_class="GameConceptData" load_steps=8 format=3]
+
+[ext_resource type="Script" path="res://resources/game_concept_data.gd" id="1_script"]
+[ext_resource type="Resource" path="res://data/concepts/demon_election_assets.tres" id="2_assets"]
+[ext_resource type="Resource" path="res://data/stages/standard_20m.tres" id="3_stage"]
+[ext_resource type="Resource" path="res://data/meta/stage_rewards/standard_20m.tres" id="4_reward"]
+[ext_resource type="Resource" path="res://data/concepts/demon_election_texts.tres" id="5_text"]
+[ext_resource type="Resource" path="res://data/concepts/demon_election_campaign_v0_8.tres" id="6_campaign"]
+[ext_resource type="Resource" path="res://data/concepts/demon_election_content_pack.tres" id="7_content"]
+
+[resource]
+script = ExtResource("1_script")
+id = &"demon_election_vertical_slice"
+project_title = "DEMON ELECTION"
+project_eyebrow = "마계 선거관리위원회 / 공식 유세 채널"
+chapter_title = "제1격전지 · 공식 유세 연설"
+hero_title = "후보를 지키고\n마계의 표심을 장악하라"
+hero_description = "마왕 후보와 수석 심복을 선택하세요.\n네 차례의 합법적 난입을 막고 10분 유세 연설을 완주합니다."
+ready_status = "●  공식 유세 등록 대기 중"
+core_term = "마왕 후보"
+cursor_term = "수석 심복"
+tower_term = "유세 지원대"
+formation_term = "지원대 진형"
+enemy_term = "난입자"
+boss_term = "공식 난입"
+currency_term = "선거 자금"
+stage_term = "격전지"
+accent_color = Color(0.93, 0.34, 0.5, 1)
+secondary_color = Color(0.76, 0.55, 0.98, 1)
+danger_color = Color(1, 0.35, 0.28, 1)
+background_tint = Color(0.72, 0.53, 0.76, 1)
+background_overlay = Color(0.08, 0.015, 0.08, 0.52)
+battlefield_fill = Color(0.19, 0.05, 0.2, 0.42)
+assets = ExtResource("2_assets")
+text_catalog = ExtResource("5_text")
+default_stage = ExtResource("3_stage")
+stage_reward = ExtResource("4_reward")
+content_pack = ExtResource("7_content")
+election_campaign = ExtResource("6_campaign")

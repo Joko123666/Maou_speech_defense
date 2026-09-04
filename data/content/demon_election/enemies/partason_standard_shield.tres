@@ -1,0 +1,22 @@
+[gd_resource type="Resource" script_class="EnemyData" format=3]
+
+[ext_resource type="Script" path="res://resources/enemy_data.gd" id="1_6jrii"]
+[ext_resource type="Texture2D" path="res://assets/graphics/enemies/partason_standard_shield.png" id="2_67t7g"]
+
+[resource]
+script = ExtResource("1_6jrii")
+id = &"partason_standard_shield"
+display_name = "마왕군 표준 방패병"
+max_health = 155.0
+move_speed = 49.0
+core_damage = 17.0
+experience_value = 10.0
+spawn_cost = 15.0
+role_tags = Array[StringName]([&"faction", &"frontline"])
+armor = 5.0
+knockback_resistance = 0.2
+available_from_seconds = 240.0
+behavior = &"faction_frontline"
+body_color = Color(0.37254903, 0.8117647, 0.5411765, 1)
+radius = 23.0
+texture = ExtResource("2_67t7g")

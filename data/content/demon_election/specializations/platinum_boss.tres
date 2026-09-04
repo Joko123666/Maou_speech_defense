@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="SpecializationBranchData" format=3]
+
+[ext_resource type="Script" path="res://resources/specialization_branch_data.gd" id="1_c83jc"]
+
+[resource]
+script = ExtResource("1_c83jc")
+id = &"platinum_boss"
+owner_kind = &"cursor"
+owner_id = &"platinum"
+display_name = "망령마 돌진"
+level_4_description = "일반 공격에 망령마 범위 충격 추가"
+level_7_description = "망령마 충격 피해·범위 +50%"
+level_4_modifiers = {
+"jugdied_horse_area": 0.55
+}
+level_7_modifiers = {
+"jugdied_horse_area": 0.85,
+"jugdied_horse_radius": 1.5
+}
+impact_keys = Array[StringName]([&"retainer", &"area", &"damage"])

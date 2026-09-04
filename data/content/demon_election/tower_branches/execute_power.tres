@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="TowerBranchData" format=3]
+
+[ext_resource type="Script" path="res://resources/tower_branch_data.gd" id="1_juie6"]
+
+[resource]
+script = ExtResource("1_juie6")
+id = &"execute_power"
+display_name = "장전수 배치"
+description = "단일 저격 패턴을 유지하면서 재장전 시간을 대폭 단축"
+tower_id = &"execute"
+branch_type = &"role"
+level_4_modifiers = {
+"speed": 1.7
+}
+level_7_modifiers = {
+"speed": 2.45
+}

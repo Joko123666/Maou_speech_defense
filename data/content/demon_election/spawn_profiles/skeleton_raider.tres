@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="EnemySpawnProfileData" format=3]
+
+[ext_resource type="Script" path="res://resources/enemy_spawn_profile_data.gd" id="1_vrc4j"]
+
+[resource]
+script = ExtResource("1_vrc4j")
+enemy_id = &"skeleton_raider"
+spawn_cost = 8.0
+role_tags = Array[StringName]([&"fast", &"diagonal"])
+unlock_time = 150.0
+group_min = 2
+group_max = 2
+rare_spawn_cooldown = 6.0

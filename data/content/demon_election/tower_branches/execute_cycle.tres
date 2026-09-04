@@ -1,0 +1,21 @@
+[gd_resource type="Resource" script_class="TowerBranchData" format=3]
+
+[ext_resource type="Script" path="res://resources/tower_branch_data.gd" id="1_rlcco"]
+
+[resource]
+script = ExtResource("1_rlcco")
+id = &"execute_cycle"
+display_name = "도탄 전문가"
+description = "주 대상 적중 후 주변의 서로 다른 적에게 감쇠 도탄"
+tower_id = &"execute"
+branch_type = &"playstyle"
+level_4_modifiers = {
+"ricochet": 0.62,
+"ricochet_count": 2,
+"ricochet_falloff": 0.72
+}
+level_7_modifiers = {
+"ricochet": 0.72,
+"ricochet_count": 3,
+"ricochet_falloff": 0.78
+}

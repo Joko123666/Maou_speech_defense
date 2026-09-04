@@ -1,0 +1,91 @@
+[gd_scene load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/ui/components/modal_shell.gd" id="1_modal"]
+
+[node name="ModalShell" type="Control"]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 0
+script = ExtResource("1_modal")
+
+[node name="Dimmer" type="ColorRect" parent="."]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+color = Color(0.0784314, 0.0431373, 0.113725, 0.82)
+
+[node name="SafeArea" type="MarginContainer" parent="."]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 24
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 24
+theme_override_constants/margin_bottom = 16
+
+[node name="Center" type="CenterContainer" parent="SafeArea"]
+layout_mode = 2
+
+[node name="Panel" type="PanelContainer" parent="SafeArea/Center"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(640, 360)
+layout_mode = 2
+
+[node name="Layout" type="VBoxContainer" parent="SafeArea/Center/Panel"]
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="Header" type="HBoxContainer" parent="SafeArea/Center/Panel/Layout"]
+layout_mode = 2
+theme_override_constants/separation = 12
+
+[node name="Title" type="Label" parent="SafeArea/Center/Panel/Layout/Header"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0.223529, 0.137255, 0.309804, 1)
+theme_override_font_sizes/font_size = 32
+text = "대화상자 제목"
+vertical_alignment = 1
+
+[node name="CloseButton" type="Button" parent="SafeArea/Center/Panel/Layout/Header"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(48, 48)
+layout_mode = 2
+text = "×"
+
+[node name="Divider" type="HSeparator" parent="SafeArea/Center/Panel/Layout"]
+layout_mode = 2
+
+[node name="BodyScroll" type="ScrollContainer" parent="SafeArea/Center/Panel/Layout"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 3
+horizontal_scroll_mode = 0
+
+[node name="Body" type="VBoxContainer" parent="SafeArea/Center/Panel/Layout/BodyScroll"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/separation = 12
+
+[node name="Footer" type="HBoxContainer" parent="SafeArea/Center/Panel/Layout"]
+unique_name_in_owner = true
+layout_mode = 2
+alignment = 2
+theme_override_constants/separation = 12

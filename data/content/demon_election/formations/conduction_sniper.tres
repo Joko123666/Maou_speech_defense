@@ -1,0 +1,26 @@
+[gd_resource type="Resource" script_class="TowerFormationData" format=3]
+
+[ext_resource type="Script" path="res://resources/formation_cell_data.gd" id="1_nwtq4"]
+[ext_resource type="Script" path="res://resources/tower_formation_data.gd" id="2_5n1dc"]
+
+[sub_resource type="Resource" id="Resource_t1v4x"]
+script = ExtResource("1_nwtq4")
+tower_id = &"chain"
+
+[sub_resource type="Resource" id="Resource_x44nc"]
+script = ExtResource("1_nwtq4")
+offset = Vector2i(0, 1)
+tower_id = &"execute"
+
+[resource]
+script = ExtResource("2_5n1dc")
+id = &"conduction_sniper"
+display_name = "전도 저격조"
+description = "전도망 보조 타격과 트롤의 강적 저격을 결합"
+cells = Array[ExtResource("1_nwtq4")]([SubResource("Resource_t1v4x"), SubResource("Resource_x44nc")])
+role_tags = Array[StringName]([&"network", &"elite"])
+shape_class = &"LONG"
+formation_score = 230
+raw_power_score = 230.0
+output_multiplier = 1.3043478260869565
+expected_power_score = 300.0

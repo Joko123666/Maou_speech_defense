@@ -1,0 +1,160 @@
+[gd_scene load_steps=3 format=3]
+
+[ext_resource type="Script" path="res://scripts/ui/components/unit_info_popover.gd" id="1_popover"]
+[ext_resource type="Theme" path="res://data/ui/demon_election_ui_theme.tres" id="2_theme"]
+
+[node name="UnitInfoPopover" type="Control"]
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme = ExtResource("2_theme")
+script = ExtResource("1_popover")
+
+[node name="Panel" type="PanelContainer" parent="."]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(360, 500)
+offset_right = 360.0
+offset_bottom = 500.0
+grow_horizontal = 0
+grow_vertical = 0
+
+[node name="Content" type="VBoxContainer" parent="Panel"]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/separation = 7
+
+[node name="Header" type="HBoxContainer" parent="Panel/Content"]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/separation = 10
+
+[node name="PortraitFrame" type="PanelContainer" parent="Panel/Content/Header"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(76, 76)
+layout_mode = 2
+mouse_filter = 2
+
+[node name="Portrait" type="TextureRect" parent="Panel/Content/Header/PortraitFrame"]
+unique_name_in_owner = true
+layout_mode = 2
+mouse_filter = 2
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Heading" type="VBoxContainer" parent="Panel/Content/Header"]
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_filter = 2
+theme_override_constants/separation = 1
+
+[node name="Title" type="Label" parent="Panel/Content/Header/Heading"]
+unique_name_in_owner = true
+layout_mode = 2
+mouse_filter = 2
+theme_override_colors/font_color = Color(0.952941, 0.901961, 0.811765, 1)
+theme_override_font_sizes/font_size = 22
+text = "대상 정보"
+
+[node name="Subtitle" type="Label" parent="Panel/Content/Header/Heading"]
+unique_name_in_owner = true
+layout_mode = 2
+mouse_filter = 2
+theme_override_colors/font_color = Color(0.847059, 0.682353, 0.282353, 1)
+theme_override_font_sizes/font_size = 14
+text = "역할 · 단계"
+
+[node name="Faction" type="Label" parent="Panel/Content/Header/Heading"]
+unique_name_in_owner = true
+layout_mode = 2
+mouse_filter = 2
+theme_override_colors/font_color = Color(0.858824, 0.803922, 0.721569, 0.82)
+theme_override_font_sizes/font_size = 13
+text = "소속 · 확인 필요"
+autowrap_mode = 2
+
+[node name="CloseButton" type="Button" parent="Panel/Content/Header"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(48, 48)
+layout_mode = 2
+focus_neighbor_right = NodePath(".")
+focus_neighbor_top = NodePath(".")
+focus_neighbor_bottom = NodePath(".")
+text = "×"
+
+[node name="Tags" type="HBoxContainer" parent="Panel/Content"]
+unique_name_in_owner = true
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/separation = 6
+
+[node name="StatusPanel" type="PanelContainer" parent="Panel/Content"]
+unique_name_in_owner = true
+layout_mode = 2
+mouse_filter = 2
+
+[node name="Status" type="Label" parent="Panel/Content/StatusPanel"]
+unique_name_in_owner = true
+layout_mode = 2
+mouse_filter = 2
+theme_override_font_sizes/font_size = 14
+text = "상태 · 정상"
+
+[node name="HealthContainer" type="VBoxContainer" parent="Panel/Content"]
+unique_name_in_owner = true
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/separation = 3
+
+[node name="HealthLabel" type="Label" parent="Panel/Content/HealthContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+mouse_filter = 2
+theme_override_colors/font_color = Color(0.952941, 0.901961, 0.811765, 1)
+theme_override_font_sizes/font_size = 13
+text = "생존력"
+
+[node name="HealthBar" type="ProgressBar" parent="Panel/Content/HealthContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 14)
+layout_mode = 2
+mouse_filter = 2
+show_percentage = false
+
+[node name="Separator" type="HSeparator" parent="Panel/Content"]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="Stats" type="VBoxContainer" parent="Panel/Content"]
+unique_name_in_owner = true
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/separation = 0
+
+[node name="DetailsPanel" type="PanelContainer" parent="Panel/Content"]
+unique_name_in_owner = true
+layout_mode = 2
+mouse_filter = 2
+
+[node name="Details" type="Label" parent="Panel/Content/DetailsPanel"]
+unique_name_in_owner = true
+layout_mode = 2
+mouse_filter = 2
+theme_override_colors/font_color = Color(0.952941, 0.901961, 0.811765, 0.84)
+theme_override_font_sizes/font_size = 13
+text = "추가 정보"
+autowrap_mode = 2
+max_lines_visible = 4
+
+[node name="InteractionHint" type="Label" parent="Panel/Content"]
+unique_name_in_owner = true
+layout_mode = 2
+mouse_filter = 2
+theme_override_colors/font_color = Color(0.847059, 0.682353, 0.282353, 0.86)
+theme_override_font_sizes/font_size = 12
+text = "미리보기 · 클릭하거나 탭해 고정"
+horizontal_alignment = 1

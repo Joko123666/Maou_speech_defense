@@ -1,0 +1,24 @@
+[gd_resource type="Resource" script_class="SpecializationBranchData" format=3]
+
+[ext_resource type="Script" path="res://resources/specialization_branch_data.gd" id="1_u17rl"]
+
+[resource]
+script = ExtResource("1_u17rl")
+id = &"silver_tracking"
+owner_kind = &"cursor"
+owner_id = &"silver"
+display_name = "쾌락의 삼연타"
+level_4_description = "채찍을 3회 연속 휘두르되 환혹 판정은 연격당 1회"
+level_7_description = "연격 피해 +35% · 환혹 지속시간 +30%"
+level_4_modifiers = {
+"given_sequence_charm_rolls": 1,
+"given_strike_count": 3,
+"given_strike_damage": 0.48
+}
+level_7_modifiers = {
+"given_charm_duration": 1.3,
+"given_sequence_charm_rolls": 1,
+"given_strike_count": 3,
+"given_strike_damage": 0.65
+}
+impact_keys = Array[StringName]([&"retainer", &"charm", &"damage"])

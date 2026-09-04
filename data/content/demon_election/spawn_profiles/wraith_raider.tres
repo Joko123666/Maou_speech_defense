@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="EnemySpawnProfileData" format=3]
+
+[ext_resource type="Script" path="res://resources/enemy_spawn_profile_data.gd" id="1_osqco"]
+
+[resource]
+script = ExtResource("1_osqco")
+enemy_id = &"wraith_raider"
+spawn_cost = 14.0
+role_tags = Array[StringName]([&"disable"])
+unlock_time = 300.0

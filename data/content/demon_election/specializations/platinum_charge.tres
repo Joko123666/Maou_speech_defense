@@ -1,0 +1,23 @@
+[gd_resource type="Resource" script_class="SpecializationBranchData" format=3]
+
+[ext_resource type="Script" path="res://resources/specialization_branch_data.gd" id="1_hruw1"]
+
+[resource]
+script = ExtResource("1_hruw1")
+id = &"platinum_charge"
+owner_kind = &"cursor"
+owner_id = &"platinum"
+display_name = "영속 계약"
+level_4_description = "재구성 없이 행동하지만 합동 돌격 피해·넉백 -35%"
+level_7_description = "합동 돌격 페널티가 -15%로 완화"
+level_4_modifiers = {
+"combo_damage": 0.65,
+"combo_knockback": 0.65,
+"persistent_contract": true
+}
+level_7_modifiers = {
+"combo_damage": 0.85,
+"combo_knockback": 0.85,
+"persistent_contract": true
+}
+impact_keys = Array[StringName]([&"retainer", &"combo", &"uptime"])

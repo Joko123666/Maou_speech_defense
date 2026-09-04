@@ -1,0 +1,25 @@
+[gd_resource type="Resource" script_class="TowerBranchData" format=3]
+
+[ext_resource type="Script" path="res://resources/tower_branch_data.gd" id="1_e540a"]
+
+[resource]
+script = ExtResource("1_e540a")
+id = &"rapid_mark"
+display_name = "고블린 병법"
+description = "주기적으로 독 또는 출혈과 취약을 함께 부여해 평범한 창병을 상태 보조원으로 전환"
+tower_id = &"rapid"
+branch_type = &"playstyle"
+level_4_modifiers = {
+"tactics_bleed_ratio": 0.006,
+"tactics_cycle": 3,
+"tactics_mark": 0.1,
+"tactics_poison_chance": 0.5,
+"tactics_poison_damage": 6.0
+}
+level_7_modifiers = {
+"tactics_bleed_ratio": 0.009,
+"tactics_cycle": 2,
+"tactics_mark": 0.16,
+"tactics_poison_chance": 0.5,
+"tactics_poison_damage": 9.0
+}

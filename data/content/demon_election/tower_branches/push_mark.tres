@@ -1,0 +1,25 @@
+[gd_resource type="Resource" script_class="TowerBranchData" format=3]
+
+[ext_resource type="Script" path="res://resources/tower_branch_data.gd" id="1_5ww3w"]
+
+[resource]
+script = ExtResource("1_5ww3w")
+id = &"push_mark"
+display_name = "크고 아름다운 전도수단"
+description = "톱날을 하나로 고정하고 크기·피해·회전속도·넉백을 대폭 강화"
+tower_id = &"knockback"
+branch_type = &"synergy"
+level_4_modifiers = {
+"damage": 2.35,
+"push": 1.85,
+"saw_fixed": 1,
+"saw_size": 1.65,
+"speed": 1.35
+}
+level_7_modifiers = {
+"damage": 3.2,
+"push": 2.4,
+"saw_fixed": 1,
+"saw_size": 2.05,
+"speed": 1.6
+}

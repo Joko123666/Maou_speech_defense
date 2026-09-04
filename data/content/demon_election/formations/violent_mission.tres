@@ -1,0 +1,27 @@
+[gd_resource type="Resource" script_class="TowerFormationData" format=3]
+
+[ext_resource type="Script" path="res://resources/formation_cell_data.gd" id="1_dsxp0"]
+[ext_resource type="Script" path="res://resources/tower_formation_data.gd" id="2_o11pw"]
+
+[sub_resource type="Resource" id="Resource_qjq3i"]
+script = ExtResource("1_dsxp0")
+tower_id = &"knockback"
+
+[sub_resource type="Resource" id="Resource_exth4"]
+script = ExtResource("1_dsxp0")
+offset = Vector2i(0, 1)
+tower_id = &"mark"
+
+[resource]
+script = ExtResource("2_o11pw")
+id = &"violent_mission"
+display_name = "과격 포교조"
+description = "톱날 출혈과 취약 표식을 한 지점에 집중"
+cells = Array[ExtResource("1_dsxp0")]([SubResource("Resource_qjq3i"), SubResource("Resource_exth4")])
+role_tags = Array[StringName]([&"contact", &"amplify", &"status"])
+shape_class = &"LONG"
+base_weight = 1.05
+formation_score = 170
+raw_power_score = 170.0
+output_multiplier = 1.7647058823529411
+expected_power_score = 300.0

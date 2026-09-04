@@ -1,0 +1,749 @@
+[gd_resource type="Resource" script_class="ElectionCampaignData" load_steps=82 format=3]
+
+[ext_resource type="Script" path="res://resources/election_campaign_data.gd" id="1_campaign"]
+[ext_resource type="Script" path="res://resources/candidate_profile_data.gd" id="2_candidate"]
+[ext_resource type="Script" path="res://resources/retainer_profile_data.gd" id="3_retainer"]
+[ext_resource type="Script" path="res://resources/election_faction_data.gd" id="4_faction"]
+[ext_resource type="Script" path="res://resources/combo_attack_profile_data.gd" id="5_combo"]
+[ext_resource type="Script" path="res://resources/vanguard_stack_profile_data.gd" id="6_vanguard"]
+[ext_resource type="Resource" path="res://data/concepts/demon_election_decrees_v0_8.tres" id="7_decrees"]
+[ext_resource type="Resource" path="res://data/concepts/demon_election_governance_v0_8.tres" id="8_governance"]
+[ext_resource type="Script" path="res://resources/candidate_upgrade_data.gd" id="9_candidate_upgrade"]
+[ext_resource type="Script" path="res://resources/candidate_growth_data.gd" id="10_candidate_growth"]
+[ext_resource type="Script" path="res://resources/guard_specialization_data.gd" id="11_guard_specialization"]
+[ext_resource type="Script" path="res://resources/guard_growth_data.gd" id="12_guard_growth"]
+[ext_resource type="Script" path="res://resources/retainer_growth_data.gd" id="13_retainer_growth"]
+
+[sub_resource type="Resource" id="Partason_fixed_royal_dignity"]
+script = ExtResource("9_candidate_upgrade")
+id = &"partason_royal_dignity"
+kind = &"fixed"
+display_name = "왕가의 위엄"
+description = "후보의 공격력·최대 체력·재생력이 증가합니다."
+modifiers = {"core_damage": 1.08, "core_health": 1.1, "core_regeneration": 1.15}
+
+[sub_resource type="Resource" id="Partason_branch_armament"]
+script = ExtResource("9_candidate_upgrade")
+id = &"partason_armament"
+kind = &"branch"
+display_name = "군비 강화"
+description = "후보와 수비병력의 공격력, 수비병력의 공격속도가 증가합니다."
+modifiers = {"core_damage": 1.15, "tower_damage": 1.1, "tower_speed": 1.1}
+
+[sub_resource type="Resource" id="Partason_branch_union"]
+script = ExtResource("9_candidate_upgrade")
+id = &"partason_union"
+kind = &"branch"
+display_name = "다종족 연합국가"
+description = "배치한 일반 수비병력 종류가 많을수록 공격속도와 사거리·범위가 증가합니다."
+modifiers = {"diversity_scaling": true}
+
+[sub_resource type="Resource" id="Partason_branch_elitism"]
+script = ExtResource("9_candidate_upgrade")
+id = &"partason_elitism"
+kind = &"branch"
+display_name = "엘리트주의"
+description = "친위대의 공격력과 공격속도가 크게 증가하고 2칸 증원대를 추가합니다."
+modifiers = {"guard_damage": 1.3, "guard_speed": 1.15, "guard_reinforcement_cells": 2}
+
+[sub_resource type="Resource" id="Partason_fixed_royal_command"]
+script = ExtResource("9_candidate_upgrade")
+id = &"partason_royal_command"
+kind = &"fixed"
+display_name = "총동원령"
+description = "필살 공약과 친위대 자동 기술, 모든 수비병력의 공격력이 증가합니다."
+modifiers = {"core_skill_damage": 1.25, "guard_auto_skill_damage": 1.2, "guard_damage": 1.18, "tower_damage": 1.08}
+
+[sub_resource type="Resource" id="Partason_growth"]
+script = ExtResource("10_candidate_growth")
+candidate_id = &"partason"
+first_upgrade = SubResource("Partason_fixed_royal_dignity")
+branch_upgrades = Array[ExtResource("9_candidate_upgrade")]([SubResource("Partason_branch_armament"), SubResource("Partason_branch_union"), SubResource("Partason_branch_elitism")])
+final_upgrade = SubResource("Partason_fixed_royal_command")
+
+[sub_resource type="Resource" id="Partason_guard_shield"]
+script = ExtResource("11_guard_specialization")
+id = &"partason_guard_shield"
+display_name = "마왕의 방패"
+description = "일반 공격에 넉백을 더하고, 5번째 공격마다 넓은 범위를 밀어내는 방패 충격을 발동합니다."
+modifiers = {"guard_damage": 1.05, "guard_knockback": 1.6, "guard_auto_skill_cycle": 5, "guard_auto_skill_damage": 0.75, "guard_auto_skill_knockback": 78.0, "guard_auto_skill_mode": &"shield", "guard_auto_skill_radius": 105.0}
+completion_description = "방패 충격의 범위와 위력이 증가하고 일반 공격의 넉백이 강화됩니다."
+completion_modifiers = {"guard_auto_skill_damage": 1.25, "guard_auto_skill_knockback": 1.2, "guard_auto_skill_radius": 1.15, "guard_knockback": 1.25}
+
+[sub_resource type="Resource" id="Partason_guard_sword"]
+script = ExtResource("11_guard_specialization")
+id = &"partason_guard_sword"
+display_name = "마왕의 검"
+description = "공격력과 사거리가 크게 증가하고, 5번째 공격마다 전방의 좁은 선을 찌릅니다."
+modifiers = {"guard_auto_skill_cycle": 5, "guard_auto_skill_damage": 2.0, "guard_auto_skill_mode": &"sword", "guard_auto_skill_width": 42.0, "guard_damage": 1.35, "guard_range": 1.25}
+completion_description = "검격의 피해와 친위대의 공격력·사거리가 한 번 더 증가합니다."
+completion_modifiers = {"guard_auto_skill_damage": 1.35, "guard_damage": 1.18, "guard_range": 1.1}
+
+[sub_resource type="Resource" id="Partason_guard_liege"]
+script = ExtResource("11_guard_specialization")
+id = &"partason_guard_liege"
+display_name = "마왕의 수족"
+description = "자동 특화 기술을 제거합니다. 대신 파르타손의 필살 공약 발동 시 모든 친위대가 약화된 방패 충격을 동시에 사용합니다."
+modifiers = {"guard_auto_skill_disabled": true, "guard_auto_skill_mode": &"liege", "guard_core_active_cast": true, "guard_linked_skill_damage": 0.72, "guard_linked_skill_knockback": 80.0, "guard_linked_skill_radius": 92.0}
+completion_description = "필살 공약에 연동되는 친위대 충격의 피해와 넉백, 범위가 강화됩니다."
+completion_modifiers = {"guard_linked_skill_damage": 1.25, "guard_linked_skill_knockback": 1.25, "guard_linked_skill_radius": 1.15}
+
+[sub_resource type="Resource" id="Partason_guard_growth"]
+script = ExtResource("12_guard_growth")
+candidate_id = &"partason"
+formation_id = &"emerald_guard"
+training_display_name = "왕실 친위대 훈련"
+training_description = "친위대의 공격력·공격속도·사거리가 소폭 증가합니다."
+training_modifiers = {"guard_damage": 1.1, "guard_range": 1.05, "guard_speed": 1.08}
+specializations = Array[ExtResource("11_guard_specialization")]([SubResource("Partason_guard_shield"), SubResource("Partason_guard_sword"), SubResource("Partason_guard_liege")])
+
+[sub_resource type="Resource" id="Jiane_fixed_dream_authority"]
+script = ExtResource("9_candidate_upgrade")
+id = &"jiane_dream_authority"
+kind = &"fixed"
+display_name = "몽마의 권위"
+description = "환혹 지속시간과 후보 관통 공격의 유효 폭이 증가하고, 난입자의 후보 돌파 피해를 50% 줄입니다."
+modifiers = {"charm_duration": 1.35, "core_breach_damage": 0.5, "core_pierce_width": 1.35}
+
+[sub_resource type="Resource" id="Jiane_branch_scattered_love"]
+script = ExtResource("9_candidate_upgrade")
+id = &"jiane_scattered_love"
+kind = &"branch"
+display_name = "흩날리는 사랑"
+description = "선형 관통 공격을 최대 5개 방향의 방사형 환혹 공격으로 변경합니다."
+modifiers = {"charm_radial": true, "charm_radial_targets": 5, "charm_radial_damage": 0.72, "charm_duration": 1.25}
+
+[sub_resource type="Resource" id="Jiane_branch_betraying_love"]
+script = ExtResource("9_candidate_upgrade")
+id = &"jiane_betraying_love"
+kind = &"branch"
+display_name = "배신하는 사랑"
+description = "환혹 상태 적이 모든 비고정 피해를 더 크게 받으며 취약 주술과 중첩됩니다."
+modifiers = {"charm_vulnerability": 0.35}
+
+[sub_resource type="Resource" id="Jiane_branch_stage_of_love"]
+script = ExtResource("9_candidate_upgrade")
+id = &"jiane_stage_of_love"
+kind = &"branch"
+display_name = "사랑의 무대"
+description = "액티브 환혹 무대가 6초간 유지되며 모든 아군의 공격력과 공격속도를 높입니다."
+modifiers = {"charm_stage": true, "charm_stage_duration": 6.0, "charm_stage_damage": 1.2, "charm_stage_speed": 1.15}
+
+[sub_resource type="Resource" id="Jiane_fixed_fanatic_supporters"]
+script = ExtResource("9_candidate_upgrade")
+id = &"jiane_fanatic_supporters"
+kind = &"fixed"
+display_name = "열광하는 지지자들"
+description = "환혹 상태 일반 난입자 퇴장 시 주변에 짧은 환혹 잔향을 남깁니다."
+modifiers = {"charm_echo": true, "charm_echo_radius": 140.0, "charm_echo_duration": 0.55}
+
+[sub_resource type="Resource" id="Jiane_growth"]
+script = ExtResource("10_candidate_growth")
+candidate_id = &"jiane"
+first_upgrade = SubResource("Jiane_fixed_dream_authority")
+branch_upgrades = Array[ExtResource("9_candidate_upgrade")]([SubResource("Jiane_branch_scattered_love"), SubResource("Jiane_branch_betraying_love"), SubResource("Jiane_branch_stage_of_love")])
+final_upgrade = SubResource("Jiane_fixed_fanatic_supporters")
+
+[sub_resource type="Resource" id="Jiane_guard_pure"]
+script = ExtResource("11_guard_specialization")
+id = &"jiane_guard_pure"
+display_name = "지아느님은 청초하시고"
+description = "사거리가 감소하는 대신 공격력이 크게 증가하고, 일반 공격 적중점에 방사형 충격파를 일으킵니다."
+modifiers = {"guard_damage": 1.45, "guard_hit_shockwave": true, "guard_hit_shockwave_damage": 0.42, "guard_hit_shockwave_radius": 76.0, "guard_range": 0.72}
+completion_description = "친위대의 공격력과 충격파 피해·범위가 한 번 더 증가합니다."
+completion_modifiers = {"guard_damage": 1.18, "guard_hit_shockwave_damage": 1.35, "guard_hit_shockwave_radius": 1.2}
+
+[sub_resource type="Resource" id="Jiane_guard_chaste"]
+script = ExtResource("11_guard_specialization")
+id = &"jiane_guard_chaste"
+display_name = "지아느님은 정숙하시고"
+description = "일정 주기마다 목표 지정을 해제하고 좁은 범위 피해를 주며 전장을 종횡무진 이동한 뒤 원래 위치로 복귀합니다."
+modifiers = {"guard_frenzy": true, "guard_frenzy_damage": 0.55, "guard_frenzy_duration": 2.8, "guard_frenzy_interval": 10.0, "guard_frenzy_movement_speed": 170.0, "guard_frenzy_radius": 42.0}
+completion_description = "광란 주기가 짧아지고 이동속도·지속시간·충돌 피해가 증가합니다."
+completion_modifiers = {"guard_frenzy_damage": 1.3, "guard_frenzy_duration": 1.3, "guard_frenzy_interval": 0.78, "guard_frenzy_movement_speed": 1.15}
+
+[sub_resource type="Resource" id="Jiane_guard_devotion"]
+script = ExtResource("11_guard_specialization")
+id = &"jiane_guard_devotion"
+display_name = "남을 위해서 헌신하시는 분입니다"
+description = "일반 공격이 적중할 때마다 최대 30의 헌신을 얻습니다. 지아느 액티브 사용 시 친위대가 정지하고 헌신을 소모해 환혹 지속시간을 최대 3초 연장합니다."
+modifiers = {"guard_devotion": true, "guard_devotion_extension_per_stack": 0.1, "guard_devotion_max_extension": 3.0, "guard_devotion_max_stacks": 30, "guard_devotion_stacks_per_hit": 1}
+completion_description = "친위대 피해가 증가하고 헌신 스택당 환혹 연장량이 증가하되 최대 연장은 3초로 유지됩니다."
+completion_modifiers = {"guard_damage": 1.12, "guard_devotion_extension_per_stack": 1.2}
+
+[sub_resource type="Resource" id="Jiane_guard_growth"]
+script = ExtResource("12_guard_growth")
+candidate_id = &"jiane"
+formation_id = &"sapphire_spearhead"
+training_display_name = "광신 추종자 훈련"
+training_description = "친위대의 공격력·공격속도·사거리가 소폭 증가합니다."
+training_modifiers = {"guard_damage": 1.08, "guard_range": 1.08, "guard_speed": 1.06}
+specializations = Array[ExtResource("11_guard_specialization")]([SubResource("Jiane_guard_pure"), SubResource("Jiane_guard_chaste"), SubResource("Jiane_guard_devotion")])
+
+[sub_resource type="Resource" id="Kasuha_fixed_amplification"]
+script = ExtResource("9_candidate_upgrade")
+id = &"kasuha_amplification"
+kind = &"fixed"
+display_name = "심연 증폭술"
+description = "후보의 기본 공격 피해와 방사 공격 범위가 증가합니다."
+modifiers = {"core_attack_range": 1.15, "core_damage": 1.12}
+
+[sub_resource type="Resource" id="Kasuha_branch_power"]
+script = ExtResource("9_candidate_upgrade")
+id = &"kasuha_abyss_power"
+kind = &"branch"
+display_name = "심연의 힘"
+description = "공격속도가 소폭 감소하지만 공격 범위가 넓어지고 중심부에 좁은 고피해 영역이 추가됩니다."
+modifiers = {"abyss_center_damage": 1.4, "abyss_center_radius": 90.0, "core_attack_range": 1.35, "core_attack_speed": 0.88}
+
+[sub_resource type="Resource" id="Kasuha_branch_presence"]
+script = ExtResource("9_candidate_upgrade")
+id = &"kasuha_abyss_presence"
+kind = &"branch"
+display_name = "심연의 존재"
+description = "후보가 퇴장시킨 난입자와 공식 난입 누적 피해로 12스택을 모으면 다음 기본 공격이 넓은 4회 다단 공격으로 변경됩니다."
+modifiers = {"abyss_presence": true, "abyss_presence_boss_damage_ratio": 0.08, "abyss_presence_damage": 0.72, "abyss_presence_elite_stacks": 4, "abyss_presence_hits": 4, "abyss_presence_normal_stacks": 1, "abyss_presence_radius": 1.45, "abyss_presence_threshold": 12}
+
+[sub_resource type="Resource" id="Kasuha_branch_mass_summoning"]
+script = ExtResource("9_candidate_upgrade")
+id = &"kasuha_mass_summoning"
+kind = &"branch"
+display_name = "대규모 소환술"
+description = "액티브 사용 시 전장에 적을 추적하는 심연 생명체를 최대 8기까지 소환합니다."
+modifiers = {"candidate_summon_cap": 8, "candidate_summon_count": 8, "candidate_summon_damage": 36.0, "candidate_summon_duration": 8.0, "candidate_summon_interval": 1.0, "candidate_summon_radius": 1600.0, "candidate_summoning": true}
+
+[sub_resource type="Resource" id="Kasuha_fixed_overdrive"]
+script = ExtResource("9_candidate_upgrade")
+id = &"kasuha_overdrive"
+kind = &"fixed"
+display_name = "초과출력 허가"
+description = "액티브 피해와 범위가 증가하며 변경된 소환 액티브의 생명체 피해에도 적용됩니다."
+modifiers = {"core_skill_damage": 1.3, "core_skill_range": 1.35}
+
+[sub_resource type="Resource" id="Kasuha_growth"]
+script = ExtResource("10_candidate_growth")
+candidate_id = &"kasuha"
+first_upgrade = SubResource("Kasuha_fixed_amplification")
+branch_upgrades = Array[ExtResource("9_candidate_upgrade")]([SubResource("Kasuha_branch_power"), SubResource("Kasuha_branch_presence"), SubResource("Kasuha_branch_mass_summoning")])
+final_upgrade = SubResource("Kasuha_fixed_overdrive")
+
+[sub_resource type="Resource" id="Kasuha_guard_research"]
+script = ExtResource("11_guard_specialization")
+id = &"kasuha_guard_research"
+display_name = "심연탐구"
+description = "공격력과 사거리가 증가하고 공격속도가 소폭 감소합니다. 낮은 확률로 기능이 정지한 뒤 새 인원으로 교체되어 첫 공격이 강화됩니다."
+modifiers = {"guard_damage": 1.18, "guard_range": 1.22, "guard_replacement_chance": 0.08, "guard_replacement_downtime": 1.2, "guard_replacement_first_attack_damage": 1.8, "guard_research_replacement": true, "guard_speed": 0.9}
+completion_description = "교체 확률과 첫 공격 보너스·공격력·사거리가 증가하고 기능 정지 시간이 감소합니다."
+completion_modifiers = {"guard_damage": 1.12, "guard_range": 1.12, "guard_replacement_chance": 1.35, "guard_replacement_downtime": 0.85, "guard_replacement_first_attack_damage": 1.2}
+
+[sub_resource type="Resource" id="Kasuha_guard_erosion"]
+script = ExtResource("11_guard_specialization")
+id = &"kasuha_guard_erosion"
+display_name = "심연 침식"
+description = "공격 착탄점에 짧게 지속되는 둔화 장판을 생성해 카스하의 강한 범위 공격 적중을 보조합니다."
+modifiers = {"guard_damage": 1.12, "guard_erosion_duration": 2.6, "guard_erosion_radius": 86.0, "guard_erosion_slow": 0.34, "guard_erosion_tick": 0.25, "guard_erosion_zone": true, "guard_erosion_zone_cap": 3}
+completion_description = "침식 장판의 지속시간·범위·둔화율과 친위대 공격력이 증가합니다."
+completion_modifiers = {"guard_damage": 1.1, "guard_erosion_duration": 1.35, "guard_erosion_radius": 1.2, "guard_erosion_slow": 1.25}
+
+[sub_resource type="Resource" id="Kasuha_guard_obsession"]
+script = ExtResource("11_guard_specialization")
+id = &"kasuha_guard_obsession"
+display_name = "구탐연심"
+description = "친위대와 기둥이 심연의 존재로 교체됩니다. 범위와 사거리를 잃는 대신 매우 높은 단일 공격력을 얻습니다."
+modifiers = {"guard_damage": 1.75, "guard_range": 0.72, "guard_single_target_conversion": true, "guard_single_target_damage_floor": 42.0, "guard_single_target_slow_duration": 1.6, "guard_single_target_splash_radius": 58.0, "guard_single_target_splash_ratio": 0.22}
+completion_description = "심연 존재의 단일 공격력과 최소 피해가 크게 증가하고 사거리 일부를 회복합니다."
+completion_modifiers = {"guard_damage": 1.22, "guard_range": 1.08, "guard_single_target_damage_floor": 1.2, "guard_single_target_splash_ratio": 1.15}
+
+[sub_resource type="Resource" id="Kasuha_guard_growth"]
+script = ExtResource("12_guard_growth")
+candidate_id = &"kasuha"
+formation_id = &"amethyst_bastion"
+training_display_name = "심연마술 신봉자 훈련"
+training_description = "혼성 친위대의 공격력·공격속도·사거리가 소폭 증가합니다."
+training_modifiers = {"guard_damage": 1.07, "guard_range": 1.07, "guard_speed": 1.05}
+specializations = Array[ExtResource("11_guard_specialization")]([SubResource("Kasuha_guard_research"), SubResource("Kasuha_guard_erosion"), SubResource("Kasuha_guard_obsession")])
+
+[sub_resource type="Resource" id="Irelai_fixed_employment_expansion"]
+script = ExtResource("9_candidate_upgrade")
+id = &"irelai_employment_expansion"
+kind = &"fixed"
+display_name = "사후 고용 확대"
+description = "사령의 지속시간이 증가하고 동시에 활동할 수 있는 사령 수가 2기 증가합니다."
+modifiers = {"spirit_duration": 1.5, "spirit_simultaneous_bonus": 2}
+
+[sub_resource type="Resource" id="Irelai_branch_soul_harvest"]
+script = ExtResource("9_candidate_upgrade")
+id = &"irelai_soul_harvest"
+kind = &"branch"
+display_name = "영혼수확"
+description = "액티브 준비 중 적 퇴장으로 영혼을 최대 300 모아 다음 죽음의 파도 피해·범위·사령 생성량을 강화합니다."
+modifiers = {"soul_harvest": true, "soul_harvest_cap": 300, "soul_wave_damage_per_effective": 0.006, "soul_wave_range_per_effective": 1.2}
+
+[sub_resource type="Resource" id="Irelai_branch_death_dies"]
+script = ExtResource("9_candidate_upgrade")
+id = &"irelai_death_dies"
+kind = &"branch"
+display_name = "죽음조차 죽으리라"
+description = "활동을 마친 사령이 마지막 위치에서 주변 적에게 폭발 피해를 줍니다."
+modifiers = {"spirit_expiration_blast": true, "spirit_expiration_damage": 0.55, "spirit_expiration_radius": 110.0}
+
+[sub_resource type="Resource" id="Irelai_branch_necrophobia"]
+script = ExtResource("9_candidate_upgrade")
+id = &"irelai_necrophobia"
+kind = &"branch"
+display_name = "죽음 공포증"
+description = "적 퇴장 시 사령 생성 확률이 증가하고, 사령이 생성된 위치 주변에 감쇠하는 공포를 부여합니다."
+modifiers = {"spirit_gain_chance_bonus": 0.2, "spirit_generation_fear": true, "spirit_generation_fear_duration": 4.0, "spirit_generation_fear_power": 0.8, "spirit_generation_fear_radius": 120.0}
+
+[sub_resource type="Resource" id="Irelai_fixed_mass_reemployment"]
+script = ExtResource("9_candidate_upgrade")
+id = &"irelai_mass_reemployment"
+kind = &"fixed"
+display_name = "대규모 재고용"
+description = "죽음의 파도 후 8초간 사령 생성 확률이 증가하고 파도로 생성된 사령의 피해가 강화됩니다."
+modifiers = {"active_generated_spirit_damage": 1.2, "post_active_spirit_chance_bonus": 0.3, "post_active_spirit_window": 8.0}
+
+[sub_resource type="Resource" id="Irelai_growth"]
+script = ExtResource("10_candidate_growth")
+candidate_id = &"irelai"
+first_upgrade = SubResource("Irelai_fixed_employment_expansion")
+branch_upgrades = Array[ExtResource("9_candidate_upgrade")]([SubResource("Irelai_branch_soul_harvest"), SubResource("Irelai_branch_death_dies"), SubResource("Irelai_branch_necrophobia")])
+final_upgrade = SubResource("Irelai_fixed_mass_reemployment")
+
+[sub_resource type="Resource" id="Irelai_guard_fast_soul"]
+script = ExtResource("11_guard_specialization")
+id = &"irelai_guard_fast_soul"
+display_name = "패스트 소울"
+description = "공격력이 소폭 감소하는 대신 공격속도와 재가동 속도가 증가합니다. 재가동 직후에는 짧은 시간 공격속도가 크게 증가합니다."
+modifiers = {"guard_damage": 0.88, "guard_speed": 1.18, "post_reactivation_speed": 2.0, "post_reactivation_speed_duration": 2.4, "reactivation_speed": 1.45}
+completion_description = "공격력 손실을 일부 회복하고 재가동 속도·재가동 직후 공격속도와 지속시간이 한 번 더 증가합니다."
+completion_modifiers = {"guard_damage": 1.06, "guard_speed": 1.08, "post_reactivation_speed": 1.2, "post_reactivation_speed_duration": 1.3, "reactivation_speed": 1.2}
+
+[sub_resource type="Resource" id="Irelai_guard_explosive_death"]
+script = ExtResource("11_guard_specialization")
+id = &"irelai_guard_explosive_death"
+display_name = "폭발사산"
+description = "공격력이 증가하고 행동불능이 되는 순간 주변 적에게 범위 피해를 줍니다. 강한 폭발의 대가로 재가동 대기시간이 길어집니다."
+modifiers = {"guard_damage": 1.22, "guard_inactive_explosion": true, "guard_inactive_explosion_damage": 1.25, "guard_inactive_explosion_radius": 112.0, "reactivation_speed": 0.82}
+completion_description = "친위대와 비활성 폭발의 피해·범위가 증가하고 늘어난 재가동 대기시간을 일부 회복합니다."
+completion_modifiers = {"guard_damage": 1.12, "guard_inactive_explosion_damage": 1.35, "guard_inactive_explosion_radius": 1.2, "reactivation_speed": 1.1}
+
+[sub_resource type="Resource" id="Irelai_guard_death_curse"]
+script = ExtResource("11_guard_specialization")
+id = &"irelai_guard_death_curse"
+display_name = "죽음의 저주"
+description = "재가동 후 첫 공격이 죽음의 저주 I을 부여합니다. 저주받은 적은 사령을 확정 생성하고, 그 사령이 다음 적에게 II·III 순서로 약한 저주를 이어 최대 3세대까지 연쇄합니다."
+modifiers = {"guard_damage": 1.08, "guard_death_curse": true, "guard_death_curse_max_generation": 3, "guard_range": 1.06}
+completion_description = "죽음의 저주 3세대 연쇄 규칙을 유지하면서 친위대의 공격력과 사거리가 증가합니다."
+completion_modifiers = {"guard_damage": 1.15, "guard_range": 1.08}
+
+[sub_resource type="Resource" id="Irelai_guard_growth"]
+script = ExtResource("12_guard_growth")
+candidate_id = &"irelai"
+formation_id = &"jade_gambit"
+training_display_name = "부활 시체 친위대 훈련"
+training_description = "부활 시체 친위대의 공격력·공격속도·사거리가 소폭 증가합니다."
+training_modifiers = {"guard_damage": 1.06, "guard_range": 1.06, "guard_speed": 1.06}
+specializations = Array[ExtResource("11_guard_specialization")]([SubResource("Irelai_guard_fast_soul"), SubResource("Irelai_guard_explosive_death"), SubResource("Irelai_guard_death_curse")])
+
+[sub_resource type="Resource" id="Judaginda_fixed_doctrine"]
+script = ExtResource("9_candidate_upgrade")
+id = &"judaginda_doctrine"
+kind = &"fixed"
+display_name = "교리 강화"
+description = "후보의 기본 공격력이 증가하고 일반·정예·공식 난입의 처형 기준이 소폭 상승합니다."
+modifiers = {"core_damage": 1.12, "execute_threshold_multiplier": 1.15}
+
+[sub_resource type="Resource" id="Judaginda_branch_death_affinity"]
+script = ExtResource("9_candidate_upgrade")
+id = &"judaginda_death_affinity"
+kind = &"branch"
+display_name = "죽음친화의식"
+description = "후보와 친위대의 처형 기준이 상승합니다. 정예 상승폭은 낮고 공식 난입은 즉시 퇴장 대신 처형 피해가 강화됩니다."
+modifiers = {"execute_boss_damage_multiplier": 1.35, "execute_threshold_boss_multiplier": 1.25, "execute_threshold_elite_multiplier": 1.18, "execute_threshold_normal_multiplier": 1.35}
+
+[sub_resource type="Resource" id="Judaginda_branch_cruel_death"]
+script = ExtResource("9_candidate_upgrade")
+id = &"judaginda_cruel_death"
+kind = &"branch"
+display_name = "잔혹한 죽음"
+description = "후보 또는 친위대의 처형 위치 주변에 강하게 시작해 점차 약해지는 공포를 부여합니다."
+modifiers = {"execution_fear": true, "execution_fear_duration": 4.0, "execution_fear_power": 0.8, "execution_fear_radius": 150.0}
+
+[sub_resource type="Resource" id="Judaginda_branch_advance"]
+script = ExtResource("9_candidate_upgrade")
+id = &"judaginda_advance"
+kind = &"branch"
+display_name = "1보 후퇴 2보 투신"
+description = "후보 공격력이 25% 감소하지만 후보 또는 친위대 처형마다 런 동안 1%씩, 최대 40회 증가합니다."
+modifiers = {"core_damage": 0.75, "execution_growth_cap": 40, "execution_growth_per_stack": 0.01}
+
+[sub_resource type="Resource" id="Judaginda_fixed_authority"]
+script = ExtResource("9_candidate_upgrade")
+id = &"judaginda_authority"
+kind = &"fixed"
+display_name = "교주 권위"
+description = "사신 소환의 범위와 피해가 증가하고 공식 난입 대상 처형 추가 피해가 강화됩니다."
+modifiers = {"core_skill_damage": 1.25, "core_skill_range": 1.35, "execute_boss_damage_multiplier": 1.5}
+
+[sub_resource type="Resource" id="Judaginda_growth"]
+script = ExtResource("10_candidate_growth")
+candidate_id = &"judaginda"
+first_upgrade = SubResource("Judaginda_fixed_doctrine")
+branch_upgrades = Array[ExtResource("9_candidate_upgrade")]([SubResource("Judaginda_branch_death_affinity"), SubResource("Judaginda_branch_cruel_death"), SubResource("Judaginda_branch_advance")])
+final_upgrade = SubResource("Judaginda_fixed_authority")
+
+[sub_resource type="Resource" id="Judaginda_guard_martyrdom"]
+script = ExtResource("11_guard_specialization")
+id = &"judaginda_guard_martyrdom"
+display_name = "죽음으로의 투신"
+description = "처형에 성공한 친위대가 잠시 비활성화되는 대신 순교 스택을 얻습니다. 스택마다 후보와 모든 친위대 공격속도가 0.5% 증가하며 최대 30스택입니다."
+modifiers = {"guard_damage": 1.08, "guard_martyr_disabled_duration": 1.4, "guard_martyr_max_stacks": 30, "guard_martyr_speed_bonus_cap": 0.15, "guard_martyr_speed_per_stack": 0.005, "guard_martyrdom": true}
+completion_description = "처형 뒤 비활성 시간이 짧아지고 친위대 공격력과 기본 공격속도가 증가합니다. 순교는 30스택·공격속도 15% 상한을 유지합니다."
+completion_modifiers = {"guard_damage": 1.1, "guard_martyr_disabled_duration": 0.8, "guard_speed": 1.08}
+
+[sub_resource type="Resource" id="Judaginda_guard_sudden_death"]
+script = ExtResource("11_guard_specialization")
+id = &"judaginda_guard_sudden_death"
+display_name = "갑작스런 죽음"
+description = "친위대 일반 공격이 일반 난입자를 4%, 정예 난입자를 1% 확률로 즉시 퇴장시킵니다. 공식 난입에게는 발동하지 않습니다."
+modifiers = {"guard_damage": 1.06, "guard_sudden_death": true, "guard_sudden_death_chance": 0.04, "guard_sudden_death_elite_ratio": 0.25}
+completion_description = "일반 난입자 즉시 퇴장 확률과 정예 대상 보정이 증가하고 친위대 공격속도가 상승합니다. 공식 난입 제외 규칙은 유지됩니다."
+completion_modifiers = {"guard_speed": 1.1, "guard_sudden_death_chance": 1.5, "guard_sudden_death_elite_ratio": 1.2}
+
+[sub_resource type="Resource" id="Judaginda_guard_reaper_ritual"]
+script = ExtResource("11_guard_specialization")
+id = &"judaginda_guard_reaper_ritual"
+display_name = "사신 소환 의식"
+description = "친위대 처형 성공 시 일반 난입자는 1초, 정예 난입자는 2.5초만큼 필살 공약을 충전합니다. 0.6초 내부 재사용 대기시간으로 무한 충전을 방지합니다."
+modifiers = {"guard_damage": 1.08, "guard_reaper_charge_elite": 2.5, "guard_reaper_charge_normal": 1.0, "guard_reaper_ritual": true, "guard_reaper_ritual_cooldown": 0.6}
+completion_description = "처형당 액티브 충전량이 증가하고 내부 재사용 대기시간이 감소하며 친위대 공격력이 상승합니다."
+completion_modifiers = {"guard_damage": 1.1, "guard_reaper_charge_elite": 1.35, "guard_reaper_charge_normal": 1.35, "guard_reaper_ritual_cooldown": 0.75}
+
+[sub_resource type="Resource" id="Judaginda_guard_growth"]
+script = ExtResource("12_guard_growth")
+candidate_id = &"judaginda"
+formation_id = &"obsidian_tribunal"
+training_display_name = "죽음교도 집행대 훈련"
+training_description = "근접·원거리 혼성 친위대의 공격력·공격속도·사거리가 소폭 증가합니다."
+training_modifiers = {"guard_damage": 1.07, "guard_range": 1.06, "guard_speed": 1.06}
+specializations = Array[ExtResource("11_guard_specialization")]([SubResource("Judaginda_guard_martyrdom"), SubResource("Judaginda_guard_sudden_death"), SubResource("Judaginda_guard_reaper_ritual")])
+
+[sub_resource type="Resource" id="Combo_jugdied"]
+script = ExtResource("5_combo")
+combo_type = &"line_charge"
+path_half_width = 46.0
+damage_multiplier = 2.5
+knockback = 72.0
+reconstruction_seconds = 5.0
+
+[sub_resource type="Resource" id="Vanguard_death_vanguard"]
+script = ExtResource("6_vanguard")
+maximum_members = 3
+minimum_members = 1
+damage_per_member = 0.333333
+execution_health_ratio = 0.12
+reinforcement_seconds = 5.5
+
+[sub_resource type="Resource" id="RetainerGrowth_kanda"]
+script = ExtResource("13_retainer_growth")
+retainer_id = &"kanda"
+legacy_cursor_id = &"iron"
+level_2_description = "근접 검격 피해가 크게 증가합니다."
+level_3_description = "검격 넉백과 타격 범위가 증가합니다."
+level_5_description = "이동속도와 유세 열기 회수 범위가 증가합니다."
+level_6_description = "검격 주기가 짧아지고 특화 고유 행동이 강화됩니다."
+specialization_ids = Array[StringName]([&"iron_impact", &"iron_focus", &"iron_relay"])
+
+[sub_resource type="Resource" id="RetainerGrowth_given"]
+script = ExtResource("13_retainer_growth")
+retainer_id = &"given"
+legacy_cursor_id = &"silver"
+level_2_description = "채찍 피해와 출혈 위력이 증가합니다."
+level_3_description = "채찍 넉백과 환혹 확률이 증가합니다."
+level_5_description = "이동속도와 유세 열기 회수 범위가 증가합니다."
+level_6_description = "채찍 사거리와 환혹 지속시간이 증가합니다."
+specialization_ids = Array[StringName]([&"silver_tracking", &"silver_weakness", &"silver_switch"])
+
+[sub_resource type="Resource" id="RetainerGrowth_jeomujeom"]
+script = ExtResource("13_retainer_growth")
+retainer_id = &"jeomujeom"
+legacy_cursor_id = &"gold"
+level_2_description = "심연 장판의 지속 피해가 증가합니다."
+level_3_description = "장판 둔화와 중심부 제어력이 증가합니다."
+level_5_description = "이동속도와 유세 열기 회수 범위가 증가합니다."
+level_6_description = "심연 장판 범위와 유지력이 증가합니다."
+specialization_ids = Array[StringName]([&"gold_experience", &"gold_zone", &"gold_chain"])
+
+[sub_resource type="Resource" id="RetainerGrowth_jugdied"]
+script = ExtResource("13_retainer_growth")
+retainer_id = &"jugdied"
+legacy_cursor_id = &"platinum"
+level_2_description = "기마 참격과 합동 돌격 피해가 증가합니다."
+level_3_description = "합동 돌격의 넉백과 경로 폭이 증가합니다."
+level_5_description = "이동속도와 유세 열기 회수 범위가 증가합니다."
+level_6_description = "재구성 시간이 감소하고 기마 행동이 강화됩니다."
+specialization_ids = Array[StringName]([&"platinum_charge", &"platinum_shatter", &"platinum_boss"])
+
+[sub_resource type="Resource" id="RetainerGrowth_death_vanguard"]
+script = ExtResource("13_retainer_growth")
+retainer_id = &"death_vanguard"
+legacy_cursor_id = &"vanguard"
+level_2_description = "부대 중공격 피해가 증가합니다."
+level_3_description = "부대 넉백과 처형 기준이 증가합니다."
+level_5_description = "행군속도와 유세 열기 회수 범위가 증가합니다."
+level_6_description = "충원 시간이 감소하고 부대 행동이 강화됩니다."
+specialization_ids = Array[StringName]([&"vanguard_impact", &"vanguard_hunt", &"vanguard_march"])
+
+[sub_resource type="Resource" id="Candidate_partason"]
+script = ExtResource("2_candidate")
+id = &"partason"
+core_id = &"emerald"
+faction_id = &"partason_faction"
+full_name = "파르태손 VIII 마아앙"
+short_name = "파르태손 8세"
+title = "정통 마왕가의 후계자"
+description = "마왕 명가의 후손. 넉백·방어·일반 지원대 강화에 능한 균형형 후보입니다."
+campaign_slogan = "정통 마왕의 품격으로 안정된 마계를!"
+emblem_id = &"partason_sword_shield"
+candidate_boss_id = &"boss_5"
+default_retainer_id = &"kanda"
+decree_ids = Array[StringName]([&"royal_barrier", &"orthodox_army", &"royal_command"])
+growth_data = SubResource("Partason_growth")
+guard_growth_data = SubResource("Partason_guard_growth")
+
+[sub_resource type="Resource" id="Candidate_jiane"]
+script = ExtResource("2_candidate")
+id = &"jiane"
+core_id = &"sapphire"
+faction_id = &"jiane_faction"
+full_name = "지아느 야하니아"
+short_name = "지아느"
+title = "서큐버스의 별"
+description = "환혹과 관통 공격으로 진군을 뒤집고 친위대의 단일 화력을 증폭하는 제어형 후보입니다."
+campaign_slogan = "싸우지 않아도 모두가 내 편이 되는 마계."
+emblem_id = &"jiane_heart"
+candidate_boss_id = &"boss_10"
+default_retainer_id = &"given"
+decree_ids = Array[StringName]([&"charmed_march", &"elegant_proxy_war", &"gaze_of_support"])
+growth_data = SubResource("Jiane_growth")
+guard_growth_data = SubResource("Jiane_guard_growth")
+
+[sub_resource type="Resource" id="Candidate_kasuha"]
+script = ExtResource("2_candidate")
+id = &"kasuha"
+core_id = &"amethyst"
+faction_id = &"kasuha_faction"
+full_name = "카스하 르짜르"
+short_name = "카스하"
+title = "심연마술의 대가"
+description = "긴 예고 뒤 밀집 지점에 강한 범위 폭발을 일으키는 순간 화력형 후보입니다."
+campaign_slogan = "더 깊은 심연, 더 큰 연구 예산!"
+emblem_id = &"kasuha_tentacle_eye"
+candidate_boss_id = &"boss_15"
+default_retainer_id = &"jeomujeom"
+decree_ids = Array[StringName]([&"abyss_collapse", &"observation_network", &"forbidden_research"])
+growth_data = SubResource("Kasuha_growth")
+guard_growth_data = SubResource("Kasuha_guard_growth")
+
+[sub_resource type="Resource" id="Candidate_irelai"]
+script = ExtResource("2_candidate")
+id = &"irelai"
+core_id = &"jade"
+faction_id = &"irelai_faction"
+full_name = "이레라이 거주서도"
+short_name = "이레라이"
+title = "사령의 대가"
+description = "퇴장한 난입자에게서 사령 충전을 모으고 소환 공격을 연쇄하는 누적 화력형 후보입니다."
+campaign_slogan = "퇴직도 이직도 없는 안정적인 마왕군."
+emblem_id = &"irelai_skull_aura"
+candidate_boss_id = &"final_boss"
+default_retainer_id = &"jugdied"
+decree_ids = Array[StringName]([&"instant_rehire", &"mass_revival", &"afterlife_welfare"])
+growth_data = SubResource("Irelai_growth")
+guard_growth_data = SubResource("Irelai_guard_growth")
+
+[sub_resource type="Resource" id="Candidate_judaginda"]
+script = ExtResource("2_candidate")
+id = &"judaginda"
+core_id = &"obsidian"
+faction_id = &"judaginda_faction"
+full_name = "죽음교주 주다긴다"
+short_name = "주다긴다"
+title = "죽음교주"
+description = "짧은 사거리의 강한 판결과 처형, 사신 소환으로 정예와 공식 난입을 빠르게 퇴장시키는 결전형 마왕 후보입니다."
+campaign_slogan = "끝까지 버티는 표는 없다. 판결은 한 번이면 충분하다!"
+emblem_id = &"judaginda_scythe_blood"
+candidate_boss_id = &"judgment_bell"
+default_retainer_id = &"death_vanguard"
+decree_ids = Array[StringName]([&"final_sentence", &"vanguard_mobilization", &"bell_of_judgment"])
+growth_data = SubResource("Judaginda_growth")
+guard_growth_data = SubResource("Judaginda_guard_growth")
+
+[sub_resource type="Resource" id="Retainer_kanda"]
+script = ExtResource("3_retainer")
+id = &"kanda"
+cursor_id = &"iron"
+preferred_candidate_id = &"partason"
+full_name = "마장군 칸다 도르기어크"
+short_name = "칸다"
+title = "마장군"
+description = "평균적인 이동·피해·넉백과 안정적인 유세 열기 회수를 갖춘 초보자 추천 심복입니다."
+retainer_boss_id = &"boss_5"
+movement_profile_id = &"balanced"
+special_resource_type = &"none"
+combo_attack_type = &"guard_slash"
+action_profile_id = &"kanda_sword"
+growth_data = SubResource("RetainerGrowth_kanda")
+
+[sub_resource type="Resource" id="Retainer_given"]
+script = ExtResource("3_retainer")
+id = &"given"
+cursor_id = &"silver"
+preferred_candidate_id = &"jiane"
+full_name = "고통과 쾌락의 마녀 기븐 즈타"
+short_name = "기븐"
+title = "채찍의 마녀"
+description = "낮은 직접 피해 대신 출혈·넉백·환혹으로 근거리를 제압하는 제어형 심복입니다."
+retainer_boss_id = &"boss_10"
+movement_profile_id = &"control"
+special_resource_type = &"charm_resistance"
+combo_attack_type = &"whip_zone"
+action_profile_id = &"given_whip"
+growth_data = SubResource("RetainerGrowth_given")
+
+[sub_resource type="Resource" id="Retainer_jeomujeom"]
+script = ExtResource("3_retainer")
+id = &"jeomujeom"
+cursor_id = &"gold"
+preferred_candidate_id = &"kasuha"
+full_name = "심연의 피조물 저므조므"
+short_name = "저므조므"
+title = "심연의 피조물"
+description = "매우 느리지만 넓은 지속 피해·둔화·회수 보정을 갖춘 지역 점유형 심복입니다."
+retainer_boss_id = &"boss_15"
+movement_profile_id = &"slow_zone"
+special_resource_type = &"abyss_charge"
+combo_attack_type = &"abyss_burst"
+action_profile_id = &"jeomujeom_abyss_zone"
+growth_data = SubResource("RetainerGrowth_jeomujeom")
+
+[sub_resource type="Resource" id="Retainer_jugdied"]
+script = ExtResource("3_retainer")
+id = &"jugdied"
+cursor_id = &"platinum"
+preferred_candidate_id = &"irelai"
+full_name = "사령기사 주그디에드 야그니야"
+short_name = "주그디에드"
+title = "사령기사"
+description = "빠른 이동과 넓은 전장 관리, 후보와의 합동 직선 공격을 담당하는 기동형 심복입니다."
+retainer_boss_id = &"final_boss"
+movement_profile_id = &"fast_rebuild"
+special_resource_type = &"reconstruction"
+combo_attack_type = &"line_charge"
+action_profile_id = &"jugdied_cavalry"
+growth_data = SubResource("RetainerGrowth_jugdied")
+combo_profile = SubResource("Combo_jugdied")
+
+[sub_resource type="Resource" id="Retainer_death_vanguard"]
+script = ExtResource("3_retainer")
+id = &"death_vanguard"
+cursor_id = &"vanguard"
+preferred_candidate_id = &"judaginda"
+full_name = "죽음교 돌격부대"
+short_name = "돌격부대"
+title = "선봉 집행대"
+description = "3인 인원 스택의 강한 중공격과 체력 기준 처형을 사용하며, 처형으로 줄어든 인원을 본진에서 충원하는 돌격형 심복입니다."
+retainer_boss_id = &"judgment_bell"
+movement_profile_id = &"heavy_vanguard"
+special_resource_type = &"vanguard_stack"
+combo_attack_type = &"judgment_charge"
+action_profile_id = &"death_vanguard_squad"
+growth_data = SubResource("RetainerGrowth_death_vanguard")
+vanguard_stack_profile = SubResource("Vanguard_death_vanguard")
+
+[sub_resource type="Resource" id="Faction_partason"]
+script = ExtResource("4_faction")
+id = &"partason_faction"
+candidate_id = &"partason"
+display_name = "마왕 정통파"
+primary_color = Color(0.145098, 0.156863, 0.192157, 1)
+secondary_color = Color(0.721569, 0.72549, 0.756863, 1)
+accent_color = Color(0.788235, 0.654902, 0.364706, 1)
+emblem_id = &"partason_sword_shield"
+marker_style = &"sword_shield"
+supporter_enemy_ids = Array[StringName]([&"partason_standard_shield"])
+elite_enemy_ids = Array[StringName]([&"partason_standard_shield"])
+boss_ids = Array[StringName]([&"boss_5"])
+replacement_boss_ids = Array[StringName]([&"boss_10", &"boss_15", &"final_boss", &"judgment_bell"])
+
+[sub_resource type="Resource" id="Faction_jiane"]
+script = ExtResource("4_faction")
+id = &"jiane_faction"
+candidate_id = &"jiane"
+display_name = "몽마 연합"
+primary_color = Color(0.847059, 0.227451, 0.568627, 1)
+secondary_color = Color(0.431373, 0.164706, 0.392157, 1)
+accent_color = Color(0.964706, 0.639216, 0.819608, 1)
+emblem_id = &"jiane_heart"
+marker_style = &"heart"
+supporter_enemy_ids = Array[StringName]([&"jiane_succubus_bewitcher"])
+elite_enemy_ids = Array[StringName]([&"jiane_succubus_bewitcher"])
+boss_ids = Array[StringName]([&"boss_10"])
+replacement_boss_ids = Array[StringName]([&"boss_5", &"boss_15", &"final_boss", &"judgment_bell"])
+
+[sub_resource type="Resource" id="Faction_kasuha"]
+script = ExtResource("4_faction")
+id = &"kasuha_faction"
+candidate_id = &"kasuha"
+display_name = "심연 연구회"
+primary_color = Color(0.313725, 0.721569, 0.290196, 1)
+secondary_color = Color(0.113725, 0.262745, 0.219608, 1)
+accent_color = Color(0.721569, 0.901961, 0.360784, 1)
+emblem_id = &"kasuha_tentacle_eye"
+marker_style = &"tentacle_eye"
+supporter_enemy_ids = Array[StringName]([&"kasuha_abyss_creature"])
+elite_enemy_ids = Array[StringName]([&"kasuha_abyss_creature"])
+boss_ids = Array[StringName]([&"boss_15"])
+replacement_boss_ids = Array[StringName]([&"boss_5", &"boss_10", &"final_boss", &"judgment_bell"])
+
+[sub_resource type="Resource" id="Faction_irelai"]
+script = ExtResource("4_faction")
+id = &"irelai_faction"
+candidate_id = &"irelai"
+display_name = "사령 고용조합"
+primary_color = Color(0.501961, 0.85098, 0.960784, 1)
+secondary_color = Color(0.917647, 0.984314, 1, 1)
+accent_color = Color(0.662745, 0.780392, 1, 1)
+emblem_id = &"irelai_skull_aura"
+marker_style = &"skull_aura"
+supporter_enemy_ids = Array[StringName]([&"irelai_skeleton_cavalry"])
+elite_enemy_ids = Array[StringName]([&"irelai_skeleton_cavalry"])
+boss_ids = Array[StringName]([&"final_boss"])
+replacement_boss_ids = Array[StringName]([&"boss_5", &"boss_10", &"boss_15", &"judgment_bell"])
+
+[sub_resource type="Resource" id="Faction_judaginda"]
+script = ExtResource("4_faction")
+id = &"judaginda_faction"
+candidate_id = &"judaginda"
+display_name = "죽음교 심판단"
+primary_color = Color(0.831373, 0.266667, 0.290196, 1)
+secondary_color = Color(0.141176, 0.141176, 0.164706, 1)
+accent_color = Color(0.647059, 0.654902, 0.690196, 1)
+emblem_id = &"judaginda_scythe_blood"
+marker_style = &"scythe_blood"
+supporter_enemy_ids = Array[StringName]([&"judaginda_cult_applicant"])
+elite_enemy_ids = Array[StringName]([&"judaginda_cult_applicant"])
+boss_ids = Array[StringName]([&"judgment_bell"])
+replacement_boss_ids = Array[StringName]([&"boss_5", &"boss_10", &"boss_15", &"final_boss"])
+
+[resource]
+script = ExtResource("1_campaign")
+id = &"demon_election_five_candidate"
+expected_candidate_count = 5
+expected_boss_slot_count = 4
+candidates = Array[ExtResource("2_candidate")]([SubResource("Candidate_partason"), SubResource("Candidate_jiane"), SubResource("Candidate_kasuha"), SubResource("Candidate_irelai"), SubResource("Candidate_judaginda")])
+retainers = Array[ExtResource("3_retainer")]([SubResource("Retainer_kanda"), SubResource("Retainer_given"), SubResource("Retainer_jeomujeom"), SubResource("Retainer_jugdied"), SubResource("Retainer_death_vanguard")])
+factions = Array[ExtResource("4_faction")]([SubResource("Faction_partason"), SubResource("Faction_jiane"), SubResource("Faction_kasuha"), SubResource("Faction_irelai"), SubResource("Faction_judaginda")])
+decree_catalog = ExtResource("7_decrees")
+governance_reactions = ExtResource("8_governance")

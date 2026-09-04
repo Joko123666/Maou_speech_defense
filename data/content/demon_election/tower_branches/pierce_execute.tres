@@ -1,0 +1,25 @@
+[gd_resource type="Resource" script_class="TowerBranchData" format=3]
+
+[ext_resource type="Script" path="res://resources/tower_branch_data.gd" id="1_8jpf2"]
+
+[resource]
+script = ExtResource("1_8jpf2")
+id = &"pierce_execute"
+display_name = "하이오크 부대"
+description = "주요 능력치를 높이고 5회 공격마다 폭이 넓은 파워샷을 발사"
+tower_id = &"pierce"
+branch_type = &"synergy"
+level_4_modifiers = {
+"damage": 1.3,
+"power_shot_damage": 1.65,
+"power_shot_hits": 5,
+"power_shot_width": 1.7,
+"range": 1.15
+}
+level_7_modifiers = {
+"damage": 1.55,
+"power_shot_damage": 2.2,
+"power_shot_hits": 5,
+"power_shot_width": 2.3,
+"range": 1.3
+}

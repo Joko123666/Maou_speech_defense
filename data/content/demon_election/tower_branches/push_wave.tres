@@ -1,0 +1,22 @@
+[gd_resource type="Resource" script_class="TowerBranchData" format=3]
+
+[ext_resource type="Script" path="res://resources/tower_branch_data.gd" id="1_210q4"]
+
+[resource]
+script = ExtResource("1_210q4")
+id = &"push_wave"
+display_name = "피로서 이루리라"
+description = "톱날을 8개로 고정해 더 많은 각도를 덮는 대신 개별 피해와 넉백을 낮춤"
+tower_id = &"knockback"
+branch_type = &"playstyle"
+level_4_modifiers = {
+"damage": 0.55,
+"push": 0.55,
+"saw_fixed": 8
+}
+level_7_modifiers = {
+"bleed_power": 1.6,
+"damage": 0.68,
+"push": 0.68,
+"saw_fixed": 8
+}

@@ -1,0 +1,22 @@
+[gd_resource type="Resource" script_class="SpecializationBranchData" format=3]
+
+[ext_resource type="Script" path="res://resources/specialization_branch_data.gd" id="1_sxudu"]
+
+[resource]
+script = ExtResource("1_sxudu")
+id = &"obsidian_sentence"
+owner_kind = &"core"
+owner_id = &"obsidian"
+display_name = "최종 선고"
+level_4_description = "핵 공격 피해 +45% · 보스 피해 +25%"
+level_7_description = "체력 20% 이하 일반 적을 즉시 처형하고 보스에게 추가 피해"
+level_4_modifiers = {
+"boss_damage": 1.25,
+"damage": 1.45
+}
+level_7_modifiers = {
+"boss_damage": 1.5,
+"damage": 1.7,
+"execute_ratio": 0.2
+}
+impact_keys = Array[StringName]([&"core", &"damage", &"boss"])

@@ -1,0 +1,28 @@
+[gd_resource type="Resource" script_class="EnemyData" format=3]
+
+[ext_resource type="Script" path="res://resources/control_resistance_profile_data.gd" id="1_6wne2"]
+[ext_resource type="Script" path="res://resources/enemy_data.gd" id="2_afs3l"]
+[ext_resource type="Texture2D" path="res://assets/graphics/enemies/final_boss.png" id="3_c0x3u"]
+
+[sub_resource type="Resource" id="Resource_6v3de"]
+script = ExtResource("1_6wne2")
+
+[resource]
+script = ExtResource("2_afs3l")
+id = &"final_boss"
+display_name = "최종 경쟁 후보"
+max_health = 9000.0
+move_speed = 31.0
+core_damage = 70.0
+experience_value = 600.0
+armor = 12.0
+knockback_resistance = 0.87
+status_resistance = 0.56
+control_resistance_profile = SubResource("Resource_6v3de")
+available_from_seconds = 600.0
+behavior = &"boss_final"
+is_boss = true
+boss_tier = 4
+body_color = Color(0.8901961, 0.30980393, 0.40392157, 1)
+radius = 54.0
+texture = ExtResource("3_c0x3u")

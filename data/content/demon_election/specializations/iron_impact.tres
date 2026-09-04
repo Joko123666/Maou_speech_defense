@@ -1,0 +1,23 @@
+[gd_resource type="Resource" script_class="SpecializationBranchData" format=3]
+
+[ext_resource type="Script" path="res://resources/specialization_branch_data.gd" id="1_2jyxs"]
+
+[resource]
+script = ExtResource("1_2jyxs")
+id = &"iron_impact"
+owner_kind = &"cursor"
+owner_id = &"iron"
+display_name = "정예 검술 훈련"
+level_4_description = "검격 피해 +22% · 넉백 +18%"
+level_7_description = "검격 피해 +45% · 넉백 +65% · 충돌 취약"
+level_4_modifiers = {
+"damage": 1.22,
+"knockback": 1.18
+}
+level_7_modifiers = {
+"collision_damage": 0.32,
+"collision_mark": 0.18,
+"damage": 1.45,
+"knockback": 1.65
+}
+impact_keys = Array[StringName]([&"retainer", &"damage", &"control"])

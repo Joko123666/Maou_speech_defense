@@ -1,0 +1,24 @@
+[gd_resource type="Resource" script_class="EnemyData" format=3]
+
+[ext_resource type="Script" path="res://resources/enemy_data.gd" id="1_vn63s"]
+[ext_resource type="Texture2D" path="res://assets/graphics/enemies/steel_golem.png" id="2_5usbi"]
+
+[resource]
+script = ExtResource("1_vn63s")
+id = &"steel_golem"
+display_name = "강철 골렘"
+max_health = 260.0
+move_speed = 34.0
+core_damage = 22.0
+experience_value = 18.0
+spawn_cost = 26.0
+role_tags = Array[StringName]([&"heavy", &"cc_resist"])
+armor = 7.0
+knockback_resistance = 0.55
+status_resistance = 0.45
+available_from_seconds = 450.0
+behavior = &"heavy_resist"
+is_elite = true
+body_color = Color(0.43529412, 0.50980395, 0.58431375, 1)
+radius = 27.0
+texture = ExtResource("2_5usbi")

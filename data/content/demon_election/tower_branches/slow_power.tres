@@ -1,0 +1,27 @@
+[gd_resource type="Resource" script_class="TowerBranchData" format=3]
+
+[ext_resource type="Script" path="res://resources/tower_branch_data.gd" id="1_aq6cc"]
+
+[resource]
+script = ExtResource("1_aq6cc")
+id = &"slow_power"
+display_name = "제물소환의식"
+description = "영향권에서 적이 쓰러지면 제물을 쌓고 빈 소환 슬롯에 체력이 소진되는 추적 피조물을 생성"
+tower_id = &"slow"
+branch_type = &"role"
+level_4_modifiers = {
+"sacrifice_required": 5,
+"summon_cap": 1,
+"summon_damage": 28.0,
+"summon_duration": 5.0,
+"summon_interval": 0.72,
+"summon_radius": 140.0
+}
+level_7_modifiers = {
+"sacrifice_required": 4,
+"summon_cap": 2,
+"summon_damage": 42.0,
+"summon_duration": 7.0,
+"summon_interval": 0.55,
+"summon_radius": 170.0
+}

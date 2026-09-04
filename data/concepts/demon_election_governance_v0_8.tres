@@ -1,0 +1,73 @@
+[gd_resource type="Resource" script_class="GovernanceReactionCatalogData" load_steps=7 format=3]
+
+[ext_resource type="Script" path="res://resources/governance_reaction_catalog_data.gd" id="1_catalog"]
+[ext_resource type="Script" path="res://resources/governance_reaction_data.gd" id="2_reaction"]
+
+[sub_resource type="Resource" id="Reaction_cold"]
+script = ExtResource("2_reaction")
+id = &"cold"
+minimum_approval = 0
+maximum_approval = 19
+display_name = "냉랭"
+color = Color(0.94, 0.34, 0.4, 1)
+audience_strength = 1
+battle_chant = "야유가 방벽 너머로 번진다."
+victory_line = "의심 속에서도 결과는 남았다."
+defeat_line = "관중은 말없이 등을 돌린다."
+result_pose = "굳은 방어 자세"
+
+[sub_resource type="Resource" id="Reaction_wary"]
+script = ExtResource("2_reaction")
+id = &"wary"
+minimum_approval = 20
+maximum_approval = 39
+display_name = "경계"
+color = Color(0.95, 0.58, 0.28, 1)
+audience_strength = 2
+battle_chant = "드문 응원 사이로 평가의 시선이 따른다."
+victory_line = "조금은 믿어 볼 만하다는 웅성거림이 돈다."
+defeat_line = "불안하던 시선이 다시 차가워진다."
+result_pose = "신중한 경례"
+
+[sub_resource type="Resource" id="Reaction_neutral"]
+script = ExtResource("2_reaction")
+id = &"neutral"
+minimum_approval = 40
+maximum_approval = 59
+display_name = "안정"
+color = Color(0.46, 0.78, 0.88, 1)
+audience_strength = 3
+battle_chant = "관중이 전황을 지켜보며 박자를 맞춘다."
+victory_line = "안정된 환호가 다음 원정을 기대한다."
+defeat_line = "아쉬운 탄식 속에서도 자리는 지켜진다."
+result_pose = "침착한 지휘 자세"
+
+[sub_resource type="Resource" id="Reaction_supportive"]
+script = ExtResource("2_reaction")
+id = &"supportive"
+minimum_approval = 60
+maximum_approval = 79
+display_name = "호응"
+color = Color(0.38, 0.9, 0.62, 1)
+audience_strength = 4
+battle_chant = "진영의 구호가 공격 박자에 맞춰 울린다!"
+victory_line = "승전 구호가 후보의 이름으로 이어진다!"
+defeat_line = "재도전을 외치는 함성이 패배를 덮는다."
+result_pose = "당당한 승전 자세"
+
+[sub_resource type="Resource" id="Reaction_fervent"]
+script = ExtResource("2_reaction")
+id = &"fervent"
+minimum_approval = 80
+maximum_approval = 100
+display_name = "열광"
+color = Color(1, 0.78, 0.26, 1)
+audience_strength = 5
+battle_chant = "관중석 전체가 마왕의 이름을 연호한다!"
+victory_line = "폭발적인 환호 속에 왕좌의 주인이 선포된다!"
+defeat_line = "패배에도 연호는 멈추지 않는다. 다시 한 번!"
+result_pose = "왕좌의 군림 자세"
+
+[resource]
+script = ExtResource("1_catalog")
+reactions = Array[ExtResource("2_reaction")]([SubResource("Reaction_cold"), SubResource("Reaction_wary"), SubResource("Reaction_neutral"), SubResource("Reaction_supportive"), SubResource("Reaction_fervent")])

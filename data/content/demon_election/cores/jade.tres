@@ -1,0 +1,28 @@
+[gd_resource type="Resource" script_class="CoreData" format=3]
+
+[ext_resource type="Script" path="res://resources/necromancy_profile_data.gd" id="1_xrrby"]
+[ext_resource type="Script" path="res://resources/core_data.gd" id="2_14tjq"]
+[ext_resource type="Texture2D" path="res://assets/graphics/emblems/v019/irelai_skull_aura.svg" id="3_3vlcw"]
+
+[sub_resource type="Resource" id="Resource_accrs"]
+script = ExtResource("1_xrrby")
+
+[resource]
+script = ExtResource("2_14tjq")
+id = &"jade"
+display_name = "이레라이 거주서도"
+description = "퇴장한 난입자를 사령으로 재고용하고 죽음의 파도로 연쇄 전투를 만드는 누적 화력형 후보"
+attack_type = &"random"
+skill_type = &"barrage"
+passive_type = &"necromancy"
+damage = 16.0
+attack_interval = 0.38
+max_health = 145.0
+regeneration = 0.2
+skill_damage = 165.0
+skill_cast_seconds = 1.25
+unique_tower_id = &"jade_roulette"
+unique_formation_id = &"jade_gambit"
+necromancy_profile = SubResource("Resource_accrs")
+color = Color(0.6156863, 0.8666667, 0.33333334, 1)
+texture = ExtResource("3_3vlcw")

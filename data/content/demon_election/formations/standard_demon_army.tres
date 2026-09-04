@@ -1,0 +1,38 @@
+[gd_resource type="Resource" script_class="TowerFormationData" format=3]
+
+[ext_resource type="Script" path="res://resources/formation_cell_data.gd" id="1_x1id0"]
+[ext_resource type="Script" path="res://resources/tower_formation_data.gd" id="2_eii5o"]
+
+[sub_resource type="Resource" id="Resource_bq67u"]
+script = ExtResource("1_x1id0")
+offset = Vector2i(1, 0)
+tower_id = &"rapid"
+
+[sub_resource type="Resource" id="Resource_opoj6"]
+script = ExtResource("1_x1id0")
+offset = Vector2i(2, 0)
+tower_id = &"pierce"
+
+[sub_resource type="Resource" id="Resource_mvcc3"]
+script = ExtResource("1_x1id0")
+offset = Vector2i(0, 1)
+tower_id = &"rubber_golem"
+
+[sub_resource type="Resource" id="Resource_ajpk0"]
+script = ExtResource("1_x1id0")
+offset = Vector2i(1, 1)
+tower_id = &"rubber_golem"
+
+[resource]
+script = ExtResource("2_eii5o")
+id = &"standard_demon_army"
+display_name = "표준 마군단"
+description = "고블린·오크·고무골렘 세 병종이 계단형 전선을 구성"
+cells = Array[ExtResource("1_x1id0")]([SubResource("Resource_bq67u"), SubResource("Resource_opoj6"), SubResource("Resource_mvcc3"), SubResource("Resource_ajpk0")])
+role_tags = Array[StringName]([&"basic", &"pierce", &"knockback"])
+shape_class = &"STEP"
+placement_difficulty = 2
+formation_score = 320
+raw_power_score = 320.0
+output_multiplier = 0.9375
+expected_power_score = 300.0

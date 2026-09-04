@@ -1,0 +1,338 @@
+[gd_resource type="Resource" script_class="ArtifactCatalogData" load_steps=48 format=3]
+
+[ext_resource type="Script" path="res://resources/artifact_catalog_data.gd" id="1_catalog"]
+[ext_resource type="Script" path="res://resources/artifact_data.gd" id="2_artifact"]
+[ext_resource type="Script" path="res://resources/artifact_effect_data.gd" id="3_effect"]
+
+[sub_resource type="Resource" id="E_WarBannerPower"]
+script = ExtResource("3_effect")
+target_group = &"normal_defender"
+stat_key = &"power"
+axis_id = &"power"
+value = 0.25
+
+[sub_resource type="Resource" id="A_WarBanner"]
+script = ExtResource("2_artifact")
+id = &"war_banner"
+display_name = "핏빛 전투 깃발"
+description = "일반 수비병력 🔴 위력 +25%"
+icon_key = &"damage"
+color = Color(1, 0.35, 0.32, 1)
+effects = Array[ExtResource("3_effect")]([SubResource("E_WarBannerPower")])
+
+[sub_resource type="Resource" id="E_BloodPrismPower"]
+script = ExtResource("3_effect")
+target_group = &"normal_defender"
+stat_key = &"power"
+axis_id = &"power"
+value = 0.35
+
+[sub_resource type="Resource" id="E_BloodPrismRange"]
+script = ExtResource("3_effect")
+target_group = &"normal_defender"
+stat_key = &"range"
+axis_id = &"range"
+value_mode = &"fixed_bonus"
+value = -20.0
+
+[sub_resource type="Resource" id="A_BloodPrism"]
+script = ExtResource("2_artifact")
+id = &"blood_prism"
+display_name = "응축 혈정"
+description = "일반 수비병력 🔴 위력 +35% / 🔵 범위 -20"
+icon_key = &"damage"
+color = Color(0.93, 0.18, 0.27, 1)
+effects = Array[ExtResource("3_effect")]([SubResource("E_BloodPrismPower"), SubResource("E_BloodPrismRange")])
+
+[sub_resource type="Resource" id="E_GreenGearSpeed"]
+script = ExtResource("3_effect")
+target_group = &"normal_defender"
+stat_key = &"speed"
+axis_id = &"speed"
+value = 0.25
+
+[sub_resource type="Resource" id="A_GreenGear"]
+script = ExtResource("2_artifact")
+id = &"green_gear"
+display_name = "비취 기어"
+description = "일반 수비병력 🟢 속도 +25%"
+icon_key = &"speed"
+color = Color(0.38, 0.88, 0.48, 1)
+effects = Array[ExtResource("3_effect")]([SubResource("E_GreenGearSpeed")])
+
+[sub_resource type="Resource" id="E_OverclockSpeed"]
+script = ExtResource("3_effect")
+target_group = &"normal_defender"
+stat_key = &"speed"
+axis_id = &"speed"
+value = 0.35
+
+[sub_resource type="Resource" id="E_OverclockPower"]
+script = ExtResource("3_effect")
+target_group = &"normal_defender"
+stat_key = &"power"
+axis_id = &"power"
+value = -0.10
+
+[sub_resource type="Resource" id="A_Overclock"]
+script = ExtResource("2_artifact")
+id = &"overclock_coil"
+display_name = "과부하 코일"
+description = "일반 수비병력 🟢 속도 +35% / 🔴 위력 -10%"
+icon_key = &"speed"
+color = Color(0.42, 1, 0.55, 1)
+effects = Array[ExtResource("3_effect")]([SubResource("E_OverclockSpeed"), SubResource("E_OverclockPower")])
+
+[sub_resource type="Resource" id="E_BlueLensRange"]
+script = ExtResource("3_effect")
+target_group = &"normal_defender"
+stat_key = &"range"
+axis_id = &"range"
+value_mode = &"fixed_bonus"
+value = 24.0
+
+[sub_resource type="Resource" id="A_BlueLens"]
+script = ExtResource("2_artifact")
+id = &"blue_lens"
+display_name = "청람 관측경"
+description = "일반 수비병력 🔵 범위 +24"
+icon_key = &"area"
+color = Color(0.35, 0.67, 1, 1)
+effects = Array[ExtResource("3_effect")]([SubResource("E_BlueLensRange")])
+
+[sub_resource type="Resource" id="E_HorizonRange"]
+script = ExtResource("3_effect")
+target_group = &"normal_defender"
+stat_key = &"range"
+axis_id = &"range"
+value_mode = &"fixed_bonus"
+value = 40.0
+
+[sub_resource type="Resource" id="E_HorizonSpeed"]
+script = ExtResource("3_effect")
+target_group = &"normal_defender"
+stat_key = &"speed"
+axis_id = &"speed"
+value = -0.10
+
+[sub_resource type="Resource" id="A_Horizon"]
+script = ExtResource("2_artifact")
+id = &"horizon_map"
+display_name = "먼 지평선 지도"
+description = "일반 수비병력 🔵 범위 +40 / 🟢 속도 -10%"
+icon_key = &"area"
+color = Color(0.28, 0.58, 1, 1)
+effects = Array[ExtResource("3_effect")]([SubResource("E_HorizonRange"), SubResource("E_HorizonSpeed")])
+
+[sub_resource type="Resource" id="E_CrownDamage"]
+script = ExtResource("3_effect")
+target_group = &"candidate"
+stat_key = &"damage"
+value = 0.25
+
+[sub_resource type="Resource" id="A_Crown"]
+script = ExtResource("2_artifact")
+id = &"crown_shard"
+display_name = "마왕관 파편"
+description = "후보 직접 피해 +25%"
+icon_key = &"core"
+color = Color(1, 0.82, 0.32, 1)
+effects = Array[ExtResource("3_effect")]([SubResource("E_CrownDamage")])
+
+[sub_resource type="Resource" id="E_DecreeSkill"]
+script = ExtResource("3_effect")
+target_group = &"candidate"
+stat_key = &"skill"
+value = 0.30
+
+[sub_resource type="Resource" id="A_Decree"]
+script = ExtResource("2_artifact")
+id = &"decree_tablet"
+display_name = "공약 석판"
+description = "후보 고유 기술 피해 +30%"
+icon_key = &"global"
+color = Color(0.86, 0.52, 1, 1)
+effects = Array[ExtResource("3_effect")]([SubResource("E_DecreeSkill")])
+
+[sub_resource type="Resource" id="E_SilverSpurDamage"]
+script = ExtResource("3_effect")
+target_group = &"retainer"
+stat_key = &"damage"
+value = 0.25
+
+[sub_resource type="Resource" id="A_SilverSpur"]
+script = ExtResource("2_artifact")
+id = &"silver_spur"
+display_name = "심복의 은빛 박차"
+description = "심복 직접 피해 +25%"
+icon_key = &"cursor"
+color = Color(0.62, 0.88, 1, 1)
+effects = Array[ExtResource("3_effect")]([SubResource("E_SilverSpurDamage")])
+
+[sub_resource type="Resource" id="E_QuicksilverSpeed"]
+script = ExtResource("3_effect")
+target_group = &"retainer"
+stat_key = &"action_speed"
+value = 0.35
+
+[sub_resource type="Resource" id="E_QuicksilverMovement"]
+script = ExtResource("3_effect")
+target_group = &"retainer"
+stat_key = &"movement"
+value = -0.10
+
+[sub_resource type="Resource" id="A_Quicksilver"]
+script = ExtResource("2_artifact")
+id = &"quicksilver_hourglass"
+display_name = "수은 모래시계"
+description = "심복 행동속도 +35% / 이동속도 -10%"
+icon_key = &"speed"
+color = Color(0.72, 0.88, 0.96, 1)
+effects = Array[ExtResource("3_effect")]([SubResource("E_QuicksilverSpeed"), SubResource("E_QuicksilverMovement")])
+
+[sub_resource type="Resource" id="E_WhetstoneDamage"]
+script = ExtResource("3_effect")
+target_group = &"guard"
+stat_key = &"damage"
+value = 0.30
+
+[sub_resource type="Resource" id="A_Whetstone"]
+script = ExtResource("2_artifact")
+id = &"royal_whetstone"
+display_name = "친위대 숫돌"
+description = "친위대 피해 +30%"
+icon_key = &"tower"
+color = Color(1, 0.78, 0.32, 1)
+effects = Array[ExtResource("3_effect")]([SubResource("E_WhetstoneDamage")])
+
+[sub_resource type="Resource" id="E_WatchSpeed"]
+script = ExtResource("3_effect")
+target_group = &"guard"
+stat_key = &"action_speed"
+value = 0.25
+
+[sub_resource type="Resource" id="E_WatchRange"]
+script = ExtResource("3_effect")
+target_group = &"guard"
+stat_key = &"range"
+value = 0.20
+
+[sub_resource type="Resource" id="A_Watch"]
+script = ExtResource("2_artifact")
+id = &"watchtower_sigil"
+display_name = "망루 인장"
+description = "친위대 행동속도 +25% / 범위 +20%"
+icon_key = &"area"
+color = Color(0.98, 0.86, 0.42, 1)
+effects = Array[ExtResource("3_effect")]([SubResource("E_WatchSpeed"), SubResource("E_WatchRange")])
+
+[sub_resource type="Resource" id="E_ToxinDamage"]
+script = ExtResource("3_effect")
+target_group = &"status"
+stat_key = &"damage"
+status_id = &"poison"
+value = 0.40
+
+[sub_resource type="Resource" id="A_Toxin"]
+script = ExtResource("2_artifact")
+id = &"toxin_ampoule"
+display_name = "농축 독액"
+description = "독 자체 피해 +40%"
+icon_key = &"poison"
+color = Color(0.45, 0.84, 0.42, 1)
+effects = Array[ExtResource("3_effect")]([SubResource("E_ToxinDamage")])
+required_status_ids = Array[StringName]([&"poison"])
+
+[sub_resource type="Resource" id="E_EmberDamage"]
+script = ExtResource("3_effect")
+target_group = &"status"
+stat_key = &"damage"
+status_id = &"burn"
+value = 0.40
+
+[sub_resource type="Resource" id="A_Ember"]
+script = ExtResource("2_artifact")
+id = &"ember_core"
+display_name = "불씨 핵"
+description = "화상 자체 피해 +40%"
+icon_key = &"burn"
+color = Color(1, 0.54, 0.3, 1)
+effects = Array[ExtResource("3_effect")]([SubResource("E_EmberDamage")])
+required_status_ids = Array[StringName]([&"burn"])
+
+[sub_resource type="Resource" id="E_BloodletterDamage"]
+script = ExtResource("3_effect")
+target_group = &"status"
+stat_key = &"damage"
+status_id = &"bleed"
+value = 0.40
+
+[sub_resource type="Resource" id="A_Bloodletter"]
+script = ExtResource("2_artifact")
+id = &"bloodletter_needle"
+display_name = "방혈 바늘"
+description = "출혈 자체 피해 +40%"
+icon_key = &"bleed"
+color = Color(0.91, 0.3, 0.4, 1)
+effects = Array[ExtResource("3_effect")]([SubResource("E_BloodletterDamage")])
+required_status_ids = Array[StringName]([&"bleed"])
+
+[sub_resource type="Resource" id="E_StormDamage"]
+script = ExtResource("3_effect")
+target_group = &"status"
+stat_key = &"damage"
+status_id = &"shock"
+value = 0.40
+
+[sub_resource type="Resource" id="A_Storm"]
+script = ExtResource("2_artifact")
+id = &"storm_bottle"
+display_name = "병 속의 폭풍"
+description = "감전 자체 피해 +40%"
+icon_key = &"shock"
+color = Color(0.47, 0.84, 1, 1)
+effects = Array[ExtResource("3_effect")]([SubResource("E_StormDamage")])
+required_status_ids = Array[StringName]([&"shock"])
+
+[sub_resource type="Resource" id="E_ControlRange"]
+script = ExtResource("3_effect")
+target_group = &"normal_defender"
+stat_key = &"range"
+axis_id = &"range"
+value_mode = &"fixed_bonus"
+value = 32.0
+
+[sub_resource type="Resource" id="A_ControlCompass"]
+script = ExtResource("2_artifact")
+id = &"control_compass"
+display_name = "통제 나침반"
+description = "통제 역할 편대 보유 시 일반 수비병력 🔵 범위 +32"
+icon_key = &"control"
+color = Color(0.42, 0.85, 0.92, 1)
+effects = Array[ExtResource("3_effect")]([SubResource("E_ControlRange")])
+required_role_tags = Array[StringName]([&"control"])
+
+[sub_resource type="Resource" id="E_TwinCandidate"]
+script = ExtResource("3_effect")
+target_group = &"candidate"
+stat_key = &"damage"
+value = 0.20
+
+[sub_resource type="Resource" id="E_TwinRetainer"]
+script = ExtResource("3_effect")
+target_group = &"retainer"
+stat_key = &"damage"
+value = 0.20
+
+[sub_resource type="Resource" id="A_TwinMandate"]
+script = ExtResource("2_artifact")
+id = &"twin_mandate"
+display_name = "쌍두의 위임장"
+description = "후보 직접 피해 +20% / 심복 직접 피해 +20%"
+icon_key = &"global"
+color = Color(0.82, 0.64, 1, 1)
+effects = Array[ExtResource("3_effect")]([SubResource("E_TwinCandidate"), SubResource("E_TwinRetainer")])
+
+[resource]
+script = ExtResource("1_catalog")
+artifacts = Array[ExtResource("2_artifact")]([SubResource("A_WarBanner"), SubResource("A_BloodPrism"), SubResource("A_GreenGear"), SubResource("A_Overclock"), SubResource("A_BlueLens"), SubResource("A_Horizon"), SubResource("A_Crown"), SubResource("A_Decree"), SubResource("A_SilverSpur"), SubResource("A_Quicksilver"), SubResource("A_Whetstone"), SubResource("A_Watch"), SubResource("A_Toxin"), SubResource("A_Ember"), SubResource("A_Bloodletter"), SubResource("A_Storm"), SubResource("A_ControlCompass"), SubResource("A_TwinMandate")])

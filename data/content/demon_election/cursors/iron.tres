@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="CursorData" format=3]
+
+[ext_resource type="Script" path="res://resources/cursor_data.gd" id="1_82ggp"]
+[ext_resource type="Texture2D" path="res://assets/graphics/cursors/iron.png" id="2_osaoj"]
+
+[resource]
+script = ExtResource("1_82ggp")
+id = &"iron"
+display_name = "마장군 칸다 도르기어크"
+description = "균형 잡힌 기동과 검격·넉백으로 전선을 정리하는 안정적인 마장군"
+damage = 21.0
+attack_interval = 0.43
+attack_radius = 64.0
+knockback = 52.0
+collection_radius = 120.0
+movement_speed = 320.0
+color = Color(0.4392157, 0.8, 0.9098039, 1)
+texture = ExtResource("2_osaoj")

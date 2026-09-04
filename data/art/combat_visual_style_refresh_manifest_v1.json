@@ -1,0 +1,76 @@
+{
+  "schema_version": 1,
+  "status": "active",
+  "gdd": "res://godot_formation_defense_gdd_v0_19.md",
+  "review_date": "2026-08-31",
+  "generation": {
+    "tool": "built_in_imagegen",
+    "mode": "stylized-concept",
+    "background_refinement": "built_in_imagegen_preserve_design_alpha_extraction",
+    "postprocess": "deterministic_alpha_normalization_and_square_canvas_fit",
+    "script": "res://tools/prepare_combat_visual_style_refresh.ps1"
+  },
+  "style_contract": {
+    "outline": "thick_deep_navy",
+    "shading": "two_step_cel",
+    "palette": "vivid_flat_cartoon",
+    "texture_detail": "minimal_at_mobile_scale",
+    "status_redundancy": ["color", "unique_silhouette", "placement_or_motion"],
+    "runtime_policy": "shared_atlas_plus_lightweight_procedural_motion"
+  },
+  "assets": [
+    {
+      "id": "status_effect_icon_atlas_v019",
+      "stage_path": "res://assets/graphics/style_refresh_v019/effects/status_effect_icon_atlas_v019.png",
+      "active_path": "res://assets/graphics/effects/status_effect_icon_atlas_v019.png",
+      "source_size": [1024, 1024],
+      "import_size_limit": 512,
+      "sha256": "108B44058814612A573DA6FDB7B4DEB3621A59C0F89A469B7D8303A317BDF6EF",
+      "layout": "4x4 row-major",
+      "order": [
+        "poison", "bleed", "shock", "burn",
+        "slow", "fear", "charm", "stun",
+        "freeze", "mark", "sentence", "pierce_mark",
+        "frost_stack", "haste", "fortify", "knockback"
+      ]
+    },
+    {
+      "id": "reaper_summon_v019",
+      "stage_path": "res://assets/graphics/style_refresh_v019/effects/reaper_summon_v019.png",
+      "active_path": "res://assets/graphics/effects/reaper_summon_v019.png",
+      "source_size": [1024, 1024],
+      "import_size_limit": 512,
+      "sha256": "8DC4F28624D7B79EBED951227D3AE6BBFB3005628213E51D3B27A43D2FE41140",
+      "runtime_role": "Judaginda active-skill manifestation with procedural aura and sweep arcs"
+    },
+    {
+      "id": "death_vanguard_member_token_v019",
+      "stage_path": "res://assets/graphics/style_refresh_v019/effects/death_vanguard_member_token_v019.png",
+      "active_path": "res://assets/graphics/effects/death_vanguard_member_token_v019.png",
+      "source_size": [512, 512],
+      "import_size_limit": 256,
+      "sha256": "03C03FE76BBD5C4A3D2FF46FE32E6AFAD12341C8DD4094EFB98C57E369A11D27",
+      "runtime_role": "18-24px Vanguard stack member token with dimmed empty state"
+    }
+  ],
+  "review": {
+    "status_catalog": "res://tests/visual_reviews/status_effect_visual_review.png",
+    "status_density": "res://tests/visual_reviews/status_effect_density_review.png",
+    "reaper_combat": "res://tests/ui_snapshots/candidate_skill_cast_judaginda.png",
+    "vanguard_stack": "res://tests/ui_snapshots/demon_election_vanguard_squad.png",
+    "viewport": [1280, 720],
+    "renderer": "Forward Mobile",
+    "result": "approved"
+  },
+  "verification": {
+    "quality_gate": "7_of_7_pass",
+    "quality_gate_report": "C:\\Users\\USER\\AppData\\Local\\Temp\\td-survival-headless-quality-gate\\20260831_220408_189_25520\\summary.json",
+    "android_debug_apk": "C:\\Users\\USER\\Documents\\GodotGames\\Output\\TD_survival_v019_combat_visual_style_debug.apk",
+    "android_apk_bytes": 68970280,
+    "android_apk_sha256": "C66A45FFF50819F8229B88B659CE6DFF19D189684BCFBDF1C40FA9995E3464C7",
+    "android_package": "com.example.td_survival",
+    "android_abi": "arm64-v8a",
+    "android_signature_schemes": ["v2", "v3"],
+    "physical_device": "not_tested_no_approved_device"
+  }
+}

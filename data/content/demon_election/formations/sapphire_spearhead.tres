@@ -1,0 +1,41 @@
+[gd_resource type="Resource" script_class="TowerFormationData" format=3]
+
+[ext_resource type="Script" path="res://resources/formation_cell_data.gd" id="1_t2rxk"]
+[ext_resource type="Script" path="res://resources/tower_formation_data.gd" id="2_nom4n"]
+
+[sub_resource type="Resource" id="Resource_g7jd2"]
+script = ExtResource("1_t2rxk")
+tower_id = &"sapphire_lance"
+
+[sub_resource type="Resource" id="Resource_iirqn"]
+script = ExtResource("1_t2rxk")
+offset = Vector2i(1, 1)
+tower_id = &"sapphire_lance"
+
+[sub_resource type="Resource" id="Resource_fksp6"]
+script = ExtResource("1_t2rxk")
+offset = Vector2i(1, 2)
+tower_id = &"sapphire_lance"
+
+[sub_resource type="Resource" id="Resource_lrw54"]
+script = ExtResource("1_t2rxk")
+offset = Vector2i(0, 3)
+tower_id = &"sapphire_lance"
+
+[resource]
+script = ExtResource("2_nom4n")
+id = &"sapphire_spearhead"
+display_name = "지아느 광신 추종자"
+description = "엇갈린 4칸에서 환혹 대상을 추격하는 고화력 광신 친위대"
+cells = Array[ExtResource("1_t2rxk")]([SubResource("Resource_g7jd2"), SubResource("Resource_iirqn"), SubResource("Resource_fksp6"), SubResource("Resource_lrw54")])
+role_tags = Array[StringName]([&"unique", &"sapphire", &"charm_guard"])
+shape_class = &"BEND"
+placement_difficulty = 1
+rarity = 3
+formation_score = 880
+is_guard = true
+candidate_id = &"sapphire"
+raw_power_score = 880.0
+output_multiplier = 0.4090909090909091
+expected_power_score = 360.0
+unique_core_id = &"sapphire"

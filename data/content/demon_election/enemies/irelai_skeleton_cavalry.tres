@@ -1,0 +1,31 @@
+[gd_resource type="Resource" script_class="EnemyData" format=3]
+
+[ext_resource type="Script" path="res://resources/enemy_formation_profile_data.gd" id="1_x57xv"]
+[ext_resource type="Script" path="res://resources/enemy_data.gd" id="2_ivxxq"]
+[ext_resource type="Texture2D" path="res://assets/graphics/enemies/irelai_skeleton_cavalry.png" id="3_xtodq"]
+
+[sub_resource type="Resource" id="Resource_c1eqy"]
+script = ExtResource("1_x57xv")
+kind = &"cavalry_formation"
+tier_unit_counts = Array[int]([3, 4, 6])
+tier_cohort_counts = Array[int]([1, 2, 2])
+tier_stagger_seconds = Array[float]([0.0, 0.0, 0.9])
+cohort_axis_spacing_ratio = 0.16
+separate_group_per_cohort = true
+
+[resource]
+script = ExtResource("2_ivxxq")
+id = &"irelai_skeleton_cavalry"
+display_name = "해골 기병"
+max_health = 46.0
+move_speed = 96.0
+core_damage = 8.0
+experience_value = 4.0
+spawn_cost = 6.0
+role_tags = Array[StringName]([&"faction", &"fast", &"pack"])
+formation_profile = SubResource("Resource_c1eqy")
+available_from_seconds = 240.0
+behavior = &"formation_charge"
+body_color = Color(0.4392157, 0.7882353, 0.7647059, 1)
+radius = 17.0
+texture = ExtResource("3_xtodq")

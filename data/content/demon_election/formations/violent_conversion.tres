@@ -1,0 +1,32 @@
+[gd_resource type="Resource" script_class="TowerFormationData" format=3]
+
+[ext_resource type="Script" path="res://resources/formation_cell_data.gd" id="1_xpshy"]
+[ext_resource type="Script" path="res://resources/tower_formation_data.gd" id="2_ey4bk"]
+
+[sub_resource type="Resource" id="Resource_ckc6s"]
+script = ExtResource("1_xpshy")
+tower_id = &"knockback"
+
+[sub_resource type="Resource" id="Resource_r478k"]
+script = ExtResource("1_xpshy")
+offset = Vector2i(1, 0)
+tower_id = &"mark"
+
+[sub_resource type="Resource" id="Resource_bc7ni"]
+script = ExtResource("1_xpshy")
+offset = Vector2i(0, 1)
+tower_id = &"rapid"
+
+[resource]
+script = ExtResource("2_ey4bk")
+id = &"violent_conversion"
+display_name = "과격 포교대"
+description = "출혈 접촉과 취약 표식을 고블린이 지원"
+cells = Array[ExtResource("1_xpshy")]([SubResource("Resource_ckc6s"), SubResource("Resource_r478k"), SubResource("Resource_bc7ni")])
+role_tags = Array[StringName]([&"contact", &"status", &"amplify"])
+shape_class = &"BEND"
+placement_difficulty = 1
+formation_score = 250
+raw_power_score = 250.0
+output_multiplier = 1.2
+expected_power_score = 300.0

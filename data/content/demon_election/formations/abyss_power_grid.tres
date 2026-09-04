@@ -1,0 +1,38 @@
+[gd_resource type="Resource" script_class="TowerFormationData" format=3]
+
+[ext_resource type="Script" path="res://resources/formation_cell_data.gd" id="1_am3ps"]
+[ext_resource type="Script" path="res://resources/tower_formation_data.gd" id="2_f3vd5"]
+
+[sub_resource type="Resource" id="Resource_lverj"]
+script = ExtResource("1_am3ps")
+tower_id = &"chain"
+
+[sub_resource type="Resource" id="Resource_m3rhw"]
+script = ExtResource("1_am3ps")
+offset = Vector2i(0, 1)
+tower_id = &"chain"
+
+[sub_resource type="Resource" id="Resource_hfe5r"]
+script = ExtResource("1_am3ps")
+offset = Vector2i(1, 1)
+tower_id = &"chain"
+
+[sub_resource type="Resource" id="Resource_ihfv7"]
+script = ExtResource("1_am3ps")
+offset = Vector2i(1, 2)
+tower_id = &"chain"
+
+[resource]
+script = ExtResource("2_f3vd5")
+id = &"abyss_power_grid"
+display_name = "심연 전력망"
+description = "네 전도탑이 세로 계단형 연결망을 구축"
+cells = Array[ExtResource("1_am3ps")]([SubResource("Resource_lverj"), SubResource("Resource_m3rhw"), SubResource("Resource_hfe5r"), SubResource("Resource_ihfv7")])
+role_tags = Array[StringName]([&"network", &"status"])
+shape_class = &"STEP"
+placement_difficulty = 2
+base_weight = 0.9
+formation_score = 360
+raw_power_score = 360.0
+output_multiplier = 0.8333333333333334
+expected_power_score = 300.0

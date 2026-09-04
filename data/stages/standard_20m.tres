@@ -1,0 +1,226 @@
+[gd_resource type="Resource" script_class="StageData" load_steps=25 format=3]
+
+[ext_resource type="Script" path="res://resources/stage_data.gd" id="1_stage"]
+[ext_resource type="Resource" path="res://data/enemies/basic_enemy.tres" id="2_enemy"]
+[ext_resource type="Script" path="res://resources/spawn_phase_data.gd" id="3_phase"]
+[ext_resource type="Script" path="res://resources/spawn_packet_data.gd" id="4_packet"]
+[ext_resource type="Script" path="res://resources/faction_prelude_data.gd" id="5_prelude"]
+[ext_resource type="Script" path="res://resources/faction_spawn_packet_data.gd" id="6_faction_packet"]
+
+[sub_resource type="Resource" id="FactionPrelude_first"]
+script = ExtResource("5_prelude")
+
+[sub_resource type="Resource" id="FactionPrelude_second"]
+script = ExtResource("5_prelude")
+boss_index = 1
+duration = 60.0
+tier = 1
+faction_budget_ratio_min = 0.15
+faction_budget_ratio_max = 0.25
+
+[sub_resource type="Resource" id="FactionPrelude_third"]
+script = ExtResource("5_prelude")
+boss_index = 2
+duration = 75.0
+tier = 2
+faction_budget_ratio_min = 0.25
+faction_budget_ratio_max = 0.35
+
+[sub_resource type="Resource" id="FactionPrelude_final"]
+script = ExtResource("5_prelude")
+boss_index = 3
+duration = 90.0
+tier = 3
+faction_budget_ratio_min = 0.35
+faction_budget_ratio_max = 0.45
+
+[sub_resource type="Resource" id="FactionPacket_partason"]
+script = ExtResource("6_faction_packet")
+id = &"partason"
+display_name = "파르태손 정규 전열"
+faction_id = &"partason_faction"
+faction_enemy_id = &"partason_standard_shield"
+tier_faction_counts = Array[int]([1, 2, 2])
+tier_common_entries = Array[Dictionary]([{"civilian_slime": 2}, {"skeleton_raider": 2}, {"hound_light_infantry": 2, "orc_shield": 1}])
+
+[sub_resource type="Resource" id="FactionPacket_jiane"]
+script = ExtResource("6_faction_packet")
+id = &"jiane"
+display_name = "지아느 현혹대"
+faction_id = &"jiane_faction"
+faction_enemy_id = &"jiane_succubus_bewitcher"
+tier_faction_counts = Array[int]([1, 2, 2])
+tier_common_entries = Array[Dictionary]([{"civilian_slime": 3}, {"goblin_raider": 2, "orc_shield": 1}, {"hound_light_infantry": 2}])
+
+[sub_resource type="Resource" id="FactionPacket_kasuha"]
+script = ExtResource("6_faction_packet")
+id = &"kasuha"
+display_name = "카스하 심연 압박대"
+faction_id = &"kasuha_faction"
+faction_enemy_id = &"kasuha_abyss_creature"
+tier_faction_counts = Array[int]([1, 1, 2])
+tier_common_entries = Array[Dictionary]([{"civilian_slime": 2}, {"skeleton_raider": 2}, {"hound_light_infantry": 2}])
+
+[sub_resource type="Resource" id="FactionPacket_irelai"]
+script = ExtResource("6_faction_packet")
+id = &"irelai"
+display_name = "이레라이 기병 대열"
+faction_id = &"irelai_faction"
+faction_enemy_id = &"irelai_skeleton_cavalry"
+tier_faction_counts = Array[int]([3, 4, 6])
+tier_common_entries = Array[Dictionary]([{}, {"goblin_raider": 2}, {}])
+
+[sub_resource type="Resource" id="FactionPacket_judaginda"]
+script = ExtResource("6_faction_packet")
+id = &"judaginda"
+display_name = "주다긴다 입교 무리"
+faction_id = &"judaginda_faction"
+faction_enemy_id = &"judaginda_cult_applicant"
+tier_faction_counts = Array[int]([4, 5, 8])
+tier_common_entries = Array[Dictionary]([{}, {"orc_shield": 1}, {}])
+
+[sub_resource type="Resource" id="SpawnPhase_early"]
+script = ExtResource("3_phase")
+start_seconds = 0.0
+end_seconds = 90.0
+base_budget_rate = 5.5
+bonus_budget_rate = 1.3
+target_alive_pressure = 42.0
+max_alive_pressure = 72.0
+max_packet_cost = 18.0
+
+[sub_resource type="Resource" id="SpawnPhase_opening"]
+script = ExtResource("3_phase")
+start_seconds = 90.0
+end_seconds = 180.0
+base_budget_rate = 9.0
+bonus_budget_rate = 2.2
+target_alive_pressure = 66.0
+max_alive_pressure = 105.0
+max_packet_cost = 32.0
+
+[sub_resource type="Resource" id="SpawnPhase_mid"]
+script = ExtResource("3_phase")
+start_seconds = 180.0
+end_seconds = 300.0
+base_budget_rate = 16.0
+bonus_budget_rate = 4.0
+target_alive_pressure = 100.0
+max_alive_pressure = 150.0
+max_packet_cost = 42.0
+
+[sub_resource type="Resource" id="SpawnPhase_pressure"]
+script = ExtResource("3_phase")
+start_seconds = 300.0
+end_seconds = 420.0
+base_budget_rate = 26.0
+bonus_budget_rate = 6.5
+target_alive_pressure = 135.0
+max_alive_pressure = 195.0
+max_packet_cost = 56.0
+
+[sub_resource type="Resource" id="SpawnPhase_late"]
+script = ExtResource("3_phase")
+start_seconds = 420.0
+end_seconds = 540.0
+base_budget_rate = 40.0
+bonus_budget_rate = 10.0
+target_alive_pressure = 170.0
+max_alive_pressure = 240.0
+max_packet_cost = 68.0
+
+[sub_resource type="Resource" id="SpawnPhase_final"]
+script = ExtResource("3_phase")
+start_seconds = 540.0
+end_seconds = 600.1
+base_budget_rate = 50.0
+bonus_budget_rate = 12.5
+target_alive_pressure = 200.0
+max_alive_pressure = 280.0
+max_packet_cost = 80.0
+
+[sub_resource type="Resource" id="SpawnPacket_breakthrough"]
+script = ExtResource("4_packet")
+id = &"breakthrough"
+display_name = "돌파대"
+min_cost = 8.0
+max_cost = 80.0
+weight = 4.0
+allowed_phase_indices = Array[int]([0, 1])
+slots = Array[Dictionary]([{"count": 1, "tag": &"basic"}, {"count": 1, "tag": &"fast"}])
+role_limits = {&"disable": 1, &"heavy": 1}
+
+[sub_resource type="Resource" id="SpawnPacket_escort"]
+script = ExtResource("4_packet")
+id = &"escort"
+display_name = "호위대"
+min_cost = 22.0
+max_cost = 80.0
+weight = 3.0
+allowed_phase_indices = Array[int]([2])
+slots = Array[Dictionary]([{"count": 1, "tag": &"frontline"}, {"count": 2, "tag": &"fast"}])
+role_limits = {&"disable": 1, &"heavy": 1}
+
+[sub_resource type="Resource" id="SpawnPacket_siege"]
+script = ExtResource("4_packet")
+id = &"siege"
+display_name = "공성대"
+min_cost = 16.0
+max_cost = 80.0
+weight = 2.0
+allowed_phase_indices = Array[int]([3, 4, 5])
+slots = Array[Dictionary]([{"count": 2, "tag": &"fast"}, {"count": 1, "optional": true, "tag": &"disable"}, {"count": 1, "optional": true, "tag": &"frontline"}])
+role_limits = {&"disable": 1, &"heavy": 1}
+
+[resource]
+script = ExtResource("1_stage")
+id = &"standard_20m"
+display_name = "10분 표준 스테이지"
+duration_seconds = 600.0
+initial_spawn_interval = 1.45
+minimum_spawn_interval = 0.42
+initial_health_multiplier = 1.3
+final_health_multiplier = 4.2
+final_speed_multiplier = 1.55
+enemy = ExtResource("2_enemy")
+boss_times = Array[float]([150.0, 300.0, 450.0, 600.0])
+default_boss_ids = Array[StringName]([&"boss_5", &"boss_10", &"boss_15", &"final_boss"])
+final_boss_id = &"final_boss"
+artifact_elite_interval_seconds = 120.0
+artifact_elite_enemy_id = &"steel_golem"
+artifact_elite_health_multipliers = Array[float]([3.0, 5.0, 8.0, 12.0])
+spawn_table = Array[Dictionary]([{
+"end": 90.0,
+"groups": {"civilian_slime": 3, "goblin_raider": 2},
+"start": 0.0,
+"weights": {"civilian_slime": 7.0, "goblin_raider": 3.0}
+}, {
+"end": 180.0,
+"groups": {"civilian_slime": 3, "goblin_raider": 2},
+"start": 90.0,
+"weights": {"civilian_slime": 5.0, "goblin_raider": 5.0, "orc_shield": 2.0, "skeleton_raider": 3.0}
+}, {
+"end": 300.0,
+"groups": {"civilian_slime": 3, "goblin_raider": 2, "skeleton_raider": 2},
+"start": 180.0,
+"weights": {"civilian_slime": 2.0, "goblin_raider": 2.0, "orc_shield": 3.0, "skeleton_raider": 4.0}
+}, {
+"end": 420.0,
+"groups": {"civilian_slime": 3, "goblin_raider": 2, "hound_light_infantry": 1, "skeleton_raider": 2},
+"start": 300.0,
+"weights": {"goblin_raider": 2.0, "hound_light_infantry": 3.0, "orc_shield": 3.0, "skeleton_raider": 3.0, "wraith_raider": 2.0}
+}, {
+"end": 540.0,
+"groups": {"goblin_raider": 2, "hound_light_infantry": 1, "skeleton_raider": 2, "steel_golem": 1},
+"start": 420.0,
+"weights": {"goblin_raider": 1.0, "hound_light_infantry": 4.0, "orc_shield": 3.0, "skeleton_raider": 3.0, "steel_golem": 1.0, "wraith_raider": 3.0}
+}, {
+"end": 600.1,
+"groups": {"hound_light_infantry": 1, "skeleton_raider": 2, "steel_golem": 1},
+"start": 540.0,
+"weights": {"hound_light_infantry": 4.0, "orc_shield": 3.0, "skeleton_raider": 4.0, "steel_golem": 2.0, "wraith_raider": 4.0}
+}])
+spawn_phases = Array[ExtResource("3_phase")]([SubResource("SpawnPhase_early"), SubResource("SpawnPhase_opening"), SubResource("SpawnPhase_mid"), SubResource("SpawnPhase_pressure"), SubResource("SpawnPhase_late"), SubResource("SpawnPhase_final")])
+spawn_packets = Array[ExtResource("4_packet")]([SubResource("SpawnPacket_breakthrough"), SubResource("SpawnPacket_escort"), SubResource("SpawnPacket_siege")])
+faction_preludes = Array[ExtResource("5_prelude")]([SubResource("FactionPrelude_first"), SubResource("FactionPrelude_second"), SubResource("FactionPrelude_third"), SubResource("FactionPrelude_final")])
+faction_spawn_packets = Array[ExtResource("6_faction_packet")]([SubResource("FactionPacket_partason"), SubResource("FactionPacket_jiane"), SubResource("FactionPacket_kasuha"), SubResource("FactionPacket_irelai"), SubResource("FactionPacket_judaginda")])

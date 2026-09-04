@@ -1,0 +1,78 @@
+{
+  "schema_version": 2,
+  "status": "active",
+  "gdd": "res://godot_formation_defense_gdd_v0_19.md",
+  "review_date": "2026-08-31",
+  "generation": {
+    "tool": "built_in_imagegen",
+    "mode": "stylized-concept",
+    "postprocess": "centered_cover_crop_high_quality_bicubic_to_1280x720_opaque_rgb",
+    "script": "res://tools/prepare_background_style_refresh.ps1"
+  },
+  "style_contract": {
+    "outline": "thick_deep_navy",
+    "shading": "two_step_cel",
+    "palette": ["dark_eggplant", "charcoal_blue", "muted_burgundy", "restrained_gold", "small_magenta_accents"],
+    "detail_budget": "maximum_five_major_color_planes_and_three_large_props",
+    "surface_policy": "large_matte_shapes_without_micro_cracks_tiles_filagree_or_painterly_texture",
+    "contrast_policy": "background_approximately_35_percent_lower_contrast_than_characters_and_hud",
+    "embedded_content": "no_people_text_logo_button_hud_or_audience"
+  },
+  "assets": [
+    {
+      "id": "demon_election_campaign_hq_v019",
+      "stage_path": "res://assets/graphics/style_refresh_v019/backgrounds/demon_election_campaign_hq_v019.png",
+      "active_path": "res://assets/graphics/backgrounds/demon_election_campaign_hq_v019.png",
+      "source_size": [1280, 720],
+      "format": "opaque_rgb",
+      "sha256": "ACE7252DEEA7E052369A1949EF2990AA035C0D27DBA499AAFDAB84519A8A55EF",
+      "safe_zone": "central_65_percent_and_upper_ui_band_are_quiet_low_contrast",
+      "composition": "simplified_campaign_table_left_and_sealed_reliquary_right"
+    },
+    {
+      "id": "demon_election_campaign_arena_v019",
+      "stage_path": "res://assets/graphics/style_refresh_v019/backgrounds/demon_election_campaign_arena_v019.png",
+      "active_path": "res://assets/graphics/backgrounds/demon_election_campaign_arena_v019.png",
+      "source_size": [1280, 720],
+      "format": "opaque_rgb",
+      "sha256": "005976E816417ED9AC23B2378867540481D36AE029731F2BD5865F1FA35E4B49",
+      "safe_zone": "battlefield_rect_x150_y105_w1060_h540_is_uniform_low_contrast_and_bottom_75px_remains_audience_safe",
+      "composition": "small_dais_within_leftmost_12_percent_and_simple_right_gate"
+    }
+  ],
+  "scope": {
+    "regenerated": ["main_hub_background", "demon_election_battlefield_background"],
+    "preserved": ["title_background", "formation_compatibility_battlefield_background", "dynamic_audience_ribbon"]
+  },
+  "prompt_summary": {
+    "shared": "16:9 mobile strategy environment, v0.19 thick navy outline and two-step cel shading, broad quiet matte planes, sparse burgundy and gold architecture, tiny magenta accents, no micro-detail or embedded UI",
+    "main_hub": "simple infernal campaign hall with a restrained table on the left and sealed reliquary on the right; keep the center and top UI band quiet",
+    "arena": "simple infernal election arena with a broad uninterrupted floor, a small left dais, a simple right gate, sparse walls and four tiny corner flames"
+  },
+  "review": {
+    "viewport": [1280, 720],
+    "renderer": "Forward Mobile",
+    "screenshots": [
+      "res://tests/ui_snapshots/main_menu.png",
+      "res://tests/ui_snapshots/game_setup.png",
+      "res://tests/ui_snapshots/demon_election_vanguard_squad.png",
+      "res://tests/ui_snapshots/candidate_skill_cast_judaginda.png",
+      "res://tests/ui_snapshots/audience_enemy_danger.png",
+      "res://tests/ui_snapshots/audience_skill_release.png"
+    ],
+    "result": "approved"
+  },
+  "verification": {
+    "quality_gate": "7_of_7_pass",
+    "quality_gate_report": "C:\\Users\\USER\\AppData\\Local\\Temp\\td-survival-headless-quality-gate\\20260831_224113_129_29272\\summary.json",
+    "android_debug_apk": "C:\\Users\\USER\\Documents\\GodotGames\\Output\\TD_survival_v019_minimal_backgrounds_debug.apk",
+    "android_apk_bytes": 68462376,
+    "android_apk_sha256": "40B3160E97674567E39A1292FFF3C8F8B2ECF86196B23C85CD7F644CE3FF2376",
+    "android_package": "com.example.td_survival",
+    "android_sdk": {"min": 24, "target": 36},
+    "android_abi": "arm64-v8a",
+    "android_signature_schemes": ["v2", "v3"],
+    "package_resource_audit": "active_background_imports_and_ctex_present; style_refresh_tests_tools_reference_data_art_absent",
+    "physical_device": "not_tested_no_approved_device"
+  }
+}

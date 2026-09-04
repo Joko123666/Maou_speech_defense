@@ -1,0 +1,22 @@
+[gd_resource type="Resource" script_class="SpecializationBranchData" format=3]
+
+[ext_resource type="Script" path="res://resources/specialization_branch_data.gd" id="1_s03ja"]
+
+[resource]
+script = ExtResource("1_s03ja")
+id = &"emerald_resonance"
+owner_kind = &"core"
+owner_id = &"emerald"
+display_name = "방어 공명"
+level_4_description = "핵 재생 +60% · 후방 타워 피해 +12%"
+level_7_description = "핵 피격 후 3초간 후방 타워 공속 +45%"
+level_4_modifiers = {
+"rear_tower_damage": 1.12,
+"regeneration": 1.6
+}
+level_7_modifiers = {
+"rear_overcharge": true,
+"rear_tower_damage": 1.22,
+"regeneration": 2.2
+}
+impact_keys = Array[StringName]([&"core", &"health", &"global"])

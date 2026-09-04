@@ -1,0 +1,21 @@
+[gd_resource type="Resource" script_class="TowerBranchData" format=3]
+
+[ext_resource type="Script" path="res://resources/tower_branch_data.gd" id="1_vjtxf"]
+
+[resource]
+script = ExtResource("1_vjtxf")
+id = &"pierce_power"
+display_name = "장궁부대"
+description = "사거리와 피해를 크게 높이는 대신 공격속도가 느려지는 장거리 관통 분기"
+tower_id = &"pierce"
+branch_type = &"role"
+level_4_modifiers = {
+"damage": 1.55,
+"range": 1.6,
+"speed": 0.82
+}
+level_7_modifiers = {
+"damage": 2.0,
+"range": 1.9,
+"speed": 0.72
+}

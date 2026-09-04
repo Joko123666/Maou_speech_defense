@@ -1,0 +1,27 @@
+[gd_resource type="Resource" script_class="CoreData" format=3]
+
+[ext_resource type="Script" path="res://resources/charm_profile_data.gd" id="1_te7u2"]
+[ext_resource type="Script" path="res://resources/core_data.gd" id="2_eqhfw"]
+[ext_resource type="Texture2D" path="res://assets/graphics/emblems/v019/jiane_heart.svg" id="3_usvyj"]
+
+[sub_resource type="Resource" id="Resource_2ol03"]
+script = ExtResource("1_te7u2")
+
+[resource]
+script = ExtResource("2_eqhfw")
+id = &"sapphire"
+display_name = "지아느 야하니아"
+description = "관통 공격과 환혹 무대로 난입자의 진군을 뒤집고 광신 친위대의 화력을 끌어내는 제어형 후보"
+attack_type = &"pierce"
+skill_type = &"radial"
+passive_type = &"piercing"
+damage = 22.0
+attack_interval = 1.05
+regeneration = 0.15
+skill_damage = 200.0
+skill_cast_seconds = 1.15
+unique_tower_id = &"sapphire_lance"
+unique_formation_id = &"sapphire_spearhead"
+charm_profile = SubResource("Resource_2ol03")
+color = Color(0.29803923, 0.6509804, 1, 1)
+texture = ExtResource("3_usvyj")

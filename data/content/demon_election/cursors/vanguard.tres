@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="CursorData" format=3]
+
+[ext_resource type="Script" path="res://resources/cursor_data.gd" id="1_pv20d"]
+[ext_resource type="Texture2D" path="res://assets/graphics/cursors/vanguard.svg" id="2_6j1n4"]
+
+[resource]
+script = ExtResource("1_pv20d")
+id = &"vanguard"
+display_name = "죽음교 돌격부대"
+description = "인원 비례 중공격과 처형·충원·부대 희생을 사용하는 돌격형 수석 심복"
+attack_type = &"heavy"
+damage = 76.0
+attack_interval = 1.08
+attack_radius = 60.0
+knockback = 68.0
+collection_radius = 116.0
+experience_multiplier = 1.05
+movement_speed = 245.0
+color = Color(0.8901961, 0.34117648, 0.38431373, 1)
+texture = ExtResource("2_6j1n4")

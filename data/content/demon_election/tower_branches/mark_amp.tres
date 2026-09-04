@@ -1,0 +1,21 @@
+[gd_resource type="Resource" script_class="TowerBranchData" format=3]
+
+[ext_resource type="Script" path="res://resources/tower_branch_data.gd" id="1_ow2ms"]
+
+[resource]
+script = ExtResource("1_ow2ms")
+id = &"mark_amp"
+display_name = "충격과 공포"
+description = "취약 주술에 약한 둔화를 더하고 지속시간을 늘려 제어를 겸함"
+tower_id = &"mark"
+branch_type = &"role"
+level_4_modifiers = {
+"hex_slow": 0.12,
+"mark": 0.26,
+"mark_duration": 6.0
+}
+level_7_modifiers = {
+"hex_slow": 0.18,
+"mark": 0.34,
+"mark_duration": 8.0
+}

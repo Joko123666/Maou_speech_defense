@@ -1,0 +1,35 @@
+[gd_resource type="Resource" script_class="StageData" load_steps=3 format=3]
+
+[ext_resource type="Script" path="res://resources/stage_data.gd" id="1_stage"]
+[ext_resource type="Script" path="res://resources/spawn_phase_data.gd" id="2_phase"]
+
+[sub_resource type="Resource" id="SpawnPhase_tutorial"]
+script = ExtResource("2_phase")
+start_seconds = 0.0
+end_seconds = 60.1
+base_budget_rate = 2.4
+bonus_budget_rate = 0.0
+target_alive_pressure = 16.0
+max_alive_pressure = 28.0
+max_packet_cost = 8.0
+boss_bonus_multiplier = 0.0
+
+[resource]
+script = ExtResource("1_stage")
+id = &"tutorial_60s"
+display_name = "첫 공개 연설 · 60초 훈련"
+duration_seconds = 60.0
+initial_spawn_interval = 2.4
+minimum_spawn_interval = 1.8
+initial_health_multiplier = 0.7
+final_health_multiplier = 0.85
+final_speed_multiplier = 1.0
+boss_times = Array[float]([55.0])
+default_boss_ids = Array[StringName]([&"boss_5"])
+final_boss_id = &"boss_5"
+spawn_table = Array[Dictionary]([{
+"end": 60.0,
+"start": 0.0,
+"weights": {&"goblin_raider": 1.0}
+}])
+spawn_phases = Array[ExtResource("2_phase")]([SubResource("SpawnPhase_tutorial")])

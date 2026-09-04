@@ -1,0 +1,31 @@
+[gd_resource type="Resource" script_class="TowerFormationData" format=3]
+
+[ext_resource type="Script" path="res://resources/formation_cell_data.gd" id="1_uk5mh"]
+[ext_resource type="Script" path="res://resources/tower_formation_data.gd" id="2_akthp"]
+
+[sub_resource type="Resource" id="Resource_iw04r"]
+script = ExtResource("1_uk5mh")
+tower_id = &"emerald_guardian"
+
+[sub_resource type="Resource" id="Resource_glndy"]
+script = ExtResource("1_uk5mh")
+offset = Vector2i(0, 1)
+tower_id = &"emerald_guardian"
+
+[resource]
+script = ExtResource("2_akthp")
+id = &"emerald_guard_reinforcement"
+display_name = "왕실 친위대 증원"
+description = "엘리트주의 특성으로 합류하는 세로 2칸 친위대"
+cells = Array[ExtResource("1_uk5mh")]([SubResource("Resource_iw04r"), SubResource("Resource_glndy")])
+role_tags = Array[StringName]([&"unique", &"emerald", &"reinforcement"])
+shape_class = &"LONG"
+rarity = 3
+can_vertical_flip = false
+formation_score = 400
+is_guard = true
+candidate_id = &"emerald"
+raw_power_score = 400.0
+output_multiplier = 0.45
+expected_power_score = 180.0
+unique_core_id = &"emerald"

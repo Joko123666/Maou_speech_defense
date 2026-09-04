@@ -1,0 +1,21 @@
+[gd_resource type="Resource" script_class="SpecializationBranchData" format=3]
+
+[ext_resource type="Script" path="res://resources/specialization_branch_data.gd" id="1_v886s"]
+
+[resource]
+script = ExtResource("1_v886s")
+id = &"iron_focus"
+owner_kind = &"cursor"
+owner_id = &"iron"
+display_name = "삼중 저주 검술"
+level_4_description = "검격마다 독·출혈·감전 중 하나를 부여"
+level_7_description = "상태 위력과 지속시간 +40%"
+level_4_modifiers = {
+"kanda_random_status": true
+}
+level_7_modifiers = {
+"kanda_random_status": true,
+"retainer_status_duration": 1.4,
+"retainer_status_power": 1.4
+}
+impact_keys = Array[StringName]([&"retainer", &"status", &"damage"])

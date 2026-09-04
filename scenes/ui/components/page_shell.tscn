@@ -1,0 +1,77 @@
+[gd_scene load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/ui/components/page_shell.gd" id="1_page"]
+
+[node name="PageShell" type="MarginContainer"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_page")
+
+[node name="Surface" type="PanelContainer" parent="."]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="Layout" type="VBoxContainer" parent="Surface"]
+layout_mode = 2
+theme_override_constants/separation = 12
+
+[node name="Header" type="HBoxContainer" parent="Surface/Layout"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="BackButton" type="Button" parent="Surface/Layout/Header"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(112, 48)
+layout_mode = 2
+text = "‹ 이전"
+
+[node name="TitleStack" type="VBoxContainer" parent="Surface/Layout/Header"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = -2
+
+[node name="Eyebrow" type="Label" parent="Surface/Layout/Header/TitleStack"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0.435294, 0.376471, 0.47451, 1)
+theme_override_font_sizes/font_size = 13
+text = "PAGE / SECTION"
+
+[node name="Title" type="Label" parent="Surface/Layout/Header/TitleStack"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0.223529, 0.137255, 0.309804, 1)
+theme_override_font_sizes/font_size = 28
+text = "화면 제목"
+vertical_alignment = 1
+
+[node name="Status" type="Label" parent="Surface/Layout/Header"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0.615686, 0.403922, 0.109804, 1)
+theme_override_font_sizes/font_size = 16
+text = "현재 상태"
+vertical_alignment = 1
+
+[node name="Subtitle" type="Label" parent="Surface/Layout"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0.435294, 0.376471, 0.47451, 1)
+theme_override_font_sizes/font_size = 16
+text = "화면의 목적과 현재 상태를 설명합니다."
+autowrap_mode = 2
+
+[node name="Divider" type="HSeparator" parent="Surface/Layout"]
+layout_mode = 2
+
+[node name="Body" type="VBoxContainer" parent="Surface/Layout"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/separation = 16

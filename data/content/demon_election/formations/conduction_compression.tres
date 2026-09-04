@@ -1,0 +1,27 @@
+[gd_resource type="Resource" script_class="TowerFormationData" format=3]
+
+[ext_resource type="Script" path="res://resources/formation_cell_data.gd" id="1_koij3"]
+[ext_resource type="Script" path="res://resources/tower_formation_data.gd" id="2_n8pw0"]
+
+[sub_resource type="Resource" id="Resource_xqhdb"]
+script = ExtResource("1_koij3")
+tower_id = &"chain"
+
+[sub_resource type="Resource" id="Resource_e2cpx"]
+script = ExtResource("1_koij3")
+offset = Vector2i(1, 0)
+tower_id = &"rubber_golem"
+
+[resource]
+script = ExtResource("2_n8pw0")
+id = &"conduction_compression"
+display_name = "전도 압축조"
+description = "고무골렘이 적을 전도선 안으로 집적"
+cells = Array[ExtResource("1_koij3")]([SubResource("Resource_xqhdb"), SubResource("Resource_e2cpx")])
+role_tags = Array[StringName]([&"network", &"knockback"])
+shape_class = &"LONG"
+base_weight = 1.05
+formation_score = 160
+raw_power_score = 160.0
+output_multiplier = 1.875
+expected_power_score = 300.0

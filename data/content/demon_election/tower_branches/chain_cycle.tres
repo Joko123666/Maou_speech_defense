@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="TowerBranchData" format=3]
+
+[ext_resource type="Script" path="res://resources/tower_branch_data.gd" id="1_putyj"]
+
+[resource]
+script = ExtResource("1_putyj")
+id = &"chain_cycle"
+display_name = "공진 회로"
+description = "마지막 중계점에서 시작점으로 감쇠가 적은 역방향 빔을 추가 방출"
+tower_id = &"chain"
+branch_type = &"synergy"
+level_4_modifiers = {
+"relay_return": 0.34,
+"relay_return_falloff": 0.86
+}
+level_7_modifiers = {
+"relay_return": 0.52,
+"relay_return_falloff": 0.94
+}

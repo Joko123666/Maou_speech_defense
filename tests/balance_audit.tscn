@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://tests/balance_audit_runner.gd" id="1_runner"]
+
+[node name="BalanceAudit" type="Node"]
+process_mode = 3
+script = ExtResource("1_runner")

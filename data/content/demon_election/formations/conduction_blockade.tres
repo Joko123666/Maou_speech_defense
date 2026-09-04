@@ -1,0 +1,33 @@
+[gd_resource type="Resource" script_class="TowerFormationData" format=3]
+
+[ext_resource type="Script" path="res://resources/formation_cell_data.gd" id="1_w4l7q"]
+[ext_resource type="Script" path="res://resources/tower_formation_data.gd" id="2_br6mw"]
+
+[sub_resource type="Resource" id="Resource_t78t8"]
+script = ExtResource("1_w4l7q")
+tower_id = &"chain"
+
+[sub_resource type="Resource" id="Resource_wr21v"]
+script = ExtResource("1_w4l7q")
+offset = Vector2i(0, 1)
+tower_id = &"chain"
+
+[sub_resource type="Resource" id="Resource_5alhb"]
+script = ExtResource("1_w4l7q")
+offset = Vector2i(0, 2)
+tower_id = &"chain"
+
+[resource]
+script = ExtResource("2_br6mw")
+id = &"conduction_blockade"
+display_name = "전도 종대"
+description = "세 전도탑이 세로 연결망으로 좁은 전선을 봉쇄"
+cells = Array[ExtResource("1_w4l7q")]([SubResource("Resource_t78t8"), SubResource("Resource_wr21v"), SubResource("Resource_5alhb")])
+role_tags = Array[StringName]([&"network", &"status"])
+shape_class = &"LONG"
+placement_difficulty = 1
+base_weight = 1.1
+formation_score = 270
+raw_power_score = 270.0
+output_multiplier = 1.1111111111111112
+expected_power_score = 300.0

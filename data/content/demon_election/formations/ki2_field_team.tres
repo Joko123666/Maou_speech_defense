@@ -1,0 +1,27 @@
+[gd_resource type="Resource" script_class="TowerFormationData" format=3]
+
+[ext_resource type="Script" path="res://resources/formation_cell_data.gd" id="1_4y4ne"]
+[ext_resource type="Script" path="res://resources/tower_formation_data.gd" id="2_prm1n"]
+
+[sub_resource type="Resource" id="Resource_47dlg"]
+script = ExtResource("1_4y4ne")
+tower_id = &"knockback"
+
+[sub_resource type="Resource" id="Resource_yawiu"]
+script = ExtResource("1_4y4ne")
+offset = Vector2i(1, 0)
+tower_id = &"rubber_golem"
+
+[resource]
+script = ExtResource("2_prm1n")
+id = &"ki2_field_team"
+display_name = "전도 현장조"
+description = "KI-Ⅱ 톱날이 고무골렘의 집적 지점을 밀어냄"
+cells = Array[ExtResource("1_4y4ne")]([SubResource("Resource_47dlg"), SubResource("Resource_yawiu")])
+role_tags = Array[StringName]([&"contact", &"knockback"])
+shape_class = &"LONG"
+base_weight = 1.15
+formation_score = 150
+raw_power_score = 150.0
+output_multiplier = 2.0
+expected_power_score = 300.0

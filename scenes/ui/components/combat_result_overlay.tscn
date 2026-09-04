@@ -1,0 +1,276 @@
+[gd_scene load_steps=10 format=3]
+
+[ext_resource type="Script" path="res://scripts/ui/components/combat_result_overlay.gd" id="1_overlay"]
+[ext_resource type="Script" path="res://scripts/ui/result_progress_timeline.gd" id="2_result_timeline"]
+[ext_resource type="Script" path="res://scripts/ui/formation_board_preview.gd" id="3_board_preview"]
+[ext_resource type="PackedScene" path="res://scenes/ui/components/modal_shell.tscn" id="4_modal"]
+
+[sub_resource type="StyleBoxFlat" id="StyleResultSection"]
+bg_color = Color(0.035, 0.085, 0.112, 0.82)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.2, 0.47, 0.55, 0.72)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+content_margin_left = 16.0
+content_margin_top = 7.0
+content_margin_right = 16.0
+content_margin_bottom = 7.0
+
+[sub_resource type="StyleBoxFlat" id="StyleSupportBackground"]
+bg_color = Color(0.025, 0.055, 0.07, 0.9)
+corner_radius_top_left = 7
+corner_radius_top_right = 7
+corner_radius_bottom_right = 7
+corner_radius_bottom_left = 7
+
+[sub_resource type="StyleBoxFlat" id="StyleSupportFill"]
+bg_color = Color(0.95, 0.67, 0.22, 1)
+corner_radius_top_left = 7
+corner_radius_top_right = 7
+corner_radius_bottom_right = 7
+corner_radius_bottom_left = 7
+
+[sub_resource type="StyleBoxFlat" id="StyleCurrencyEarned"]
+bg_color = Color(0.08, 0.19, 0.16, 0.9)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.38, 0.86, 0.65, 0.82)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+content_margin_left = 18.0
+content_margin_top = 10.0
+content_margin_right = 18.0
+content_margin_bottom = 10.0
+
+[sub_resource type="StyleBoxFlat" id="StyleCurrencyTotal"]
+bg_color = Color(0.08, 0.14, 0.2, 0.9)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.36, 0.68, 0.9, 0.82)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+content_margin_left = 18.0
+content_margin_top = 10.0
+content_margin_right = 18.0
+content_margin_bottom = 10.0
+
+[node name="CombatResultOverlay" instance=ExtResource("4_modal")]
+script = ExtResource("1_overlay")
+
+[node name="Content" type="VBoxContainer" parent="SafeArea/Center/Panel/Layout/BodyScroll/Body"]
+layout_mode = 2
+theme_override_constants/separation = 6
+
+[node name="ResultSubtitle" type="Label" parent="SafeArea/Center/Panel/Layout/BodyScroll/Body/Content"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0.56, 0.7, 0.76, 1)
+theme_override_font_sizes/font_size = 14
+text = "10분 표준 스테이지 · 도전 단계 0"
+horizontal_alignment = 1
+
+[node name="ProgressSection" type="PanelContainer" parent="SafeArea/Center/Panel/Layout/BodyScroll/Body/Content"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleResultSection")
+
+[node name="Content" type="VBoxContainer" parent="SafeArea/Center/Panel/Layout/BodyScroll/Body/Content/ProgressSection"]
+layout_mode = 2
+theme_override_constants/separation = 2
+
+[node name="Header" type="HBoxContainer" parent="SafeArea/Center/Panel/Layout/BodyScroll/Body/Content/ProgressSection/Content"]
+layout_mode = 2
+
+[node name="Title" type="Label" parent="SafeArea/Center/Panel/Layout/BodyScroll/Body/Content/ProgressSection/Content/Header"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0.72, 0.84, 0.88, 1)
+theme_override_font_sizes/font_size = 15
+text = "스테이지 진행도"
+
+[node name="ResultProgressLabel" type="Label" parent="SafeArea/Center/Panel/Layout/BodyScroll/Body/Content/ProgressSection/Content/Header"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0.39, 0.88, 0.67, 1)
+theme_override_font_sizes/font_size = 16
+text = "100% · 10:00 / 10:00"
+horizontal_alignment = 2
+
+[node name="ResultTimeline" type="Control" parent="SafeArea/Center/Panel/Layout/BodyScroll/Body/Content/ProgressSection/Content"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 96)
+layout_mode = 2
+script = ExtResource("2_result_timeline")
+
+[node name="CurrencyRow" type="HBoxContainer" parent="SafeArea/Center/Panel/Layout/BodyScroll/Body/Content"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="EarnedCard" type="PanelContainer" parent="SafeArea/Center/Panel/Layout/BodyScroll/Body/Content/CurrencyRow"]
+custom_minimum_size = Vector2(0, 68)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("StyleCurrencyEarned")
+
+[node name="Content" type="VBoxContainer" parent="SafeArea/Center/Panel/Layout/BodyScroll/Body/Content/CurrencyRow/EarnedCard"]
+layout_mode = 2
+
+[node name="Title" type="Label" parent="SafeArea/Center/Panel/Layout/BodyScroll/Body/Content/CurrencyRow/EarnedCard/Content"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.61, 0.78, 0.7, 1)
+theme_override_font_sizes/font_size = 13
+text = "이번 원정 획득"
+horizontal_alignment = 1
+
+[node name="FundsEarnedLabel" type="Label" parent="SafeArea/Center/Panel/Layout/BodyScroll/Body/Content/CurrencyRow/EarnedCard/Content"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0.4, 0.94, 0.7, 1)
+theme_override_font_sizes/font_size = 25
+text = "+0  방위 자금"
+horizontal_alignment = 1
+
+[node name="TotalCard" type="PanelContainer" parent="SafeArea/Center/Panel/Layout/BodyScroll/Body/Content/CurrencyRow"]
+custom_minimum_size = Vector2(0, 68)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("StyleCurrencyTotal")
+
+[node name="Content" type="VBoxContainer" parent="SafeArea/Center/Panel/Layout/BodyScroll/Body/Content/CurrencyRow/TotalCard"]
+layout_mode = 2
+
+[node name="Title" type="Label" parent="SafeArea/Center/Panel/Layout/BodyScroll/Body/Content/CurrencyRow/TotalCard/Content"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.62, 0.74, 0.84, 1)
+theme_override_font_sizes/font_size = 13
+text = "최종 보유 재화"
+horizontal_alignment = 1
+
+[node name="FundsTotalLabel" type="Label" parent="SafeArea/Center/Panel/Layout/BodyScroll/Body/Content/CurrencyRow/TotalCard/Content"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0.45, 0.78, 1, 1)
+theme_override_font_sizes/font_size = 25
+text = "0  방위 자금"
+horizontal_alignment = 1
+
+[node name="RewardBreakdownLabel" type="Label" parent="SafeArea/Center/Panel/Layout/BodyScroll/Body/Content"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0.52, 0.66, 0.71, 1)
+theme_override_font_sizes/font_size = 12
+text = "진행 +0 · 공식 난입 제압 +0 · 완주 +0"
+horizontal_alignment = 1
+
+[node name="CandidateSupportSection" type="PanelContainer" parent="SafeArea/Center/Panel/Layout/BodyScroll/Body/Content"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleResultSection")
+
+[node name="Content" type="VBoxContainer" parent="SafeArea/Center/Panel/Layout/BodyScroll/Body/Content/CandidateSupportSection"]
+layout_mode = 2
+theme_override_constants/separation = 3
+
+[node name="Header" type="HBoxContainer" parent="SafeArea/Center/Panel/Layout/BodyScroll/Body/Content/CandidateSupportSection/Content"]
+layout_mode = 2
+
+[node name="CandidateSupportLabel" type="Label" parent="SafeArea/Center/Panel/Layout/BodyScroll/Body/Content/CandidateSupportSection/Content/Header"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0.96, 0.75, 0.32, 1)
+theme_override_font_sizes/font_size = 14
+text = "후보 지지도  +0"
+
+[node name="CandidateElectionLabel" type="Label" parent="SafeArea/Center/Panel/Layout/BodyScroll/Body/Content/CandidateSupportSection/Content/Header"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0.78, 0.84, 0.9, 1)
+theme_override_font_sizes/font_size = 13
+text = "0 / 1000"
+horizontal_alignment = 2
+
+[node name="CandidateSupportBar" type="ProgressBar" parent="SafeArea/Center/Panel/Layout/BodyScroll/Body/Content/CandidateSupportSection/Content"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 15)
+layout_mode = 2
+max_value = 1000.0
+show_percentage = false
+theme_override_styles/background = SubResource("StyleSupportBackground")
+theme_override_styles/fill = SubResource("StyleSupportFill")
+
+[node name="GovernanceResultLabel" type="Label" parent="SafeArea/Center/Panel/Layout/BodyScroll/Body/Content/CandidateSupportSection/Content"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+theme_override_colors/font_color = Color(0.46, 0.78, 0.88, 1)
+theme_override_font_sizes/font_size = 12
+text = "통치 안정 50 · 침착한 지휘 자세 · 안정된 환호"
+horizontal_alignment = 1
+text_overrun_behavior = 3
+
+[node name="SummarySection" type="PanelContainer" parent="SafeArea/Center/Panel/Layout/BodyScroll/Body/Content"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleResultSection")
+
+[node name="Content" type="HBoxContainer" parent="SafeArea/Center/Panel/Layout/BodyScroll/Body/Content/SummarySection"]
+layout_mode = 2
+theme_override_constants/separation = 12
+
+[node name="ResultDetail" type="Label" parent="SafeArea/Center/Panel/Layout/BodyScroll/Body/Content/SummarySection/Content"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0.76, 0.83, 0.87, 1)
+theme_override_font_sizes/font_size = 13
+text = "결과 상세"
+autowrap_mode = 2
+
+[node name="BoardColumn" type="VBoxContainer" parent="SafeArea/Center/Panel/Layout/BodyScroll/Body/Content/SummarySection/Content"]
+custom_minimum_size = Vector2(220, 0)
+layout_mode = 2
+theme_override_constants/separation = 3
+
+[node name="Title" type="Label" parent="SafeArea/Center/Panel/Layout/BodyScroll/Body/Content/SummarySection/Content/BoardColumn"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.69, 0.84, 0.9, 1)
+theme_override_font_sizes/font_size = 12
+text = "최종 4×6 진형"
+horizontal_alignment = 1
+
+[node name="FormationBoardPreview" type="Control" parent="SafeArea/Center/Panel/Layout/BodyScroll/Body/Content/SummarySection/Content/BoardColumn"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(220, 96)
+layout_mode = 2
+script = ExtResource("3_board_preview")
+
+[node name="Buttons" type="HBoxContainer" parent="SafeArea/Center/Panel/Layout/Footer"]
+layout_mode = 2
+theme_override_constants/separation = 12
+
+[node name="RestartButton" type="Button" parent="SafeArea/Center/Panel/Layout/Footer/Buttons"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 48)
+layout_mode = 2
+size_flags_horizontal = 3
+text = "다시 시작 [R]"
+
+[node name="MenuButton" type="Button" parent="SafeArea/Center/Panel/Layout/Footer/Buttons"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 48)
+layout_mode = 2
+size_flags_horizontal = 3
+text = "선택 화면"

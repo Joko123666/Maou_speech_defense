@@ -1,0 +1,25 @@
+[gd_resource type="Resource" script_class="TowerData" format=3]
+
+[ext_resource type="Texture2D" path="res://assets/graphics/tower_attacks/amethyst_nova.png" id="1_yoru0"]
+[ext_resource type="Script" path="res://resources/tower_data.gd" id="2_fonpo"]
+[ext_resource type="Texture2D" path="res://assets/graphics/towers/amethyst_nova.png" id="3_8yut1"]
+
+[resource]
+script = ExtResource("2_fonpo")
+id = &"amethyst_nova"
+display_name = "심연마술 신봉자"
+description = "주변 난입자를 동시에 타격하고 둔화시키는 심연 파동을 방출"
+behavior = &"unique_radial"
+target_rule = &"breach_pressure"
+damage = 29.0
+attack_interval = 1.2
+attack_range_cells = 2.5
+area_radius = 130.0
+status_power = 0.22
+max_level = 1
+color = Color(0.7176471, 0.47058824, 1, 1)
+tags = Array[StringName]([&"unique", &"amethyst", &"unique_radial"])
+texture = ExtResource("3_8yut1")
+attack_texture = ExtResource("1_yoru0")
+unique_core_id = &"amethyst"
+formation_power_rating = 220.0

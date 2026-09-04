@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="EnemySpawnProfileData" format=3]
+
+[ext_resource type="Script" path="res://resources/enemy_spawn_profile_data.gd" id="1_0w8kn"]
+
+[resource]
+script = ExtResource("1_0w8kn")
+enemy_id = &"jiane_succubus_bewitcher"
+spawn_cost = 16.0
+role_tags = Array[StringName]([&"faction", &"disable"])
+unlock_time = 240.0
+is_faction_enemy = true
+faction_id = &"jiane_faction"

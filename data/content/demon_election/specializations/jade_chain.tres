@@ -1,0 +1,23 @@
+[gd_resource type="Resource" script_class="SpecializationBranchData" format=3]
+
+[ext_resource type="Script" path="res://resources/specialization_branch_data.gd" id="1_3nxqx"]
+
+[resource]
+script = ExtResource("1_3nxqx")
+id = &"jade_chain"
+owner_kind = &"core"
+owner_id = &"jade"
+display_name = "사후 복지"
+level_4_description = "친위대 체력 +45% · 지속 소모 -28% · 공격 소모 -20%"
+level_7_description = "체력 +80% · 지속 소모 -50% · 공격 소모 -40%"
+level_4_modifiers = {
+"retainer_attack_cost": 0.8,
+"retainer_health": 1.45,
+"retainer_passive_drain": 0.72
+}
+level_7_modifiers = {
+"retainer_attack_cost": 0.6,
+"retainer_health": 1.8,
+"retainer_passive_drain": 0.5
+}
+impact_keys = Array[StringName]([&"core", &"necromancy", &"health"])

@@ -1,0 +1,22 @@
+[gd_resource type="Resource" script_class="TowerData" format=3]
+
+[ext_resource type="Texture2D" path="res://assets/graphics/defender_attacks/slow.png" id="1_mnolp"]
+[ext_resource type="Script" path="res://resources/tower_data.gd" id="2_iwn71"]
+[ext_resource type="Texture2D" path="res://assets/graphics/defenders/slow.png" id="3_w6nq4"]
+
+[resource]
+script = ExtResource("2_iwn71")
+id = &"slow"
+display_name = "심연의 기둥"
+description = "범위 안의 적을 지속적으로 늦춰 특정 지점을 통제"
+behavior = &"slow"
+target_rule = &"breach_pressure"
+damage = 0.0
+attack_interval = 0.72
+status_power = 0.38
+color = Color(0.49803922, 0.9098039, 0.8745098, 1)
+tags = Array[StringName]([&"slow"])
+origin_faction_id = &"kasuha_faction"
+technology_name = "심연 영역 제어·제물소환술"
+texture = ExtResource("3_w6nq4")
+attack_texture = ExtResource("1_mnolp")

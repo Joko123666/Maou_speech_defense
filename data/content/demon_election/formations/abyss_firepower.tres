@@ -1,0 +1,27 @@
+[gd_resource type="Resource" script_class="TowerFormationData" format=3]
+
+[ext_resource type="Script" path="res://resources/formation_cell_data.gd" id="1_20ec6"]
+[ext_resource type="Script" path="res://resources/tower_formation_data.gd" id="2_vn8u2"]
+
+[sub_resource type="Resource" id="Resource_nmtww"]
+script = ExtResource("1_20ec6")
+tower_id = &"slow"
+
+[sub_resource type="Resource" id="Resource_7wxaf"]
+script = ExtResource("1_20ec6")
+offset = Vector2i(0, 1)
+tower_id = &"area"
+
+[resource]
+script = ExtResource("2_vn8u2")
+id = &"abyss_firepower"
+display_name = "심연 화력조"
+description = "심연의 기둥이 둔화한 밀집 적을 해골 척탄병이 마무리"
+cells = Array[ExtResource("1_20ec6")]([SubResource("Resource_nmtww"), SubResource("Resource_7wxaf")])
+role_tags = Array[StringName]([&"control", &"aoe"])
+shape_class = &"LONG"
+base_weight = 1.05
+formation_score = 220
+raw_power_score = 220.0
+output_multiplier = 1.3636363636363635
+expected_power_score = 300.0

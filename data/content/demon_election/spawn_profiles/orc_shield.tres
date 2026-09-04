@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="EnemySpawnProfileData" format=3]
+
+[ext_resource type="Script" path="res://resources/enemy_spawn_profile_data.gd" id="1_1awhx"]
+
+[resource]
+script = ExtResource("1_1awhx")
+enemy_id = &"orc_shield"
+spawn_cost = 12.0
+role_tags = Array[StringName]([&"frontline"])
+unlock_time = 150.0

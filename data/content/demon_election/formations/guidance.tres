@@ -1,0 +1,26 @@
+[gd_resource type="Resource" script_class="TowerFormationData" format=3]
+
+[ext_resource type="Script" path="res://resources/formation_cell_data.gd" id="1_4kntr"]
+[ext_resource type="Script" path="res://resources/tower_formation_data.gd" id="2_2brcx"]
+
+[sub_resource type="Resource" id="Resource_n0w0y"]
+script = ExtResource("1_4kntr")
+tower_id = &"rapid"
+
+[sub_resource type="Resource" id="Resource_f3loo"]
+script = ExtResource("1_4kntr")
+offset = Vector2i(1, 0)
+tower_id = &"rapid"
+
+[resource]
+script = ExtResource("2_2brcx")
+id = &"guidance"
+display_name = "창병 전열"
+description = "두 고블린 창병이 가로 전열에서 안정적인 단일 화력을 집중"
+cells = Array[ExtResource("1_4kntr")]([SubResource("Resource_n0w0y"), SubResource("Resource_f3loo")])
+role_tags = Array[StringName]([&"basic", &"single"])
+shape_class = &"LONG"
+formation_score = 160
+raw_power_score = 160.0
+output_multiplier = 1.875
+expected_power_score = 300.0

@@ -1,0 +1,51 @@
+[gd_resource type="Resource" script_class="TowerFormationData" format=3]
+
+[ext_resource type="Script" path="res://resources/formation_cell_data.gd" id="1_3tmsg"]
+[ext_resource type="Script" path="res://resources/tower_formation_data.gd" id="2_okphm"]
+
+[sub_resource type="Resource" id="Resource_2hyn6"]
+script = ExtResource("1_3tmsg")
+tower_id = &"jade_roulette"
+
+[sub_resource type="Resource" id="Resource_03thr"]
+script = ExtResource("1_3tmsg")
+offset = Vector2i(1, 0)
+tower_id = &"jade_roulette"
+
+[sub_resource type="Resource" id="Resource_cpxhk"]
+script = ExtResource("1_3tmsg")
+offset = Vector2i(1, 1)
+tower_id = &"jade_roulette"
+
+[sub_resource type="Resource" id="Resource_knl4v"]
+script = ExtResource("1_3tmsg")
+offset = Vector2i(0, 2)
+tower_id = &"jade_roulette"
+
+[sub_resource type="Resource" id="Resource_ebilm"]
+script = ExtResource("1_3tmsg")
+offset = Vector2i(0, 3)
+tower_id = &"jade_roulette"
+
+[sub_resource type="Resource" id="Resource_rwu75"]
+script = ExtResource("1_3tmsg")
+offset = Vector2i(1, 3)
+tower_id = &"jade_roulette"
+
+[resource]
+script = ExtResource("2_okphm")
+id = &"jade_gambit"
+display_name = "부활 시체 친위대"
+description = "여섯 부활 친위대가 높은 초기 전력을 제공하지만 두 공란과 넓은 점유로 후반 배치를 압박"
+cells = Array[ExtResource("1_3tmsg")]([SubResource("Resource_2hyn6"), SubResource("Resource_03thr"), SubResource("Resource_cpxhk"), SubResource("Resource_knl4v"), SubResource("Resource_ebilm"), SubResource("Resource_rwu75")])
+role_tags = Array[StringName]([&"unique", &"jade", &"necromancy"])
+shape_class = &"BEND"
+placement_difficulty = 1
+rarity = 3
+formation_score = 1200
+is_guard = true
+candidate_id = &"jade"
+raw_power_score = 1200.0
+output_multiplier = 0.3
+expected_power_score = 360.0
+unique_core_id = &"jade"

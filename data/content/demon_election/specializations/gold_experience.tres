@@ -1,0 +1,22 @@
+[gd_resource type="Resource" script_class="SpecializationBranchData" format=3]
+
+[ext_resource type="Script" path="res://resources/specialization_branch_data.gd" id="1_5u761"]
+
+[resource]
+script = ExtResource("1_5u761")
+id = &"gold_experience"
+owner_kind = &"cursor"
+owner_id = &"gold"
+display_name = "심연의 힘"
+level_4_description = "장판 중심부 피해 +55% · 범위 +20%"
+level_7_description = "중심부 피해 +95% · 둔화 강화"
+level_4_modifiers = {
+"area": 1.2,
+"jeomujeom_center_damage": 1.55
+}
+level_7_modifiers = {
+"area": 1.35,
+"jeomujeom_center_damage": 1.95,
+"jeomujeom_slow_power": 1.35
+}
+impact_keys = Array[StringName]([&"retainer", &"area", &"damage"])

@@ -1,0 +1,165 @@
+[gd_resource type="Resource" script_class="GameAssetCatalogData" load_steps=66 format=3]
+
+[ext_resource type="Script" path="res://resources/game_asset_catalog_data.gd" id="1_script"]
+[ext_resource type="Texture2D" path="res://assets/graphics/backgrounds/demon_election_campaign_arena_v019.png" id="2_background"]
+[ext_resource type="Texture2D" path="res://assets/graphics/backgrounds/demon_election_title_citadel_v019.png" id="69_title_background"]
+[ext_resource type="Texture2D" path="res://assets/graphics/backgrounds/demon_election_campaign_hq_v019.png" id="70_hub_background"]
+[ext_resource type="Texture2D" path="res://assets/graphics/cores/core_test.png" id="3_core"]
+[ext_resource type="Texture2D" path="res://assets/graphics/cursors/iron.png" id="4_cursor"]
+[ext_resource type="Texture2D" path="res://assets/graphics/towers/tower_test.png" id="5_tower"]
+[ext_resource type="Texture2D" path="res://assets/graphics/enemies/enemy_test.png" id="6_enemy"]
+[ext_resource type="Texture2D" path="res://assets/graphics/projectiles/plasma_bolt.png" id="7_plasma"]
+[ext_resource type="Texture2D" path="res://assets/graphics/projectiles/artillery_shell.png" id="8_artillery"]
+[ext_resource type="AudioStream" path="res://assets/audio/ui/ui_click.wav" id="9_ui"]
+[ext_resource type="AudioStream" path="res://assets/audio/gameplay/level_up.wav" id="10_level"]
+[ext_resource type="AudioStream" path="res://assets/audio/events/boss_warning.wav" id="11_warning"]
+[ext_resource type="AudioStream" path="res://assets/audio/events/boss_spawn.wav" id="12_spawn"]
+[ext_resource type="AudioStream" path="res://assets/audio/gameplay/core_skill.wav" id="13_skill"]
+[ext_resource type="AudioStream" path="res://assets/audio/combat/hit_light.wav" id="14_light"]
+[ext_resource type="AudioStream" path="res://assets/audio/combat/hit_heavy.wav" id="15_heavy"]
+[ext_resource type="AudioStream" path="res://assets/audio/combat/core_hit.wav" id="16_core_hit"]
+[ext_resource type="AudioStream" path="res://assets/audio/events/victory.wav" id="17_victory"]
+[ext_resource type="AudioStream" path="res://assets/audio/events/defeat.wav" id="18_defeat"]
+[ext_resource type="Texture2D" path="res://assets/graphics/candidates/partason.png" id="19_partason"]
+[ext_resource type="Texture2D" path="res://assets/graphics/candidates/jiane.png" id="20_jiane"]
+[ext_resource type="Texture2D" path="res://assets/graphics/candidates/kasuha.png" id="21_kasuha"]
+[ext_resource type="Texture2D" path="res://assets/graphics/candidates/irelai.png" id="22_irelai"]
+[ext_resource type="Texture2D" path="res://assets/graphics/retainers/kanda.png" id="23_kanda"]
+[ext_resource type="Texture2D" path="res://assets/graphics/retainers/given.png" id="24_given"]
+[ext_resource type="Texture2D" path="res://assets/graphics/retainers/jeomujeom.png" id="25_jeomujeom"]
+[ext_resource type="Texture2D" path="res://assets/graphics/retainers/jugdied.png" id="26_jugdied"]
+[ext_resource type="Texture2D" path="res://assets/graphics/emblems/v019/partason_sword_shield.svg" id="27_partason_emblem"]
+[ext_resource type="Texture2D" path="res://assets/graphics/emblems/v019/jiane_heart.svg" id="28_jiane_emblem"]
+[ext_resource type="Texture2D" path="res://assets/graphics/emblems/v019/kasuha_tentacle_eye.svg" id="29_kasuha_emblem"]
+[ext_resource type="Texture2D" path="res://assets/graphics/emblems/v019/irelai_skull_aura.svg" id="30_irelai_emblem"]
+[ext_resource type="Texture2D" path="res://assets/graphics/candidates/judaginda.png" id="31_judaginda"]
+[ext_resource type="Texture2D" path="res://assets/graphics/retainers/death_vanguard.png" id="32_death_vanguard"]
+[ext_resource type="Texture2D" path="res://assets/graphics/emblems/v019/judaginda_scythe_blood.svg" id="33_judaginda_emblem"]
+[ext_resource type="Texture2D" path="res://assets/graphics/cursors/vanguard.svg" id="35_vanguard"]
+[ext_resource type="AudioStream" path="res://assets/audio/gameplay/candidate_skill_partason.wav" id="40_skill_partason"]
+[ext_resource type="AudioStream" path="res://assets/audio/gameplay/candidate_skill_jiane.wav" id="41_skill_jiane"]
+[ext_resource type="AudioStream" path="res://assets/audio/gameplay/candidate_skill_kasuha.wav" id="42_skill_kasuha"]
+[ext_resource type="AudioStream" path="res://assets/audio/gameplay/candidate_skill_irelai.wav" id="43_skill_irelai"]
+[ext_resource type="AudioStream" path="res://assets/audio/gameplay/candidate_skill_judaginda.wav" id="44_skill_judaginda"]
+[ext_resource type="AudioStream" path="res://assets/audio/combat/tower_rapid.wav" id="45_tower_rapid"]
+[ext_resource type="AudioStream" path="res://assets/audio/combat/tower_blast.wav" id="46_tower_blast"]
+[ext_resource type="AudioStream" path="res://assets/audio/combat/tower_energy.wav" id="47_tower_energy"]
+[ext_resource type="AudioStream" path="res://assets/audio/combat/tower_saw.wav" id="48_tower_saw"]
+[ext_resource type="AudioStream" path="res://assets/audio/combat/tower_arcane.wav" id="49_tower_arcane"]
+[ext_resource type="Texture2D" path="res://assets/graphics/combat_sd/candidates/judaginda.png" id="50_judaginda_sd"]
+[ext_resource type="Texture2D" path="res://assets/graphics/combat_sd/retainers/death_vanguard.png" id="51_death_vanguard_sd"]
+[ext_resource type="Texture2D" path="res://assets/graphics/combat_sd/candidates/partason.png" id="52_partason_sd"]
+[ext_resource type="Texture2D" path="res://assets/graphics/combat_sd/retainers/kanda.png" id="53_kanda_sd"]
+[ext_resource type="Texture2D" path="res://assets/graphics/combat_sd/candidates/jiane.png" id="54_jiane_sd"]
+[ext_resource type="Texture2D" path="res://assets/graphics/combat_sd/retainers/given.png" id="55_given_sd"]
+[ext_resource type="Texture2D" path="res://assets/graphics/combat_sd/candidates/kasuha.png" id="56_kasuha_sd"]
+[ext_resource type="Texture2D" path="res://assets/graphics/combat_sd/retainers/jeomujeom.png" id="57_jeomujeom_sd"]
+[ext_resource type="Texture2D" path="res://assets/graphics/combat_sd/candidates/irelai.png" id="58_irelai_sd"]
+[ext_resource type="Texture2D" path="res://assets/graphics/combat_sd/retainers/jugdied.png" id="59_jugdied_sd"]
+[ext_resource type="Texture2D" path="res://assets/graphics/towers/economy.png" id="60_rubber_golem"]
+[ext_resource type="Texture2D" path="res://assets/graphics/towers/emerald_guardian.png" id="61_partason_guard"]
+[ext_resource type="Texture2D" path="res://assets/graphics/towers/sapphire_lance.png" id="62_jiane_guard"]
+[ext_resource type="Texture2D" path="res://assets/graphics/towers/amethyst_nova.png" id="63_kasuha_guard"]
+[ext_resource type="Texture2D" path="res://assets/graphics/towers/jade_roulette.png" id="64_irelai_guard"]
+[ext_resource type="Texture2D" path="res://assets/graphics/projectiles/election/goblin_javelin.svg" id="65_goblin_javelin"]
+[ext_resource type="Texture2D" path="res://assets/graphics/projectiles/election/skeleton_grenade.svg" id="66_skeleton_grenade"]
+[ext_resource type="Texture2D" path="res://assets/graphics/projectiles/election/royal_slash.svg" id="67_royal_slash"]
+[ext_resource type="Texture2D" path="res://assets/graphics/projectiles/election/judgment_bolt.svg" id="68_judgment_bolt"]
+
+[resource]
+script = ExtResource("1_script")
+id = &"demon_election_assets"
+graphics_root = "res://assets/graphics"
+content_texture_overrides = {
+"cores/emerald": ExtResource("27_partason_emblem"),
+"cores/sapphire": ExtResource("28_jiane_emblem"),
+"cores/amethyst": ExtResource("29_kasuha_emblem"),
+"cores/jade": ExtResource("30_irelai_emblem"),
+"cores/obsidian": ExtResource("33_judaginda_emblem"),
+"cursors/vanguard": ExtResource("35_vanguard"),
+"candidates/partason": ExtResource("19_partason"),
+"candidates/jiane": ExtResource("20_jiane"),
+"candidates/kasuha": ExtResource("21_kasuha"),
+"candidates/irelai": ExtResource("22_irelai"),
+"candidates/judaginda": ExtResource("31_judaginda"),
+"retainers/kanda": ExtResource("23_kanda"),
+"retainers/given": ExtResource("24_given"),
+"retainers/jeomujeom": ExtResource("25_jeomujeom"),
+"retainers/jugdied": ExtResource("26_jugdied"),
+"retainers/death_vanguard": ExtResource("32_death_vanguard"),
+"candidate_sd/judaginda": ExtResource("50_judaginda_sd"),
+"retainer_sd/death_vanguard": ExtResource("51_death_vanguard_sd"),
+"candidate_sd/partason": ExtResource("52_partason_sd"),
+"retainer_sd/kanda": ExtResource("53_kanda_sd"),
+"candidate_sd/jiane": ExtResource("54_jiane_sd"),
+"retainer_sd/given": ExtResource("55_given_sd"),
+"candidate_sd/kasuha": ExtResource("56_kasuha_sd"),
+"retainer_sd/jeomujeom": ExtResource("57_jeomujeom_sd"),
+"candidate_sd/irelai": ExtResource("58_irelai_sd"),
+"retainer_sd/jugdied": ExtResource("59_jugdied_sd"),
+"emblems/partason_sword_shield": ExtResource("27_partason_emblem"),
+"emblems/jiane_heart": ExtResource("28_jiane_emblem"),
+"emblems/kasuha_tentacle_eye": ExtResource("29_kasuha_emblem"),
+"emblems/irelai_skull_aura": ExtResource("30_irelai_emblem"),
+"emblems/judaginda_scythe_blood": ExtResource("33_judaginda_emblem"),
+"towers/rubber_golem": ExtResource("60_rubber_golem"),
+"towers/emerald_guardian": ExtResource("61_partason_guard"),
+"towers/sapphire_lance": ExtResource("62_jiane_guard"),
+"towers/amethyst_nova": ExtResource("63_kasuha_guard"),
+"towers/jade_roulette": ExtResource("64_irelai_guard"),
+"projectiles/goblin_javelin": ExtResource("65_goblin_javelin"),
+"projectiles/skeleton_grenade": ExtResource("66_skeleton_grenade"),
+"projectiles/royal_slash": ExtResource("67_royal_slash"),
+"projectiles/judgment_bolt": ExtResource("68_judgment_bolt"),
+"factions/partason_faction": ExtResource("27_partason_emblem"),
+"factions/jiane_faction": ExtResource("28_jiane_emblem"),
+"factions/kasuha_faction": ExtResource("29_kasuha_emblem"),
+"factions/irelai_faction": ExtResource("30_irelai_emblem"),
+"factions/judaginda_faction": ExtResource("33_judaginda_emblem")
+}
+approved_content_aliases = {
+"emblems/partason_crown": "emblems/partason_sword_shield",
+"emblems/jiane_star": "emblems/jiane_heart",
+"emblems/kasuha_abyss": "emblems/kasuha_tentacle_eye",
+"emblems/irelai_spirit": "emblems/irelai_skull_aura",
+"emblems/judaginda_bell": "emblems/judaginda_scythe_blood",
+"enemies/zigzag": "enemies/shifter",
+"enemies/taunter": "enemies/disruptor"
+}
+audio_overrides = {
+"candidate_skill_partason": ExtResource("40_skill_partason"),
+"candidate_skill_jiane": ExtResource("41_skill_jiane"),
+"candidate_skill_kasuha": ExtResource("42_skill_kasuha"),
+"candidate_skill_irelai": ExtResource("43_skill_irelai"),
+"candidate_skill_judaginda": ExtResource("44_skill_judaginda"),
+"core_skill_emerald": ExtResource("40_skill_partason"),
+"core_skill_sapphire": ExtResource("41_skill_jiane"),
+"core_skill_amethyst": ExtResource("42_skill_kasuha"),
+"core_skill_jade": ExtResource("43_skill_irelai"),
+"core_skill_obsidian": ExtResource("44_skill_judaginda"),
+"tower_rapid": ExtResource("45_tower_rapid"),
+"tower_blast": ExtResource("46_tower_blast"),
+"tower_energy": ExtResource("47_tower_energy"),
+"tower_saw": ExtResource("48_tower_saw"),
+"tower_arcane": ExtResource("49_tower_arcane")
+}
+menu_background = ExtResource("2_background")
+title_background = ExtResource("69_title_background")
+main_hub_background = ExtResource("70_hub_background")
+battlefield_background = ExtResource("2_background")
+core_fallback = ExtResource("3_core")
+cursor_fallback = ExtResource("4_cursor")
+tower_fallback = ExtResource("5_tower")
+enemy_fallback = ExtResource("6_enemy")
+projectile_plasma = ExtResource("7_plasma")
+projectile_artillery = ExtResource("8_artillery")
+audio_ui_click = ExtResource("9_ui")
+audio_level_up = ExtResource("10_level")
+audio_boss_warning = ExtResource("11_warning")
+audio_boss_spawn = ExtResource("12_spawn")
+audio_core_skill = ExtResource("13_skill")
+audio_hit_light = ExtResource("14_light")
+audio_hit_heavy = ExtResource("15_heavy")
+audio_core_hit = ExtResource("16_core_hit")
+audio_victory = ExtResource("17_victory")
+audio_defeat = ExtResource("18_defeat")

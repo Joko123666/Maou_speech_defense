@@ -1,0 +1,22 @@
+[gd_resource type="Resource" script_class="SpecializationBranchData" format=3]
+
+[ext_resource type="Script" path="res://resources/specialization_branch_data.gd" id="1_2fx8u"]
+
+[resource]
+script = ExtResource("1_2fx8u")
+id = &"silver_switch"
+owner_kind = &"cursor"
+owner_id = &"silver"
+display_name = "매혹의 채찍"
+level_4_description = "출혈을 제거하고 환혹 확률을 크게 증가"
+level_7_description = "환혹 확률과 지속시간 추가 증가"
+level_4_modifiers = {
+"given_bleed_disabled": true,
+"given_charm_chance": 0.48
+}
+level_7_modifiers = {
+"given_bleed_disabled": true,
+"given_charm_chance": 0.72,
+"given_charm_duration": 1.45
+}
+impact_keys = Array[StringName]([&"retainer", &"charm", &"control"])

@@ -1,0 +1,24 @@
+[gd_resource type="Resource" script_class="TowerData" format=3]
+
+[ext_resource type="Texture2D" path="res://assets/graphics/tower_attacks/emerald_guardian.png" id="1_s0bv6"]
+[ext_resource type="Script" path="res://resources/tower_data.gd" id="2_x5k1t"]
+[ext_resource type="Texture2D" path="res://assets/graphics/towers/emerald_guardian.png" id="3_ntexr"]
+
+[resource]
+script = ExtResource("2_x5k1t")
+id = &"emerald_guardian"
+display_name = "왕실 정예 근위대"
+description = "검과 방패로 가장 가까운 난입자를 밀어내고 일정 주기마다 왕실 방패 충격을 사용"
+behavior = &"unique_single"
+damage = 38.0
+attack_interval = 0.72
+attack_range_cells = 2.5
+status_power = 30.0
+max_level = 1
+color = Color(0.3254902, 0.8352941, 0.64705884, 1)
+tags = Array[StringName]([&"unique", &"emerald", &"unique_single"])
+texture = ExtResource("3_ntexr")
+attack_texture = ExtResource("1_s0bv6")
+projectile_texture_id = &"royal_slash"
+unique_core_id = &"emerald"
+formation_power_rating = 200.0

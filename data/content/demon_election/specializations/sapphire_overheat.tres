@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="SpecializationBranchData" format=3]
+
+[ext_resource type="Script" path="res://resources/specialization_branch_data.gd" id="1_ciyp6"]
+
+[resource]
+script = ExtResource("1_ciyp6")
+id = &"sapphire_overheat"
+owner_kind = &"core"
+owner_id = &"sapphire"
+display_name = "과열 속사"
+level_4_description = "연속 공격마다 공속 증가"
+level_7_description = "다섯 번째 공격이 220% 강화탄으로 발사"
+level_4_modifiers = {
+"overheat_speed": 1.22
+}
+level_7_modifiers = {
+"overheat_round": 2.2,
+"overheat_speed": 1.38
+}
+impact_keys = Array[StringName]([&"core", &"speed", &"damage"])

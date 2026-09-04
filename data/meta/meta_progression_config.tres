@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="MetaProgressionConfig" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://resources/meta_progression_config.gd" id="1_config"]
+
+[resource]
+script = ExtResource("1_config")
+enforce_content_locks = true
+grant_all_content_in_editor = true
+show_locked_shop_silhouettes = true
+allow_progression_reset = true
+award_currency_in_debug_runs = false

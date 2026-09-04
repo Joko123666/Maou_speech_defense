@@ -1,0 +1,24 @@
+[gd_resource type="Resource" script_class="TowerData" format=3]
+
+[ext_resource type="Texture2D" path="res://assets/graphics/tower_attacks/obsidian_inquisitor.png" id="1_img05"]
+[ext_resource type="Script" path="res://resources/tower_data.gd" id="2_8okmy"]
+[ext_resource type="Texture2D" path="res://assets/graphics/towers/obsidian_inquisitor.png" id="3_sjetv"]
+
+[resource]
+script = ExtResource("2_8okmy")
+id = &"obsidian_inquisitor"
+display_name = "죽음교 원거리 집행관"
+description = "후열에서 심판 주술탄으로 선고를 누적하고 처형을 지원하는 원거리 친위대"
+behavior = &"unique_single"
+target_rule = &"highest_health"
+damage = 52.0
+attack_interval = 1.35
+attack_range_cells = 4.0
+max_level = 1
+color = Color(0.9372549, 0.41960785, 0.4, 1)
+tags = Array[StringName]([&"unique", &"obsidian", &"unique_single"])
+texture = ExtResource("3_sjetv")
+attack_texture = ExtResource("1_img05")
+projectile_texture_id = &"judgment_bolt"
+unique_core_id = &"obsidian"
+formation_power_rating = 180.0

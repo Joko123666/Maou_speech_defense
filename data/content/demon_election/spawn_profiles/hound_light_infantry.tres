@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="EnemySpawnProfileData" format=3]
+
+[ext_resource type="Script" path="res://resources/enemy_spawn_profile_data.gd" id="1_7jbma"]
+
+[resource]
+script = ExtResource("1_7jbma")
+enemy_id = &"hound_light_infantry"
+spawn_cost = 11.0
+role_tags = Array[StringName]([&"fast", &"on_hit_speed"])
+unlock_time = 300.0
+group_max = 2

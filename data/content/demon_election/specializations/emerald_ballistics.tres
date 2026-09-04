@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="SpecializationBranchData" format=3]
+
+[ext_resource type="Script" path="res://resources/specialization_branch_data.gd" id="1_llks2"]
+
+[resource]
+script = ExtResource("1_llks2")
+id = &"emerald_ballistics"
+owner_kind = &"core"
+owner_id = &"emerald"
+display_name = "탄도 동기화"
+level_4_description = "목표지점 반경 적을 공격하는 타워 피해 +16%"
+level_7_description = "목표지점 공격 시 핵이 45% 피해로 추가 사격"
+level_4_modifiers = {
+"cursor_tower_damage": 1.16
+}
+level_7_modifiers = {
+"core_follow_shot": 0.45,
+"cursor_tower_damage": 1.3
+}
+impact_keys = Array[StringName]([&"core", &"cursor", &"global"])

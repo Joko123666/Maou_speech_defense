@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="EnemyData" format=3]
+
+[ext_resource type="Script" path="res://resources/enemy_data.gd" id="1_uiskm"]
+[ext_resource type="Texture2D" path="res://assets/graphics/enemies/goblin_raider.png" id="2_q68vh"]
+
+[resource]
+script = ExtResource("1_uiskm")
+id = &"goblin_raider"
+display_name = "고블린 약탈병"
+max_health = 30.0
+move_speed = 92.0
+core_damage = 7.0
+experience_value = 3.0
+spawn_cost = 5.0
+role_tags = Array[StringName]([&"basic", &"fast"])
+behavior = &"fast"
+body_color = Color(0.7254902, 0.78431374, 0.34117648, 1)
+radius = 15.0
+texture = ExtResource("2_q68vh")

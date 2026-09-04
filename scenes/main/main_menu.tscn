@@ -1,0 +1,1130 @@
+[gd_scene load_steps=12 format=3]
+
+[ext_resource type="Script" path="res://scripts/ui/main_menu.gd" id="1_menu"]
+
+[sub_resource type="StyleBoxFlat" id="StyleSurface"]
+bg_color = Color(0.025, 0.055, 0.078, 0.96)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.16, 0.35, 0.43, 0.85)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+content_margin_left = 32.0
+content_margin_top = 28.0
+content_margin_right = 32.0
+content_margin_bottom = 28.0
+
+[sub_resource type="StyleBoxFlat" id="StyleHero"]
+bg_color = Color(0.075, 0.035, 0.11, 0.76)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.85, 0.635, 0.19, 0.52)
+corner_radius_top_left = 18
+corner_radius_top_right = 18
+corner_radius_bottom_right = 18
+corner_radius_bottom_left = 18
+content_margin_left = 32.0
+content_margin_top = 30.0
+content_margin_right = 32.0
+content_margin_bottom = 30.0
+shadow_color = Color(0.015, 0.005, 0.025, 0.42)
+shadow_size = 12
+
+[sub_resource type="StyleBoxFlat" id="StyleNav"]
+bg_color = Color(0.075, 0.035, 0.11, 0.82)
+border_width_left = 5
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.85, 0.635, 0.19, 0.7)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+content_margin_left = 22.0
+content_margin_right = 18.0
+
+[sub_resource type="StyleBoxFlat" id="StyleNavHover"]
+bg_color = Color(0.16, 0.075, 0.2, 0.96)
+border_width_left = 5
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.95, 0.78, 0.34, 1)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+content_margin_left = 22.0
+content_margin_right = 18.0
+
+[sub_resource type="StyleBoxFlat" id="StyleStart"]
+bg_color = Color(0.07, 0.42, 0.36, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.35, 0.9, 0.72, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleStartHover"]
+bg_color = Color(0.1, 0.56, 0.46, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.62, 1, 0.85, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBack"]
+bg_color = Color(0.04, 0.085, 0.11, 0.95)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.25, 0.48, 0.55, 0.9)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxFlat" id="StylePlaceholder"]
+bg_color = Color(0.025, 0.055, 0.075, 0.65)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.22, 0.39, 0.45, 0.7)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+content_margin_left = 30.0
+content_margin_top = 30.0
+content_margin_right = 30.0
+content_margin_bottom = 30.0
+
+[sub_resource type="StyleBoxFlat" id="StyleSplashPlate"]
+bg_color = Color(0.09, 0.035, 0.13, 0.88)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.85, 0.635, 0.19, 0.92)
+corner_radius_top_left = 22
+corner_radius_top_right = 22
+corner_radius_bottom_right = 22
+corner_radius_bottom_left = 22
+content_margin_left = 48.0
+content_margin_top = 34.0
+content_margin_right = 48.0
+content_margin_bottom = 34.0
+
+[sub_resource type="StyleBoxFlat" id="StylePortraitFrame"]
+bg_color = Color(0.12, 0.055, 0.16, 0.94)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.85, 0.635, 0.19, 0.9)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_menu")
+
+[node name="Background" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+expand_mode = 1
+stretch_mode = 6
+
+[node name="Overlay" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0.006, 0.02, 0.032, 0.73)
+
+[node name="SplashPage" type="MarginContainer" parent="."]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 64
+theme_override_constants/margin_top = 48
+theme_override_constants/margin_right = 64
+theme_override_constants/margin_bottom = 48
+
+[node name="Center" type="CenterContainer" parent="SplashPage"]
+layout_mode = 2
+
+[node name="TitlePlate" type="PanelContainer" parent="SplashPage/Center"]
+custom_minimum_size = Vector2(590, 390)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleSplashPlate")
+
+[node name="Content" type="VBoxContainer" parent="SplashPage/Center/TitlePlate"]
+layout_mode = 2
+theme_override_constants/separation = 12
+
+[node name="SplashTitle" type="Label" parent="SplashPage/Center/TitlePlate/Content"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0.98, 0.925, 0.82, 1)
+theme_override_font_sizes/font_size = 48
+text = "DEMON ELECTION"
+horizontal_alignment = 1
+
+[node name="Rule" type="ColorRect" parent="SplashPage/Center/TitlePlate/Content"]
+custom_minimum_size = Vector2(0, 3)
+layout_mode = 2
+color = Color(0.85, 0.635, 0.19, 0.92)
+
+[node name="SplashTagline" type="Label" parent="SplashPage/Center/TitlePlate/Content"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0.89, 0.82, 0.91, 1)
+theme_override_font_sizes/font_size = 20
+text = "후보를 지키고 마계의 표심을 장악하라"
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="Spacer" type="Control" parent="SplashPage/Center/TitlePlate/Content"]
+custom_minimum_size = Vector2(0, 8)
+layout_mode = 2
+
+[node name="EnterHubButton" type="Button" parent="SplashPage/Center/TitlePlate/Content"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 62)
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleStart")
+theme_override_styles/hover = SubResource("StyleStartHover")
+theme_override_styles/pressed = SubResource("StyleStartHover")
+theme_override_styles/focus = SubResource("StyleStartHover")
+text = "유세 본부 입장"
+
+[node name="SplashHint" type="Label" parent="SplashPage/Center/TitlePlate/Content"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0.72, 0.64, 0.76, 1)
+theme_override_font_sizes/font_size = 13
+text = "터치 또는 확인 키로 시작"
+horizontal_alignment = 1
+
+[node name="BuildVersionLabel" type="Label" parent="."]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -410.0
+offset_top = -42.0
+offset_right = -24.0
+offset_bottom = -18.0
+grow_horizontal = 0
+grow_vertical = 0
+mouse_filter = 2
+theme_override_colors/font_color = Color(0.72, 0.66, 0.76, 0.72)
+theme_override_font_sizes/font_size = 12
+text = "v0.03 · DEV"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="SafeArea" type="MarginContainer" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 56
+theme_override_constants/margin_top = 36
+theme_override_constants/margin_right = 56
+theme_override_constants/margin_bottom = 34
+
+[node name="Shell" type="VBoxContainer" parent="SafeArea"]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="Pages" type="Control" parent="SafeArea/Shell"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="TitlePage" type="Control" parent="SafeArea/Shell/Pages"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Center" type="CenterContainer" parent="SafeArea/Shell/Pages/TitlePage"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Columns" type="HBoxContainer" parent="SafeArea/Shell/Pages/TitlePage/Center"]
+custom_minimum_size = Vector2(1020, 470)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 24
+
+[node name="Hero" type="PanelContainer" parent="SafeArea/Shell/Pages/TitlePage/Center/Columns"]
+custom_minimum_size = Vector2(440, 470)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 1.0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleHero")
+
+[node name="Content" type="VBoxContainer" parent="SafeArea/Shell/Pages/TitlePage/Center/Columns/Hero"]
+layout_mode = 2
+theme_override_constants/separation = 14
+
+[node name="Sector" type="Label" parent="SafeArea/Shell/Pages/TitlePage/Center/Columns/Hero/Content"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.95, 0.78, 0.34, 1)
+theme_override_font_sizes/font_size = 15
+text = "현재 출격 조합"
+
+[node name="Title" type="Label" parent="SafeArea/Shell/Pages/TitlePage/Center/Columns/Hero/Content"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.98, 0.925, 0.82, 1)
+theme_override_font_sizes/font_size = 36
+text = "유세 본부"
+
+[node name="Rule" type="ColorRect" parent="SafeArea/Shell/Pages/TitlePage/Center/Columns/Hero/Content"]
+custom_minimum_size = Vector2(0, 3)
+layout_mode = 2
+color = Color(0.85, 0.635, 0.19, 0.92)
+
+[node name="Description" type="Label" parent="SafeArea/Shell/Pages/TitlePage/Center/Columns/Hero/Content"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0.78, 0.72, 0.82, 1)
+theme_override_font_sizes/font_size = 15
+text = "후보와 심복을 확인하고 다음 행동을 선택하세요."
+vertical_alignment = 1
+autowrap_mode = 2
+max_lines_visible = 2
+
+[node name="Identity" type="HBoxContainer" parent="SafeArea/Shell/Pages/TitlePage/Center/Columns/Hero/Content"]
+custom_minimum_size = Vector2(0, 112)
+layout_mode = 2
+theme_override_constants/separation = 14
+
+[node name="PortraitFrame" type="PanelContainer" parent="SafeArea/Shell/Pages/TitlePage/Center/Columns/Hero/Content/Identity"]
+custom_minimum_size = Vector2(108, 108)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StylePortraitFrame")
+
+[node name="HubCandidatePortrait" type="TextureRect" parent="SafeArea/Shell/Pages/TitlePage/Center/Columns/Hero/Content/Identity/PortraitFrame"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(96, 96)
+layout_mode = 2
+expand_mode = 1
+stretch_mode = 5
+
+[node name="IdentityCopy" type="VBoxContainer" parent="SafeArea/Shell/Pages/TitlePage/Center/Columns/Hero/Content/Identity"]
+layout_mode = 2
+size_flags_horizontal = 3
+alignment = 1
+theme_override_constants/separation = 2
+
+[node name="HubCandidateName" type="Label" parent="SafeArea/Shell/Pages/TitlePage/Center/Columns/Hero/Content/Identity/IdentityCopy"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0.98, 0.925, 0.82, 1)
+theme_override_font_sizes/font_size = 22
+text = "현재 후보 · 확인 중"
+
+[node name="HubCandidateMeta" type="Label" parent="SafeArea/Shell/Pages/TitlePage/Center/Columns/Hero/Content/Identity/IdentityCopy"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0.78, 0.72, 0.82, 1)
+theme_override_font_sizes/font_size = 14
+text = "수석 심복과 출격 기록을 불러오는 중입니다."
+autowrap_mode = 2
+max_lines_visible = 2
+
+[node name="Status" type="Label" parent="SafeArea/Shell/Pages/TitlePage/Center/Columns/Hero/Content"]
+visible = false
+layout_mode = 2
+theme_override_colors/font_color = Color(0.95, 0.78, 0.34, 1)
+theme_override_font_sizes/font_size = 14
+text = ""
+
+[node name="Navigation" type="VBoxContainer" parent="SafeArea/Shell/Pages/TitlePage/Center/Columns"]
+custom_minimum_size = Vector2(440, 470)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 1.0
+theme_override_constants/separation = 14
+
+[node name="GameMenuButton" type="Button" parent="SafeArea/Shell/Pages/TitlePage/Center/Columns/Navigation"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 82)
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0.9, 0.98, 0.97, 1)
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleNav")
+theme_override_styles/hover = SubResource("StyleNavHover")
+theme_override_styles/pressed = SubResource("StyleNavHover")
+theme_override_styles/focus = SubResource("StyleNavHover")
+text = "출격 준비"
+alignment = 0
+
+[node name="ShopMenuButton" type="Button" parent="SafeArea/Shell/Pages/TitlePage/Center/Columns/Navigation"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 82)
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0.86, 0.92, 0.93, 1)
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleNav")
+theme_override_styles/hover = SubResource("StyleNavHover")
+theme_override_styles/pressed = SubResource("StyleNavHover")
+theme_override_styles/focus = SubResource("StyleNavHover")
+text = "병력 확보"
+alignment = 0
+
+[node name="AchievementMenuButton" type="Button" parent="SafeArea/Shell/Pages/TitlePage/Center/Columns/Navigation"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 82)
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0.86, 0.92, 0.93, 1)
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleNav")
+theme_override_styles/hover = SubResource("StyleNavHover")
+theme_override_styles/pressed = SubResource("StyleNavHover")
+theme_override_styles/focus = SubResource("StyleNavHover")
+text = "업적"
+alignment = 0
+
+[node name="CodexMenuButton" type="Button" parent="SafeArea/Shell/Pages/TitlePage/Center/Columns/Navigation"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 82)
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0.86, 0.92, 0.93, 1)
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleNav")
+theme_override_styles/hover = SubResource("StyleNavHover")
+theme_override_styles/pressed = SubResource("StyleNavHover")
+theme_override_styles/focus = SubResource("StyleNavHover")
+text = "도감"
+alignment = 0
+
+[node name="GameSetupPage" type="Control" parent="SafeArea/Shell/Pages"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Center" type="CenterContainer" parent="SafeArea/Shell/Pages/GameSetupPage"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="PanelContainer" parent="SafeArea/Shell/Pages/GameSetupPage/Center"]
+custom_minimum_size = Vector2(900, 520)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleSurface")
+
+[node name="Content" type="VBoxContainer" parent="SafeArea/Shell/Pages/GameSetupPage/Center/Panel"]
+layout_mode = 2
+theme_override_constants/separation = 4
+
+[node name="PageHeader" type="HBoxContainer" parent="SafeArea/Shell/Pages/GameSetupPage/Center/Panel/Content"]
+layout_mode = 2
+
+[node name="GameBackButton" type="Button" parent="SafeArea/Shell/Pages/GameSetupPage/Center/Panel/Content/PageHeader"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(104, 34)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBack")
+theme_override_styles/hover = SubResource("StyleNavHover")
+theme_override_styles/focus = SubResource("StyleNavHover")
+text = "‹ 타이틀"
+
+[node name="HeaderSpacer" type="Control" parent="SafeArea/Shell/Pages/GameSetupPage/Center/Panel/Content/PageHeader"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Step" type="Label" parent="SafeArea/Shell/Pages/GameSetupPage/Center/Panel/Content/PageHeader"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.38, 0.82, 0.7, 1)
+text = "GAME / LOADOUT"
+vertical_alignment = 1
+
+[node name="PageTitle" type="Label" parent="SafeArea/Shell/Pages/GameSetupPage/Center/Panel/Content"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.9, 0.96, 0.97, 1)
+theme_override_font_sizes/font_size = 25
+text = "방어 프로토콜 설정"
+
+[node name="PageSubtitle" type="Label" parent="SafeArea/Shell/Pages/GameSetupPage/Center/Panel/Content"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.59, 0.7, 0.74, 1)
+text = "출격할 마왕 후보와 수석 심복을 선택하세요."
+
+[node name="CampaignChoiceSection" type="VBoxContainer" parent="SafeArea/Shell/Pages/GameSetupPage/Center/Panel/Content"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+theme_override_constants/separation = 2
+
+[node name="CandidateStepLabel" type="Label" parent="SafeArea/Shell/Pages/GameSetupPage/Center/Panel/Content/CampaignChoiceSection"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0.98, 0.42, 0.58, 1)
+theme_override_font_sizes/font_size = 14
+text = "1  마왕 후보 선택"
+
+[node name="CandidateChoiceScroll" type="ScrollContainer" parent="SafeArea/Shell/Pages/GameSetupPage/Center/Panel/Content/CampaignChoiceSection"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 52)
+layout_mode = 2
+horizontal_scroll_mode = 1
+vertical_scroll_mode = 0
+scroll_deadzone = 12
+
+[node name="CandidateChoiceList" type="HBoxContainer" parent="SafeArea/Shell/Pages/GameSetupPage/Center/Panel/Content/CampaignChoiceSection/CandidateChoiceScroll"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 7
+
+[node name="RetainerStepLabel" type="Label" parent="SafeArea/Shell/Pages/GameSetupPage/Center/Panel/Content/CampaignChoiceSection"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0.82, 0.52, 1, 1)
+theme_override_font_sizes/font_size = 14
+text = "2  수석 심복 선택"
+
+[node name="RetainerChoiceScroll" type="ScrollContainer" parent="SafeArea/Shell/Pages/GameSetupPage/Center/Panel/Content/CampaignChoiceSection"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 52)
+layout_mode = 2
+horizontal_scroll_mode = 1
+vertical_scroll_mode = 0
+scroll_deadzone = 12
+
+[node name="RetainerChoiceList" type="HBoxContainer" parent="SafeArea/Shell/Pages/GameSetupPage/Center/Panel/Content/CampaignChoiceSection/RetainerChoiceScroll"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 7
+
+[node name="Selectors" type="GridContainer" parent="SafeArea/Shell/Pages/GameSetupPage/Center/Panel/Content"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_constants/h_separation = 16
+theme_override_constants/v_separation = 10
+columns = 2
+
+[node name="CoreLabel" type="Label" parent="SafeArea/Shell/Pages/GameSetupPage/Center/Panel/Content/Selectors"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "마왕 후보"
+
+[node name="CoreOption" type="OptionButton" parent="SafeArea/Shell/Pages/GameSetupPage/Center/Panel/Content/Selectors"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(680, 42)
+layout_mode = 2
+
+[node name="CursorLabel" type="Label" parent="SafeArea/Shell/Pages/GameSetupPage/Center/Panel/Content/Selectors"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "수석 심복"
+
+[node name="CursorOption" type="OptionButton" parent="SafeArea/Shell/Pages/GameSetupPage/Center/Panel/Content/Selectors"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(680, 42)
+layout_mode = 2
+
+[node name="ChallengeLabel" type="Label" parent="SafeArea/Shell/Pages/GameSetupPage/Center/Panel/Content/Selectors"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "도전 단계"
+vertical_alignment = 1
+
+[node name="ChallengeControls" type="HBoxContainer" parent="SafeArea/Shell/Pages/GameSetupPage/Center/Panel/Content/Selectors"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(680, 38)
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="ChallengeDecrease" type="Button" parent="SafeArea/Shell/Pages/GameSetupPage/Center/Panel/Content/Selectors/ChallengeControls"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(40, 38)
+layout_mode = 2
+text = "−"
+
+[node name="ChallengeSlider" type="HSlider" parent="SafeArea/Shell/Pages/GameSetupPage/Center/Panel/Content/Selectors/ChallengeControls"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+max_value = 10.0
+step = 1.0
+tick_count = 11
+ticks_on_borders = true
+
+[node name="ChallengeIncrease" type="Button" parent="SafeArea/Shell/Pages/GameSetupPage/Center/Panel/Content/Selectors/ChallengeControls"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(40, 38)
+layout_mode = 2
+text = "+"
+
+[node name="ChallengeValue" type="Label" parent="SafeArea/Shell/Pages/GameSetupPage/Center/Panel/Content/Selectors/ChallengeControls"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(90, 38)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.98, 0.78, 0.35, 1)
+text = "잠김"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ChallengeSummary" type="Label" parent="SafeArea/Shell/Pages/GameSetupPage/Center/Panel/Content/Selectors/ChallengeControls"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(250, 38)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0.86, 0.72, 0.42, 1)
+theme_override_font_sizes/font_size = 12
+text = "현재 선택 가능한 단계와 난이도 효과"
+vertical_alignment = 1
+text_overrun_behavior = 3
+
+[node name="ChallengeDescription" type="Label" parent="SafeArea/Shell/Pages/GameSetupPage/Center/Panel/Content"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 28)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.95, 0.76, 0.34, 1)
+theme_override_font_sizes/font_size = 14
+text = "첫 스테이지를 클리어하면 도전 단계가 활성화됩니다."
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="DescriptionLabel" type="Label" parent="SafeArea/Shell/Pages/GameSetupPage/Center/Panel/Content"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0.76, 0.84, 0.86, 1)
+theme_override_font_sizes/font_size = 16
+text = "선택 설명"
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="CampaignProfileSection" type="VBoxContainer" parent="SafeArea/Shell/Pages/GameSetupPage/Center/Panel/Content"]
+unique_name_in_owner = true
+visible = false
+custom_minimum_size = Vector2(0, 108)
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/separation = 7
+
+[node name="CampaignRivalPreview" type="Label" parent="SafeArea/Shell/Pages/GameSetupPage/Center/Panel/Content/CampaignProfileSection"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0.98, 0.72, 0.38, 1)
+theme_override_font_sizes/font_size = 13
+text = "경쟁 진영 미리보기"
+horizontal_alignment = 1
+text_overrun_behavior = 3
+
+[node name="ProfileCards" type="HBoxContainer" parent="SafeArea/Shell/Pages/GameSetupPage/Center/Panel/Content/CampaignProfileSection"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/separation = 12
+
+[node name="CandidateCard" type="PanelContainer" parent="SafeArea/Shell/Pages/GameSetupPage/Center/Panel/Content/CampaignProfileSection/ProfileCards"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("StylePlaceholder")
+
+[node name="Content" type="HBoxContainer" parent="SafeArea/Shell/Pages/GameSetupPage/Center/Panel/Content/CampaignProfileSection/ProfileCards/CandidateCard"]
+layout_mode = 2
+theme_override_constants/separation = 12
+
+[node name="CandidatePortrait" type="TextureRect" parent="SafeArea/Shell/Pages/GameSetupPage/Center/Panel/Content/CampaignProfileSection/ProfileCards/CandidateCard/Content"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(68, 68)
+layout_mode = 2
+expand_mode = 1
+stretch_mode = 5
+
+[node name="CandidateEmblem" type="TextureRect" parent="SafeArea/Shell/Pages/GameSetupPage/Center/Panel/Content/CampaignProfileSection/ProfileCards/CandidateCard/Content/CandidatePortrait"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -34.0
+offset_top = -34.0
+offset_right = -2.0
+offset_bottom = -2.0
+grow_horizontal = 0
+grow_vertical = 0
+mouse_filter = 2
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Text" type="VBoxContainer" parent="SafeArea/Shell/Pages/GameSetupPage/Center/Panel/Content/CampaignProfileSection/ProfileCards/CandidateCard/Content"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 1
+
+[node name="CandidateName" type="Label" parent="SafeArea/Shell/Pages/GameSetupPage/Center/Panel/Content/CampaignProfileSection/ProfileCards/CandidateCard/Content/Text"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0.98, 0.86, 0.68, 1)
+theme_override_font_sizes/font_size = 19
+text = "마왕 후보 · 후보명"
+text_overrun_behavior = 3
+
+[node name="CandidateTitle" type="Label" parent="SafeArea/Shell/Pages/GameSetupPage/Center/Panel/Content/CampaignProfileSection/ProfileCards/CandidateCard/Content/Text"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0.7, 0.78, 0.81, 1)
+theme_override_font_sizes/font_size = 13
+text = "칭호"
+text_overrun_behavior = 3
+
+[node name="CandidateSlogan" type="Label" parent="SafeArea/Shell/Pages/GameSetupPage/Center/Panel/Content/CampaignProfileSection/ProfileCards/CandidateCard/Content/Text"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0.91, 0.94, 0.93, 1)
+theme_override_font_sizes/font_size = 13
+text = "선거 구호"
+vertical_alignment = 1
+autowrap_mode = 2
+max_lines_visible = 2
+
+[node name="MetaRow" type="HBoxContainer" parent="SafeArea/Shell/Pages/GameSetupPage/Center/Panel/Content/CampaignProfileSection/ProfileCards/CandidateCard/Content/Text"]
+layout_mode = 2
+theme_override_constants/separation = 5
+
+[node name="CandidateStats" type="Label" parent="SafeArea/Shell/Pages/GameSetupPage/Center/Panel/Content/CampaignProfileSection/ProfileCards/CandidateCard/Content/Text/MetaRow"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0.47, 0.84, 0.72, 1)
+theme_override_font_sizes/font_size = 12
+text = "전투 기반"
+text_overrun_behavior = 3
+
+[node name="DecreeOption" type="OptionButton" parent="SafeArea/Shell/Pages/GameSetupPage/Center/Panel/Content/CampaignProfileSection/ProfileCards/CandidateCard/Content/Text/MetaRow"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(132, 24)
+layout_mode = 2
+theme_override_font_sizes/font_size = 11
+text_overrun_behavior = 3
+
+[node name="RetainerCard" type="PanelContainer" parent="SafeArea/Shell/Pages/GameSetupPage/Center/Panel/Content/CampaignProfileSection/ProfileCards"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("StylePlaceholder")
+
+[node name="Content" type="HBoxContainer" parent="SafeArea/Shell/Pages/GameSetupPage/Center/Panel/Content/CampaignProfileSection/ProfileCards/RetainerCard"]
+layout_mode = 2
+theme_override_constants/separation = 12
+
+[node name="RetainerPortrait" type="TextureRect" parent="SafeArea/Shell/Pages/GameSetupPage/Center/Panel/Content/CampaignProfileSection/ProfileCards/RetainerCard/Content"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(68, 68)
+layout_mode = 2
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Text" type="VBoxContainer" parent="SafeArea/Shell/Pages/GameSetupPage/Center/Panel/Content/CampaignProfileSection/ProfileCards/RetainerCard/Content"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 1
+
+[node name="RetainerName" type="Label" parent="SafeArea/Shell/Pages/GameSetupPage/Center/Panel/Content/CampaignProfileSection/ProfileCards/RetainerCard/Content/Text"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0.72, 0.88, 1, 1)
+theme_override_font_sizes/font_size = 19
+text = "수석 심복 · 심복명"
+text_overrun_behavior = 3
+
+[node name="RetainerTitle" type="Label" parent="SafeArea/Shell/Pages/GameSetupPage/Center/Panel/Content/CampaignProfileSection/ProfileCards/RetainerCard/Content/Text"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0.7, 0.78, 0.81, 1)
+theme_override_font_sizes/font_size = 13
+text = "칭호"
+text_overrun_behavior = 3
+
+[node name="RetainerDescription" type="Label" parent="SafeArea/Shell/Pages/GameSetupPage/Center/Panel/Content/CampaignProfileSection/ProfileCards/RetainerCard/Content/Text"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0.91, 0.94, 0.93, 1)
+theme_override_font_sizes/font_size = 13
+text = "심복 역할 설명"
+vertical_alignment = 1
+autowrap_mode = 2
+max_lines_visible = 2
+
+[node name="RetainerStats" type="Label" parent="SafeArea/Shell/Pages/GameSetupPage/Center/Panel/Content/CampaignProfileSection/ProfileCards/RetainerCard/Content/Text"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0.46, 0.75, 0.96, 1)
+theme_override_font_sizes/font_size = 12
+text = "이동·전투 기반"
+text_overrun_behavior = 3
+
+[node name="RecordLabel" type="Label" parent="SafeArea/Shell/Pages/GameSetupPage/Center/Panel/Content"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0.98, 0.78, 0.35, 1)
+text = "최고 기록"
+horizontal_alignment = 1
+
+[node name="StartButton" type="Button" parent="SafeArea/Shell/Pages/GameSetupPage/Center/Panel/Content"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 44)
+layout_mode = 2
+theme_override_font_sizes/font_size = 21
+theme_override_styles/normal = SubResource("StyleStart")
+theme_override_styles/hover = SubResource("StyleStartHover")
+theme_override_styles/focus = SubResource("StyleStartHover")
+text = "10분 방어 시작"
+
+[node name="ShopPage" type="Control" parent="SafeArea/Shell/Pages"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Center" type="CenterContainer" parent="SafeArea/Shell/Pages/ShopPage"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="PanelContainer" parent="SafeArea/Shell/Pages/ShopPage/Center"]
+custom_minimum_size = Vector2(1000, 590)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleSurface")
+
+[node name="Content" type="VBoxContainer" parent="SafeArea/Shell/Pages/ShopPage/Center/Panel"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="Header" type="HBoxContainer" parent="SafeArea/Shell/Pages/ShopPage/Center/Panel/Content"]
+layout_mode = 2
+
+[node name="ShopBackButton" type="Button" parent="SafeArea/Shell/Pages/ShopPage/Center/Panel/Content/Header"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(104, 40)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBack")
+theme_override_styles/hover = SubResource("StyleNavHover")
+theme_override_styles/focus = SubResource("StyleNavHover")
+text = "‹ 타이틀"
+
+[node name="HeaderSpacer" type="Control" parent="SafeArea/Shell/Pages/ShopPage/Center/Panel/Content/Header"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="ShopBalance" type="Label" parent="SafeArea/Shell/Pages/ShopPage/Center/Panel/Content/Header"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0.4, 0.95, 0.76, 1)
+theme_override_font_sizes/font_size = 21
+text = "보유 방위 자금  0"
+vertical_alignment = 1
+
+[node name="Title" type="Label" parent="SafeArea/Shell/Pages/ShopPage/Center/Panel/Content"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.9, 0.96, 0.97, 1)
+theme_override_font_sizes/font_size = 31
+text = "전술 보급 상점"
+
+[node name="Subtitle" type="Label" parent="SafeArea/Shell/Pages/ShopPage/Center/Panel/Content"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.59, 0.7, 0.74, 1)
+text = "유세 실적으로 발견한 수비병력을 확보하면 다음 출격부터 병력 세트 풀에 추가됩니다."
+
+[node name="ShopNotice" type="Label" parent="SafeArea/Shell/Pages/ShopPage/Center/Panel/Content"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 24)
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.81, 0.35, 1)
+text = "후속 병력 5종은 선행 업적 없이 원하는 순서로 구매할 수 있습니다."
+
+[node name="Scroll" type="ScrollContainer" parent="SafeArea/Shell/Pages/ShopPage/Center/Panel/Content"]
+layout_mode = 2
+size_flags_vertical = 3
+horizontal_scroll_mode = 0
+
+[node name="ShopProductList" type="VBoxContainer" parent="SafeArea/Shell/Pages/ShopPage/Center/Panel/Content/Scroll"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 8
+
+[node name="AchievementsPage" type="Control" parent="SafeArea/Shell/Pages"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Center" type="CenterContainer" parent="SafeArea/Shell/Pages/AchievementsPage"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="PanelContainer" parent="SafeArea/Shell/Pages/AchievementsPage/Center"]
+custom_minimum_size = Vector2(900, 520)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleSurface")
+
+[node name="Content" type="VBoxContainer" parent="SafeArea/Shell/Pages/AchievementsPage/Center/Panel"]
+layout_mode = 2
+theme_override_constants/separation = 14
+
+[node name="PageHeader" type="HBoxContainer" parent="SafeArea/Shell/Pages/AchievementsPage/Center/Panel/Content"]
+layout_mode = 2
+
+[node name="AchievementBackButton" type="Button" parent="SafeArea/Shell/Pages/AchievementsPage/Center/Panel/Content/PageHeader"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(104, 40)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBack")
+theme_override_styles/hover = SubResource("StyleNavHover")
+theme_override_styles/focus = SubResource("StyleNavHover")
+text = "‹ 타이틀"
+
+[node name="HeaderSpacer" type="Control" parent="SafeArea/Shell/Pages/AchievementsPage/Center/Panel/Content/PageHeader"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Step" type="Label" parent="SafeArea/Shell/Pages/AchievementsPage/Center/Panel/Content/PageHeader"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.38, 0.82, 0.7, 1)
+text = "RECORDS / ACHIEVEMENTS"
+vertical_alignment = 1
+
+[node name="PageTitle" type="Label" parent="SafeArea/Shell/Pages/AchievementsPage/Center/Panel/Content"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.9, 0.96, 0.97, 1)
+theme_override_font_sizes/font_size = 31
+text = "업적"
+
+[node name="PageSubtitle" type="Label" parent="SafeArea/Shell/Pages/AchievementsPage/Center/Panel/Content"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.59, 0.7, 0.74, 1)
+text = "전투 기록으로 달성하는 업적과 해금 진행도를 확인합니다."
+
+[node name="Placeholder" type="PanelContainer" parent="SafeArea/Shell/Pages/AchievementsPage/Center/Panel/Content"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StylePlaceholder")
+
+[node name="Message" type="VBoxContainer" parent="SafeArea/Shell/Pages/AchievementsPage/Center/Panel/Content/Placeholder"]
+layout_mode = 2
+alignment = 1
+
+[node name="AchievementCounter" type="Label" parent="SafeArea/Shell/Pages/AchievementsPage/Center/Panel/Content/Placeholder/Message"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0.32, 0.75, 0.66, 1)
+theme_override_font_sizes/font_size = 38
+text = "0 / 0"
+horizontal_alignment = 1
+
+[node name="AchievementSummary" type="Label" parent="SafeArea/Shell/Pages/AchievementsPage/Center/Panel/Content/Placeholder/Message"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0.58, 0.68, 0.71, 1)
+theme_override_font_sizes/font_size = 17
+text = "등록된 업적이 없습니다\n추후 업적 데이터가 이 영역에 표시됩니다"
+horizontal_alignment = 1
+
+[node name="CodexPage" type="Control" parent="SafeArea/Shell/Pages"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Center" type="CenterContainer" parent="SafeArea/Shell/Pages/CodexPage"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="PanelContainer" parent="SafeArea/Shell/Pages/CodexPage/Center"]
+custom_minimum_size = Vector2(900, 520)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleSurface")
+
+[node name="Content" type="VBoxContainer" parent="SafeArea/Shell/Pages/CodexPage/Center/Panel"]
+layout_mode = 2
+theme_override_constants/separation = 14
+
+[node name="PageHeader" type="HBoxContainer" parent="SafeArea/Shell/Pages/CodexPage/Center/Panel/Content"]
+layout_mode = 2
+
+[node name="CodexBackButton" type="Button" parent="SafeArea/Shell/Pages/CodexPage/Center/Panel/Content/PageHeader"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(104, 40)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBack")
+theme_override_styles/hover = SubResource("StyleNavHover")
+theme_override_styles/focus = SubResource("StyleNavHover")
+text = "‹ 타이틀"
+
+[node name="HeaderSpacer" type="Control" parent="SafeArea/Shell/Pages/CodexPage/Center/Panel/Content/PageHeader"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Step" type="Label" parent="SafeArea/Shell/Pages/CodexPage/Center/Panel/Content/PageHeader"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.38, 0.82, 0.7, 1)
+text = "ARCHIVE / CODEX"
+vertical_alignment = 1
+
+[node name="PageTitle" type="Label" parent="SafeArea/Shell/Pages/CodexPage/Center/Panel/Content"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.9, 0.96, 0.97, 1)
+theme_override_font_sizes/font_size = 31
+text = "도감"
+
+[node name="PageSubtitle" type="Label" parent="SafeArea/Shell/Pages/CodexPage/Center/Panel/Content"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.59, 0.7, 0.74, 1)
+text = "후보, 심복, 수비병력, 병력 세트와 난입자 정보를 분류할 공간입니다."
+
+[node name="Categories" type="HBoxContainer" parent="SafeArea/Shell/Pages/CodexPage/Center/Panel/Content"]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="Core" type="Button" parent="SafeArea/Shell/Pages/CodexPage/Center/Panel/Content/Categories"]
+layout_mode = 2
+size_flags_horizontal = 3
+disabled = true
+text = "마왕 후보"
+
+[node name="Cursor" type="Button" parent="SafeArea/Shell/Pages/CodexPage/Center/Panel/Content/Categories"]
+layout_mode = 2
+size_flags_horizontal = 3
+disabled = true
+text = "수석 심복"
+
+[node name="Tower" type="Button" parent="SafeArea/Shell/Pages/CodexPage/Center/Panel/Content/Categories"]
+layout_mode = 2
+size_flags_horizontal = 3
+disabled = true
+text = "유세 지원대"
+
+[node name="Enemy" type="Button" parent="SafeArea/Shell/Pages/CodexPage/Center/Panel/Content/Categories"]
+layout_mode = 2
+size_flags_horizontal = 3
+disabled = true
+text = "적"
+
+[node name="Placeholder" type="PanelContainer" parent="SafeArea/Shell/Pages/CodexPage/Center/Panel/Content"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StylePlaceholder")
+
+[node name="Message" type="VBoxContainer" parent="SafeArea/Shell/Pages/CodexPage/Center/Panel/Content/Placeholder"]
+layout_mode = 2
+alignment = 1
+
+[node name="Counter" type="Label" parent="SafeArea/Shell/Pages/CodexPage/Center/Panel/Content/Placeholder/Message"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.32, 0.75, 0.66, 1)
+theme_override_font_sizes/font_size = 38
+text = "0 ENTRIES"
+horizontal_alignment = 1
+
+[node name="Empty" type="Label" parent="SafeArea/Shell/Pages/CodexPage/Center/Panel/Content/Placeholder/Message"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.58, 0.68, 0.71, 1)
+theme_override_font_sizes/font_size = 17
+text = "등록된 도감 항목이 없습니다\n추후 발견 데이터가 이 영역에 표시됩니다"
+horizontal_alignment = 1

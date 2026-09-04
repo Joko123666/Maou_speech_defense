@@ -1,0 +1,24 @@
+[gd_resource type="Resource" script_class="TowerData" format=3]
+
+[ext_resource type="Texture2D" path="res://assets/graphics/tower_attacks/obsidian_verdict.png" id="1_nbnqg"]
+[ext_resource type="Script" path="res://resources/tower_data.gd" id="2_6n2a2"]
+[ext_resource type="Texture2D" path="res://assets/graphics/towers/obsidian_verdict.png" id="3_m2dk6"]
+
+[resource]
+script = ExtResource("2_6n2a2")
+id = &"obsidian_verdict"
+display_name = "죽음교 판결관"
+description = "전열에서 강적에게 선고를 누적해 3중첩 일반 난입자를 처형하고 공식 난입에게 최대 체력 비례 고정 피해"
+behavior = &"unique_single"
+target_rule = &"highest_health"
+damage = 78.0
+attack_interval = 1.12
+attack_range_cells = 1.75
+max_level = 1
+color = Color(0.8509804, 0.29411766, 0.3372549, 1)
+tags = Array[StringName]([&"unique", &"obsidian", &"unique_single"])
+texture = ExtResource("3_m2dk6")
+attack_texture = ExtResource("1_nbnqg")
+projectile_texture_id = &"judgment_bolt"
+unique_core_id = &"obsidian"
+formation_power_rating = 220.0

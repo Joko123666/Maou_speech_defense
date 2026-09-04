@@ -1,0 +1,490 @@
+[gd_scene load_steps=9 format=3]
+
+[ext_resource type="Script" path="res://scripts/ui/hud.gd" id="1_hud"]
+[ext_resource type="PackedScene" path="res://scenes/ui/components/combat_result_overlay.tscn" id="2_result_overlay"]
+[ext_resource type="Theme" path="res://data/ui/demon_election_ui_theme.tres" id="3_theme"]
+[ext_resource type="Script" path="res://scripts/ui/faction_marker_icon.gd" id="4_faction_marker"]
+
+[sub_resource type="StyleBoxFlat" id="StyleTopGroup"]
+bg_color = Color(0.12549, 0.0862745, 0.180392, 0.94)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.847059, 0.682353, 0.282353, 0.86)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+content_margin_left = 12.0
+content_margin_top = 7.0
+content_margin_right = 12.0
+content_margin_bottom = 7.0
+
+[sub_resource type="StyleBoxFlat" id="StyleRail"]
+bg_color = Color(0.12549, 0.0862745, 0.180392, 0.9)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.847059, 0.682353, 0.282353, 0.72)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+content_margin_left = 6.0
+content_margin_top = 6.0
+content_margin_right = 6.0
+content_margin_bottom = 6.0
+
+[sub_resource type="StyleBoxFlat" id="StyleEvent"]
+bg_color = Color(0.12549, 0.0862745, 0.180392, 0.88)
+border_width_left = 3
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.847059, 0.682353, 0.282353, 0.88)
+corner_radius_top_left = 12
+corner_radius_bottom_left = 12
+content_margin_left = 14.0
+content_margin_top = 9.0
+content_margin_right = 10.0
+content_margin_bottom = 9.0
+
+[sub_resource type="StyleBoxFlat" id="StyleDrawer"]
+bg_color = Color(0.12549, 0.0862745, 0.180392, 0.95)
+border_width_left = 1
+border_width_top = 2
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.847059, 0.682353, 0.282353, 0.76)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+content_margin_left = 14.0
+content_margin_top = 7.0
+content_margin_right = 14.0
+content_margin_bottom = 7.0
+
+[node name="HUD" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme = ExtResource("3_theme")
+script = ExtResource("1_hud")
+
+[node name="TopBar" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 18.0
+offset_top = 8.0
+offset_right = -18.0
+offset_bottom = 98.0
+grow_horizontal = 2
+theme_override_constants/separation = 12
+
+[node name="RunContextPanel" type="PanelContainer" parent="TopBar"]
+custom_minimum_size = Vector2(286, 0)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleTopGroup")
+
+[node name="Content" type="VBoxContainer" parent="TopBar/RunContextPanel"]
+layout_mode = 2
+theme_override_constants/separation = 5
+
+[node name="RunIdentity" type="Label" parent="TopBar/RunContextPanel/Content"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 24)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.952941, 0.8, 0.388235, 1)
+theme_override_font_sizes/font_size = 15
+text = "후보 · 심복 · 도전 0"
+text_overrun_behavior = 3
+
+[node name="VitalRow" type="HBoxContainer" parent="TopBar/RunContextPanel/Content"]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="HealthLabel" type="Label" parent="TopBar/RunContextPanel/Content/VitalRow"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0.396078, 0.878431, 0.619608, 1)
+theme_override_font_sizes/font_size = 16
+text = "후보 100/100"
+
+[node name="LaneLabel" type="Label" parent="TopBar/RunContextPanel/Content/VitalRow"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0.560784, 0.858824, 1, 1)
+theme_override_font_sizes/font_size = 14
+text = "X50·Y50"
+horizontal_alignment = 2
+
+[node name="CenterStatusPanel" type="PanelContainer" parent="TopBar"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("StyleTopGroup")
+
+[node name="Content" type="VBoxContainer" parent="TopBar/CenterStatusPanel"]
+layout_mode = 2
+theme_override_constants/separation = 3
+
+[node name="StatusRow" type="HBoxContainer" parent="TopBar/CenterStatusPanel/Content"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="ExperienceLabel" type="Label" parent="TopBar/CenterStatusPanel/Content/StatusRow"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0.894118, 0.827451, 0.709804, 1)
+theme_override_font_sizes/font_size = 14
+text = "LV.1 · 0/23 XP"
+
+[node name="TimeLabel" type="Label" parent="TopBar/CenterStatusPanel/Content/StatusRow"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0.952941, 0.901961, 0.811765, 1)
+theme_override_font_sizes/font_size = 27
+text = "10:00"
+horizontal_alignment = 1
+
+[node name="KillLabel" type="Label" parent="TopBar/CenterStatusPanel/Content/StatusRow"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0.741176, 0.682353, 0.784314, 1)
+theme_override_font_sizes/font_size = 13
+text = "퇴장 0 · 난입 0"
+horizontal_alignment = 2
+
+[node name="ExperienceBar" type="ProgressBar" parent="TopBar/CenterStatusPanel/Content"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 8)
+layout_mode = 2
+show_percentage = false
+
+[node name="BossPanel" type="PanelContainer" parent="TopBar/CenterStatusPanel/Content"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleRail")
+
+[node name="BossContent" type="HBoxContainer" parent="TopBar/CenterStatusPanel/Content/BossPanel"]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="BossMarker" type="Control" parent="TopBar/CenterStatusPanel/Content/BossPanel/BossContent"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(28, 28)
+layout_mode = 2
+script = ExtResource("4_faction_marker")
+
+[node name="BossLabel" type="Label" parent="TopBar/CenterStatusPanel/Content/BossPanel/BossContent"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(140, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.75, 0.35, 1)
+theme_override_font_sizes/font_size = 13
+text = "BOSS"
+text_overrun_behavior = 3
+
+[node name="BossBar" type="ProgressBar" parent="TopBar/CenterStatusPanel/Content/BossPanel/BossContent"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 12)
+layout_mode = 2
+size_flags_horizontal = 3
+show_percentage = false
+
+[node name="CombatActionsPanel" type="PanelContainer" parent="TopBar"]
+custom_minimum_size = Vector2(442, 0)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleTopGroup")
+
+[node name="Actions" type="HBoxContainer" parent="TopBar/CombatActionsPanel"]
+layout_mode = 2
+theme_override_constants/separation = 6
+
+[node name="SkillButton" type="Button" parent="TopBar/CombatActionsPanel/Actions"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(166, 56)
+layout_mode = 2
+mouse_filter = 0
+text = "필살 공약 0% [SPACE]"
+
+[node name="SpeedButton" type="Button" parent="TopBar/CombatActionsPanel/Actions"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(78, 56)
+layout_mode = 2
+mouse_filter = 0
+text = "1× [F]"
+
+[node name="RangeButton" type="Button" parent="TopBar/CombatActionsPanel/Actions"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(112, 56)
+layout_mode = 2
+mouse_filter = 0
+toggle_mode = true
+tooltip_text = "마우스를 올리면 개별 사거리를 표시합니다. 터치 환경에서는 이 버튼을 켠 뒤 후보나 수비병력을 선택하세요."
+text = "사거리 [G]"
+
+[node name="PauseButton" type="Button" parent="TopBar/CombatActionsPanel/Actions"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(52, 56)
+layout_mode = 2
+mouse_filter = 0
+tooltip_text = "전투를 일시정지하고 옵션 또는 선택 화면으로 이동합니다."
+text = "Ⅱ"
+
+[node name="EffectPanels" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 18.0
+offset_top = 108.0
+offset_right = 142.0
+offset_bottom = 320.0
+mouse_filter = 2
+theme_override_constants/separation = 6
+
+[node name="GlobalPanel" type="PanelContainer" parent="EffectPanels"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleRail")
+
+[node name="Content" type="VBoxContainer" parent="EffectPanels/GlobalPanel"]
+layout_mode = 2
+theme_override_constants/separation = 4
+
+[node name="Header" type="HBoxContainer" parent="EffectPanels/GlobalPanel/Content"]
+layout_mode = 2
+
+[node name="Title" type="Label" parent="EffectPanels/GlobalPanel/Content/Header"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0.541176, 0.909804, 0.721569, 1)
+theme_override_font_sizes/font_size = 12
+text = "상태 강화"
+
+[node name="GlobalCount" type="Label" parent="EffectPanels/GlobalPanel/Content/Header"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0.741176, 0.682353, 0.784314, 1)
+theme_override_font_sizes/font_size = 12
+text = "0"
+
+[node name="GlobalList" type="GridContainer" parent="EffectPanels/GlobalPanel/Content"]
+unique_name_in_owner = true
+layout_mode = 2
+columns = 3
+theme_override_constants/h_separation = 4
+theme_override_constants/v_separation = 4
+
+[node name="ArtifactPanel" type="PanelContainer" parent="EffectPanels"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleRail")
+
+[node name="Content" type="VBoxContainer" parent="EffectPanels/ArtifactPanel"]
+layout_mode = 2
+theme_override_constants/separation = 4
+
+[node name="Header" type="HBoxContainer" parent="EffectPanels/ArtifactPanel/Content"]
+layout_mode = 2
+
+[node name="ArtifactDetailButton" type="Button" parent="EffectPanels/ArtifactPanel/Content/Header"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 48)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 12
+text = "유물 상세"
+
+[node name="ArtifactCount" type="Label" parent="EffectPanels/ArtifactPanel/Content/Header"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0.741176, 0.682353, 0.784314, 1)
+theme_override_font_sizes/font_size = 11
+text = "0/6"
+
+[node name="ArtifactList" type="GridContainer" parent="EffectPanels/ArtifactPanel/Content"]
+unique_name_in_owner = true
+layout_mode = 2
+columns = 3
+theme_override_constants/h_separation = 4
+theme_override_constants/v_separation = 4
+
+[node name="ArtifactDetailPanel" type="PanelContainer" parent="."]
+unique_name_in_owner = true
+visible = false
+z_index = 20
+layout_mode = 0
+offset_left = 150.0
+offset_top = 112.0
+offset_right = 540.0
+offset_bottom = 430.0
+theme_override_styles/panel = SubResource("StyleEvent")
+
+[node name="ArtifactDetailLabel" type="Label" parent="ArtifactDetailPanel"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0.894118, 0.827451, 0.709804, 1)
+theme_override_font_sizes/font_size = 14
+text = "보유한 아티팩트가 없습니다."
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="EventFrame" type="PanelContainer" parent="."]
+unique_name_in_owner = true
+visible = false
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -330.0
+offset_top = 108.0
+offset_right = -18.0
+offset_bottom = 230.0
+grow_horizontal = 0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleEvent")
+
+[node name="Content" type="VBoxContainer" parent="EventFrame"]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/separation = 5
+
+[node name="Header" type="Label" parent="EventFrame/Content"]
+layout_mode = 2
+mouse_filter = 2
+theme_override_colors/font_color = Color(0.952941, 0.8, 0.388235, 1)
+theme_override_font_sizes/font_size = 12
+text = "전장 경보  ◀◀◀"
+horizontal_alignment = 2
+
+[node name="PreludeRow" type="HBoxContainer" parent="EventFrame/Content"]
+layout_mode = 2
+alignment = 2
+theme_override_constants/separation = 6
+
+[node name="PreludeMarker" type="Control" parent="EventFrame/Content/PreludeRow"]
+unique_name_in_owner = true
+visible = false
+custom_minimum_size = Vector2(28, 28)
+layout_mode = 2
+script = ExtResource("4_faction_marker")
+
+[node name="PreludeLabel" type="Label" parent="EventFrame/Content/PreludeRow"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_filter = 2
+theme_override_colors/font_color = Color(0.92, 0.78, 0.48, 1)
+theme_override_font_sizes/font_size = 14
+text = "예고 T1 · 진영 · 0:30"
+horizontal_alignment = 2
+autowrap_mode = 2
+
+[node name="WarningRow" type="HBoxContainer" parent="EventFrame/Content"]
+layout_mode = 2
+alignment = 2
+theme_override_constants/separation = 6
+
+[node name="WarningMarker" type="Control" parent="EventFrame/Content/WarningRow"]
+unique_name_in_owner = true
+visible = false
+custom_minimum_size = Vector2(28, 28)
+layout_mode = 2
+script = ExtResource("4_faction_marker")
+
+[node name="WarningLabel" type="Label" parent="EventFrame/Content/WarningRow"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_filter = 2
+theme_override_colors/font_color = Color(1, 0.48, 0.42, 1)
+theme_override_font_sizes/font_size = 16
+text = "WARNING"
+horizontal_alignment = 2
+autowrap_mode = 2
+
+[node name="GovernanceAudience" type="Label" parent="EventFrame/Content"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+mouse_filter = 2
+theme_override_colors/font_color = Color(0.46, 0.78, 0.88, 1)
+theme_override_font_sizes/font_size = 12
+text = "관객석 ●●●○○ · 통치 안정 50"
+horizontal_alignment = 2
+autowrap_mode = 2
+
+[node name="WarningTimer" type="Timer" parent="."]
+unique_name_in_owner = true
+one_shot = true
+
+[node name="BottomInfo" type="PanelContainer" parent="."]
+unique_name_in_owner = true
+visible = false
+layout_mode = 1
+anchors_preset = 12
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 150.0
+offset_top = -112.0
+offset_right = -18.0
+offset_bottom = -12.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_styles/panel = SubResource("StyleDrawer")
+
+[node name="Content" type="VBoxContainer" parent="BottomInfo"]
+layout_mode = 2
+theme_override_constants/separation = 2
+
+[node name="BuildLabel" type="Label" parent="BottomInfo/Content"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 58)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.894118, 0.827451, 0.709804, 1)
+theme_override_font_sizes/font_size = 14
+text = "편대 및 강화 현황"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="Instruction" type="Label" parent="BottomInfo/Content"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0.741176, 0.682353, 0.784314, 1)
+theme_override_font_sizes/font_size = 13
+text = "클릭/드래그: 심복 이동 · SPACE: 필살 공약 · F: 배속 · G: 사거리 · ESC: 일시정지"
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="BottomInfoToggle" type="Button" parent="."]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(124, 48)
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 0.0
+anchor_top = 1.0
+anchor_right = 0.0
+anchor_bottom = 1.0
+offset_left = 18.0
+offset_top = -60.0
+offset_right = 142.0
+offset_bottom = -12.0
+grow_vertical = 0
+theme_override_font_sizes/font_size = 13
+text = "설명 보기  [H]"
+
+[node name="ResultOverlay" parent="." instance=ExtResource("2_result_overlay")]
+unique_name_in_owner = true
+layout_mode = 1

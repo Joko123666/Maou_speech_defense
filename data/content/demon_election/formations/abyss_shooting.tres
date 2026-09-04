@@ -1,0 +1,38 @@
+[gd_resource type="Resource" script_class="TowerFormationData" format=3]
+
+[ext_resource type="Script" path="res://resources/formation_cell_data.gd" id="1_deq4u"]
+[ext_resource type="Script" path="res://resources/tower_formation_data.gd" id="2_usr2m"]
+
+[sub_resource type="Resource" id="Resource_mxqf3"]
+script = ExtResource("1_deq4u")
+tower_id = &"slow"
+
+[sub_resource type="Resource" id="Resource_82spx"]
+script = ExtResource("1_deq4u")
+offset = Vector2i(0, 1)
+tower_id = &"pierce"
+
+[sub_resource type="Resource" id="Resource_kbpqo"]
+script = ExtResource("1_deq4u")
+offset = Vector2i(0, 2)
+tower_id = &"slow"
+
+[sub_resource type="Resource" id="Resource_27xgm"]
+script = ExtResource("1_deq4u")
+offset = Vector2i(0, 3)
+tower_id = &"pierce"
+
+[resource]
+script = ExtResource("2_usr2m")
+id = &"abyss_shooting"
+display_name = "심연 혼성 사격진"
+description = "세로 4칸 둔화 지대에서 심연의 기둥과 오크 궁병이 관통 사격을 집중"
+cells = Array[ExtResource("1_deq4u")]([SubResource("Resource_mxqf3"), SubResource("Resource_82spx"), SubResource("Resource_kbpqo"), SubResource("Resource_27xgm")])
+role_tags = Array[StringName]([&"control", &"pierce"])
+shape_class = &"LONG"
+placement_difficulty = 2
+base_weight = 0.9
+formation_score = 400
+raw_power_score = 400.0
+output_multiplier = 0.75
+expected_power_score = 300.0
